@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Knihovna_VitaTest>
+            <version>0.1.0</version>
+        </Knihovna_VitaTest>
+    </modules>
+    <global>
+        <models>
+            <knihovna_vitatest>
+                <class>Knihovna_VitaTest_Model</class>
+            </knihovna_vitatest>
+        </models>
+        <blocks>
+            <knihovna_vitatest>
+                <class>Knihovna_VitaTest_Block</class>
+            </knihovna_vitatest>
+        </blocks>
+        <helpers>
+            <knihovna_vitatest>
+                <class>Knihovna_VitaTest_Helper</class>
+            </knihovna_vitatest>
+        </helpers>
+        <resources>
+            <knihovna_vitatest_setup>
+                <setup>
+                    <module>Knihovna_VitaTest</module>
+                </setup>
+            </knihovna_vitatest_setup>
+        </resources>
+    </global>
+</config>
