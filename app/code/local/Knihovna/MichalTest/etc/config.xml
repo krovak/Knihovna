@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Knihovna_MichalTest>
+            <version>0.1.0</version>
+        </Knihovna_MichalTest>
+    </modules>
+    <adminhtml>
+           <!-- The <layout> updates allow us to define our block layouts in a separate file so are aren't messin' with the Magento layout files.  -->
+           <layout>
+               <updates>
+                   <michal>
+                       <file>awesome.xml</file>
+                   </michal>
+               </updates>
+           </layout>
+           <!-- The <acl> section is for access control. Here we define the pieces where access can be controlled within a role. -->
+           <acl>
+               <resources>
+                   <admin>
+                       <children>
+                           <michal>
+                               <title>Michal menu</title>
+                               <children>
+                                   <example translate="title" module="awesome">
+                                       <title>Michal menu</title>
+                                   </example>
+                               </children>
+                           </michal>
+                       </children>
+                   </admin>
+               </resources>
+           </acl>
+       </adminhtml>
+    <global>
+        <models>
+            <knihovna_michaltest>
+                <class>Knihovna_MichalTest_Model</class>
+            </knihovna_michaltest>
+        </models>
+        <blocks>
+            <knihovna_michaltest>
+                <class>Knihovna_MichalTest_Block</class>
+            </knihovna_michaltest>
+        </blocks>
+        <helpers>
+            <knihovna_michaltest>
+                <class>Knihovna_MichalTest_Helper</class>
+            </knihovna_michaltest>
+        </helpers>
+        <resources>
+            <knihovna_michaltest_setup>
+                <setup>
+                    <module>Knihovna_MichalTest</module>
+                </setup>
+            </knihovna_michaltest_setup>
+        </resources>
+    </global>
+</config>
