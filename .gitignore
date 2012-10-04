@@ -1,6 +1,5 @@
 var/*
 media/*
 app/etc/local.xml
-app/etc/modules/*.xml
 .idea
 cron.php
