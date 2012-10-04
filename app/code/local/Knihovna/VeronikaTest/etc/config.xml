@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Knihovna_VeronikaTest>
+            <version>0.1.0</version>
+        </Knihovna_VeronikaTest>
+    </modules>
+    <global>
+        <models>
+            <knihovna_veronikatest>
+                <class>Knihovna_VeronikaTest_Model</class>
+            </knihovna_veronikatest>
+        </models>
+        <blocks>
+            <knihovna_veronikatest>
+                <class>Knihovna_VeronikaTest_Block</class>
+            </knihovna_veronikatest>
+        </blocks>
+        <helpers>
+            <knihovna_veronikatest>
+                <class>Knihovna_VeronikaTest_Helper</class>
+            </knihovna_veronikatest>
+        </helpers>
+        <resources>
+            <knihovna_veronikatest_setup>
+                <setup>
+                    <module>Knihovna_VeronikaTest</module>
+                </setup>
+            </knihovna_veronikatest_setup>
+        </resources>
+    </global>
+</config>
