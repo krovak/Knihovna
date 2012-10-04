@@ -1,0 +1,274 @@
+/*vytvo�en� 3 dom�n*/
+CREATE DOMAIN identifikace AS INTEGER NOT NULL CHECK(VALUE > 0);
+CREATE DOMAIN textpov AS VARCHAR(40) CHARACTER SET WIN1250 NOT NULL COLLATE PXW_CSY;
+CREATE DOMAIN rok AS INTEGER CHECK (VALUE > 1900);
+/vytvo�en� 5 tabulek*/
+CREATE TABLE kniha(
+	idkn identifikace,
+	nazev textpov,
+	rok_vydani INTEGER,
+	CONSTRAINT kniha_pk PRIMARY KEY(idkn));	
+CREATE TABLE knihovna (
+	idk identifikace, 
+	nazev textpov, 
+	ulice textpov, 
+	CONSTRAINT knihovna_pk PRIMARY KEY(idk),
+	CONSTRAINT knihovna_uni_nazev UNIQUE(nazev));
+CREATE TABLE vytisk (
+	ev_cislo identifikace, 
+	knihovna identifikace, 
+	kniha identifikace, 
+	cena identifikace, 
+	CONSTRAINT vytisk_pk PRIMARY KEY(ev_cislo), 
+	CONSTRAINT vytisk_fk_knihovna FOREIGN KEY(knihovna)REFERENCES knihovna(idk) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT vytisk_fk_kniha FOREIGN KEY(kniha)REFERENCES kniha(idkn) ON DELETE CASCADE ON UPDATE CASCADE);
+CREATE TABLE osoba(
+	ido identifikace,
+	jmeno textpov,
+	prijmeni textpov,
+	dat_naroz DATE ,
+	CONSTRAINT osoba_pk PRIMARY KEY(ido));
+
+CREATE TABLE ctenar (
+	osoba identifikace,
+	ulice textpov,
+	dom_knihovna identifikace,
+	CONSTRAINT ctenar_pk PRIMARY KEY(osoba),
+	CONSTRAINT ctenar_fk_knihovna FOREIGN KEY(dom_knihovna)REFERENCES knihovna(idk) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT ctenar_fk_osoba FOREIGN KEY(osoba)REFERENCES osoba(ido) ON DELETE CASCADE ON UPDATE CASCADE);
+CREATE TABLE vypujcka (
+	dat_vypujcky DATE NOT NULL,
+	dat_vraceni DATE,
+	ctenar identifikace,
+	vytisk identifikace,
+	CONSTRAINT vypujcka_pk PRIMARY KEY(dat_vypujcky,vytisk),
+	CONSTRAINT vypujcka_fk_ctenar FOREIGN KEY(ctenar)REFERENCES ctenar(osoba) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT vypujcka_fk_vytisk FOREIGN KEY(vytisk)REFERENCES vytisk(ev_cislo) ON DELETE CASCADE ON UPDATE CASCADE);
+
+CREATE TABLE spisovatel (
+	osoba identifikace,
+	kniha identifikace,
+	zanr textpov,	
+	CONSTRAINT spisovatel_pk PRIMARY KEY(osoba,kniha),
+	CONSTRAINT spisovatel_fk_osoba FOREIGN KEY(osoba)REFERENCES osoba(ido) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT spisovatel_fk_kniha FOREIGN KEY(kniha) REFERENCES kniha(idkn) ON DELETE CASCADE ON UPDATE CASCADE);
+/*gener�tory*/
+CREATE SEQUENCE g_knihovna;
+CREATE SEQUENCE g_osoba;
+CREATE SEQUENCE g_kniha;
+
+/*data do tabulky kniha*/
+INSERT INTO kniha VALUES (NEXT VALUE FOR g_kniha, 'M�j',1999);
+INSERT INTO kniha VALUES (NEXT VALUE FOR g_kniha, '�pal��ek ver�� poh�dek',1989);
+INSERT INTO kniha VALUES (NEXT VALUE FOR g_kniha, 'Pravd�podobnost a statistika',2001);
+INSERT INTO kniha VALUES (NEXT VALUE FOR g_kniha, 'Klub rv���',2007);
+INSERT INTO kniha VALUES (NEXT VALUE FOR g_kniha, 'Teorie k�dov�n�',2010);
+INSERT INTO kniha VALUES (NEXT VALUE FOR g_kniha, 'Brou�ci',1989);
+INSERT INTO kniha VALUES (NEXT VALUE FOR g_kniha, 'Babi�ka',1997);
+INSERT INTO kniha VALUES (NEXT VALUE FOR g_kniha, 'Rozum a cit',2002);
+INSERT INTO kniha VALUES (NEXT VALUE FOR g_kniha, 'P�se�n� bou�e',2003);
+INSERT INTO kniha VALUES (NEXT VALUE FOR g_kniha, 'Jm�no r�e',1967);
+INSERT INTO kniha VALUES (NEXT VALUE FOR g_kniha, 'Datab�zov� syst�my',2003);
+
+
+/*data do tabulky knihovna*/
+INSERT INTO knihovna VALUES (NEXT VALUE FOR g_knihovna, 'hlavn�','Raisova');
+INSERT INTO knihovna VALUES (NEXT VALUE FOR g_knihovna, 'okresn�','Tyr�ova');
+INSERT INTO knihovna VALUES (NEXT VALUE FOR g_knihovna, '�VUT','Pohrani�n�');
+INSERT INTO knihovna VALUES (NEXT VALUE FOR g_knihovna, '�koln�','Kamenick�');
+INSERT INTO knihovna VALUES (NEXT VALUE FOR g_knihovna, 'obecn�','Janov');
+INSERT INTO knihovna VALUES (NEXT VALUE FOR g_knihovna, 'pobo�ka','Arnoltice');
+
+
+/*data do tabulky vytisk*/
+INSERT INTO vytisk VALUES (27, 1, 2, 249);
+INSERT INTO vytisk VALUES (75, 4, 3, 99);
+INSERT INTO vytisk VALUES (163, 2, 1, 129);
+INSERT INTO vytisk VALUES (45, 1, 4, 399);
+INSERT INTO vytisk VALUES (90, 3, 5, 169);
+INSERT INTO vytisk VALUES (67, 2, 6, 299);
+INSERT INTO vytisk VALUES (897, 4, 7, 349);
+INSERT INTO vytisk VALUES (97, 6, 10, 249);
+INSERT INTO vytisk VALUES (25, 5, 9, 449);
+INSERT INTO vytisk VALUES (26, 4, 10, 249);
+INSERT INTO vytisk VALUES (7, 3, 11, 153);
+INSERT INTO vytisk VALUES (37, 6, 9, 449);
+INSERT INTO vytisk VALUES (1, 2, 10, 249);
+INSERT INTO vytisk VALUES (64, 1, 4, 399);
+INSERT INTO vytisk VALUES (78, 3, 11,153);
+INSERT INTO vytisk VALUES (6, 5, 7, 349);
+
+/*osoba*/
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Jan', 'Nov�k', '1997-01-01');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Ale�', 'Mal�', '1991-02-26');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Ad�la', 'Tich�', '1967-05-02');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'R�ena', 'Hrachov�', '1996-02-07');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Jaroslav', 'Karl�k', '1974-09-02');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Ema', 'Nezvalov�', '1965-07-29');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Ond�ej', 'Roub�k', '1988-12-29');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Karel H.', 'M�cha', '1836-11-16');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Franti�ek ', 'Hrub�n', '1910-09-17');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Daneila', 'Jaru�kov�', '1967-02-26');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Chuck', 'Palahniuk', '1962-02-21');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Jan', 'Mare�', '1955-11-11');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Jan', 'Karafi�t', '1929-01-31');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Bo�ena', 'N�mcov�', '1820-02-04');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Jane', 'Austenov�', '1775-12-16');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'James', 'Rollins', '1961-08-20');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Umberto', 'Eco', '1932-01-05');
+INSERT INTO osoba VALUES (NEXT VALUE FOR g_osoba, 'Ivan', 'Hala�ka', '1965-04-20');
+
+/*ctenar*/
+INSERT INTO ctenar VALUES (1, 'Janov', 5);
+INSERT INTO ctenar VALUES (2, 'Riegrova', '3');
+INSERT INTO ctenar VALUES (3, 'Labsk� Str��', '6');
+INSERT INTO ctenar VALUES (4, 'Dvo��kova', '3');
+INSERT INTO ctenar VALUES (5, 'Lipov�', '2');
+INSERT INTO ctenar VALUES (6, '�elivsk�ho', '4');
+INSERT INTO ctenar VALUES (7, 'Dvo��kova', '3');
+
+
+
+/*data do tabulky vypujcka*/
+INSERT INTO vypujcka VALUES ('2012-04-09', '2012-04-20',  6,1);
+INSERT INTO vypujcka VALUES ('2012-01-29', '2012-02-28',  6,97);
+INSERT INTO vypujcka VALUES ('2011-11-11', '2012-01-02',  5,7);
+INSERT INTO vypujcka VALUES ('2012-02-02', '2012-03-02',  5,64);
+INSERT INTO vypujcka VALUES ('2012-02-02', '2012-03-02',  5,163);
+INSERT INTO vypujcka VALUES ('2012-02-02', '2012-03-02',  5,1);
+INSERT INTO vypujcka VALUES ('2011-02-03', '2011-04-01',  1,6);
+INSERT INTO vypujcka VALUES ('2012-02-07', '2012-03-08',  1,45);
+INSERT INTO vypujcka VALUES ('2012-04-30', '2012-05-26',  6,1);
+INSERT INTO vypujcka VALUES ('2012-05-09', NULL,          2,1);
+INSERT INTO vypujcka VALUES ('2012-02-09', '2012-03-09',  4,25);
+INSERT INTO vypujcka VALUES ('2012-01-31', '2012-03-01',  4,897);
+INSERT INTO vypujcka VALUES ('2012-04-20', '2012-07-21',  4,78);
+
+
+
+
+/*spisovatel*/
+INSERT INTO spisovatel VALUES ( 8,1,'poezie' );
+INSERT INTO spisovatel VALUES ( 9,2, 'poh�dka');
+INSERT INTO spisovatel VALUES ( 10,3, 'skripta');
+INSERT INTO spisovatel VALUES ( 11,4, 'satira');
+INSERT INTO spisovatel VALUES ( 12,5, 'skripta');
+INSERT INTO spisovatel VALUES ( 13,6, 'poh�dka');
+INSERT INTO spisovatel VALUES ( 14,7, 'novela');
+INSERT INTO spisovatel VALUES ( 15,8, 'rom�n');
+INSERT INTO spisovatel VALUES ( 16,9, 'thriller');
+INSERT INTO spisovatel VALUES ( 17,10, 'historick�');
+INSERT INTO spisovatel VALUES ( 18,11, 'skripta');
+
+
+/*pohledy*/
+
+/*pohled p�es dny - kolik r�zn�ch lid� si v dan� den dohromady p�j�ilo v�tisk� + v kolika r�zn�ch knihovn�ch.*/
+CREATE VIEw VYP_KNIHY(dat_vypujcky, pocet_ctenaru,pocet_vytisku,ruznych_knihoven)
+AS
+SELECT dat_vypujcky,COUNT(ctenar),COUNT(vytisk),COUNT(distinct knihovna)
+FROM vypujcka JOIN vytisk ON vytisk = ev_cislo
+GROUP BY dat_vypujcky;
+
+/*pohled CLEN v�e o �ten��i*/
+CREATE VIEW CLEN(ido,jmeno,prijmeni,dat_naroz,ulice,id_dom_kn,nazev_dom_kn,ulice_dom_kn)
+AS
+SELECT ido,jmeno,prijmeni,dat_naroz,ctenar.ulice, idk, nazev, knihovna.ulice
+FROM (osoba JOIN ctenar ON osoba=ido) JOIN knihovna ON dom_knihovna=idk ;
+
+/*neselektov� procedury*/
+/*procedura VYPUJCKA_NOVA, kter� dostane id �ten��e, ev. ��slo vytisku a: 
+zkontroluje, zda dan� ��slo v�tisku je voln� (vr�cen�) - pokud ne, vypsat chybu, jinak
+ulo�� z�znam: nastav� dne�n� datum jako dat_vvypujcky, NULL jako dat_vraceni, vstupn� 
+id �ten��e do ctenar, vstupni ��slo v�tisku do vytisk */
+SET TERM!!;
+CREATE PROCEDURE vypujcka_vytisku (ctenar identifikace,ev_cislo identifikace)
+RETURNS (nelze_vypujcit INTEGER)
+AS
+BEGIN
+SELECT count(*) from vypujcka where vytisk=:ev_cislo and dat_vraceni is null INTO :nelze_vypujcit; /* 1 nebo 0 */
+IF nelze_vypujcit = 0 then 
+insert into vypujcka values (cast('today' as date),NULL,:ctenar, :ev_cislo);
+END!!
+SET TERM ;!!
+
+
+/* selektove proc. */�
+set term !!;
+CREATE PROCEDURE pujcky_vytisku(ev_cislo identifikace)
+RETURNS (dat_vypujcky DATE NOT NULL, dat_vraceni DATE, ctenar identifikace,  vytisk identifikace) 
+AS
+BEGIN
+FOR
+SELECT dat_vypujcky, dat_vraceni, ctenar, vytisk
+FROM vypujcka WHERE vytisk= ev_cislo
+ORDER BY dat_vypujcky desc into :dat_vypujcky,:dat_vraceni,:ctenar,:vytisk
+do suspend;
+end !!
+SET term ;!!
+select * from pujcky_vytisku(1);
+
+
+
+
+SET TERM!!;
+CREATE PROCEDURE prekrocena_doba (dat_vypujcky DATE, pocet_dni INTEGER)
+RETURNS (idk identifikace, nazev textpov, ev_cislo identifikace,osoba identifikace, jmeno textpov, prijmeni textpov, dat_vypujcky DATE, prekroceni INTEGER)
+AS 
+BEGIN
+FOR
+SELECT idk, nazev,ev_cislo, osoba, jmeno, prijmeni,dat_vypujcky, :dat_vypujcky-dat_vypujcky-:pocet_dni 
+FROM ((((osoba JOIN ctenar ON ido=osoba)JOIN vypujcka ON ctenar=osoba)JOIN vytisk ON vytisk=ev_cislo)JOIN kniha ON kniha=idk)
+WHERE dat_vypujcky <= :dat_vypujcky - :pocet_dni AND dat_vraceni IS NULL
+ORDER BY nazev, prijmeni
+INTO :idk, :nazev,:ev_cislo, :osoba, :jmeno, :prijmeni,:dat_vypujcky, :prekroceni
+DO 
+SUSPEND;
+END !!
+SET TERM;!!
+
+SET TERM!!;
+CREATE PROCEDURE napsana_kniha (prijmeni textpov, jmeno textpov)
+RETURNS (idk identifikace, nazev textpov, rok_vydani rok, ido identifikace)
+AS
+BEGIN
+FOR
+SELECT idk, nazev, rok_vydani, ido
+FROM (osoba JOIN spisovatel ON ido=osoba)JOIN kniha ON kniha=idk
+ORDER BY ido, rok_vydani, nazev
+INTO :idk, :nazev, :rok_vydani, :ido
+DO
+SUSPEND;
+END !!
+SET TERM;!!
+
+/*neselektov�*/
+SET TERM ^;
+CREATE PROCEDURE vrat_knihu (ev_cislo identifikace)
+RETURNS(datum_vraceni DATE)
+AS
+DECLARE VARIABLE datum_pujc DATE;
+BEGIN
+SELECT MAX(dat_vypujcky) FROM vypujcka WHERE vytisk=:ev_cislo INTO :datum_pujc;
+SELECT dat_vraceni FROM vypujcka WHERE vytisk=:ev_cislo AND dat_vypujcky=:datum_pujc INTO :datum_vraceni;
+IF (datum_vraceni IS NULL) THEN /* OK, bylo vyp�j�eno, dnes vrac�me */
+BEGIN
+  datum_vraceni = CAST('today' AS DATE);
+  UPDATE vypujcka SET dat_vraceni=:datum_vraceni WHERE  vytisk=:ev_cislo AND dat_vypujcky=:datum_pujc;
+END
+END^
+SET TERM ;^
+
+CREATE EXCEPTION chyba 'chyba';
+SET TERM ^;
+CREATE PROCEDURE kniha_pridej(nazev textpov, rok_vydani integer) 
+RETURNS (nove_id INTEGER)
+AS
+BEGIN
+  nove_id = NEXT VALUE FOR g_kniha;
+  INSERT INTO kniha VALUES (:nove_id, :nazev,:rok);
+  WHEN ANY DO EXCEPTION chyba 'Nov� n�zev knihy se nepovedlo vlo�it!';
+END^
+SET TERM ;^
+
+
