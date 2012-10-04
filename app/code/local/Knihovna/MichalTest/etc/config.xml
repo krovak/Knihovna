@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Knihovna_MichalTest>
+            <version>0.1.0</version>
+        </Knihovna_MichalTest>
+    </modules>
+    <global>
+        <models>
+            <knihovna_michaltest>
+                <class>Knihovna_MichalTest_Model</class>
+            </knihovna_michaltest>
+        </models>
+        <blocks>
+            <knihovna_michaltest>
+                <class>Knihovna_MichalTest_Block</class>
+            </knihovna_michaltest>
+        </blocks>
+        <helpers>
+            <knihovna_michaltest>
+                <class>Knihovna_MichalTest_Helper</class>
+            </knihovna_michaltest>
+        </helpers>
+        <resources>
+            <knihovna_michaltest_setup>
+                <setup>
+                    <module>Knihovna_MichalTest</module>
+                </setup>
+            </knihovna_michaltest_setup>
+        </resources>
+    </global>
+</config>
