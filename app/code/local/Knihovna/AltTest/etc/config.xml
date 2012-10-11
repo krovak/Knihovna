@@ -10,7 +10,6 @@
             <updates>
                 <knihovna_alttest>
                     <file>helloPetr.xml</file>
-                    <file>helloworldPetr.xml</file>
                 </knihovna_alttest>
             </updates>
         </layout>
