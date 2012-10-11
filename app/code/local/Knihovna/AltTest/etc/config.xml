@@ -14,15 +14,6 @@
             </updates>
         </layout>
     </frontend>
-    <frontend>
-        <layout>
-            <updates>
-                <knihovna_alttest>
-                    <file>helloworldPetr.xml</file>
-                </knihovna_alttest>
-            </updates>
-        </layout>
-    </frontend>
     <global>
         <models>
             <knihovna_alttest>
