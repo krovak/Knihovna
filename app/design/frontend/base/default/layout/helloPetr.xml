@@ -2,7 +2,7 @@
 <layout version="0.1.0">
     <default>
         <reference name="right">
-            <block type="core/template" name="helloworld" template="helloPetr/world.phtml" />
+            <block type="core/template" name="helloworldPetr" template="helloPetr/world.phtml" />
         </reference>
     </default>
 </layout>
