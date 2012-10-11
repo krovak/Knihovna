@@ -28,6 +28,11 @@
 -->
 <layout version="0.1.0">
     <default>
-        <block name="formkey" type="core/template" template="core/formkey.phtml" />
+        <block name="formkey" type="core/template" template="core/
+formkey.phtml" />
+        <reference name="right">
+            <block type="core/template" name="helloworldKuba" template="helloKuba/
+world.phtml" />
+        </reference>
     </default>
 </layout>
