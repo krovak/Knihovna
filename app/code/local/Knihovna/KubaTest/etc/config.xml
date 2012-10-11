@@ -5,6 +5,15 @@
             <version>0.1.0</version>
         </Knihovna_KubaTest>
     </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <knihovna_kubatest>
+                    <file>helloKuba.xml</file>
+                </knihovna_kubatest>
+            </updates>
+        </layout>
+    </frontend>
     <global>
         <models>
             <knihovna_kubatest>
