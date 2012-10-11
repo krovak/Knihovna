@@ -5,7 +5,7 @@ class Book_HelloworldPetr_Block_HelloworldPetr extends Mage_Core_Block_Template
 {
     return parent::_prepareLayout();
 }
-    public function getHelloworld()
+    public function getHelloworldPetr()
 {
     return 'Hello world';
 }
