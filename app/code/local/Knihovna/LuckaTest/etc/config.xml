@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Knihovna_LuckaTest>
+            <version>0.1.0</version>
+        </Knihovna_LuckaTest>
+    </modules>
+    <global>
+        <models>
+            <knihovna_luckatest>
+                <class>Knihovna_LuckaTest_Model</class>
+            </knihovna_luckatest>
+        </models>
+        <blocks>
+            <knihovna_luckatest>
+                <class>Knihovna_LuckaTest_Block</class>
+            </knihovna_luckatest>
+        </blocks>
+        <helpers>
+            <knihovna_luckatest>
+                <class>Knihovna_LuckaTest_Helper</class>
+            </knihovna_luckatest>
+        </helpers>
+        <resources>
+            <knihovna_luckatest_setup>
+                <setup>
+                    <module>Knihovna_LuckaTest</module>
+                </setup>
+            </knihovna_luckatest_setup>
+        </resources>
+    </global>
+</config>
