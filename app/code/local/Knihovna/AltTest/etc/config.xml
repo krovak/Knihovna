@@ -5,6 +5,15 @@
             <version>0.1.0</version>
         </Knihovna_AltTest>
     </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <knihovna_alttest>
+                    <file>helloPetr.xml</file>
+                </knihovna_alttest>
+            </updates>
+        </layout>
+    </frontend>
     <global>
         <models>
             <knihovna_alttest>
