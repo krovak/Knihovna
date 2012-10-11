@@ -5,6 +5,15 @@
             <version>0.1.0</version>
         </Knihovna_VitaTest>
     </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <knihovna_vitatest>
+                    <file>ahojVita.xml</file>
+                </knihovna_vitatest>
+            </updates>
+        </layout>
+    </frontend>
     <global>
         <models>
             <knihovna_vitatest>
