@@ -2,7 +2,7 @@
 <layout version="0.1.0">
     <helloworldPetr_index_index>
         <reference name="content">
-            <block type="helloworldPetr/helloworldPetr" name="helloworldPetr"
+            <block type="helloworldPetr/helloworldPetr" name="book.helloworldPetr"
                    template="helloworldPetr/helloworldPetr.phtml" />
         </reference>
     </helloworldPetr_index_index>
