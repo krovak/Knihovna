@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa18b365-94cb-4714-8731-01cc5c5fdbd3" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\altpetr\Documents\GitHub\Knihovna\app\code\local\Book\HelloworldPetr2\Helper\Data.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\altpetr\Documents\GitHub\Knihovna\app\code\local\Book\HelloworldPetr2\etc\config.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\altpetr\Documents\GitHub\Knihovna\app\code\local\Book\HelloworldPetr2\sql\book_helloworldpetr2_setup\mysql4-install-0.1.0.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\altpetr\Documents\GitHub\Knihovna\app\etc\modules\Book_HelloworldPetr2.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="5a83b2cc-0872-4e76-8395-d5fff7d0cc6b" name="zend" comment="" />
@@ -1052,14 +1048,18 @@
       <created>1349967632695</created>
       <updated>1349967632695</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Odstranění zbytečné složky">
+      <created>1350558202239</created>
+      <updated>1350558202239</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297619" sideWeight="0.47730955" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" sideWeight="0.47730955" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" sideWeight="0.48379254" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1114,7 +1114,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pokus o nový modul Hello World" />
+    <option name="LAST_COMMIT_MESSAGE" value="Odstranění zbytečné složky" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1140,6 +1140,7 @@
     <MESSAGE value="Test" />
     <MESSAGE value="Stále nic" />
     <MESSAGE value="Pokus o nový modul Hello World" />
+    <MESSAGE value="Odstranění zbytečné složky" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
