@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa18b365-94cb-4714-8731-01cc5c5fdbd3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="aa18b365-94cb-4714-8731-01cc5c5fdbd3" name="Default" comment="" />
     <list id="5a83b2cc-0872-4e76-8395-d5fff7d0cc6b" name="zend" comment="" />
     <ignored path="Knihovna.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,10 +21,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="helloworldPetr.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="helloworldPetr.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/layout/helloworldPetr.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="68" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0">
+            <state line="2" column="22" selection-start="69" selection-end="69" vertical-scroll-proportion="0.06563707">
               <folding />
             </state>
           </provider>
@@ -44,7 +42,7 @@
       <file leaf-file-name="IndexController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/code/local/Book/HelloworldPetr/controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -62,7 +60,7 @@
       <file leaf-file-name="HelloworldPetr.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/code/local/Book/HelloworldPetr/Block/HelloworldPetr.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="36" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+            <state line="3" column="36" selection-start="124" selection-end="124" vertical-scroll-proportion="-1.9615384">
               <folding />
             </state>
           </provider>
@@ -71,16 +69,16 @@
       <file leaf-file-name="HelloworldPetr.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/code/local/Book/HelloworldPetr/Model/HelloworldPetr.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="51" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0">
+            <state line="6" column="51" selection-start="208" selection-end="208" vertical-scroll-proportion="-3.9230769">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="helloworldPetr.phtml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/template/HelloworldPetr/helloworldPetr.phtml">
+      <file leaf-file-name="helloworldPetr.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/template/helloworldPetr/helloworldPetr.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="50" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0">
+            <state line="2" column="35" selection-start="107" selection-end="107" vertical-scroll-proportion="-1.3076923">
               <folding />
             </state>
           </provider>
@@ -369,83 +367,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HelloworldPetr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Knihovna" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Knihovna" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helloPetr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Knihovna" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Knihovna" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
+              <option name="myItemId" value="helloworldPetr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1052,7 +974,11 @@
       <created>1350558202239</created>
       <updated>1350558202239</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Oprava překlepu">
+      <created>1350559247566</created>
+      <updated>1350559247566</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1114,7 +1040,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Odstranění zbytečné složky" />
+    <option name="LAST_COMMIT_MESSAGE" value="Oprava překlepu" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1141,6 +1067,7 @@
     <MESSAGE value="Stále nic" />
     <MESSAGE value="Pokus o nový modul Hello World" />
     <MESSAGE value="Odstranění zbytečné složky" />
+    <MESSAGE value="Oprava překlepu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1181,20 +1108,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Book/HelloworldPetr/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="17" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Book/HelloworldPetr/controllers/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Book/HelloworldPetr/Helper/Data.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1207,30 +1120,37 @@
         <state line="246" column="6" selection-start="5623" selection-end="5623" vertical-scroll-proportion="0.24425887" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Book/HelloworldPetr/Block/HelloworldPetr.php">
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/template/helloPetr/world.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="36" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="26" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/layout/helloworldPetr.xml">
+    <entry file="file://$PROJECT_DIR$/app/code/local/Book/HelloworldPetr/Block/HelloworldPetr.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="68" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0">
+        <state line="3" column="36" selection-start="124" selection-end="124" vertical-scroll-proportion="-1.9615384">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/Book/HelloworldPetr/etc/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="17" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/template/helloworldPetr/helloworldPetr.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="35" selection-start="107" selection-end="107" vertical-scroll-proportion="-1.3076923">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/local/Book/HelloworldPetr/Model/HelloworldPetr.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="51" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/template/helloPetr/world.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="26" vertical-scroll-proportion="-0.0">
+        <state line="6" column="51" selection-start="208" selection-end="208" vertical-scroll-proportion="-3.9230769">
           <folding />
         </state>
       </provider>
@@ -1242,9 +1162,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/template/HelloworldPetr/helloworldPetr.phtml">
+    <entry file="file://$PROJECT_DIR$/app/code/local/Book/HelloworldPetr/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="50" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/layout/helloworldPetr.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="22" selection-start="69" selection-end="69" vertical-scroll-proportion="0.06563707">
           <folding />
         </state>
       </provider>
