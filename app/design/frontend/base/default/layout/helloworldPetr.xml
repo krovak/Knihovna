@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
-    <helloworldpetr_index_index>
+    <cms_index_index>
         <reference name="content">
             <block type="helloworldPetr/helloworldPetr" name="book.helloworldPetr"
                    template="helloworldPetr/helloworldPetr.phtml" />
         </reference>
-    </helloworldpetr_index_index>
+    </cms_index_index>
 </layout>
