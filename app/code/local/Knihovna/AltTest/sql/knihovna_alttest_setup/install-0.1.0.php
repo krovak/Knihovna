@@ -18,7 +18,7 @@ $table = $installer->getConnection() //pripojime se k databazi
     'nullable' => false,
     'primary'  => true,
 ),'Entity_id')
-    ->addColumn('jmeno',Varien_Db_Ddl_Table::l_Table::TYPE_VARCHAR,50,array(
+    ->addColumn('jmeno',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
     'nullable' => false //jmeno musi byt vyplneno
 ), 'Jméno')
     ->addColumn('prijmeni',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
