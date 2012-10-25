@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Knihovna_KubaTest>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </Knihovna_KubaTest>
     </modules>
