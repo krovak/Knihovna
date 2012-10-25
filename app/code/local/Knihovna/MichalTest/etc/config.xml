@@ -36,7 +36,15 @@
         <models>
             <knihovna_michaltest>
                 <class>Knihovna_MichalTest_Model</class>
+                <resourceModel>knihovna_michaltest_resource</resourceModel>
             </knihovna_michaltest>
+            <knihovna_michaltest_resource>
+                <entities>
+                    <knihovna_michaltest>
+                        <table>tabulka_michal</table>
+                    </knihovna_michaltest>
+                </entities>
+            </knihovna_michaltest_resource>
         </models>
         <blocks>
             <knihovna_michaltest>
