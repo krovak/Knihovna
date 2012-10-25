@@ -11,6 +11,13 @@
                 <knihovna_alttest>
                     <file>helloPetr.xml</file>
                 </knihovna_alttest>
+                <knihovna_alttest_resource>
+                    <entities>
+                        <knihovna_alttest>
+                            <table>tabulka_petr</table>
+                        </knihovna_alttest>
+                    </entities>
+                </knihovna_alttest_resource>
             </updates>
         </layout>
     </frontend>
@@ -18,6 +25,7 @@
         <models>
             <knihovna_alttest>
                 <class>Knihovna_AltTest_Model</class>
+                <resourceModel>knihovna_alttest_resource</resourceModel>
             </knihovna_alttest>
         </models>
         <blocks>
