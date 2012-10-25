@@ -11,13 +11,13 @@
                 <class>Knihovna_VeronikaTest_Model</class>
                 <resourceModel>knihovna_veronikatest_resource</resourceModel>
             </knihovna_veronikatest>
-            <knihovna_veronikatest>
+            <knihovna_veronikatest_resource>
                 <entities>
                     <knihovna_veronikatest>
                         <table>tabulka_veronika</table>
                     </knihovna_veronikatest>
                 </entities>
-            </knihovna_veronikatest>
+            </knihovna_veronikatest_resource>
         </models>
         <blocks>
             <knihovna_veronikatest>
