@@ -17,7 +17,7 @@ $table = $installer->getConnection()
     'nullable' => false,
     'primary' => true,
 ),'Entity_id')
-    ->addColumn('jmeno',Varien_Db_Dbl_Table::TYPE_VARCHAR,50, array(
+    ->addColumn('jmeno',Varien_Db_Ddl_Table::TYPE_VARCHAR,50, array(
     'nullable'=> false
 ),'Jméno')
     ->addColumn('prijmeni',Varien_Db_Ddl_Table::TYPE_VARCHAR,50, array(
