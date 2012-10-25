@@ -23,9 +23,7 @@
             <knihovna_vitatest_resource>
                 <entities>
                     <knihovna_vitatest>
-                        <table>
-                            tabulka_vita
-                        </table>
+                        <table>tabulka_vita</table>
                     </knihovna_vitatest>
                 </entities>
             </knihovna_vitatest_resource>
