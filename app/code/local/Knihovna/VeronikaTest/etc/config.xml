@@ -9,6 +9,14 @@
         <models>
             <knihovna_veronikatest>
                 <class>Knihovna_VeronikaTest_Model</class>
+                <resourceModel>knihovna_veronikatest_resource</resourceModel>
+            </knihovna_veronikatest>
+            <knihovna_veronikatest>
+                <entities>
+                    <knihovna_veronikatest>
+                        <table>tabulka_veronika</table>
+                    </knihovna_veronikatest>
+                </entities>
             </knihovna_veronikatest>
         </models>
         <blocks>

@@ -18,7 +18,18 @@
         <models>
             <knihovna_vitatest>
                 <class>Knihovna_VitaTest_Model</class>
+                <resourceModel>knihovna_vitatest_resource</resourceModel>
             </knihovna_vitatest>
+            <knihovna_vitatest_resource>
+                <entities>
+                    <knihovna_vitatest>
+                        <table>
+                            tabulka_vita
+                        </table>
+                    </knihovna_vitatest>
+                </entities>
+            </knihovna_vitatest_resource>
+
         </models>
         <blocks>
             <knihovna_vitatest>
