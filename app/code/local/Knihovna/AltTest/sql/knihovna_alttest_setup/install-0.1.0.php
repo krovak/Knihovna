@@ -12,7 +12,7 @@ $installer = $this;
 $installer->startSetup();
 
 $table = $installer->getConnection() //pripojime se k databazi
-    ->newTable($installer->$getTable('knihovna_alttest/knihovna_alttest')) //resource knihovna_alttest, entita knihovna_alttest
+    ->newTable($installer->getTable('knihovna_alttest/knihovna_alttest')) //resource knihovna_alttest, entita knihovna_alttest
     ->addColumn('entity_id',Varien_Db_Ddl_Table::TYPE_SMALLINT,null,array(
     'identity' => true,
     'nullable' => false,
