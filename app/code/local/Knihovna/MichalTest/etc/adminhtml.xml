@@ -8,7 +8,7 @@
                 <test>
                     <title>Test</title>
                     <sort_order>100</sort_order>
-                    <action></action>
+                    <action>admin/</action>
                 </test>
             </children>
         </michal>
