@@ -13,4 +13,20 @@
             </children>
         </michal>
     </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <michal>
+                        <title>Michal menu</title>
+                        <children>
+                            <test translate="title" module="awesome">
+                                <title>Michal menu</title>
+                            </test>
+                        </children>
+                    </michal>
+                </children>
+            </admin>
+        </resources>
+    </acl>
 </config>
