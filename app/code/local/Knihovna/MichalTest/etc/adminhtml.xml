@@ -8,6 +8,7 @@
                 <test>
                     <title>Test</title>
                     <sort_order>100</sort_order>
+                    <action></action>
                 </test>
             </children>
         </michal>

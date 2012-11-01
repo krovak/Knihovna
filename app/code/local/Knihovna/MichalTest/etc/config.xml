@@ -6,32 +6,32 @@
         </Knihovna_MichalTest>
     </modules>
     <adminhtml>
-           <!-- The <layout> updates allow us to define our block layouts in a separate file so are aren't messin' with the Magento layout files.  -->
-           <layout>
-               <updates>
-                   <michal>
-                       <file>awesome.xml</file>
-                   </michal>
-               </updates>
-           </layout>
-           <!-- The <acl> section is for access control. Here we define the pieces where access can be controlled within a role. -->
-           <acl>
-               <resources>
-                   <admin>
-                       <children>
-                           <michal>
-                               <title>Michal menu</title>
-                               <children>
-                                   <example translate="title" module="awesome">
-                                       <title>Michal menu</title>
-                                   </example>
-                               </children>
-                           </michal>
-                       </children>
-                   </admin>
-               </resources>
-           </acl>
-       </adminhtml>
+        <!-- The <layout> updates allow us to define our block layouts in a separate file so are aren't messin' with the Magento layout files.  -->
+        <layout>
+            <updates>
+                <michal>
+                    <file>awesome.xml</file>
+                </michal>
+            </updates>
+        </layout>
+        <!-- The <acl> section is for access control. Here we define the pieces where access can be controlled within a role. -->
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <michal>
+                            <title>Michal menu</title>
+                            <children>
+                                <example translate="title" module="awesome">
+                                    <title>Michal menu</title>
+                                </example>
+                            </children>
+                        </michal>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
     <global>
         <models>
             <knihovna_michaltest>
@@ -64,4 +64,15 @@
             </knihovna_michaltest_setup>
         </resources>
     </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Knihovna_MichalTest_Adminhtml before="Mage_Adminhtml">Knihovna_MichalTest_Adminhtml</Knihovna_MichalTest_Adminhtml>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
 </config>
