@@ -1,15 +1,32 @@
 <?xml version="1.0"?>
 <config>
-   <menu>
-       <vita>
-           <title>Vita</title>
-           <sort_order>100</sort_order>
-           <children>
-               <test>
-                   <title>Test</title>
-                   <sort_order>100</sort_order>
-               </test>
-           </children>
-       </vita>
-   </menu>
+    <menu>
+        <michal>
+            <title>Vita</title>
+            <sort_order>1</sort_order>
+            <children>
+                <test>
+                    <title>Test</title>
+                    <sort_order>100</sort_order>
+                    <action>admin/vitatest</action>
+                </test>
+            </children>
+        </michal>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <michal>
+                        <title>Vita menu</title>
+                        <children>
+                            <test translate="title" module="awesome">
+                                <title>Vita menu</title>
+                            </test>
+                        </children>
+                    </michal>
+                </children>
+            </admin>
+        </resources>
+    </acl>
 </config>
