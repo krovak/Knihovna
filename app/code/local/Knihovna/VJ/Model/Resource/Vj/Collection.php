@@ -8,7 +8,7 @@
  * email: info@iguru.eu
  */
  
-class Knihovna_VJ_Model_Resource_Mm_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract {
+class Knihovna_VJ_Model_Resource_Vj_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract {
     public function _construct(){
        $this->_init('vj');
     }

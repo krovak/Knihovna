@@ -8,7 +8,7 @@
  * email: info@iguru.eu
  */
  
-class Knihovna_VJ_Block_Adminhtml_Mm_Grid extends  Mage_Adminhtml_Block_Widget_Grid {
+class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends  Mage_Adminhtml_Block_Widget_Grid {
     public function _construct(){
         parent::_construct();
         $this->setId('vj');
