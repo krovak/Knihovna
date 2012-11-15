@@ -5,6 +5,33 @@
             <version>0.1.0</version>
         </Knihovna_KubaTest>
     </modules>
+    <adminhtml>
+        <!-- The <layout> updates allow us to define our block layouts in a separate file so are aren't messin' with the Magento layout files.  -->
+        <layout>
+            <updates>
+                <kuba>
+                    <file>awesome.xml</file>
+                </kuba>
+            </updates>
+        </layout>
+        <!-- The <acl> section is for access control. Here we define the pieces where access can be controlled within a role. -->
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <kuba>
+                            <title>Kuba menu</title>
+                            <children>
+                                <example translate="title" module="awesome">
+                                    <title>Kuba menu</title>
+                                </example>
+                            </children>
+                        </kuba>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
     <frontend>
         <layout>
             <updates>
