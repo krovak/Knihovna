@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Knihovna_js>
+        <Knihovna_JS>
             <version>0.1.0</version>
-        </Knihovna_js>
+        </Knihovna_JS>
     </modules>
     <admin>
         <routers>
@@ -21,7 +21,7 @@
             <js>
                 <use>standard</use>
                 <args>
-                    <module>Knihovna_js</module>
+                    <module>Knihovna_JS</module>
                     <frontName>js</frontName>
                 </args>
             </js>
@@ -30,7 +30,7 @@
     <global>
         <models>
             <js>
-                <class>Knihovna_js_Model</class>
+                <class>Knihovna_JS_Model</class>
                 <resourceModel>js_resource</resourceModel>
             </js>
             <js_resource>
@@ -44,18 +44,18 @@
         </models>
         <blocks>
             <js>
-             esource   <class>Knihovna_js_Block</class>
+                <class>Knihovna_JS_Block</class>
             </js>
         </blocks>
         <helpers>
             <js>
-                <class>Knihovna_js_Helper</class>
+                <class>Knihovna_JS_Helper</class>
             </js>
         </helpers>
         <resources>
             <js_setup>
                 <setup>
-                    <module>Knihovna_js</module>
+                    <module>Knihovna_JS</module>
                 </setup>
             </js_setup>
         </resources>
