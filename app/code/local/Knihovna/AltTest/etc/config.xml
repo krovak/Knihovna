@@ -5,16 +5,17 @@
             <version>0.1.0</version>
         </Knihovna_AltTest>
     </modules>
-    <frontend>
+    <adminhtml>
         <layout>
             <updates>
-                <knihovna_alttest>
-                    <file>helloPetr.xml</file>
-                </knihovna_alttest>
-
+                <petr>
+                    <file>awesome.xml</file>
+                </petr>
             </updates>
         </layout>
-    </frontend>
+        <!-- The <acl> section is for access control. Here we define the pieces where access can be controlled within a role. -->
+
+    </adminhtml>
     <global>
         <models>
             <knihovna_alttest>
@@ -47,4 +48,15 @@
             </knihovna_alttest_setup>
         </resources>
     </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Knihovna_AltTest_Adminhtml before="Mage_Adminhtml">Knihovna_AltTest_Adminhtml</Knihovna_AltTest_Adminhtml>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
 </config>
