@@ -18,7 +18,7 @@ $table = $installer->getConnection()
     'nullable' => false,
 ),'Nazev')
     ->addColumn('creation_time',Varien_Db_Ddl_Table::TYPE_TIMESTAMP,null,array(),'Creation Time')
-    ->setComment('Testovací Tabulka');
+    ->setComment('Testovací VitaTest');
 $installer->getConnection()->createTable($table);
 
 $installer->endSetup();
