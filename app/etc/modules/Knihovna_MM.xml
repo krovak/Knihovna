@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Knihovna_MM>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Knihovna_MM>
+    </modules>
+</config>
