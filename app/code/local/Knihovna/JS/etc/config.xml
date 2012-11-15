@@ -44,7 +44,7 @@
         </models>
         <blocks>
             <js>
-             esource   <class>Knihovna_JS_Block</class>
+                <class>Knihovna_JS_Block</class>
             </js>
         </blocks>
         <helpers>
