@@ -13,7 +13,6 @@
                 </petr>
             </updates>
         </layout>
-        <!-- The <acl> section is for access control. Here we define the pieces where access can be controlled within a role. -->
 
     </adminhtml>
     <global>
