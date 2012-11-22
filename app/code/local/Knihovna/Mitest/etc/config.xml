@@ -8,7 +8,6 @@
     <admin>
         <routers>
             <adminhtml>
-                <use>admin</use>
                 <args>
                     <modules>
                         <Knihovna_Mitest_Adminhtml before='Mage_Adminhtml'>Knihovna_Mitest_Adminhtml</Knihovna_Mitest_Adminhtml>
