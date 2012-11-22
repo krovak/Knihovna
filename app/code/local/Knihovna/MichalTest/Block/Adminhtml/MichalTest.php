@@ -17,6 +17,6 @@ class Knihovna_MichalTest_Block_Adminhtml_MichalTest extends Mage_Adminhtml_Bloc
     }
 
     public function getHeaderText(){
-        return Mage::helper('knihovna_michaltest')->__('Test');
+        return Mage::helper('michaltest')->__('Test');
     }
 }
