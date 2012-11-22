@@ -22,7 +22,7 @@ class Knihovna_MichalTest_Adminhtml_MichalTestController extends Mage_Adminhtml_
     public function indexAction()
     {
         $this->_initAction()
-            ->_addContent($this->getLayout()->createBlock('knihovna_michalTest/adminhtml_michalTest'))
+            ->_addContent($this->getLayout()->createBlock('michaltest/adminhtml_michalTest'))
             ->renderLayout();
     }
 }
