@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Knihovna_MM>
+        <Knihovna_VJ>
             <version>0.1.0</version>
-        </Knihovna_MM>
+        </Knihovna_VJ>
     </modules>
     <admin>
         <routers>
             <adminhtml>
                 <args>
                     <modules>
-                        <Knihovna_MM_Adminhtml before='Mage_Adminhtml'>Knihovna_MM_Adminhtml</Knihovna_MM_Adminhtml>
+                        <Knihovna_VJ_Adminhtml before='Mage_Adminhtml'>Knihovna_VJ_Adminhtml</Knihovna_VJ_Adminhtml>
                     </modules>
                 </args>
             </adminhtml>
@@ -18,46 +18,46 @@
     </admin>
     <frontend>
         <routers>
-            <mm>
+            <vj>
                 <use>standard</use>
                 <args>
-                    <module>Knihovna_MM</module>
-                    <frontName>mm</frontName>
+                    <module>Knihovna_VJ</module>
+                    <frontName>vj</frontName>
                 </args>
-            </mm>
+            </vj>
         </routers>
     </frontend>
     <global>
         <models>
-            <mm>
-                <class>Knihovna_MM_Model</class>
-                <resourceModel>mm_resource</resourceModel>
-            </mm>
-            <mm_resource>
-                <class>Knihovna_MM_Model_Resource</class>
+            <vj>
+                <class>Knihovna_VJ_Model</class>
+                <resourceModel>vj_resource</resourceModel>
+            </vj>
+            <vj_resource>
+                <class>Knihovna_VJ_Model_Resource</class>
                 <entities>
-                    <knihovna_mm>
-                        <table>mm_test</table>
-                    </knihovna_mm>
+                    <knihovna_vj>
+                        <table>vj_test</table>
+                    </knihovna_vj>
                 </entities>
-            </mm_resource>
+            </vj_resource>
         </models>
         <blocks>
-            <mm>
-                <class>Knihovna_MM_Block</class>
-            </mm>
+            <vj>
+                <class>Knihovna_VJ_Block</class>
+            </vj>
         </blocks>
         <helpers>
-            <mm>
-                <class>Knihovna_MM_Helper</class>
-            </mm>
+            <vj>
+                <class>Knihovna_VJ_Helper</class>
+            </vj>
         </helpers>
         <resources>
-            <mm_setup>
+            <vj_setup>
                 <setup>
-                    <module>Knihovna_MM</module>
+                    <module>Knihovna_VJ</module>
                 </setup>
-            </mm_setup>
+            </vj_setup>
         </resources>
     </global>
 </config>
