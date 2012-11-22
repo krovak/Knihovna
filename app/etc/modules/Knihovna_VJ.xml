@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <VJ_>
+        <VJ>
             <active>true</active>
             <codePool>local</codePool>
             <depends>
                 <Knihovna_VJ/>
             </depends>
-        </VJ_>
+        </VJ>
     </modules>
 </config>
