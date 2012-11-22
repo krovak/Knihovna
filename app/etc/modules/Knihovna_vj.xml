@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Knihovna_vj>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Knihovna_vj>
+    </modules>
+</config>
