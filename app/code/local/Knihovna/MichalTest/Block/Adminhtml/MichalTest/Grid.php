@@ -12,6 +12,7 @@ class Knihovna_MichalTest_Block_Adminhtml_MichalTest_Grid extends Mage_Adminhtml
 {
     public function _construct()
     {
+        Mage::log('konstruktor',null,'moje.txt',true);
         $this->setId('michaltestGrid');
         $this->setDefaultSort('entity_id');
         $this->setDefaultDir('ASC');
@@ -21,7 +22,11 @@ class Knihovna_MichalTest_Block_Adminhtml_MichalTest_Grid extends Mage_Adminhtml
 
     protected function _prepareCollection()
     {
-        $collection = Mage::getResourceSingleton('knihovna_michaltest/knihovna_michaltest_collection');
+        Mage::log('prepare',null,'moje.txt',true);
+        $collection = Mage::getModel('michaltest/michalTest')->getCollection();
+        var_dump($collection);
+        //$collection->addAttributeToSelect('*');
+        //var_dump($collection);
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }

@@ -8,7 +8,7 @@
                 <test>
                     <title>Test</title>
                     <sort_order>100</sort_order>
-                    <action>admin/michaltest</action>
+                    <action>adminhtml/michalTest</action>
                 </test>
             </children>
         </michal>
@@ -20,7 +20,7 @@
                     <michal>
                         <title>Michal menu</title>
                         <children>
-                            <test translate="title" module="awesome">
+                            <test translate="title" module="michaltest">
                                 <title>Michal menu</title>
                             </test>
                         </children>

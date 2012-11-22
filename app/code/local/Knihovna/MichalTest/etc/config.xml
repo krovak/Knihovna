@@ -5,48 +5,47 @@
             <version>0.1.0</version>
         </Knihovna_MichalTest>
     </modules>
-    <adminhtml>
-        <!-- The <layout> updates allow us to define our block layouts in a separate file so are aren't messin' with the Magento layout files.  -->
-        <layout>
-            <updates>
-                <michal>
-                    <file>awesome.xml</file>
-                </michal>
-            </updates>
-        </layout>
-        <!-- The <acl> section is for access control. Here we define the pieces where access can be controlled within a role. -->
-
-    </adminhtml>
+    <frontend>
+        <routers>
+            <michaltest>
+                <use>standard</use>
+                <args>
+                    <module>Knihovna_MichalTest</module>
+                    <frontName>michaltest</frontName>
+                </args>
+            </michaltest>
+        </routers>
+    </frontend>
     <global>
         <models>
-            <knihovna_michaltest>
+            <michaltest>
                 <class>Knihovna_MichalTest_Model</class>
-                <resourceModel>knihovna_michaltest_resource</resourceModel>
-            </knihovna_michaltest>
-            <knihovna_michaltest_resource>
+                <resourceModel>michaltest_resource</resourceModel>
+            </michaltest>
+            <michaltest_resource>
                 <entities>
-                    <knihovna_michaltest>
+                    <michaltest>
                         <table>tabulka_michal</table>
-                    </knihovna_michaltest>
+                    </michaltest>
                 </entities>
-            </knihovna_michaltest_resource>
+            </michaltest_resource>
         </models>
         <blocks>
-            <knihovna_michaltest>
+            <michaltest>
                 <class>Knihovna_MichalTest_Block</class>
-            </knihovna_michaltest>
+            </michaltest>
         </blocks>
         <helpers>
-            <knihovna_michaltest>
+            <michaltest>
                 <class>Knihovna_MichalTest_Helper</class>
-            </knihovna_michaltest>
+            </michaltest>
         </helpers>
         <resources>
-            <knihovna_michaltest_setup>
+            <michaltest_setup>
                 <setup>
                     <module>Knihovna_MichalTest</module>
                 </setup>
-            </knihovna_michaltest_setup>
+            </michaltest_setup>
         </resources>
     </global>
     <admin>
