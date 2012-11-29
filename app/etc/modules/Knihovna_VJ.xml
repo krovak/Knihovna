@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Knihovna_MM>
+        <Knihovna_VJ>
             <active>true</active>
             <codePool>local</codePool>
-        </Knihovna_MM>
+        </Knihovna_VJ>
     </modules>
 </config>
