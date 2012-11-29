@@ -20,7 +20,7 @@
                     <petr>
                         <title>Petr menu</title>
                         <children>
-                            <test translate="title" module="awesome">
+                            <test translate="title">
                                 <title>Petr menu</title>
                             </test>
                         </children>

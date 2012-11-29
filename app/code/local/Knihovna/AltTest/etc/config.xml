@@ -9,7 +9,7 @@
         <layout>
             <updates>
                 <petr>
-                    <file>awesome.xml</file>
+                    <!--<file>awesome.xml</file>-->
                 </petr>
             </updates>
         </layout>

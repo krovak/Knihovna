@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <mitest>
+            <title>Přidat</title>
+            <sort_order>1</sort_order>
+            <children>
+                <autor>
+                    <title>Autora</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/mitest</action>
+                </autor>
+            </children>
+        </mitest>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <mitest>
+                        <title>Autor</title>
+                        <children>
+                            <autor translate="title" module="mitest">
+                                <title>Autor</title>
+                            </autor>
+                        </children>
+                    </mitest>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

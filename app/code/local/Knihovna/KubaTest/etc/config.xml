@@ -10,7 +10,7 @@
         <layout>
             <updates>
                 <kuba>
-                    <file>awesome.xml</file>
+                    <!--<file>awesome.xml</file>-->
                 </kuba>
             </updates>
         </layout>
@@ -22,7 +22,7 @@
                         <kuba>
                             <title>Kuba menu</title>
                             <children>
-                                <example translate="title" module="awesome">
+                                <example translate="title">
                                     <title>Kuba menu</title>
                                 </example>
                             </children>

@@ -20,7 +20,7 @@
                     <vita>
                         <title>Vita menu</title>
                         <children>
-                            <test translate="title" module="awesome">
+                            <test translate="title">
                                 <title>Vita menu</title>
                             </test>
                         </children>
