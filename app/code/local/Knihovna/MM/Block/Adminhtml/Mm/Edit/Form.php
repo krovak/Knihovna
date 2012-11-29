@@ -29,6 +29,11 @@ class Knihovna_MM_Block_Adminhtml_Mm_Edit_Form extends Mage_Adminhtml_Block_Widg
             'label'=>'Jméno',
             'required'=>true
         ));
+        $f->addField('prijmeni','text',array(
+                    'name'=>'prijmeni',
+                    'label'=>'Příjmení',
+                    'required'=>true
+                ));
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);

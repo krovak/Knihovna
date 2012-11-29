@@ -25,4 +25,11 @@ class Knihovna_MM_Adminhtml_MmController extends Mage_Adminhtml_Controller_Actio
         $this->_addContent($this->getLayout()->createBlock('mm/adminhtml_mm_edit')->setEditMode((bool)$this->getRequest()->getParam('entity_id')));
         $this->renderLayout();
     }
+    public function saveAction(){
+           $data = $this->getRequest()->getPost();
+        //   var_dump($data);
+           $m = Mage::getModel('mm/mm');
+           $m->setData($data);
+           $m->save();
+       }
 }
