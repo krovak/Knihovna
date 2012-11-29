@@ -2,11 +2,11 @@
 <config>
     <menu>
         <mitest>
-            <title>Přidat</title>
+            <title>Autor</title>
             <sort_order>1</sort_order>
             <children>
                 <autor>
-                    <title>Autora</title>
+                    <title>Spravovat autory</title>
                     <sort_order>1</sort_order>
                     <action>adminhtml/mitest</action>
                 </autor>
@@ -21,7 +21,7 @@
                         <title>Autor</title>
                         <children>
                             <autor translate="title" module="mitest">
-                                <title>Autor</title>
+                                <title>Spravovat autory</title>
                             </autor>
                         </children>
                     </mitest>
