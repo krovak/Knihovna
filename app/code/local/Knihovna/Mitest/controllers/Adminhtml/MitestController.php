@@ -20,4 +20,25 @@ class Knihovna_Mitest_Adminhtml_MitestController
         $this->loadLayout();
         return $this;
     }
+
+    public function newAction(){
+            $this->_forward('edit');
+        }
+        public function editAction(){
+            $this->loadLayout();
+            $this->_addContent($this->getLayout()
+                ->createBlock('mitest/adminhtml_mitest_edit')
+                ->setEditMode((bool)$this->getRequest()
+                ->getParam('entity_id')));
+            $this->renderLayout();
+        }
+
+    public function saveAction(){
+        $data = $this->getRequest()->getPost();
+        var_dump($data);
+        $m = Mage::getModel('mitest/mitest');
+        $m->setData($data);
+        $m->save();
+    }
+
 }
