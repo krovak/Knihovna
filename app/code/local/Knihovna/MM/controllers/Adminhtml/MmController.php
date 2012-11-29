@@ -12,6 +12,7 @@ class Knihovna_MM_Adminhtml_MmController extends Mage_Adminhtml_Controller_Actio
     public function indexAction() {
        $this->_initAction()->_addContent($this->getLayout()->createBlock('mm/adminhtml_mm'))->renderLayout();
     }
+
     public function _initAction(){
         $this->loadLayout();
         return $this;
