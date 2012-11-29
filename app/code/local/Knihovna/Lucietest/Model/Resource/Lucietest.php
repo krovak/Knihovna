@@ -8,7 +8,7 @@
  */
 
 
-class Knihovna_Lucietest_Model_Resource_lucietest extends Mage_Core_Model_Resource_Db_Abstract{
+class Knihovna_Lucietest_Model_Resource_Lucietest extends Mage_Core_Model_Resource_Db_Abstract{
     /**
      * Resource initialization
      */
