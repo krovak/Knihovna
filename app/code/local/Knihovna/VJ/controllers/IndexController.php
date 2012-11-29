@@ -8,9 +8,9 @@
  * email: info@iguru.eu
  */
  
-class Knihovna_MM_IndexController extends Mage_Core_Controller_Front_Action {
+class Knihovna_VJ_IndexController extends Mage_Core_Controller_Front_Action {
     public function indexAction(){
-        $collection = Mage::getModel('mm/mm')->getCollection();
+        $collection = Mage::getModel('vj/vj')->getCollection();
         var_dump($collection);
     }
 }
