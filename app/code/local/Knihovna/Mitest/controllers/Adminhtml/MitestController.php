@@ -35,10 +35,10 @@ class Knihovna_Mitest_Adminhtml_MitestController
 
     public function saveAction(){
         $data = $this->getRequest()->getPost();
-        var_dump($data);
         $m = Mage::getModel('mitest/mitest');
         $m->setData($data);
         $m->save();
+        $this->_redirect('*/*/');//kam se to má přesměrovat po uložení na indexAction, tj. na grid
     }
 
 }
