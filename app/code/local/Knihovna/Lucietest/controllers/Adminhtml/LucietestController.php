@@ -8,5 +8,11 @@
  */
 
 class Knihovna_Lucietest_Adminhtml_LucietestController extends Mage_Adminhtml_Controller_Action {
-
+public function indexAction(){
+    $this->_initAction()->addContent($this->getLayout()->createBlock ('lucietest/adminhtml_lucietest'))->renderLayout();
+}
+    public function _initAction(){
+        $this->loadLayout();
+        return $this;
+    }
 }
