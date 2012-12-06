@@ -28,6 +28,11 @@ class Knihovna_Lucietest_Block_Adminhtml_Lucietest_Edit_Form extends Mage_Adminh
             'label'=>'Jméno',
             'required'=>true
         ));
+        $f->addField('prijmeni', 'text', array(
+            'name'     => 'prijmeni',
+            'label'    => 'Přijmení',
+            'required' => true
+        ));
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
