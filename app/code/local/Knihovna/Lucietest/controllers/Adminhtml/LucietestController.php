@@ -22,7 +22,7 @@ public function indexAction(){
     public function editAction(){
         $this->loadLayout();
         $this->_addContent($this->getLayout()
-        ->createBlock('lucietest/adminhtms_lucietest_edit')
+        ->createBlock('lucietest/adminhtml_lucietest_edit')
         ->setEditMode((bool)$this->getRequest()
         ->getParam('entity_od')));
         $this->renderLayout();
