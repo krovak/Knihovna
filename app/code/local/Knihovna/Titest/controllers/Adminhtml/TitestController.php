@@ -13,5 +13,21 @@ class Knihovna_Titest_Adminhtml_TitestController extends Mage_Adminhtml_Controll
         $this->loadLayout();
         return $this;
     }
+    public function newAction(){
+        $this->_forward('edit');
+
+    }
+    public function editAction(){
+        $this->loadLayout();
+        $this->_addContent($this->getLayout()->createBlock('titest/adminhtml_titest_edit')->setEditMode((bool)$this->getRequest()->getParam('entity_id')));
+        $this->renderLayout();
+    }
+    public function saveAction(){
+        $data=$this->getRequest()->getPost();
+        $m=Mage::getModel('titest/titest');
+        $m->setData($data);
+        $m->save();
+        $this->_redirect('*/*/');
+    }
 }
 
