@@ -11,7 +11,7 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit extends Mage_Adminhtml_Block_W
         $this->_objectId='entity_id';
         $this->_controller='adminhtml_titest';
         $this->_blockGroup='titest';
-        paremt::_construct();
+        parent::_construct();
     }
     public function getHeaderText(){
         return 'Pridat zaznam';

@@ -29,7 +29,8 @@ class Knihovna_Mitest_Block_Adminhtml_Mitest_Grid
     public function _prepareColumns(){
            $this->addColumn('entity_id',array(
                'header'=>'ID',
-               'index'=>'entity_id'
+               'index'=>'entity_id',
+               'width'=>'30px'
           ));
            $this->addColumn('jmeno',array(
                        'header'=>'Jméno',
@@ -41,4 +42,9 @@ class Knihovna_Mitest_Block_Adminhtml_Mitest_Grid
                   ));
            return $this;
        }
+    public function getRowUrl($row)
+    {
+        return $this->getUrl('*/*/edit', array('id' => $row->getId()));
+    }
+
 }

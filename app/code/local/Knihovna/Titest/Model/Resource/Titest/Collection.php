@@ -8,6 +8,6 @@
  */
 class Knihovna_Titest_Model_Resource_Titest_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract{
     public function _construct(){
-        $this->_init('titest');
+        $this->_init('titest/titest');
     }
 }
