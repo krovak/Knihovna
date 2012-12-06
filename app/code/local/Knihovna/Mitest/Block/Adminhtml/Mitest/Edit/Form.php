@@ -21,14 +21,23 @@ class Knihovna_Mitest_Block_Adminhtml_Mitest_Edit_Form
 
     public function _prepareForm()
     {
+        $autor = Mage::registry('mitest');
+
         $form = new Varien_Data_Form(array(
             'id'     => 'edit_form',
             'method' => 'post'
         ));
-        $f    = $form->addFieldset('mitest', array(
+
+        $f = $form->addFieldset('mitest', array(
             'legend' => 'Přidat autora',
             'class'  => 'fieldset-wide'
         ));
+        if ($autor->getId()) {
+            $f->addField('entity_id', 'hidden', array(
+                'name' => 'entity_id'
+            ));
+        }
+
         $f->addField('jmeno', 'text', array(
             'name'     => 'jmeno',
             'label'    => 'Jméno',
@@ -40,6 +49,7 @@ class Knihovna_Mitest_Block_Adminhtml_Mitest_Edit_Form
             'required' => true
         ));
 
+        $form->setValues($autor->getData());
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
