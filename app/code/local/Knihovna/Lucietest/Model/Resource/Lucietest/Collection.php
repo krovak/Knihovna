@@ -8,7 +8,7 @@
  */
 class Knihovna_Lucietest_Model_Resource_Lucietest_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract{
 public function _construct(){
-$this->_init('lucietest');
+$this->_init('lucietest/lucietest');
 }
 }
 
