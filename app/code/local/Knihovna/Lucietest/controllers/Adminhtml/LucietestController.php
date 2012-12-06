@@ -24,7 +24,7 @@ public function indexAction(){
         $this->_addContent($this->getLayout()
         ->createBlock('lucietest/adminhtml_lucietest_edit')
         ->setEditMode((bool)$this->getRequest()
-        ->getParam('entity_od')));
+        ->getParam('entity_id')));
         $this->renderLayout();
     }
     public function saveAction(){
