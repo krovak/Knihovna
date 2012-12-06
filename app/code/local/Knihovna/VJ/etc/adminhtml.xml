@@ -2,7 +2,7 @@
 <config>
     <menu>
         <vj>
-            <title>Autor</title>
+            <title>Vita</title>
             <sort_order>1</sort_order>
             <children>
                 <autor>
@@ -18,7 +18,7 @@
             <admin>
                 <children>
                     <vj>
-                        <title>Autor</title>
+                        <title>Vita</title>
                         <children>
                             <autor translate="title" module="vj">
                                 <title>Spravovat autory</title>
