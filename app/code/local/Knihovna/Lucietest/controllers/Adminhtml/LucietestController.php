@@ -11,6 +11,21 @@ class Knihovna_Lucietest_Adminhtml_LucietestController extends Mage_Adminhtml_Co
 public function indexAction(){
     $this->_initAction()->_addContent($this->getLayout()->createBlock('lucietest/adminhtml_lucietest'))->renderLayout();
 }
+
+protected function _initEdit($idFileName='id'){
+    $id=$this->getRequest()->getParams($idFileName);
+    $model=Mage::getModel('lucietest/lucietest');
+    if($id){
+        $model->load($id);
+
+
+    }
+    if(!Mage::registry('autor')){
+        Mage::register('autor',$model);
+    }
+    return $model;
+}
+
     public function _initAction(){
         $this->loadLayout();
         return $this;
