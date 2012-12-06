@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config>
     <menu>
-        <mitest>
+        <titest>
             <title>Čtenář</title>
             <sort_order>1</sort_order>
             <children>
@@ -11,20 +11,20 @@
                     <action>adminhtml/titest</action>
                 </autor>
             </children>
-        </mitest>
+        </titest>
     </menu>
     <acl>
         <resources>
             <admin>
                 <children>
-                    <mitest>
+                    <titest>
                         <title>Čtenář</title>
                         <children>
                             <ctenar translate="title" module="titest">
                                 <title>Spravovat čtenáře</title>
                             </ctenar>
                         </children>
-                    </mitest>
+                    </titest>
                 </children>
             </admin>
         </resources>
