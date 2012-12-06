@@ -14,6 +14,18 @@ class Knihovna_JS_Adminhtml_JsController extends Mage_Adminhtml_Controller_Actio
             ->createBlock('js/adminhtml_js'))->renderLayout();
     }
 
+    protected function _initEdit($idFieldName = 'id'){
+        $id = $this->getRequest()->getParams($idFieldName);
+        $model = Mage::getModel('js/js');
+        if($id){
+            $model->load($id);
+        }
+        if(!Mage::registry('js')){
+            Mage::register('js',$model);
+        }
+        return $model;
+    }
+
     public function _initAction(){
         $this->loadLayout();
         return $this;
@@ -24,6 +36,7 @@ class Knihovna_JS_Adminhtml_JsController extends Mage_Adminhtml_Controller_Actio
     }
     public function editAction(){
         $this->loadLayout();
+        $autor = $this->_initEdit('id');
         $this->_addContent($this->getLayout()
             ->createBlock('js/adminhtml_js_edit')
             ->setEditMode((bool)$this->getRequest()

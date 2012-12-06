@@ -19,14 +19,22 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
 
     public function _prepareForm()
     {
+        $autor = Mage::registry('js');
+
         $form = new Varien_Data_Form(array(
             'id'     => 'edit_form',
             'method' => 'post'
         ));
-        $f    = $form->addFieldset('js', array(
+
+        $f = $form->addFieldset('js', array(
             'legend' => 'Přidat autora',
             'class'  => 'fieldset-wide'
         ));
+        if($autor->getId()){
+            $f->addField('entity_id','hidden', array(
+                'name'=>'entity_id'
+            ));
+        }
         $f->addField('jmeno', 'text', array(
             'name'     => 'jmeno',
             'label'    => 'Jméno',
