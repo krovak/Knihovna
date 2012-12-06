@@ -10,24 +10,31 @@
  
 class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widget_Form {
 
-    public function _construct(){
+    public function _construct()
+    {
         parent::_construct();
         $this->setId('vjForm');
         $this->setTitle('Přidat záznam');
     }
-    public function _prepareForm(){
+    public function _prepareForm()
+    {
         $form = new Varien_Data_Form(array(
-            'id'=>'vjForm',
-            'method'=>'Post'
+            'id'=>'edit_form',
+            'method'=>'post'
         ));
         $f = $form->addFieldset('vj',array(
-            'legend'=>'co tu je napsaný',
+            'legend'=>'Přidat autora',
             'class'=>'fieldset-wide'
         ));
         $f->addField('jmeno','text',array(
             'name'=>'jmeno',
             'label'=>'Jméno',
             'required'=>true
+        ));
+        $f->addField('prijmeni', 'text', array(
+            'name'     => 'prijmeni',
+            'label'    => 'Přijmení',
+            'required' => true
         ));
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
