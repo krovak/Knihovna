@@ -18,6 +18,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
     }
     public function _prepareForm()
     {
+        $autor = Mage::registry('vj');
         $form = new Varien_Data_Form(array(
             'id'=>'edit_form',
             'method'=>'post'
@@ -26,6 +27,11 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
             'legend'=>'Přidat autora',
             'class'=>'fieldset-wide'
         ));
+        if ($autor->getId()) {
+            $f->addField('entity_id', 'hidden', array(
+                'name' => 'entity_id'
+            ));
+        }
         $f->addField('jmeno','text',array(
             'name'=>'jmeno',
             'label'=>'Jméno',
@@ -36,6 +42,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
             'label'    => 'Přijmení',
             'required' => true
         ));
+        $form->setValues($autor->getData());
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
