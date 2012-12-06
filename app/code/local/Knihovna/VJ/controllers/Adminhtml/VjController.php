@@ -1,5 +1,5 @@
 <?php
-class Knihovna_Mitest_Adminhtml_MitestController extends Mage_Adminhtml_Controller_Action
+class Knihovna_VJ_Adminhtml_VjController extends Mage_Adminhtml_Controller_Action
 {
     public function indexAction()
     {
