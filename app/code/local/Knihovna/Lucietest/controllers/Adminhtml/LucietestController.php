@@ -15,4 +15,23 @@ public function indexAction(){
         $this->loadLayout();
         return $this;
     }
+    public function newAction(){
+        $this->_forward('edit');
+
+    }
+    public function editAction(){
+        $this->loadLayout();
+        $this->_addContent($this->getLayout()
+        ->createBlock('lucietest/adminhtms_lucietest_edit')
+        ->setEditMode((bool)$this->getRequest()
+        ->getParam('entitz_od')));
+        $this->renderLayout();
+    }
+    public function saveAction(){
+        $data = $this->getRequest()->getPost();
+        $m = Mage::getModel ('lucietest/lucietest');
+        $m->setData($data);
+        $m->save();
+        $this->_redirect('*/*/');//kam se to m8 presmerovat po ulozeni na andexAc
+    }
 }
