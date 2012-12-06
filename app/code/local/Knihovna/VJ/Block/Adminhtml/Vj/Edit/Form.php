@@ -13,7 +13,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
     public function _construct()
     {
         parent::_construct();
-        $this->setId('vjForm');
+        $this->setId('editForm');
         $this->setTitle('Přidat záznam');
     }
     public function _prepareForm()
