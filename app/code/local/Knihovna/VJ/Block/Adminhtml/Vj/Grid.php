@@ -27,7 +27,8 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends  Mage_Adminhtml_Block_Widget_G
     public function _prepareColumns(){
         $this->addColumn('entity_id',array(
             'header'=>'ID',
-            'index'=>'entity_id'
+            'index'=>'entity_id',
+            'width' =>'30px'
        ));
         $this->addColumn('jmeno',array(
                     'header'=>'Jméno',
@@ -38,6 +39,10 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends  Mage_Adminhtml_Block_Widget_G
                     'index'=>'prijmeni'
                ));
         return $this;
+    }
+    public function getRowUrl($row)
+    {
+        return $this->getUrl('*/*/edit', array('id' => $row->getId()));
     }
 
 }

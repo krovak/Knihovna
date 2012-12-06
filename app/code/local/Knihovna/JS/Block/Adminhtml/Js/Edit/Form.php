@@ -20,7 +20,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
     public function _prepareForm()
     {
         $form = new Varien_Data_Form(array(
-            'id'     => 'jsform',
+            'id'     => 'edit_form',
             'method' => 'post'
         ));
         $f    = $form->addFieldset('js', array(

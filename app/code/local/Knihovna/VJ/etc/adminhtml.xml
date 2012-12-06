@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <vj>
+            <title>Autor</title>
+            <sort_order>1</sort_order>
+            <children>
+                <autor>
+                    <title>Spravovat autory</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/vjtest</action>
+                </autor>
+            </children>
+        </vj>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <vj>
+                        <title>Autor</title>
+                        <children>
+                            <autor translate="title" module="vj">
+                                <title>Spravovat autory</title>
+                            </autor>
+                        </children>
+                    </vj>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
