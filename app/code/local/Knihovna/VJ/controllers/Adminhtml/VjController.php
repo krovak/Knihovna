@@ -31,7 +31,7 @@ class Knihovna_VJ_Adminhtml_VjController extends Mage_Adminhtml_Controller_Actio
 
     public function saveAction(){
         $data = $this->getRequest()->getPost();
-        $m = Mage::getModel('vjt/vj');
+        $m = Mage::getModel('vj/vj');
         $m->setData($data);
         $m->save();
         $this->_redirect('*/*/');//kam se to má přesměrovat po uložení na indexAction, tj. na grid
