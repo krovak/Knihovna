@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <mitest>
+            <title>Čtenář</title>
+            <sort_order>1</sort_order>
+            <children>
+                <autor>
+                    <title>Spravovat čtenáře</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/titest</action>
+                </autor>
+            </children>
+        </mitest>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <mitest>
+                        <title>Čtenář</title>
+                        <children>
+                            <ctenar translate="title" module="titest">
+                                <title>Spravovat čtenáře</title>
+                            </ctenar>
+                        </children>
+                    </mitest>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

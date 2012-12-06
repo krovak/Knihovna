@@ -11,4 +11,5 @@ class Knihovna_Titest_Model_Titest extends Mage_Core_Model_Abstract{
         parent::_construct();
         $this->_init('titest/titest');
     }
+
 }

@@ -13,4 +13,5 @@ class Knihovna_Mitest_Model_Mitest extends Mage_Core_Model_Abstract {
         parent::_construct();
         $this->_init('mitest/mitest');
     }
+
 }
