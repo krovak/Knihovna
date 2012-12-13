@@ -11,7 +11,7 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Edit extends Mage_Adminhtml_Block_W
 
 
     public function _construct(){
-    $this->_objectId='entity_id';
+    $this->objectId='entity_id';
     $this->_controller='adminhtml_patest';
     $this->_blockGroup='patest';
     parent::_construct();
