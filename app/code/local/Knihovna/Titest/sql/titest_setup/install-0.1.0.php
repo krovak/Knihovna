@@ -18,6 +18,9 @@ $table = $installer->getConnection()
     'nullable' => false,
     'primary'  => true,
 ), 'Entity_id')
+    ->addColumn('cislo prukazu',Varien_Db_Ddl_Table::TYPE_INTEGER,array(
+    'nullable' => false
+),'Číslo průkazu')
     ->addColumn('jmeno',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
     'nullable' => false
 ),'Jméno')

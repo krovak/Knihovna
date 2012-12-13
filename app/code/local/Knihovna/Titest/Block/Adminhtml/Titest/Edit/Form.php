@@ -32,7 +32,11 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
                 'name' => 'entity_id'
             ));
         }
-
+        $f->addField('cislo prukazu', 'text', array(
+            'name' => 'cislo prukazu',
+            'label' => 'Číslo průkazu',
+            'required' => true
+        ));
         $f->addField('jmeno', 'text', array(
             'name' => 'jmeno',
             'label' => 'Jméno',
