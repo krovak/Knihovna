@@ -42,11 +42,17 @@ class Knihovna_Mitest_Adminhtml_MitestController
         $this->_forward('edit');
     }
 
+    public function deleteAction()
+    {
+        Mage::getModel('mitest/mitest')->load($this->getRequest()->getParam('id'))->delete();
+        $this->_redirect('*/*/'); //kam se to má přesměrovat po uložení na indexAction, tj. na grid
+    }
+
     public function editAction()
     {
 
         $this->loadLayout();
-        $autor=$this->_initEdit('id');
+        $autor = $this->_initEdit('id');
         $this->_addContent($this->getLayout()
             ->createBlock('mitest/adminhtml_mitest_edit')
             ->setEditMode((bool)$this->getRequest()
