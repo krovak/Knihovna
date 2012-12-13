@@ -44,10 +44,5 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Edit_Form extends Mage_Adminhtml_Bl
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
         return parent::_prepareForm();
-
-        $form->setUseContainer(true);
-        $form->setAction($this->getUrl('*/*/save'));
-        $this->setForm($form);
-        return parent::_prepareForm();
 }
 }
