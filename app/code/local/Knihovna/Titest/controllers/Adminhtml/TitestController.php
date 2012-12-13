@@ -16,7 +16,7 @@ class Knihovna_Titest_Adminhtml_TitestController extends Mage_Adminhtml_Controll
             $model->load($id);
         }
         if(!Mage::registry('titest')){
-            Mage::register('čtenář',$model);
+            Mage::register('titest',$model);
         }
         return $model;
     }
