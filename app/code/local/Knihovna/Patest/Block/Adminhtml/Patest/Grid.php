@@ -26,7 +26,8 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Grid extends Mage_Adminhtml_Block_W
     public function _prepareColumns(){
             $this->addColumn('entity_id',array(
                 'header'=>'ID',
-                'index'=>'entity_id'
+                'index'=>'entity_id',
+                'width'=>'30px'
             ));
             $this->addColumn('jmeno',array(
                     'header'=>'Jméno',
@@ -37,5 +38,9 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Grid extends Mage_Adminhtml_Block_W
                     'index'=>'prijmeni'
             ));
         return $this;
+    }
+    public function getRowUrl($row)
+    {
+        return $this->getUrl('*/*/edit', array('id' => $row->getId()));
     }
 }

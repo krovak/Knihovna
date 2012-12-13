@@ -14,6 +14,7 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Edit_Form extends Mage_Adminhtml_Bl
         $this->setTitle('Přidat záznam');
     }
     public function _prepareForm(){
+        $autor = Mage::registry('patest');
         $form = new Varien_Data_Form(array(
             'id'=>'patestForm',
             'method'=>'Post'
@@ -22,14 +23,26 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Edit_Form extends Mage_Adminhtml_Bl
             'legend'=>'Přidat autora',
             'class'=>'fieldset-wide'
         ));
+                if ($autor->getId()) {
+                    $f->addField('entity_id', 'hidden', array(
+                'name' => 'entity_id'
+                ));
+        }
+
         $f->addField('jmeno','text',array(
             'name'=>'jmeno',
             'label'=>'Jméno',
             'required'=>true
         ));
+        $form->setValues($autor->getData());
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
         return parent::_prepareForm();
-    }
+
+        $form->setUseContainer(true);
+        $form->setAction($this->getUrl('*/*/save'));
+        $this->setForm($form);
+        return parent::_prepareForm();
+}
 }
