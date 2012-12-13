@@ -17,7 +17,7 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
 
     public function _prepareForm()
     {
-        //$ctenar = Mage::registry('titest');
+        $ctenar = Mage::registry('titest');
 
         $form = new Varien_Data_Form(array(
             'id' => 'edit_form',
@@ -27,11 +27,11 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
             'legend' => 'Přidat čtenáře',
             'class' => 'fieldset-wide'
         ));
-        /*if ($ctenar->getId()) {
+        if ($ctenar->getId()) {
             $f->addField('entity_id', 'hidden', array(
                 'name' => 'entity_id'
             ));
-        }*/
+        }
 
         $f->addField('jmeno', 'text', array(
             'name' => 'jmeno',
