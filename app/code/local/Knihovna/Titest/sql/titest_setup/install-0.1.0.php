@@ -38,7 +38,10 @@ $table = $installer->getConnection()
 ),'Město')
 ->addColumn('psc',Varien_Db_Ddl_Table::TYPE_INTEGER,array(
     'nullable' => false
-),'PSČ');
+),'PSČ')
+->addColumn('vypujcka',Varien_Db_Ddl_Table::TYPE_INTEGER,array(
+    'nullable' => false,'foreign'=>true
+),'Výpůjčka');
 
 $installer->getConnection()->createTable($table);
 
