@@ -13,6 +13,7 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
         $this->setTitle('Pridat zaznam');
     }
     public function _prepareForm(){
+
         $form = new Varien_Data_Form(array(
             'id'=>'edit_form',
             'method'=>'Post'

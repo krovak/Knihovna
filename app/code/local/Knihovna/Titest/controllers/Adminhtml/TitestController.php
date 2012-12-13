@@ -9,6 +9,17 @@ class Knihovna_Titest_Adminhtml_TitestController extends Mage_Adminhtml_Controll
     public function indexAction(){
         $this->_initAction()->_addContent($this->getLayout()->createBlock('titest/adminhtml_titest'))->renderLayout();
             }
+    protected function _initEdit($idFielName='id'){
+        $id=$this->getRequest()->getParams($idFielName);
+        $model=Mage::getModel('titest/titest');
+        if($id){
+            $model->load($id);
+        }
+        if(!Mage::registry('čtenář')){
+            Mage::register('čtenář',$model);
+        }
+        return $model;
+    }
     public function _initAction(){
         $this->loadLayout();
         return $this;
