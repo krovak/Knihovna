@@ -8,7 +8,7 @@
  */
 class Knihovna_Titest_Block_Adminhtml_Titest_Edit extends Mage_Adminhtml_Block_Widget_Form_Container{
     public function _construct(){
-        $this->_objectId='entity_id';
+        $this->objectId='entity_id';
         $this->_controller='adminhtml_titest';
         $this->_blockGroup='titest';
         parent::_construct();
