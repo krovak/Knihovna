@@ -1,13 +1,5 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: mimo (Michal Moc)
- * Date: 15.11.12
- * Time: 14:36
- * www: http://www.iguru.eu
- * email: info@iguru.eu
- */
- 
+
 class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widget_Form {
 
     public function _construct()
@@ -32,16 +24,24 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
                 'name' => 'entity_id'
             ));
         }
-        $f->addField('jmeno','text',array(
-            'name'=>'jmeno',
-            'label'=>'Jméno',
-            'required'=>true
-        ));
-        $f->addField('prijmeni', 'text', array(
-            'name'     => 'prijmeni',
-            'label'    => 'Přijmení',
+
+        $f->addField('autor','text',array(
+            'name' => 'autor',
+            'label' => 'Autor',
             'required' => true
         ));
+        $f->addField('nazev','text',array(
+            'name' => 'nazev',
+            'label' => 'Název',
+            'required' => true
+        ));
+        $f->addField('cast','text',array(
+           'name' => 'cast',
+            'label' => 'Část',
+            'required' => true
+        ));
+        
+
         $form->setValues($autor->getData());
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
