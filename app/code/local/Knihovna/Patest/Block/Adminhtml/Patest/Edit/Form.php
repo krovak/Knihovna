@@ -12,7 +12,7 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Edit_Form extends Mage_Adminhtml_Bl
     public function _construct()
     {
         parent::_construct();
-        $this->setId('patestForm');
+        $this->setId('editForm');
         $this->setTitle('Přidat záznam');
     }
     public function _prepareForm()
