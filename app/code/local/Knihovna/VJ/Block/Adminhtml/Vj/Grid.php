@@ -30,14 +30,26 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends  Mage_Adminhtml_Block_Widget_G
             'index'=>'entity_id',
             'width' =>'30px'
        ));
-        $this->addColumn('jmeno',array(
-                    'header'=>'Jméno',
-                    'index'=>'jmeno'
+        $this->addColumn('nazev',array(
+                    'header'=>'Název',
+                    'index'=>'nazev'
                ));
-        $this->addColumn('prijmeni',array(
-                    'header'=>'Přijmení',
-                    'index'=>'prijmeni'
+        $this->addColumn('isbn',array(
+                    'header'=>'ISBN',
+                    'index'=>'isbn'
                ));
+        $this->addColumn('pocet_stranek',array(
+                    'header'=>'Počet stránek',
+                    'index'=> 'pocet_stranek'
+        ));
+        $this->addColumn('rok_vydani',array(
+            'header'=>'Rok vydání',
+            'index'=> 'rok_vydani'
+        ));
+        $this->addColumn('zanr',array(
+            'header'=>'Žánr',
+            'index'=> 'zanr'
+        ));
         return $this;
     }
     public function getRowUrl($row)
@@ -46,3 +58,4 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends  Mage_Adminhtml_Block_Widget_G
     }
 
 }
+/*id,nazev,isbn,stranky,rok_vydani,zanr*/

@@ -16,7 +16,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
             'method'=>'post'
         ));
         $f = $form->addFieldset('vj',array(
-            'legend'=>'Přidat autora',
+            'legend'=>'Přidat knihu',
             'class'=>'fieldset-wide'
         ));
         if ($autor->getId()) {
@@ -25,22 +25,29 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
             ));
         }
 
-        $f->addField('autor','text',array(
-            'name' => 'autor',
-            'label' => 'Autor',
-            'required' => true
-        ));
         $f->addField('nazev','text',array(
             'name' => 'nazev',
             'label' => 'Název',
             'required' => true
         ));
-        $f->addField('cast','text',array(
-           'name' => 'cast',
-            'label' => 'Část',
+        $f->addField('isbn','text',array(
+            'name' => 'isbn',
+            'label' => 'ISBN'
+        ));
+        $f->addField('pocet_stranek','text',array(
+           'name' => 'pocet_stranek',
+            'label' => 'Počet stránek'
+        ));
+        $f->addField('rok_vydani','text',array(
+            'name' => 'rok_vydani',
+            'label' => 'Rok vydání',
             'required' => true
         ));
-        
+        $f->addField('zanr','select',array(
+            'name' => 'zanr',
+            'label' => 'Počet stránek',
+            'required' => true
+        ));
 
         $form->setValues($autor->getData());
         $form->setUseContainer(true);
@@ -49,3 +56,4 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
         return parent::_prepareForm();
     }
 }
+/*id,nazev,isbn,stranky,rok_vydani,zanr*/
