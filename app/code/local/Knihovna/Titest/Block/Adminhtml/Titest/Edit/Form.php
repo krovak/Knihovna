@@ -19,7 +19,7 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
             'id'=>'edit_form',
             'method'=>'Post'
         ));
-        $f    = $form->addFieldset('titesttest', array(
+        $f    = $form->addFieldset('titest', array(
             'legend' => 'Přidat čtenáře',
             'class'  => 'fieldset-wide'
         ));
