@@ -45,7 +45,8 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
             'label'    => 'Přijmení',
             'required' => true
         ));
-
+        
+        $form->setValues($autor->getData());
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
