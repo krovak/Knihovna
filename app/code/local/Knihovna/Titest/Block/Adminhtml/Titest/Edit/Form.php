@@ -43,6 +43,7 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
             'label' => 'Přijmení',
             'required' => true
         ));
+        $form->setValues($ctenar->getData());
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
