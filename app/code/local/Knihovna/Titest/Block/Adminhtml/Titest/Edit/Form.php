@@ -33,20 +33,20 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
             ));
         }
 
-            $f->addField('jmeno', 'text', array(
-                'name' => 'jmeno',
-                'label' => 'Jméno',
-                'required' => true
-            ));
-            $f->addField('prijmeni', 'text', array(
-                'name' => 'prijmeni',
-                'label' => 'Přijmení',
-                'required' => true
-            ));
-            $form->setUseContainer(true);
-            $form->setAction($this->getUrl('*/*/save'));
-            $this->setForm($form);
-            return parent::_prepareForm();
+        $f->addField('jmeno', 'text', array(
+            'name' => 'jmeno',
+            'label' => 'Jméno',
+            'required' => true
+        ));
+        $f->addField('prijmeni', 'text', array(
+            'name' => 'prijmeni',
+            'label' => 'Přijmení',
+            'required' => true
+        ));
+        $form->setUseContainer(true);
+        $form->setAction($this->getUrl('*/*/save'));
+        $this->setForm($form);
+        return parent::_prepareForm();
 
     }
 }
