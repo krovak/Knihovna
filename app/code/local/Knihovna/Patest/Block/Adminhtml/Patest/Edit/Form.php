@@ -31,7 +31,7 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Edit_Form extends Mage_Adminhtml_Bl
 
         $f->addField('jmeno','text',array(
             'name'=>'jmeno',
-            'label'=>'Jméno',
+            'label'=>'Jmeno',
             'required'=>true
         ));
         $form->setValues($autor->getData());
