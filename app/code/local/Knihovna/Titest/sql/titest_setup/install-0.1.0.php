@@ -23,7 +23,19 @@ $table = $installer->getConnection()
 ),'Jméno')
     ->addColumn('prijmeni',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
     'nullable' => false
-),'Příjmení');
+),'Příjmení')
+->addColumn('ulice',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
+    'nullable' => false
+),'Ulice')
+->addColumn('cp',Varien_Db_Ddl_Table::TYPE_INTEGER,array(
+    'nullable' => false
+),'Čp')
+->addColumn('mesto',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
+    'nullable' => false
+),'Město')
+->addColumn('psc',Varien_Db_Ddl_Table::TYPE_INTEGER,array(
+    'nullable' => false
+),'PSČ');
 
 $installer->getConnection()->createTable($table);
 
