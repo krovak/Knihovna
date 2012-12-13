@@ -18,10 +18,10 @@
                 <admin>
                     <children>
                         <patest>
-                            <title>Autor</title>
+                            <title>Petrovy autoři</title>
                             <children>
                                 <autor translate="title" module="patest">
-                                    <title>Spravovat autory</title>
+                                    <title>Spravovat Petrovy autory</title>
                                 </autor>
                             </children>
                         </patest>
