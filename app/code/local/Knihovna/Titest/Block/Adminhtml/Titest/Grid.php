@@ -36,4 +36,9 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Grid extends Mage_Adminhtml_Block_W
         ));
         return $this;
     }
+    public function getRowUrl($row)
+    {
+        return $this->getUrl('*/*/edit', array('id' => $row->getId()));
+    }
+
     }
