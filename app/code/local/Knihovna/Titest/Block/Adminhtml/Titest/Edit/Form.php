@@ -13,15 +13,22 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
         $this->setTitle('Pridat zaznam');
     }
     public function _prepareForm(){
+        $ctenar = Mage::registry('titest');
 
         $form = new Varien_Data_Form(array(
             'id'=>'edit_form',
             'method'=>'Post'
         ));
-        $f    = $form->addFieldset('mitest', array(
-            'legend' => 'Přidat autora',
+        $f    = $form->addFieldset('titesttest', array(
+            'legend' => 'Přidat čtenáře',
             'class'  => 'fieldset-wide'
         ));
+        if ($ctenar->getId()) {
+            $f->addField('entity_id', 'hidden', array(
+                'name' => 'entity_id'
+            ));
+
+
         $f->addField('jmeno', 'text', array(
             'name'     => 'jmeno',
             'label'    => 'Jméno',
@@ -36,5 +43,4 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
         return parent::_prepareForm();
-    }
-}
+    }}}
