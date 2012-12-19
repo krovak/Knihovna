@@ -2,11 +2,11 @@
        <config>
         <menu>
             <patest>
-                <title>Oddělení</title>
+                <title>Petrovi autoři</title>
                 <sort_order>1</sort_order>
                 <children>
                     <autor>
-                        <title>Spravovat oddělení</title>
+                        <title>Spravovat Petrovy autory</title>
                         <sort_order>1</sort_order>
                         <action>adminhtml/patest</action>
                     </autor>
@@ -18,11 +18,11 @@
                 <admin>
                     <children>
                         <patest>
-                            <title>Oddělení</title>
+                            <title>Petrovi autoři</title>
                             <children>
-                                <oddeleni translate="title" module="patest">
-                                    <title>Spravovat oddělení</title>
-                                </oddeleni>
+                                <autor translate="title" module="patest">
+                                    <title>Spravovat Petrovy autory</title>
+                                </autor>
                             </children>
                         </patest>
                     </children>
