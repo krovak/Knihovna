@@ -52,7 +52,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
             'label' => 'Kniha',
             'required' => true,
             'values' => Mage::getModel('vj/vj')->getAttribute('entity_id'),
-            'value' => 'Vyberte'
+            'value' => '1'
           )
         );
 
@@ -61,5 +61,9 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
         return parent::_prepareForm();
+
+        echo(Mage::getModel('vj/vj')->getAttribute('entity_id'));
+        echo(Mage::getModel('vj/vj'));
+
     }
 }
