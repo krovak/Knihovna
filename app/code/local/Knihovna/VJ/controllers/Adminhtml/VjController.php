@@ -31,6 +31,12 @@ class Knihovna_VJ_Adminhtml_VjController extends Mage_Adminhtml_Controller_Actio
         $this->_forward('edit');
     }
 
+    public function deleteAction()
+    {
+        Mage::getModel('vj/vj')->load($this->getRequest()->getParam('id'))->delete();
+        $this->_redirect('*/*/'); //kam se to má přesměrovat po uložení na indexAction, tj. na grid
+    }
+
     public function editAction()
     {
 
