@@ -11,12 +11,15 @@ $table = $installer->getConnection()
     'nullable' => false,
     'primary'  => true,
 ), 'Entity_id')
-    ->addColumn('jmeno',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
+    ->addColumn('from',Varien_Db_Ddl_Table::TYPE_DATE, null,array(
     'nullable' => false
-),'Jméno')
-    ->addColumn('prijmeni',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
+),'Datum od')
+    ->addColumn('to',Varien_Db_Ddl_Table::TYPE_DATE, null,array(
     'nullable' => false
-),'Příjmení');
+),'Datum do')
+    ->addColumn('book',Varien_Db_Ddl_Table::TYPE_SMALLINT, null,array(
+    'nullable' => false
+),'Kniha');
 
 $installer->getConnection()->createTable($table);
 
