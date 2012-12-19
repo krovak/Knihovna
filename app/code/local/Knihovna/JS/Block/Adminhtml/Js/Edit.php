@@ -15,6 +15,6 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit extends Mage_Adminhtml_Block_Widget_Fo
         parent::_construct();
     }
     public function getHeaderText() {
-        return 'Přidat záznam';
+        return 'Přidat výpůjčku';
     }
 }

@@ -14,6 +14,6 @@ class Knihovna_JS_Block_Adminhtml_Js extends Mage_Adminhtml_Block_Widget_Grid_Co
         parent::_construct();
     }
     public function getHeaderText() {
-        return 'Pokus_js';
+        return 'Výpůjčky';
     }
 }

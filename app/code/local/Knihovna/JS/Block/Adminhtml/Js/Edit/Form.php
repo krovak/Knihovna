@@ -63,7 +63,6 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
         return parent::_prepareForm();
 
         echo(Mage::getModel('vj/vj')->getAttribute('entity_id'));
-        echo('iogiguogeubhfudgsfjbduofdu');
         echo(Mage::getModel('vj/vj'));
 
     }

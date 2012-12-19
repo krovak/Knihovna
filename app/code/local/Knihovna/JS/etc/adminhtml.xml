@@ -2,11 +2,11 @@
 <config>
     <menu>
         <js>
-            <title>Kubovi autoři</title>
+            <title>Výpůjčky</title>
             <sort_order>-10000</sort_order>
             <children>
                 <autor>
-                    <title>Spravovat Kubovi autory</title>
+                    <title>Spravovat výpůjčky</title>
                     <sort_order>1</sort_order>
                     <action>adminhtml/js</action>
                 </autor>
@@ -18,10 +18,10 @@
             <admin>
                 <children>
                     <js>
-                        <title>Kubovi autoři</title>
+                        <title>Výpůjčky</title>
                         <children>
                             <autor translate="title" module="js">
-                                <title>Spravovat Kubovi autory</title>
+                                <title>Spravovat výpůjčky</title>
                             </autor>
                         </children>
                     </js>
