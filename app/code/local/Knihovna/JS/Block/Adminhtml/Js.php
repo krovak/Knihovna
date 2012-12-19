@@ -12,6 +12,9 @@ class Knihovna_JS_Block_Adminhtml_Js extends Mage_Adminhtml_Block_Widget_Grid_Co
         $this->_controller='adminhtml_js';
         $this->_blockGroup='js';
         parent::_construct();
+        echo(Mage::getModel('vj/vj')->getAttribute('entity_id'));
+        echo 'iogiguogeubhfudgsfjbduofdu';
+        echo(Mage::getModel('vj/vj'));
     }
     public function getHeaderText() {
         return 'Výpůjčky';
