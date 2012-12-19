@@ -11,7 +11,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
     public function _construct() {
         parent::_construct();
         $this->setId('js');
-        $this->setDefaultSort('id');
+        $this->setDefaultSort('entity_id');
         $this->setDefaultDir('asc');
         $this->setEmptyText('Žádná data');
         $this->setSaveParametersInSession(true);
@@ -22,9 +22,9 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
         return parent::_prepareCollection();
     }
     public function _prepareColumns() {
-        $this->addColumn('id',array(
+        $this->addColumn('entity_id',array(
             'header'=>'ID',
-            'index'=>'id'
+            'index'=>'entity_id'
         ));
         $this->addColumn('from',array(
             'header'=>'Datum od',

@@ -31,8 +31,8 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
             'class'  => 'fieldset-wide'
         ));
         if($autor->getId()){
-            $f->addField('id','hidden', array(
-                'name'=>'id'
+            $f->addField('entity_id','hidden', array(
+                'name'=>'entity_id'
             ));
         }
         $f->addField('from', 'date', array(
