@@ -17,6 +17,6 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Edit extends Mage_Adminhtml_Block_W
     parent::_construct();
 }
     public function getHeaderText(){
-    return 'Přidat záznam';
+    return 'Přidat oddělení';
 }
 }

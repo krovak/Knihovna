@@ -43,11 +43,8 @@ class Knihovna_Patest_Adminhtml_PatestController extends Mage_Adminhtml_Controll
     {
 
         $this->loadLayout();
-        $autor=$this->_initEdit('id');
-        $this->_addContent($this->getLayout()
-            ->createBlock('patest/adminhtml_patest_edit')
-            ->setEditMode((bool)$this->getRequest()
-            ->getParam('entity_id')));
+        $oddeleni=$this->_initEdit('id');
+        $this->_addContent($this->getLayout()->createBlock('patest/adminhtml_patest_edit')->setEditMode((bool)$this->getRequest()->getParam('entity_id')));
         $this->renderLayout();
     }
 
