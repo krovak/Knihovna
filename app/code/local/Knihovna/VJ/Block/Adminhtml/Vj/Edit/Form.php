@@ -47,10 +47,9 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
             0 => $this->__('Román'),
             1 => $this->__('Cestopis'),
         );
-        $f->addField('ids', 'select', array(
-                'name'  => 'ids',
-                'label' => Mage::helper('adminhtml')->__('Id Numbers'),
-                'title' => Mage::helper('adminhtml')->__('Id Numbers'),
+        $f->addField('zanr', 'select', array(
+                'name'  => 'zanr',
+                'label' => 'Žánr',
                 'required' => true,
                 'values' => $options,
                 'value' => '1',
