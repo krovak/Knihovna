@@ -9,7 +9,7 @@
 
 class Knihovna_JS_Block_Adminhtml_Js_Edit extends Mage_Adminhtml_Block_Widget_Form_Container {
     public function _construct() {
-        $this->objectId='entity_id';
+        $this->_objectId='id';
         $this->_controller='adminhtml_js';
         $this->_blockGroup='js';
         parent::_construct();
