@@ -11,7 +11,7 @@ class Knihovna_JS_Block_Adminhtml_Js extends Mage_Adminhtml_Block_Widget_Grid_Co
     public function _construct() {
         $this->_controller='adminhtml_js';
         $this->_blockGroup='js';
-        echo Mage::getResourceModel('vj/vj')->getData();
+        print_r(Mage::getResourceModel('vj/vj')->getData());
         parent::_construct();
     }
     public function getHeaderText() {
