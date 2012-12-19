@@ -14,7 +14,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
     {
         parent::_construct();
         $this->setId('editForm');
-        $this->setTitle('Přidat záznam');
+        $this->setTitle('Přidat výpůjčku');
     }
 
     public function _prepareForm()
@@ -27,24 +27,34 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
         ));
 
         $f = $form->addFieldset('js', array(
-            'legend' => 'Přidat autora',
+            'legend' => 'Přidat výpůjčku',
             'class'  => 'fieldset-wide'
         ));
         if($autor->getId()){
-            $f->addField('entity_id','hidden', array(
-                'name'=>'entity_id'
+            $f->addField('id','hidden', array(
+                'name'=>'id'
             ));
         }
-        $f->addField('jmeno', 'text', array(
-            'name'     => 'jmeno',
-            'label'    => 'Jméno',
+        $f->addField('from', 'date', array(
+            'name'     => 'from',
+            'label'    => 'Datum od',
+            'format'   => 'DD-MM-YYYY',
             'required' => true
         ));
-        $f->addField('prijmeni', 'text', array(
-            'name'     => 'prijmeni',
-            'label'    => 'Přijmení',
+        $f->addField('to', 'date', array(
+            'name'     => 'to',
+            'label'    => 'Datum do',
+            'format'   => 'DD-MM-YYYY',
             'required' => true
         ));
+        $f->addField('book', 'select', array(
+            'name'  => 'book',
+            'label' => 'Kniha',
+            'required' => true,
+            'values' => Mage::getModel('vj/vj')->getAttribute('entity_id'),
+            'value' => 'Vyberte'
+          )
+        );
 
         $form->setValues($autor->getData());
         $form->setUseContainer(true);
