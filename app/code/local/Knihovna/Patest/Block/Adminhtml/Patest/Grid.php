@@ -26,22 +26,11 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Grid extends Mage_Adminhtml_Block_W
     public function _prepareColumns(){
             $this->addColumn('entity_id',array(
                 'header'=>'ID',
-                'index'=>'entity_id',
-                'width'=>'30px'
+                'index'=>'entity_id'
             ));
-<<<<<<< HEAD
             $this->addColumn('nazev',array(
                     'header'=>'Název',
                     'index'=>'nazev'
-=======
-            $this->addColumn('jmeno',array(
-                    'header'=>'Jméno',
-                    'index'=>'jmeno'
-            ));
-            $this->addColumn('prijmeni',array(
-                    'header'=>'Příjmení',
-                    'index'=>'prijmeni'
->>>>>>> parent of 80c7a3b... Přidání modulu Oddělení
             ));
         return $this;
     }
