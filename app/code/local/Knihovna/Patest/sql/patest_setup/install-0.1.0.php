@@ -13,7 +13,7 @@ $table = $installer->getConnection()
 ), 'Entity_id')
     ->addColumn('nazev',Varien_Db_Ddl_Table::TYPE_VARCHAR,45,array(
     'nullable' => false
-),'Název oddělení');
+),'Název');
 
 $installer->getConnection()->createTable($table);
 

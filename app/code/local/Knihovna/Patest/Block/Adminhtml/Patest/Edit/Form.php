@@ -34,7 +34,7 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Edit_Form extends Mage_Adminhtml_Bl
 
         $f->addField('nazev','text',array(
             'name'=>'nazev',
-            'label'=>'Název oddělení',
+            'label'=>'Název',
             'required'=>true
         ));
 

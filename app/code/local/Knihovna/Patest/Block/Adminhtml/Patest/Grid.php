@@ -29,7 +29,7 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Grid extends Mage_Adminhtml_Block_W
                 'index'=>'entity_id'
             ));
             $this->addColumn('nazev',array(
-                    'header'=>'Název oddělení',
+                    'header'=>'Název',
                     'index'=>'nazev'
             ));
         return $this;
