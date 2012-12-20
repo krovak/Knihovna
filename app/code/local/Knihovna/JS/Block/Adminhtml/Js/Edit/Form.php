@@ -22,11 +22,11 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
         $autor = Mage::registry('js');
 
         $knihy = array();
-        $model = Mage::getModel('vj/vj');
+        $model = Mage::getModel('mitest/mitest');
         $collection = $model->getCollection();
         foreach($collection as $item){
             $knihy['idecko'] = $item->getData('entity_id');
-            $knihy['nazev'] = $item->getData('nazev');
+            $knihy['jmeno'] = $item->getData('jmeno');
         }
 
         $form = new Varien_Data_Form(array(
