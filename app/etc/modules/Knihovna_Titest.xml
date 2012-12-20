@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Knihovna_Titest>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </Knihovna_Titest>
     </modules>
