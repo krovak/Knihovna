@@ -18,7 +18,7 @@ class Knihovna_JS_Block_Adminhtml_Js extends Mage_Adminhtml_Block_Widget_Grid_Co
             $knihy[$item->getData('entity_id')][' idecko '] = $item->getData('entity_id');
             $knihy[$item->getData('entity_id')][' nazev '] = $item->getData('nazev');
         }
-        print_r($knihy);
+        print_r($knihy[' idecko ']);
         parent::_construct();
     }
     public function getHeaderText() {

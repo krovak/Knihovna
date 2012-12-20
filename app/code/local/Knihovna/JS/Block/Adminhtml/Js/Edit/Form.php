@@ -25,8 +25,8 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
         $model = Mage::getModel('vj/vj');
         $collection = $model->getCollection();
         foreach($collection as $item){
-            $knihy[$item->getData('entity_id')][' idecko '] = $item->getData('entity_id');
-            $knihy[$item->getData('entity_id')][' nazev '] = $item->getData('nazev');
+            $knihy['idecko'] = $item->getData('entity_id');
+            $knihy['nazev'] = $item->getData('nazev');
         }
 
         $form = new Varien_Data_Form(array(
@@ -59,7 +59,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
             'name'  => 'book',
             'label' => 'Kniha',
             'required' => true,
-            'values' => $knihy,
+            'values' => $knihy['idecko'],
             'value' => '1'
           )
         );
