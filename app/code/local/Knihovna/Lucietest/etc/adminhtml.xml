@@ -2,14 +2,14 @@
 <config>
     <menu>
         <lucietest>
-            <title>Autor</title>
+            <title>Knihovna</title>
             <sort_order>1</sort_order>
             <children>
-                <autor>
-                    <title>Spravovat autory</title>
+                <knihovna>
+                    <title>Spravovat knihovnu</title>
                     <sort_order>1</sort_order>
                     <action>adminhtml/lucietest</action>
-                </autor>
+                </knihovna>
             </children>
         </lucietest>
     </menu>
@@ -18,11 +18,11 @@
             <admin>
                 <children>
                     <lucietest>
-                        <title>Autor</title>
+                        <title>Knihovna</title>
                         <children>
-                            <autor translate="title" module="lucietest">
-                                <title>Spravovat autory</title>
-                            </autor>
+                            <knihovna translate="title" module="lucietest">
+                                <title>Spravovat knihovnu</title>
+                            </knihovna>
                         </children>
                     </lucietest>
                 </children>

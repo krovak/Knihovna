@@ -23,14 +23,14 @@ class Knihovna_Lucietest_Block_Adminhtml_Lucietest_Edit_Form extends Mage_Adminh
             'legend'=>'co tu je napsaný',
             'class'=>'fieldset-wide'
         ));
-        $f->addField('jmeno','text',array(
-            'name'=>'jmeno',
-            'label'=>'Jméno',
+        $f->addField('nazev','text',array(
+            'name'=>'nazev',
+            'label'=>'Název',
             'required'=>true
         ));
-        $f->addField('prijmeni', 'text', array(
-            'name'     => 'prijmeni',
-            'label'    => 'Přijmení',
+        $f->addField('adresa', 'text', array(
+            'name'     => 'adresa',
+            'label'    => 'Adresa',
             'required' => true
         ));
         $form->setUseContainer(true);
