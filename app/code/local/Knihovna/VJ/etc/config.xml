@@ -37,7 +37,7 @@
                 <class>Knihovna_VJ_Model_Resource</class>
                 <entities>
                     <knihovna_vj>
-                        <table>vj_test</table>
+                        <table>vj</table>
                     </knihovna_vj>
                 </entities>
             </vj_resource>
