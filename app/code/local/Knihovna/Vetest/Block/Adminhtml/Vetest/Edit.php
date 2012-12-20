@@ -6,7 +6,7 @@
  * Time: 13:34
  * To change this template use File | Settings | File Templates.
  */
-class Knihovna_Vetest_Block_Adminhtml_Titest_Edit extends Mage_Adminhtml_Block_Widget_Form_Container{
+class Knihovna_Vetest_Block_Adminhtml_Vetest_Edit extends Mage_Adminhtml_Block_Widget_Form_Container{
     public function _construct(){
         $this->objectId='entity_id';
         $this->_controller='adminhtml_vetest';

@@ -6,7 +6,7 @@
  * Time: 13:35
  * To change this template use File | Settings | File Templates.
  */
-class Knihovna_Vetest_Block_Adminhtml_Titest_Grid extends Mage_Adminhtml_Block_Widget_Grid{
+class Knihovna_Vetest_Block_Adminhtml_Vetest_Grid extends Mage_Adminhtml_Block_Widget_Grid{
     public function _construct(){
         parent::_construct();
         $this->setId('vetest');

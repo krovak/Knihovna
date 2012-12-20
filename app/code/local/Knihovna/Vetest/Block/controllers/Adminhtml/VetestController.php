@@ -6,7 +6,7 @@
  * Time: 13:38
  * To change this template use File | Settings | File Templates.
  */
-class Knihovna_Vetest_Adminhtml_TitestController extends Mage_Adminhtml_Controller_Action
+class Knihovna_Vetest_Adminhtml_VetestController extends Mage_Adminhtml_Controller_Action
 {
     public function indexAction()
     {
