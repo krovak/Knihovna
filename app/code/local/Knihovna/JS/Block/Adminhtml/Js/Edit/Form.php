@@ -59,7 +59,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
             'name'  => 'book',
             'label' => 'Kniha',
             'required' => true,
-            'values' => $knihy[' nazev '],
+            'values' => $knihy[' idecko '],
             'value' => '1'
           )
         );
