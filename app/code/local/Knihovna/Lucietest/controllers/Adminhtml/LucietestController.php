@@ -20,8 +20,8 @@ protected function _initEdit($idFileName='id'){
 
 
     }
-    if(!Mage::registry('autor')){
-        Mage::register('autor',$model);
+    if(!Mage::registry('lucietest')){
+        Mage::register('lucietest',$model);
     }
     return $model;
 }
