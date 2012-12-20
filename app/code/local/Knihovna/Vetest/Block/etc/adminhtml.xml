@@ -5,11 +5,11 @@
             <title>Žánr</title>
             <sort_order>4</sort_order>
             <children>
-                <autor>
-                    <title>Spravovat žánt</title>
+                <zanr>
+                    <title>Spravovat žánr</title>
                     <sort_order>4</sort_order>
                     <action>adminhtml/vetest</action>
-                </autor>
+                </zanr>
             </children>
         </vetest>
     </menu>
@@ -17,14 +17,14 @@
         <resources>
             <admin>
                 <children>
-                    <titest>
+                    <vetest>
                         <title>Žánr</title>
                         <children>
                             <zanr translate="title" module="vetest">
                                 <title>Spravovat žánr</title>
                             </zanr>
                         </children>
-                    </titest>
+                    </vetest>
                 </children>
             </admin>
         </resources>
