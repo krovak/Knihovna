@@ -31,6 +31,7 @@ $table = $installer->getConnection()
     'nullable' => false
 ),'Rok vydání');
 
+//tabulka titulu
 
 $installer->getConnection()->createTable($table);
 
