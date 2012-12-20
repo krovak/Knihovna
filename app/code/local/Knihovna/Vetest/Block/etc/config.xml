@@ -22,7 +22,7 @@
             <vetest>
                 <use>standard</use>
                 <args>
-                    <module>Knihovna_Vetesttest</module>
+                    <module>Knihovna_Vetest</module>
                     <frontName>vetest</frontName>
                 </args>
             </vetest>
