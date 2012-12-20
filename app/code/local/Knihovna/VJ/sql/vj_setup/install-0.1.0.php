@@ -29,12 +29,7 @@ $table = $installer->getConnection()
 ),'Počet stránek')
     ->addColumn('rok_vydani',Varien_Db_Ddl_Table::TYPE_SMALLINT,null,array(
     'nullable' => false
-),'Rok vydání')
-    ->addColumn('zanr',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
-    'nullable' => false
-),'Žánr')
-
-;
+),'Rok vydání');
 
 
 $installer->getConnection()->createTable($table);

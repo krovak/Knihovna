@@ -30,6 +30,10 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends  Mage_Adminhtml_Block_Widget_G
             'index'=>'entity_id',
             'width' =>'30px'
        ));
+        $this->addColumn('autor',array(
+            'header'=>'Autor',
+            'index'=>'autor'
+        ));
         $this->addColumn('nazev',array(
                     'header'=>'Název',
                     'index'=>'nazev'

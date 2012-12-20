@@ -2,11 +2,11 @@
 <config>
     <menu>
         <vj>
-            <title>Vita</title>
+            <title>Tituly</title>
             <sort_order>1</sort_order>
             <children>
                 <autor>
-                    <title>Spravovat autory</title>
+                    <title>Spravovat tituly</title>
                     <sort_order>1</sort_order>
                     <action>adminhtml/vj</action>
                 </autor>
@@ -18,10 +18,10 @@
             <admin>
                 <children>
                     <vj>
-                        <title>Vita</title>
+                        <title>Tituly</title>
                         <children>
                             <autor translate="title" module="vj">
-                                <title>Spravovat autory</title>
+                                <title>Spravovat tituly</title>
                             </autor>
                         </children>
                     </vj>
