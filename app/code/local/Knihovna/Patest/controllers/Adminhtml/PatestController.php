@@ -14,9 +14,9 @@ class Knihovna_Patest_Adminhtml_PatestController extends Mage_Adminhtml_Controll
         $this->_initAction()->_addContent($this->getLayout()->createBlock('patest/adminhtml_patest'))->renderLayout();
     }
 
-    protected function _initEdit($idFielName = 'id')
+    protected function _initEdit($idFieldName = 'id')
     {
-        $id    = $this->getRequest()->getParams($idFielName);
+        $id    = $this->getRequest()->getParams($idFieldName);
         $model = Mage::getModel('patest/patest');
         if ($id) {
             $model->load($id);
@@ -43,7 +43,7 @@ class Knihovna_Patest_Adminhtml_PatestController extends Mage_Adminhtml_Controll
     {
 
         $this->loadLayout();
-        $autor=$this->_initEdit('id');
+        $oddeleni2=$this->_initEdit('id');
         $this->_addContent($this->getLayout()
             ->createBlock('patest/adminhtml_patest_edit')
             ->setEditMode((bool)$this->getRequest()

@@ -17,38 +17,26 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Edit_Form extends Mage_Adminhtml_Bl
     }
     public function _prepareForm()
     {
-        $autor = Mage::registry('patest');
+        $oddeleni2 = Mage::registry('patest');
         $form = new Varien_Data_Form(array(
             'id'=>'edit_form',
             'method'=>'post'
         ));
         $f = $form->addFieldset('patest',array(
-            'legend'=>'Přidat autora',
+            'legend'=>'Přidat oddělení',
             'class'=>'fieldset-wide'
         ));
-                if ($autor->getId()) {
+                if ($oddeleni2->getId()) {
                     $f->addField('entity_id', 'hidden', array(
                 'name' => 'entity_id'
                 ));
         }
-
-<<<<<<< HEAD
         $f->addField('nazev','text',array(
             'name'=>'nazev',
             'label'=>'Název',
-=======
-        $f->addField('jmeno','text',array(
-            'name'=>'jmeno',
-            'label'=>'Jméno',
->>>>>>> parent of 80c7a3b... Přidání modulu Oddělení
-            'required'=>true
-        ));
-        $f->addField('prijmeni', 'text', array(
-            'name'     => 'prijmeni',
-            'label'    => 'Přijmení',
             'required' => true
         ));
-        $form->setValues($autor->getData());
+        $form->setValues($oddeleni2->getData());
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
