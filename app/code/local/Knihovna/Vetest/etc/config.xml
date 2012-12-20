@@ -38,7 +38,7 @@
                 <class>Knihovna_Vetest_Model_Resource</class>
                 <entities>
                     <knihovna_vetest>
-                        <table>vetable</table>
+                        <table>titable</table>
                     </knihovna_vetest>
                 </entities>
             </vetest_resource>
