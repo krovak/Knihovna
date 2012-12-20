@@ -21,6 +21,13 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
     {
         $autor = Mage::registry('js');
 
+        /*$model = Mage::getModel('vj/vj');
+        $collection = $model->getCollection();
+        foreach($collection as $item){
+            $kniha = $item->getData();
+            print_r($item->getTitle());
+        }*/
+
         $form = new Varien_Data_Form(array(
             'id'     => 'edit_form',
             'method' => 'post'
@@ -51,7 +58,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
             'name'  => 'book',
             'label' => 'Kniha',
             'required' => true,
-            'values' => Mage::getModel('vj/vj')->getAttribute('entity_id'),
+            'values' => Mage::getModel('vj/vj')->getCollection()->getData('entity_id'),
             'value' => '1'
           )
         );
