@@ -30,13 +30,13 @@ public function _construct(){
                 'index'=>'entity_id'
             ));
 
-            $this->addColumn('jmeno',array(
-                'header'=>'Jmeno',
-                'index'=>'jmeno'
+            $this->addColumn('nazev',array(
+                'header'=>'Název',
+                'index'=>'nazev'
             ));
-            $this->addColumn('prijmeni',array(
-                'header'=>'Prijmeni',
-                'index'=>'prijmeni'
+            $this->addColumn('adresa',array(
+                'header'=>'Adresa',
+                'index'=>'adresa'
             ));
             return $this;
         }
