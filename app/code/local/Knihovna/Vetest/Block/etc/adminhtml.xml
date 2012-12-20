@@ -3,11 +3,11 @@
     <menu>
         <vetest>
             <title>Žánr</title>
-            <sort_order>1</sort_order>
+            <sort_order>4</sort_order>
             <children>
                 <autor>
                     <title>Spravovat žánt</title>
-                    <sort_order>1</sort_order>
+                    <sort_order>4</sort_order>
                     <action>adminhtml/vetest</action>
                 </autor>
             </children>
