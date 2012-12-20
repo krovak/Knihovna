@@ -14,10 +14,7 @@ class Knihovna_JS_Block_Adminhtml_Js extends Mage_Adminhtml_Block_Widget_Grid_Co
         $model = Mage::getModel('vj/vj');
         $collection = $model->getCollection();
         foreach($collection as $item){
-            print_r($item->getData());
-            print_r($item->getData()->entity_id);
-            echo($item->getData()->entity_id);
-            print_r($item->getTitle());
+            print_r($item->getData('entity_id'));
         }
         parent::_construct();
     }
