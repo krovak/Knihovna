@@ -38,7 +38,7 @@
                 <class>Knihovna_Patest_Model_Resource</class>
                 <entities>
                     <knihovna_patest>
-                        <table>patable</table>
+                        <table>patest</table>
                     </knihovna_patest>
                 </entities>
             </patest_resource>
