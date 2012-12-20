@@ -18,12 +18,24 @@ $table = $installer->getConnection()
     'nullable' => false,
     'primary'  => true,
 ), 'Entity_id')
-    ->addColumn('jmeno',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
+    ->addColumn('nazev',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
     'nullable' => false
-),'Jméno')
-    ->addColumn('prijmeni',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
+),'Název')
+    ->addColumn('isbn',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
+    'nullable' => true
+),'ISBN')
+    ->addColumn('pocet_stranek',Varien_Db_Ddl_Table::TYPE_SMALLINT,null,array(
+    'nullable' => true
+),'Počet stránek')
+    ->addColumn('rok_vydani',Varien_Db_Ddl_Table::TYPE_SMALLINT,null,array(
     'nullable' => false
-),'Příjmení');
+),'Rok vydání')
+    ->addColumn('zanr',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
+    'nullable' => false
+),'Žánr')
+
+;
+
 
 $installer->getConnection()->createTable($table);
 
