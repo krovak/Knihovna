@@ -37,7 +37,7 @@
                 <class>Knihovna_JS_Model_Resource</class>
                 <entities>
                     <knihovna_js>
-                        <table>js_test</table>
+                        <table>jstest</table>
                     </knihovna_js>
                 </entities>
             </js_resource>
