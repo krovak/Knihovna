@@ -12,8 +12,8 @@ class Knihovna_VJ_Model_Source_Zanry
 
     public function __construct()
     {
-        $this->customers[0]['label'] = '-- Vyberte --';
-        $this->customers[0]['value'] = '';
+        $this->zanry[0]['label'] = '-- Vyberte --';
+        $this->zanry[0]['value'] = '';
         $zanry                       = Mage::getModel('vj/zanry')->getCollection();
         /**@var $zanr Knihovna_VJ_Model_Zanry */
         foreach ($zanry as $zanr) {
