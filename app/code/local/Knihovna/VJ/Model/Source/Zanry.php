@@ -16,7 +16,8 @@ class Knihovna_VJ_Model_Source_Zanry
             foreach($zanry as $zanr)
             {
                 $id = $zanr->getId();
-                $name = $zanr->getName();
+                $z = $zanr->load($id);
+                $name = $z->getName();
                 $this->zanry[] = array('value'=>$id, 'label'=>$name);
             }
     }
