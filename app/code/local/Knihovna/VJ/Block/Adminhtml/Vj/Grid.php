@@ -7,9 +7,11 @@
  * www: http://www.iguru.eu
  * email: info@iguru.eu
  */
- 
-class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends  Mage_Adminhtml_Block_Widget_Grid {
-    public function _construct(){
+
+class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends Mage_Adminhtml_Block_Widget_Grid
+{
+    public function _construct()
+    {
         parent::_construct();
         $this->setId('vj');
         $this->setDefaultSort('entity_id');
@@ -18,44 +20,49 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends  Mage_Adminhtml_Block_Widget_G
         $this->setSaveParametersInSession(true);
     }
 
-    public function _prepareCollection(){
+    public function _prepareCollection()
+    {
         $collection = Mage::getModel('vj/vj')->getCollection();
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
 
-    public function _prepareColumns(){
-        $this->addColumn('entity_id',array(
-            'header'=>'ID',
-            'index'=>'entity_id',
-            'width' =>'30px'
-       ));
-        $this->addColumn('autor',array(
-            'header'=>'Autor',
-            'index'=>'autor'
+    public function _prepareColumns()
+    {
+        $this->addColumn('entity_id', array(
+            'header' => 'ID',
+            'index'  => 'entity_id',
+            'width'  => '30px'
         ));
-        $this->addColumn('nazev',array(
-                    'header'=>'Název',
-                    'index'=>'nazev'
-               ));
-        $this->addColumn('isbn',array(
-                    'header'=>'ISBN',
-                    'index'=>'isbn'
-               ));
-        $this->addColumn('pocet_stranek',array(
-                    'header'=>'Počet stránek',
-                    'index'=> 'pocet_stranek'
+        $this->addColumn('autor', array(
+            'header'   => 'Autor',
+            'index'    => 'autor',
+            'renderer' => 'Knihovna_VJ_Block_Adminhtml_Vj_Renderer_Autor'
         ));
-        $this->addColumn('rok_vydani',array(
-            'header'=>'Rok vydání',
-            'index'=> 'rok_vydani'
+        $this->addColumn('nazev', array(
+            'header' => 'Název',
+            'index'  => 'nazev'
         ));
-        $this->addColumn('zanr',array(
-            'header'=>'Žánr',
-            'index'=> 'zanr'
+        $this->addColumn('isbn', array(
+            'header' => 'ISBN',
+            'index'  => 'isbn'
+        ));
+        $this->addColumn('pocet_stranek', array(
+            'header' => 'Počet stránek',
+            'index'  => 'pocet_stranek'
+        ));
+        $this->addColumn('rok_vydani', array(
+            'header' => 'Rok vydání',
+            'index'  => 'rok_vydani'
+        ));
+        $this->addColumn('zanr', array(
+            'header' => 'Žánr',
+            'index'  => 'zanr',
+            'renderer' => 'Knihovna_VJ_Block_Adminhtml_Vj_Renderer_Zanr'
         ));
         return $this;
     }
+
     public function getRowUrl($row)
     {
         return $this->getUrl('*/*/edit', array('id' => $row->getId()));
