@@ -47,16 +47,11 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
             'label' => 'Rok vydání',
             'required' => true
         ));
-        $options = array(
-            0 => $this->__('Román'),
-            1 => $this->__('Cestopis'),
-        );
         $f->addField('zanr', 'select', array(
                 'name'  => 'zanr',
                 'label' => 'Žánr',
                 'required' => true,
-                'values' => $options,
-                'value' => '1',
+                'values' => Mage::getModel('vj/source_zanry')->toOptionArray()
             )
         );
 

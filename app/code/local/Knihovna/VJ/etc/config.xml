@@ -39,6 +39,10 @@
                     <knihovna_vj>
                         <table>vj_test</table>
                     </knihovna_vj>
+
+                    <knihovna_zanry>
+                        <table>zanr</table>
+                    </knihovna_zanry>
                 </entities>
             </vj_resource>
         </models>
