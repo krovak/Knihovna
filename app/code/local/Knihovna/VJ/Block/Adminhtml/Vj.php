@@ -16,6 +16,6 @@ class Knihovna_VJ_Block_Adminhtml_Vj extends Mage_Adminhtml_Block_Widget_Grid_Co
         parent::_construct();
     }
     public function getHeaderText(){
-        return 'Pokus';
+        return 'Tituly';
     }
 }

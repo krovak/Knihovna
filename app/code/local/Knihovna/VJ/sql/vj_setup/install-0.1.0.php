@@ -21,6 +21,9 @@ $table = $installer->getConnection()
     ->addColumn('nazev',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
     'nullable' => false
 ),'Název')
+    ->addColumn('autor',Varien_Db_Ddl_Table::TYPE_SMALLINT,null,array(
+    'nullable' => false
+),'Autor')
     ->addColumn('isbn',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
     'nullable' => true
 ),'ISBN')
@@ -29,7 +32,10 @@ $table = $installer->getConnection()
 ),'Počet stránek')
     ->addColumn('rok_vydani',Varien_Db_Ddl_Table::TYPE_SMALLINT,null,array(
     'nullable' => false
-),'Rok vydání');
+),'Rok vydání')
+->addColumn('zanr',Varien_Db_Ddl_Table::TYPE_SMALLINT,null,array(
+'nullable' => false
+),'Žánr');
 
 //tabulka titulu
 

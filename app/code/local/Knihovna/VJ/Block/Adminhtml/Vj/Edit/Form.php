@@ -42,11 +42,13 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
         ));
         $f->addField('pocet_stranek','text',array(
            'name' => 'pocet_stranek',
-            'label' => 'Počet stránek'
+            'label' => 'Počet stránek',
+            'width'=>'100px'
         ));
         $f->addField('rok_vydani','text',array(
             'name' => 'rok_vydani',
             'label' => 'Rok vydání',
+            'width'=> '100px',
             'required' => true
         ));
         $f->addField('zanr', 'select', array(
