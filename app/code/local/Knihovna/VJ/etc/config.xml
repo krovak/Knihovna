@@ -43,6 +43,11 @@
                     <knihovna_zanry>
                         <table>zanr</table>
                     </knihovna_zanry>
+
+                    <knihovna_mitable>
+                        <table>mitable</table>
+                    </knihovna_mitable>
+
                 </entities>
             </vj_resource>
         </models>

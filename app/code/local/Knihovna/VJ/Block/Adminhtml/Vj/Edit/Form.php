@@ -24,11 +24,13 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
                 'name' => 'entity_id'
             ));
         }
-        $f->addField('autor','text',array(
-            'name' => 'autor',
-            'label' => 'Autor',
-            'required' => true
-        ));
+        $f->addField('autor', 'select', array(
+                'name'  => 'autor',
+                'label' => 'Autor',
+                'required' => true,
+                'values' => Mage::getModel('vj/source_autori')->toOptionArray()
+            )
+        );
         $f->addField('nazev','text',array(
             'name' => 'nazev',
             'label' => 'Název',
