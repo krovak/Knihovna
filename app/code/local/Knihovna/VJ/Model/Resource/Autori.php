@@ -15,6 +15,6 @@ class Knihovna_VJ_Model_Resource_Autori extends Mage_Core_Model_Resource_Db_Abst
     protected function _construct()
     {
         // TODO: Implement _construct() method.
-        $this->_init('vj/knihovna_autoris','id');
+        $this->_init('vj/knihovna_autori','id');
     }
 }
