@@ -44,9 +44,9 @@
                         <table>zanr</table>
                     </knihovna_zanry>
 
-                    <knihovna_mitable>
+                    <knihovna_mitest>
                         <table>mitable</table>
-                    </knihovna_mitable>
+                    </knihovna_mitest>
 
                 </entities>
             </vj_resource>
