@@ -11,14 +11,13 @@ class Knihovna_VJ_Model_Source_Zanry
     public $zanry = array();
     public function __construct()
     {
-        $zanry = Mage::getModel('vj/zanry');
-        $Collection = $zanry ->getCollection();
+        $zanry = Mage::getModel('vj/zanry')->getCollection();
         /**@var $zanr Knihovna_VJ_Model_Zanry*/
-            foreach($Collection as $zanr)
+            foreach($zanry as $zanr)
             {
-                $id = $zanr->getId();
+                $id = $zanr->getData('entity_id');
                 //$z = $zanr->load($id);
-                $name = $zanr->getName();
+                $name = $zanr->getData('name');
                 $this->zanry[] = array('value'=>$id, 'label'=>$name);
             }
 
