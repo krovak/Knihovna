@@ -7,8 +7,9 @@
  * www: http://www.iguru.eu
  * email: info@iguru.eu
  */
- 
-class Knihovna_Mitest_Model_Resource_Mitest extends Mage_Core_Model_Resource_Db_Abstract {
+
+class Knihovna_Autor_Model_Resource_Autor extends Mage_Core_Model_Resource_Db_Abstract
+{
 
     /**
      * Resource initialization
@@ -16,6 +17,6 @@ class Knihovna_Mitest_Model_Resource_Mitest extends Mage_Core_Model_Resource_Db_
     protected function _construct()
     {
         // TODO: Implement _construct() method.
-        $this->_init('mitest/knihovna_mitest','entity_id');
+        $this->_init('autor/knihovna_autor', 'entity_id');
     }
 }

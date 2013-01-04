@@ -8,25 +8,25 @@
  * email: info@iguru.eu
  */
 
-class Knihovna_Mitest_Adminhtml_MitestController
+class Knihovna_Autor_Adminhtml_AutorController
     extends Mage_Adminhtml_Controller_Action
 {
 
     public function indexAction()
     {
         $this->_initAction()->_addContent($this->getLayout()
-            ->createBlock('mitest/adminhtml_mitest'))->renderLayout();
+            ->createBlock('autor/adminhtml_autor'))->renderLayout();
     }
 
     protected function _initEdit($idFieldName = 'id')
     {
         $id    = $this->getRequest()->getParams($idFieldName);
-        $model = Mage::getModel('mitest/mitest');
+        $model = Mage::getModel('autor/autor');
         if ($id) {
             $model->load($id);
         }
-        if (!Mage::registry('mitest')) {
-            Mage::register('mitest', $model);
+        if (!Mage::registry('autor')) {
+            Mage::register('autor', $model);
         }
         return $model;
     }
@@ -44,7 +44,7 @@ class Knihovna_Mitest_Adminhtml_MitestController
 
     public function deleteAction()
     {
-        Mage::getModel('mitest/mitest')->load($this->getRequest()->getParam('id'))->delete();
+        Mage::getModel('autor/autor')->load($this->getRequest()->getParam('id'))->delete();
         $this->_redirect('*/*/'); //kam se to má přesměrovat po uložení na indexAction, tj. na grid
     }
 
@@ -54,7 +54,7 @@ class Knihovna_Mitest_Adminhtml_MitestController
         $this->loadLayout();
         $autor = $this->_initEdit('id');
         $this->_addContent($this->getLayout()
-            ->createBlock('mitest/adminhtml_mitest_edit')
+            ->createBlock('autor/adminhtml_autor_edit')
             ->setEditMode((bool)$this->getRequest()
             ->getParam('entity_id')));
         $this->renderLayout();
@@ -63,7 +63,7 @@ class Knihovna_Mitest_Adminhtml_MitestController
     public function saveAction()
     {
         $data = $this->getRequest()->getPost();
-        $m    = Mage::getModel('mitest/mitest');
+        $m    = Mage::getModel('autor/autor');
         $m->setData($data);
         $m->save();
         $this->_redirect('*/*/'); //kam se to má přesměrovat po uložení na indexAction, tj. na grid

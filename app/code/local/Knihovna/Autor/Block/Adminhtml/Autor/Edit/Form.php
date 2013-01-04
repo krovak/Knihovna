@@ -8,7 +8,7 @@
  * email: info@iguru.eu
  */
 
-class Knihovna_Mitest_Block_Adminhtml_Mitest_Edit_Form
+class Knihovna_Autor_Block_Adminhtml_Autor_Edit_Form
     extends Mage_Adminhtml_Block_Widget_Form
 {
 
@@ -21,14 +21,14 @@ class Knihovna_Mitest_Block_Adminhtml_Mitest_Edit_Form
 
     public function _prepareForm()
     {
-        $autor = Mage::registry('mitest');
+        $autor = Mage::registry('autor');
 
         $form = new Varien_Data_Form(array(
             'id'     => 'edit_form',
             'method' => 'post'
         ));
 
-        $f = $form->addFieldset('mitest', array(
+        $f = $form->addFieldset('autor', array(
             'legend' => 'Přidat autora',
             'class'  => 'fieldset-wide'
         ));

@@ -8,15 +8,15 @@
  * email: info@iguru.eu
  */
 
-class Knihovna_Mitest_Block_Adminhtml_Mitest_Edit
+class Knihovna_Autor_Block_Adminhtml_Autor_Edit
     extends Mage_Adminhtml_Block_Widget_Form_Container
 {
 
     public function _construct()
     {
         $this->_objectId   = 'id';
-        $this->_controller = 'adminhtml_mitest';
-        $this->_blockGroup = 'mitest';
+        $this->_controller = 'adminhtml_autor';
+        $this->_blockGroup = 'autor';
         parent::_construct();
 
         $this->_addButton('saveandcontinue', array(
@@ -40,7 +40,7 @@ class Knihovna_Mitest_Block_Adminhtml_Mitest_Edit
      */
     protected function _isAllowedAction($action)
     {
-        return Mage::getSingleton('admin/session')->isAllowed('mitest/mitest' . $action);
+        return Mage::getSingleton('admin/session')->isAllowed('autor/autor' . $action);
     }
 
     /**
@@ -52,8 +52,8 @@ class Knihovna_Mitest_Block_Adminhtml_Mitest_Edit
     protected function _getSaveAndContinueUrl()
     {
         return $this->getUrl('*/*/save', array(
-            '_current'   => true,
-            'back'       => 'edit'
+            '_current' => true,
+            'back'     => 'edit'
         ));
     }
 
