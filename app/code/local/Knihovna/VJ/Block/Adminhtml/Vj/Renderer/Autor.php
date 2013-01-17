@@ -13,7 +13,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Renderer_Autor extends Mage_Adminhtml_Block
     public function render(Varien_Object $row)
     {
         $value = $row->getData($this->getColumn()->getIndex());
-        $autor = Mage::getModel('mitest/mitest')->load($value);
+        $autor = Mage::getModel('autor/autor')->load($value);
         return ($autor->getJmeno() . ' ' . $autor->getPrijmeni());
     }
 
