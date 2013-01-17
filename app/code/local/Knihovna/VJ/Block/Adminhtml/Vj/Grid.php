@@ -39,7 +39,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends Mage_Adminhtml_Block_Widget_Gr
         $this->addColumn('autor', array(
             'header'   => 'Autor',
             'index'    => 'autor',
-            'renderer' => 'Knihovna_VJ_Block_Adminhtml_Vj_Renderer_Autor'
+            'renderer' => 'Knihovna_Autor_Block_Adminhtml_Autor_Renderer_Autor'
         ));
         $this->addColumn('nazev', array(
             'header' => 'Název',

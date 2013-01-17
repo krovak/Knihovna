@@ -28,7 +28,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
                 'name'  => 'autor',
                 'label' => 'Autor',
                 'required' => true,
-                'values' => Mage::getModel('vj/source_autori')->toOptionArray()
+                'values' => Mage::getModel('autor/source_autori')->toOptionArray()
             )
         );
         $f->addField('nazev','text',array(
