@@ -12,7 +12,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Renderer_Zanr extends Mage_Adminhtml_Block_
     public function render(Varien_Object $row)
         {
             $value = $row->getData($this->getColumn()->getIndex());
-            $zanr = Mage::getModel('vj/zanry')->load($value);
-            return ($zanr->getName());
+            $zanr = Mage::getModel('zanr/zanr')->load($value);
+            return ($zanr->getNazev());
         }
 }
