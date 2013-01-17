@@ -26,6 +26,10 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
             'header'=>'ID',
             'index'=>'entity_id'
         ));
+        $this->addColumn('reader',array(
+            'header'=>'Čtenář',
+            'index'=>'reader'
+        ));
         $this->addColumn('from',array(
             'header'=>'Datum od',
             'index'=>'from'

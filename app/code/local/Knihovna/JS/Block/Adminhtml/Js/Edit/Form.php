@@ -35,6 +35,13 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
                 'name'=>'entity_id'
             ));
         }
+        $f->addField('reader', 'select', array(
+            'name'  => 'reader',
+            'label' => 'Čtenář',
+            'required' => true,
+            'values' => Mage::getModel('js/source_ctenari')->toOptionArray()
+        )
+        );
         $f->addField('from', 'date', array(
             'name'     => 'from',
             'label'    => 'Datum od',
