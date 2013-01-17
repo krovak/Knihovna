@@ -25,9 +25,9 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends Mage_Adminhtml_Block_Widget_Gr
 
         $collection = Mage::getModel('vj/vj')->getCollection();
         $autori_tabulka = Mage::getSingleton('core/resource')->getTableName('autor/knihovna_autor');
-        $collection->getSelect()->join(array('mi' => $autori_tabulka), 'mi.entity_id=main_table.book', array('book' => 'jmeno'));
+        $collection->getSelect()->join(array('mi' => $autori_tabulka), 'mi.entity_id=main_table.autor', array('autor' => 'jmeno'));
         $zanr_tabulka = Mage::getSingleton('core/resource')->getTableName('zanr/knihovna_zanr');
-        $collection->getSelect()->join(array('vt' => $zanr_tabulka), 'vt.entity_id=main_table.reader', array('zanr' => 'nazev'));
+        $collection->getSelect()->join(array('vt' => $zanr_tabulka), 'vt.entity_id=main_table.zanr', array('zanr' => 'nazev'));
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
@@ -42,7 +42,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends Mage_Adminhtml_Block_Widget_Gr
         $this->addColumn('autor', array(
             'header'   => 'Autor',
             'index'    => 'autor',
-
+            'filter_index'=>'jmeno'
         ));
         $this->addColumn('nazev', array(
             'header' => 'Název',
@@ -63,7 +63,8 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends Mage_Adminhtml_Block_Widget_Gr
         $this->addColumn('zanr', array(
             'header' => 'Žánr',
             'index'  => 'zanr',
-            'renderer' => 'Knihovna_Zanr_Block_Adminhtml_Zanr_Renderer_Zanr'
+            'filter_index'=>'nazev'
+
         ));
         return $this;
     }
