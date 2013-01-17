@@ -18,8 +18,10 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
     }
     public function _prepareCollection() {
         $collection = Mage::getModel('js/js')->getCollection();
-        $collection->getSelect()->join(array('vj' => 'vj_test'), 'vj.entity_id=main_table.book', array('book' => 'nazev'));
-        $collection->getSelect()->join(array('vt' => 'vetable'), 'vt.entity_id=main_table.reader', array('reader' => 'cislo_prukazu'));
+        $knihy_tabulka = Mage::getSingleton('core/resource')->getTableName('vj/knihovna_vj');
+        $collection->getSelect()->join(array('vj' => $knihy_tabulka, 'vj.entity_id=main_table.book', array('book' => 'nazev'));
+        $ctenari_tabulka = Mage::getSingleton('core/resource')->getTableName('titest/knihovna_titest');
+        $collection->getSelect()->join(array('vt' => $ctenari_tabulka), 'vt.entity_id=main_table.reader', array('reader' => 'cislo_prukazu'));
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
