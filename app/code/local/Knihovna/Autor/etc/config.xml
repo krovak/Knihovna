@@ -10,8 +10,7 @@
             <adminhtml>
                 <args>
                     <modules>
-                        <Knihovna_Autor_Adminhtml before='Mage_Adminhtml'>Knihovna_Autor_Adminhtml
-                        </Knihovna_Autor_Adminhtml>
+                        <Knihovna_Autor_Adminhtml before='Mage_Adminhtml'>Knihovna_Autor_Adminhtml</Knihovna_Autor_Adminhtml>
                     </modules>
                 </args>
             </adminhtml>
