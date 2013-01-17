@@ -26,7 +26,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends Mage_Adminhtml_Block_Widget_Gr
         $autorTable = Mage::getSingleton('core/resource')->getTableName('autor/knihovna_autor');
         $vjTable = Mage::getSingleton('core/resource')->getTableName('vj/knihovna_vj');
         $collection = Mage::getModel('vj/vj')->getCollection();
-      //  $collection->joinTable($autorTable,"$autorTable.entity_id=$vjTable.autor",array('autor'=>'CONCAT(jmeno," ",prijmeni)'));
+        $collection->joinTable('autor/knihovna_autor',"entity_id=autor",array('autor'=>'CONCAT(jmeno," ",prijmeni)'));
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
