@@ -39,8 +39,8 @@ $table = $installer->getConnection()
 ->addColumn('psc',Varien_Db_Ddl_Table::TYPE_INTEGER,array(
     'nullable' => false
 ),'PSČ')
-->addColumn('vypujcka',Varien_Db_Ddl_Table::TYPE_INTEGER,array(
-    'nullable' => false,'foreign'=>true
+->addColumn( 'vypujcka', Varien_Db_Ddl_Table::TYPE_INTEGER,array(
+    'nullable' => false
 ),'Výpůjčka');
 
 $installer->getConnection()->createTable($table);
