@@ -14,13 +14,13 @@ class Knihovna_VJ_Model_Source_Zanry
     {
         $this->zanry[0]['label'] = '-- Vyberte --';
         $this->zanry[0]['value'] = '';
-        $zanry                       = Mage::getModel('vj/zanry')->getCollection();
+        $zanry                       = Mage::getModel('zanr/zanr')->getCollection();
         /**@var $zanr Knihovna_VJ_Model_Zanry */
         foreach ($zanry as $zanr) {
-            $id            = $zanr->getId();
-            $z             = $zanr->load($id);
-            $name          = $z->getName();
-            $this->zanry[] = array('value' => $id, 'label' => $name);
+            $entity_id            = $zanr->getId();
+            $z             = $zanr->load($entity_id);
+            $nazev          = $z->getNazev();
+            $this->zanry[] = array('value' => $entity_id, 'label' => $nazev);
         }
     }
 
