@@ -34,6 +34,12 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Grid extends Mage_Adminhtml_Block_W
             'header'=>'Přijmení',
             'index'=>'prijmeni'
         ));
+        $this->addColumn('cislo_prukazu',array(
+            'header'=>'Číslo průkazu',
+            'index'=>'cislo_prukazu'
+        ));
+
+
         return $this;
     }
     public function getRowUrl($row)
