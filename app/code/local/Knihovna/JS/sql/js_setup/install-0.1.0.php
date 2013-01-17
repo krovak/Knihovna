@@ -11,6 +11,9 @@ $table = $installer->getConnection()
     'nullable' => false,
     'primary'  => true,
 ), 'Entity_id')
+    ->addColumn('reader',Varien_Db_Ddl_Table::TYPE_SMALLINT, null,array(
+    'nullable' => false
+),'Čtenář')
     ->addColumn('from',Varien_Db_Ddl_Table::TYPE_DATE, null,array(
     'nullable' => false
 ),'Datum od')
