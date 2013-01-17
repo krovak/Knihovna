@@ -55,7 +55,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Edit_Form extends Mage_Adminhtml_Block_Widg
                 'name'  => 'zanr',
                 'label' => 'Žánr',
                 'required' => true,
-                'values' => Mage::getModel('vj/source_zanry')->toOptionArray()
+                'values' => Mage::getModel('zanr/source_zanry')->toOptionArray()
             )
         );
 
