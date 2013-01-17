@@ -13,6 +13,6 @@ class Knihovna_Titest_Block_Adminhtml_Titest extends Mage_Adminhtml_Block_Widget
         parent::_construct();
     }
     public function getHeaderText(){
-        return 'Nazdar';
+        return 'Přidat záznam';
     }
 }
