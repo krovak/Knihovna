@@ -19,6 +19,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
     public function _prepareCollection() {
         $collection = Mage::getModel('js/js')->getCollection();
         $collection->getSelect()->join(array('vj' => 'vj_test'), 'vj.entity_id=main_table.book', array('book' => 'nazev'));
+        $collection->getSelect()->join(array('vt' => 'vetable'), 'vt.entity_id=main_table.reader', array('reader' => 'cislo_prukazu'));
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
