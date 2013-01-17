@@ -60,7 +60,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends Mage_Adminhtml_Block_Widget_Gr
         $this->addColumn('zanr', array(
             'header' => 'Žánr',
             'index'  => 'zanr',
-           // 'renderer' => 'Knihovna_VJ_Block_Adminhtml__Renderer_Zanr'
+            'renderer' => 'Knihovna_Zanr_Block_Adminhtml_Zanr_Renderer_Zanr'
         ));
         return $this;
     }
