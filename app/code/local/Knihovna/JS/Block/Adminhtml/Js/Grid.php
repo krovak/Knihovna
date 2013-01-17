@@ -18,6 +18,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
     }
     public function _prepareCollection() {
         $collection = Mage::getModel('js/js')->getCollection();
+        $collection->getSelect()->join('vj/vj','book = entity_id','nazev','left');
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
