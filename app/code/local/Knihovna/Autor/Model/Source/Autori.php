@@ -19,8 +19,8 @@ class Knihovna_VJ_Model_Source_Autori
         foreach ($autori as $autor) {
             $id             = $autor->getId();
             $z              = $autor->load($id);
-            $jmeno          = $z->getjmeno();
-            $prijmeni       = $z->getprijmeni();
+            $jmeno          = $z->getJmeno();
+            $prijmeni       = $z->getPrijmeni();
             $this->autori[] = array('value' => $id, 'label' => $prijmeni . ' ' . $jmeno);
         }
     }
