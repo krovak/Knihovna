@@ -11,8 +11,7 @@
                 <use>admin</use>
                 <args>
                     <modules>
-                        <Knihovna_Zanr_Adminhtml before='Mage_Adminthtml'>Knihovna_Zanr_Adminhtml
-                        </Knihovna_Zanr_Adminhtml>
+                        <Knihovna_Zanr_Adminhtml before='Mage_Adminthtml'>Knihovna_Zanr_Adminhtml</Knihovna_Zanr_Adminhtml>
                     </modules>
                 </args>
             </adminhtml>
