@@ -48,7 +48,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Edit_Form extends Mage_Adminhtml_Block_Widg
             'required' => true
         ));
         $f->addField('book', 'select', array(
-            'name'  => 'kniha',
+            'name'  => 'book',
             'label' => 'Kniha',
             'required' => true,
             'values' => Mage::getModel('js/source_knihy')->toOptionArray()

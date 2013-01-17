@@ -36,7 +36,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
         ));
         $this->addColumn('book',array(
             'header'=>'Kniha',
-            'index'=>'kniha'
+            'index'=>'book'
         ));
         return $this;
     }
