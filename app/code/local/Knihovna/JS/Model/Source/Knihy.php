@@ -17,10 +17,10 @@ class Knihovna_JS_Model_Source_Knihy
         $knihy                       = Mage::getModel('js/knihy')->getCollection();
         /**@var $kniha Knihovna_JS_Model_Knihy */
         foreach ($knihy as $kniha) {
-            $id            = $kniha->getId();
-            $z             = $kniha->load($id);
+            $entity_id            = $kniha->getId();
+            $z             = $kniha->load($entity_id);
             $nazev          = $z->getNazev();
-            $this->knihy[] = array('value' => $id, 'label' => $nazev);
+            $this->knihy[] = array('value' => $entity_id, 'label' => $nazev);
         }
     }
 

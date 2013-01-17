@@ -15,6 +15,6 @@ class Knihovna_JS_Model_Resource_Knihy extends Mage_Core_Model_Resource_Db_Abstr
     protected function _construct()
     {
         // TODO: Implement _construct() method.
-        $this->_init('js/knihovna_knihy','id');
+        $this->_init('js/knihovna_knihy','entity_id');
     }
 }
