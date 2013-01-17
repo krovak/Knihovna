@@ -19,8 +19,8 @@ class Knihovna_JS_Model_Source_Knihy
         foreach ($knihy as $kniha) {
             $id            = $kniha->getId();
             $z             = $kniha->load($id);
-            $name          = $z->getName();
-            $this->knihy[] = array('value' => $id, 'label' => $name);
+            $nazev          = $z->getNazev();
+            $this->knihy[] = array('value' => $id, 'label' => $nazev);
         }
     }
 
