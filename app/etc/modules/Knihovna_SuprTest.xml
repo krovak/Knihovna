@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Knihovna_SuprTest>
+            <active>false</active>
+            <codePool>local</codePool>
+        </Knihovna_SuprTest>
+    </modules>
+</config>

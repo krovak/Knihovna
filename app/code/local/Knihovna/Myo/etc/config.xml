@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Knihovna_Myo>
+            <version>0.1.0</version>
+        </Knihovna_Myo>
+    </modules>
+    <global>
+        <models>
+            <knihovna_myo>
+                <class>Knihovna_Myo_Model</class>
+            </knihovna_myo>
+        </models>
+        <blocks>
+            <knihovna_myo>
+                <class>Knihovna_Myo_Block</class>
+            </knihovna_myo>
+        </blocks>
+        <helpers>
+            <knihovna_myo>
+                <class>Knihovna_Myo_Helper</class>
+            </knihovna_myo>
+        </helpers>
+        <resources>
+            <knihovna_myo_setup>
+                <setup>
+                    <module>Knihovna_Myo</module>
+                </setup>
+            </knihovna_myo_setup>
+        </resources>
+    </global>
+</config>

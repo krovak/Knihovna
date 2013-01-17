@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <vetest>
+            <title>Žánr</title>
+            <sort_order>4</sort_order>
+            <children>
+                <zanr>
+                    <title>Spravovat žánr</title>
+                    <sort_order>4</sort_order>
+                    <action>adminhtml/vetest</action>
+                </zanr>
+            </children>
+        </vetest>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <vetest>
+                        <title>Žánr</title>
+                        <children>
+                            <zanr translate="title" module="vetest">
+                                <title>Spravovat žánr</title>
+                            </zanr>
+                        </children>
+                    </vetest>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

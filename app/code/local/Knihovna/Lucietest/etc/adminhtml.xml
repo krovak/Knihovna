@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <lucietest>
+            <title>Knihovna</title>
+            <sort_order>1</sort_order>
+            <children>
+                <knihovna>
+                    <title>Spravovat knihovnu</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/lucietest</action>
+                </knihovna>
+            </children>
+        </lucietest>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <lucietest>
+                        <title>Knihovna</title>
+                        <children>
+                            <knihovna translate="title" module="lucietest">
+                                <title>Spravovat knihovnu</title>
+                            </knihovna>
+                        </children>
+                    </lucietest>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
