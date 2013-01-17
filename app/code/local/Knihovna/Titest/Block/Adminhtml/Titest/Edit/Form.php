@@ -67,11 +67,7 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
             'label'=>'PSČ',
             'required'=> true
         ));
-        $f->addField('vypujcka','text',array(
-            'name'=>'vypujcka',
-            'label'=>'Výpůjčka',
-            'required'=> true
-        ));
+
 
 
         $form->setValues($ctenar->getData());

@@ -42,6 +42,9 @@
                     <knihovna_knihy>
                         <table>vj_test</table>
                     </knihovna_knihy>
+                    <knihovna_ctenari>
+                        <table>vetable</table>
+                    </knihovna_ctenari>
                 </entities>
             </js_resource>
         </models>

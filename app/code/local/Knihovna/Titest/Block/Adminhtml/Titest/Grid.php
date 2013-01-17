@@ -38,6 +38,22 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Grid extends Mage_Adminhtml_Block_W
             'header'=>'Číslo průkazu',
             'index'=>'cislo_prukazu'
         ));
+        $this->addColumn('mesto',array(
+            'header'=>'Město',
+            'index'=>'mesto'
+        ));
+        $this->addColumn('ulice',array(
+            'header'=>'Ulice',
+            'index'=>'ulice'
+        ));
+        $this->addColumn('cp',array(
+            'header'=>'Čp',
+            'index'=>'cp'
+        ));
+        $this->addColumn('psc',array(
+            'header'=>'PSČ',
+            'index'=>'psc'
+        ));
 
 
         return $this;
