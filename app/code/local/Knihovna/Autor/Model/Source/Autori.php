@@ -6,7 +6,7 @@
  * Time: 16:25
  * To change this template use File | Settings | File Templates.
  */
-class Knihovna_VJ_Model_Source_Autori
+class Knihovna_Autor_Model_Source_Autori
 {
     public $autori = array();
 
