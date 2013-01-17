@@ -12,20 +12,20 @@ class Knihovna_JS_Model_Source_Ctenari
 
     public function __construct()
     {
-        $this->knihy[0]['label'] = '-- Vyberte --';
-        $this->knihy[0]['value'] = '';
-        $knihy                       = Mage::getModel('js/ctenari')->getCollection();
+        $this->ctenari[0]['label'] = '-- Vyberte --';
+        $this->ctenari[0]['value'] = '';
+        $ctenari                       = Mage::getModel('js/ctenari')->getCollection();
         /**@var $ctenar Knihovna_JS_Model_Ctenari */
         foreach ($ctenari as $ctenar) {
             $entity_id            = $ctenar->getId();
             $z             = $ctenar->load($entity_id);
             $cislo_prukazu          = $z->getCislo_prukazu();
-            $this->knihy[] = array('value' => $entity_id, 'label' => $cislo_prukazu);
+            $this->ctenari[] = array('value' => $entity_id, 'label' => $cislo_prukazu);
         }
     }
 
     public function toOptionArray()
     {
-        return $this->knihy;
+        return $this->ctenari;
     }
 }
