@@ -26,7 +26,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
         return parent::_prepareCollection();
     }
     public function _prepareColumns() {
-        $knihy_tabulka = Mage::getSingleton('core/resource')->getTableName('vj/knihovna_vj');
+        //$knihy_tabulka = Mage::getSingleton('core/resource')->getTableName('vj/knihovna_vj');
         $this->addColumn('entity_id',array(
             'header'=>'ID',
             'index'=>'entity_id'
@@ -46,7 +46,7 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
         $this->addColumn('book',array(
             'header'=>'Kniha',
             'index'=>'book',
-            'filter_index'=>$knihy_tabulka.'.nazev'
+            'filter_index'=>'nazev'
         ));
         return $this;
     }
