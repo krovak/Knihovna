@@ -26,14 +26,14 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
         return parent::_prepareCollection();
     }
     public function _prepareColumns() {
-        //$knihy_tabulka = Mage::getSingleton('core/resource')->getTableName('vj/knihovna_vj');
         $this->addColumn('entity_id',array(
             'header'=>'ID',
             'index'=>'entity_id'
         ));
         $this->addColumn('reader',array(
             'header'=>'Čtenář',
-            'index'=>'reader'
+            'index'=>'reader',
+            'filter_index'=>'cislo_prukazu'
         ));
         $this->addColumn('from',array(
             'header'=>'Datum od',
