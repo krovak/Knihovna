@@ -21,7 +21,7 @@ $table = $installer->getConnection()
                                                                ), 'Entity_id'
     )
     ->addColumn(
-        'cislo_prukazu', Varien_Db_Ddl_Table::TYPE_INTEGER, array(
+        'cislo_prukazu', Varien_Db_Ddl_Table::TYPE_INTEGER,null, array(
                                                                  'nullable' => false
                                                             ), 'Číslo průkazu'
     )
@@ -41,7 +41,7 @@ $table = $installer->getConnection()
                                                         ), 'Ulice'
     )
     ->addColumn(
-        'cp', Varien_Db_Ddl_Table::TYPE_INTEGER, array(
+        'cp', Varien_Db_Ddl_Table::TYPE_INTEGER,null, array(
                                                       'nullable' => false
                                                  ), 'Čp'
     )
@@ -51,12 +51,12 @@ $table = $installer->getConnection()
                                                         ), 'Město'
     )
     ->addColumn(
-        'psc', Varien_Db_Ddl_Table::TYPE_INTEGER, array(
+        'psc', Varien_Db_Ddl_Table::TYPE_INTEGER,null, array(
                                                        'nullable' => false
                                                   ), 'PSČ'
     )
     ->addColumn(
-        'vypujcka', Varien_Db_Ddl_Table::TYPE_INTEGER, array(
+        'vypujcka', Varien_Db_Ddl_Table::TYPE_INTEGER,null, array(
                                                             'nullable' => false
                                                        ), 'Výpůjčka'
     );
