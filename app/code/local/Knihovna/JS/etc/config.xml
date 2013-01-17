@@ -39,6 +39,9 @@
                     <knihovna_js>
                         <table>js_test</table>
                     </knihovna_js>
+                    <knihovna_knihy>
+                        <table>lutable</table>
+                    </knihovna_knihy>
                 </entities>
             </js_resource>
         </models>
