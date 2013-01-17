@@ -19,9 +19,9 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
     public function _prepareCollection() {
         $collection = Mage::getModel('js/js')->getCollection();
         $knihy_tabulka = Mage::getSingleton('core/resource')->getTableName('vj/knihovna_vj');
-        $collection->getSelect()->join(array('vj' => $knihy_tabulka), 'vj.entity_id=main_table.book', array('book' => 'nazev'));
+        $collection->getSelect()->join(array('vj' => $knihy_tabulka), 'vj.entity_id=main_table.book', array('nazev_knihy' => 'nazev'));
         $ctenari_tabulka = Mage::getSingleton('core/resource')->getTableName('titest/knihovna_titest');
-        $collection->getSelect()->join(array('vt' => $ctenari_tabulka), 'vt.entity_id=main_table.reader', array('reader' => 'cislo_prukazu'));
+        $collection->getSelect()->join(array('vt' => $ctenari_tabulka), 'vt.entity_id=main_table.reader', array('cislo_prukazu' => 'cislo_prukazu'));
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
@@ -30,9 +30,9 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
             'header'=>'ID',
             'index'=>'entity_id'
         ));
-        $this->addColumn('reader',array(
+        $this->addColumn('cislo_prukazu',array(
             'header'=>'Čtenář',
-            'index'=>'reader'
+            'index'=>'cislo_prukazu'
         ));
         $this->addColumn('from',array(
             'header'=>'Datum od',
@@ -42,9 +42,9 @@ class Knihovna_JS_Block_Adminhtml_Js_Grid extends Mage_Adminhtml_Block_Widget_Gr
             'header'=>'Datum do',
             'index'=>'to'
         ));
-        $this->addColumn('book',array(
+        $this->addColumn('nazev_knihy',array(
             'header'=>'Kniha',
-            'index'=>'book'
+            'index'=>'nazev_knihy'
         ));
         return $this;
     }
