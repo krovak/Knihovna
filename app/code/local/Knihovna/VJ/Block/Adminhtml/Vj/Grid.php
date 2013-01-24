@@ -28,7 +28,7 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends Mage_Adminhtml_Block_Widget_Gr
         $collection->getSelect()->join(array('jm' => $autori_tabulka), 'jm.entity_id=main_table.autor', array('autor' => 'jmeno', 'autor'=>'prijmeni'));
         $zanr_tabulka = Mage::getSingleton('core/resource')->getTableName('zanr/knihovna_zanr');
         $collection->getSelect()->join(array('vt' => $zanr_tabulka), 'vt.entity_id=main_table.zanr', array('zanr' => 'nazev'));
-        $collection->getSelect()->columns(new Zend_Db_Expr("Concat('jmeno',' ','prijmeni')as fullname"));
+        $collection->getSelect()->columns(new Zend_Db_Expr("Concat(jmeno,' ',prijmeni)as fullname"));
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
