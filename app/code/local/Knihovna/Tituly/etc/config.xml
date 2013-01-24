@@ -18,13 +18,13 @@
     </admin>
     <frontend>
         <routers>
-            <Tituly>
+            <tituly>
                 <use>standard</use>
                 <args>
                     <module>Knihovna_Tituly</module>
                     <frontName>tituly</frontName>
                 </args>
-            </Tituly>
+            </tituly>
         </routers>
     </frontend>
     <global>
