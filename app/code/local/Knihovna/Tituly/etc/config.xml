@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Knihovna_Tituly>
+            <version>0.1.0</version>
+        </Knihovna_Tituly>
+    </modules>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Knihovna_Tituly_Adminhtml before='Mage_Adminhtml'>Knihovna_Tituly_Adminhtml</Knihovna_Tituly_Adminhtml>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <Tituly>
+                <use>standard</use>
+                <args>
+                    <module>Knihovna_Tituly</module>
+                    <frontName>tituly</frontName>
+                </args>
+            </Tituly>
+        </routers>
+    </frontend>
+    <global>
+        <models>
+            <tituly>
+                <class>Knihovna_Tituly_Model</class>
+                <resourceModel>tituly_resource</resourceModel>
+            </tituly>
+            <tituly_resource>
+                <class>Knihovna_Tituly_Model_Resource</class>
+                <entities>
+                    <knihovna_tituly>
+                        <table>tituly_test</table>
+                    </knihovna_tituly>
+
+                    <knihovna_zanry>
+                        <table>zanr</table>
+                    </knihovna_zanry>
+
+                    <knihovna_autori>
+                        <table>mitable</table>
+                    </knihovna_autori>
+
+                </entities>
+            </tituly_resource>
+        </models>
+        <blocks>
+            <tituly>
+                <class>Knihovna_Tituly_Block</class>
+            </tituly>
+        </blocks>
+        <helpers>
+            <tituly>
+                <class>Knihovna_Tituly_Helper</class>
+            </tituly>
+        </helpers>
+        <resources>
+            <tituly_setup>
+                <setup>
+                    <module>Knihovna_Tituly</module>
+                </setup>
+            </tituly_setup>
+        </resources>
+    </global>
+</config>
