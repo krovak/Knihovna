@@ -19,19 +19,19 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
     {
         /** @var $ctenar Knihovna_Titest_Model_Titest */
         $ctenar = Mage::registry('titest');
-        var_dump(Mage::getModel('titest/titest')->getCisloprukazky());die;
+        //var_dump(Mage::getModel('titest/titest')->getCisloprukazky());die;
 
-if (sizeof($ctenar->getData())==0){
-    $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
-}
+        if (sizeof($ctenar->getData()) == 0) {
+            $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
+        }
 
         $form = new Varien_Data_Form(array(
-            'id' => 'edit_form',
+            'id'     => 'edit_form',
             'method' => 'Post'
         ));
-        $f = $form->addFieldset('titest', array(
+        $f    = $form->addFieldset('titest', array(
             'legend' => 'Přidat čtenáře',
-            'class' => 'fieldset-wide'
+            'class'  => 'fieldset-wide'
         ));
         if ($ctenar->getId()) {
             $f->addField('entity_id', 'hidden', array(
@@ -39,41 +39,40 @@ if (sizeof($ctenar->getData())==0){
             ));
         }
         $f->addField('cislo_prukazu', 'text', array(
-            'name' => 'cislo_prukazu',
-            'label' => 'Číslo průkazu',
+            'name'     => 'cislo_prukazu',
+            'label'    => 'Číslo průkazu',
             'required' => true
         ));
         $f->addField('jmeno', 'text', array(
-            'name' => 'jmeno',
-            'label' => 'Jméno',
+            'name'     => 'jmeno',
+            'label'    => 'Jméno',
             'required' => true
         ));
         $f->addField('prijmeni', 'text', array(
-            'name' => 'prijmeni',
-            'label' => 'Přijmení',
+            'name'     => 'prijmeni',
+            'label'    => 'Přijmení',
             'required' => true
         ));
-        $f->addField('ulice','text',array(
-            'name'=>'ulice',
-            'label'=>'Ulice',
-            'required'=> true
+        $f->addField('ulice', 'text', array(
+            'name'     => 'ulice',
+            'label'    => 'Ulice',
+            'required' => true
         ));
-        $f->addField('cp','text',array(
-            'name'=>'cp',
-            'label'=>'Čp',
-            'required'=> true
+        $f->addField('cp', 'text', array(
+            'name'     => 'cp',
+            'label'    => 'Čp',
+            'required' => true
         ));
-        $f->addField('mesto','text',array(
-            'name'=>'mesto',
-            'label'=>'Město',
-            'required'=> true
+        $f->addField('mesto', 'text', array(
+            'name'     => 'mesto',
+            'label'    => 'Město',
+            'required' => true
         ));
-        $f->addField('psc','text',array(
-            'name'=>'psc',
-            'label'=>'PSČ',
-            'required'=> true
+        $f->addField('psc', 'text', array(
+            'name'     => 'psc',
+            'label'    => 'PSČ',
+            'required' => true
         ));
-
 
 
         $form->setValues($ctenar->getData());

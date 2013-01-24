@@ -11,7 +11,6 @@
 $zanry = array(
     array(
         'nazev' => 'Pohádka',
-
     ),
     array(
         'nazev' => 'Beletrie',
@@ -19,7 +18,6 @@ $zanry = array(
     array(
         'nazev' => 'Poezie',
     ));
-
 
 foreach ($zanry as $zanr) {
     Mage::getModel('zanr/zanr')->setData($zanr)->save();
