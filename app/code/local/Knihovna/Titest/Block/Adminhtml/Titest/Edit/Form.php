@@ -19,7 +19,7 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
     {
         /** @var $ctenar Knihovna_Titest_Model_Titest */
         $ctenar = Mage::registry('titest');
-        var_dump($ctenar->getCisloprukazky());die;
+        var_dump(Mage::getModel('titest/titest')->getCisloprukazky());die;
 if (sizeof($ctenar->getData())==0){
     $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
 }
