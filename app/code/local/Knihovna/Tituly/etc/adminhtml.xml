@@ -20,7 +20,7 @@
                     <tituly>
                         <title>Tituly</title>
                         <children>
-                            <autor translate="title" module="tituly">
+                            <autor translate="title" module="Tituly">
                                 <title>Spravovat tituly</title>
                             </autor>
                         </children>
