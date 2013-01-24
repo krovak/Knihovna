@@ -37,7 +37,7 @@
                 <class>Knihovna_Tituly_Model_Resource</class>
                 <entities>
                     <knihovna_tituly>
-                        <table>tituly_test</table>
+                        <table>tituly</table>
                     </knihovna_tituly>
 
                     <knihovna_zanry>
