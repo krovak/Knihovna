@@ -62,4 +62,13 @@
             </titest_setup>
         </resources>
     </global>
+    <default>
+        <prukazka>
+            <cislo>
+                <prefix>MK</prefix>
+                <delka>10</delka>
+                <vypln>0</vypln>
+            </cislo>
+        </prukazka>
+    </default>
 </config>

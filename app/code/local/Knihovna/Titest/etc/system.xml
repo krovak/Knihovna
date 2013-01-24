@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <prukazka>
+            <label>Číslo průkazu</label>
+            <tab>general</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1001</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <cislo>
+                    <label>Zadání čísla</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <prefix>
+                            <label>Prefix</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </prefix>
+                        <delka>
+                            <label>Délka</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </delka>
+                        <vypln>
+                            <label>Vyplň</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </vypln>
+
+                    </fields>
+                </cislo>
+            </groups>
+        </prukazka>
+    </sections>
+</config>
