@@ -25,6 +25,17 @@
                             </ctenar>
                         </children>
                     </titest>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <prukazka module="titest">
+                                        <title>Číslo průkazu</title>
+                                    </prukazka>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
                 </children>
             </admin>
         </resources>
