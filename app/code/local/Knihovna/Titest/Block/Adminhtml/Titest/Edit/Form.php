@@ -18,6 +18,9 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
     public function _prepareForm()
     {
         $ctenar = Mage::registry('titest');
+if (!$ctenar){
+    $ctenar['cislo_prukazu']= Mage::getModel('titest/titest')->getCisloprukazky();
+}
 
         $form = new Varien_Data_Form(array(
             'id' => 'edit_form',
@@ -32,8 +35,8 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
                 'name' => 'entity_id'
             ));
         }
-        $f->addField('cislo prukazu', 'text', array(
-            'name' => 'cislo prukazu',
+        $f->addField('cislo_prukazu', 'text', array(
+            'name' => 'cislo_prukazu',
             'label' => 'Číslo průkazu',
             'required' => true
         ));
