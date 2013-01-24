@@ -4,22 +4,20 @@
  * User: tichave4
  * Date: 29.11.12
  * Time: 15:08
- * To change this template use File | Settings | File Templates.
  */
-class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
+class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
 {
     public function _construct()
     {
         parent::_construct();
         $this->setId('editForm');
-        $this->setTitle('Pridat zaznam');
+        $this->setTitle('Přidat záznam');
     }
 
     public function _prepareForm()
     {
-        /** @var $ctenar Knihovna_Titest_Model_Titest */
-        $ctenar = Mage::registry('titest');
-        //var_dump(Mage::getModel('titest/titest')->getCisloprukazky());die;
+        /** @var $ctenar Knihovna_Ctenar_Model_Ctenar */
+        $ctenar = Mage::registry('ctenar');
 
         if (sizeof($ctenar->getData()) == 0) {
             $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
@@ -29,7 +27,7 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
             'id'     => 'edit_form',
             'method' => 'Post'
         ));
-        $f    = $form->addFieldset('titest', array(
+        $f    = $form->addFieldset('ctenar', array(
             'legend' => 'Přidat čtenáře',
             'class'  => 'fieldset-wide'
         ));

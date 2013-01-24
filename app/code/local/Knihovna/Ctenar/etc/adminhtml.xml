@@ -1,35 +1,35 @@
 <?xml version="1.0"?>
 <config>
     <menu>
-        <titest>
+        <ctenar>
             <title>Čtenář</title>
             <sort_order>1</sort_order>
             <children>
                 <ctenar>
                     <title>Spravovat čtenáře</title>
                     <sort_order>1</sort_order>
-                    <action>adminhtml/titest</action>
+                    <action>adminhtml/ctenar</action>
                 </ctenar>
             </children>
-        </titest>
+        </ctenar>
     </menu>
     <acl>
         <resources>
             <admin>
                 <children>
-                    <titest>
+                    <ctenar>
                         <title>Čtenář</title>
                         <children>
-                            <ctenar translate="title" module="titest">
+                            <ctenar translate="title" module="ctenar">
                                 <title>Spravovat čtenáře</title>
                             </ctenar>
                         </children>
-                    </titest>
+                    </ctenar>
                     <system>
                         <children>
                             <config>
                                 <children>
-                                    <prukazka module="titest">
+                                    <prukazka module="ctenar">
                                         <title>Číslo průkazu</title>
                                     </prukazka>
                                 </children>
