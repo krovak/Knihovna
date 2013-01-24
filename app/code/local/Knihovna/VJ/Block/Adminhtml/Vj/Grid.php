@@ -25,9 +25,9 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends Mage_Adminhtml_Block_Widget_Gr
 
         $collection = Mage::getModel('vj/vj')->getCollection();
         $autori_tabulka = Mage::getSingleton('core/resource')->getTableName('autor/knihovna_autor');
-        $collection->getSelect()->join(array('mi' => $autori_tabulka), 'mi.entity_id=main_table.autor', array('autor' => 'jmeno'));
+        $collection->getSelect()->join(array('jm' => $autori_tabulka), 'jm.entity_id=main_table.autor', array('autor' => 'jmeno'));
         $autori_tabulka1 = Mage::getSingleton('core/resource')->getTableName('autor/knihovna_autor');
-        $collection->getSelect()->join(array('mi' => $autori_tabulka1), 'mi.entity_id=main_table.autor', array('autor' => 'prijmeni'));
+        $collection->getSelect()->join(array('pr' => $autori_tabulka1), 'pr.entity_id=main_table.autor', array('autor' => 'prijmeni'));
         $zanr_tabulka = Mage::getSingleton('core/resource')->getTableName('zanr/knihovna_zanr');
         $collection->getSelect()->join(array('vt' => $zanr_tabulka), 'vt.entity_id=main_table.zanr', array('zanr' => 'nazev'));
         $this->setCollection($collection);
