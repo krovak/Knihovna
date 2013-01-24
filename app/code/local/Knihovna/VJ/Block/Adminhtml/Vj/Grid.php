@@ -42,8 +42,8 @@ class Knihovna_VJ_Block_Adminhtml_Vj_Grid extends Mage_Adminhtml_Block_Widget_Gr
         ));
         $this->addColumn('autor', array(
             'header'   => 'Autor',
-            'index'    => 'autor',
-            'filter_index'=>'jmeno'
+            'index'    => 'fullname',
+            'filter_index'=>'fullname'
         ));
         $this->addColumn('nazev', array(
             'header' => 'Název',
