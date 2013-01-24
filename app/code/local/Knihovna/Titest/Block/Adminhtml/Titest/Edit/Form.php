@@ -17,10 +17,11 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
 
     public function _prepareForm()
     {
+        /** @var $ctenar Knihovna_Titest_Model_Titest */
         $ctenar = Mage::registry('titest');
-        //var_dump($ctenar->getData());die;
+        var_dump($ctenar->getCisloprukazky());die;
 if (sizeof($ctenar->getData())==0){
-    $ctenar->setData('cislo_prukazu', Mage::getModel('titest/titest')->getCisloprukazky());
+    $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
 }
 
         $form = new Varien_Data_Form(array(
