@@ -13,13 +13,13 @@ class Knihovna_Titest_Block_Adminhtml_Titest_Edit_Form extends Mage_Adminhtml_Bl
         parent::_construct();
         $this->setId('editForm');
         $this->setTitle('Pridat zaznam');
-        var_dump(Mage::getModel('titest/titest')->getCisloprukazky());die;
     }
 
     public function _prepareForm()
     {
         /** @var $ctenar Knihovna_Titest_Model_Titest */
         $ctenar = Mage::registry('titest');
+        var_dump(Mage::getModel('titest/titest')->getCisloprukazky());die;
 
 if (sizeof($ctenar->getData())==0){
     $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
