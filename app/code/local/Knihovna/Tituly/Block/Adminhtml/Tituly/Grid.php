@@ -20,16 +20,6 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
         $this->setEmptyText('Žádná data');
         $this->setSaveParametersInSession(true);
     }
-    public function  __construct() {
-        $this->_addButton('Přidat žánr', array(
-            'label'     => Mage::helper('Sales')->__('Toms Button'),
-            'onclick'   => 'jsfunction(this.id)',
-            'class'     => 'go'
-        ), 0, 100, 'header', 'header');
-
-        parent::__construct();
-
-    }
 
     public function _prepareCollection()
     {
