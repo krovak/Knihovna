@@ -13,7 +13,7 @@
                 <zanry>
                     <title>Spravovat zanry</title>
                     <sort_order>2</sort_order>
-                    <action>adminhtml/zanr</action>
+                    <action>adminhtml/tituly/zanr</action>
                 </zanry>
             </children>
         </tituly>
