@@ -59,17 +59,32 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Form extends Mage_Adminhtml_Bl
         $f->addField('cp', 'text', array(
             'name'     => 'cp',
             'label'    => 'Čp',
-            'required' => true
+            'required' => false
         ));
         $f->addField('mesto', 'text', array(
             'name'     => 'mesto',
             'label'    => 'Město',
-            'required' => true
+            'required' => false
         ));
         $f->addField('psc', 'text', array(
             'name'     => 'psc',
             'label'    => 'PSČ',
+            'required' => false
+        ));
+        $f->addField('heslo', 'password', array(
+            'name'     => 'heslo',
+            'label'    => 'Heslo',
             'required' => true
+        ));
+        $f->addField('email', 'text', array(
+            'name'     => 'email',
+            'label'    => 'Email',
+            'required' => false
+        ));
+        $f->addField('telefonni_cislo', 'text', array(
+            'name'     => 'telefonni_cislo',
+            'label'    => 'Telefonní číslo',
+            'required' => false
         ));
 
 
