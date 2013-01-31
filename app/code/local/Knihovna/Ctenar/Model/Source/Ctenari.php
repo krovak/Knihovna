@@ -6,7 +6,7 @@
  * Time: 11:54
  * To change this template use File | Settings | File Templates.
  */
-class Knihovna_JS_Model_Source_Ctenari
+class Knihovna_Ctenar_Model_Source_Ctenari
 {
     public $ctenari = array();
 
@@ -14,12 +14,12 @@ class Knihovna_JS_Model_Source_Ctenari
     {
         $this->ctenari[0]['label'] = '-- Vyberte --';
         $this->ctenari[0]['value'] = '';
-        $ctenari                       = Mage::getModel('js/ctenari')->getCollection();
+        $ctenari                   = Mage::getModel('ctenar/ctenar')->getCollection();
         /**@var $ctenar Knihovna_JS_Model_Ctenari */
         foreach ($ctenari as $ctenar) {
-            $entity_id            = $ctenar->getId();
-            $z             = $ctenar->load($entity_id);
-            $cislo_prukazu          = $z->getCislo_prukazu();
+            $entity_id       = $ctenar->getId();
+            $z               = $ctenar->load($entity_id);
+            $cislo_prukazu   = $z->getCislo_prukazu();
             $this->ctenari[] = array('value' => $entity_id, 'label' => $cislo_prukazu);
         }
     }
