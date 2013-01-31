@@ -17,6 +17,9 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
         $this->setDefaultSort('entity_id');
         $this->setDefaultDir('asc');
         $this->setEmptyText('Žádná data');
+        $this->_addButton('test',array(
+            'label'=>'text',
+        ));
         $this->setSaveParametersInSession(true);
     }
 
