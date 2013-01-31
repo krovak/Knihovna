@@ -12,16 +12,16 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
 {
     public function _construct()
     {
+        $this->_addButton('Přídat žánr', array(
+            'label'   => Mage::helper('adminhtml')->__('Save and Continue Edit'),
+            'onclick' => 'saveAndContinueEdit()',
+            'class'   => 'save',));
         parent::_construct();
         $this->setId('tituly');
         $this->setDefaultSort('entity_id');
         $this->setDefaultDir('asc');
         $this->setEmptyText('Žádná data');
         $this->setSaveParametersInSession(true);
-        $this->_addButton('Přídat žánr', array(
-            'label'   => Mage::helper('adminhtml')->__('Save and Continue Edit'),
-            'onclick' => 'saveAndContinueEdit()',
-            'class'   => 'save',));
     }
 
     public function _prepareCollection()
