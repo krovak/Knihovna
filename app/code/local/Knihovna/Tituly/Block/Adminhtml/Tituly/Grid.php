@@ -12,11 +12,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
 {
     public function _construct()
     {
-        $this->_addButton('testbutton', array(
-            'label'     => Mage::helper('Sales')->__('Toms Button'),
-            'onclick'   => 'jsfunction(this.id)',
-            'class'     => 'go'
-        ), 0, 100, 'header', 'header');
+        $this->_addButton('testbutton');
         parent::_construct();
         $this->setId('tituly');
         $this->setDefaultSort('entity_id');
