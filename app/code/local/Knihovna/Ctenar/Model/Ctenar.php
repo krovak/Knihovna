@@ -27,7 +27,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
     }
     public function validate($cp,$heslo){
        $db = Mage::getModel('ctenar/ctenar')->getCollection()->addFieldToFilter('cislo_prukazu',array('eq'=>$cp));
-       var_dump($db);
+       var_dump($db->getData());
         die;
     }
 
