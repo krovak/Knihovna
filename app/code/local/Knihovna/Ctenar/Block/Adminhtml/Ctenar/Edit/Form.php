@@ -76,6 +76,11 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Form extends Mage_Adminhtml_Bl
             'label'    => 'Heslo',
             'required' => false
         ));
+        $f->addField('potvrzeni_hesla','password',array(
+        'name'     => 'potvrzeni_hesla',
+        'label'    => 'Potvrzení hesla',
+        'required' => false
+        ));
         $f->addField('email', 'text', array(
             'name'     => 'email',
             'label'    => 'Email',
@@ -86,11 +91,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Form extends Mage_Adminhtml_Bl
             'label'    => 'Telefonní číslo',
             'required' => false
         ));
-        $f->addField('potvrzeni_hesla','password',array(
-            'name'     => 'potvrzeni_hesla',
-            'label'    => 'Potvrzení hesla',
-            'required' => false
-        ));
+
 
         $form->setValues($ctenar->getData());
         $form->setUseContainer(true);
