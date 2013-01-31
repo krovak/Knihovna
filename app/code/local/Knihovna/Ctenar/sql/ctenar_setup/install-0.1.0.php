@@ -41,7 +41,7 @@ $table = $installer->getConnection()
 )
     ->addColumn(
     'cp', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
-        'nullable' => true
+        'nullable' => false
     ), 'Čp'
 )
     ->addColumn(
@@ -56,9 +56,10 @@ $table = $installer->getConnection()
 )
     ->addColumn(
     'heslo',Varien_Db_Ddl_Table::TYPE_VARCHAR,255, array(
-        'nullable' => false
+        'nullable' => true
     ),'Heslo'
 )
+
     ->addColumn(
     'email',Varien_Db_Ddl_Table::TYPE_VARCHAR,255, array(
         'nullable'=> true
