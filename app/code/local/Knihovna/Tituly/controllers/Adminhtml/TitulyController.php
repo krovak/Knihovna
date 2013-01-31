@@ -58,4 +58,5 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         $this->_redirect('*/*/'); //kam se to má přesměrovat po uložení na indexAction, tj. na grid
     }
 
+
 }
