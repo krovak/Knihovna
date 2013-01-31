@@ -13,7 +13,6 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
     public function _construct()
     {
         parent::_construct();
-        $this->
         $this->setId('tituly');
         $this->setDefaultSort('entity_id');
         $this->setDefaultDir('asc');
