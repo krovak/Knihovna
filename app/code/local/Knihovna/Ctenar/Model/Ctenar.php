@@ -25,6 +25,10 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $cp = $prefix . str_pad(($posledni_cislo->getId()) + 1, $delka - strlen($prefix), $vypln, STR_PAD_LEFT);
         return $cp;
     }
-
+    public function validate($cp,$heslo){
+       $db = Mage::getModel('ctenar/ctenar')->getCollection()->addFieldToFilter('cislo_prukazu',array('eq'=>$cp));
+       var_dump($db);
+        die;
+    }
 
 }

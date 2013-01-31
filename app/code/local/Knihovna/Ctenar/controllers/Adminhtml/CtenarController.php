@@ -61,5 +61,11 @@ class Knihovna_Ctenar_Adminhtml_CtenarController extends Mage_Adminhtml_Controll
         $m->save();
         $this->_redirect('*/*/');
     }
+
+    public function test($cp='MK00000001',$pw='nevim'){
+    $m           = Mage::getModel('ctenar/ctenar');
+    $m->validate($cp,$pw);
+
+}
 }
 
