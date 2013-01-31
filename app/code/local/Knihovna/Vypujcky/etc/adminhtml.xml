@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <vypujcky>
+            <title>Výpůjčky</title>
+            <sort_order>-10000</sort_order>
+            <children>
+                <vypujcky>
+                    <title>Spravovat výpůjčky</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/vypujcky</action>
+                </vypujcky>
+            </children>
+        </vypujcky>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <vypujcky>
+                        <title>Výpůjčky</title>
+                        <children>
+                            <vypujcky translate="title" module="vypujcky">
+                                <title>Spravovat výpůjčky</title>
+                            </vypujcky>
+                        </children>
+                    </vypujcky>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
