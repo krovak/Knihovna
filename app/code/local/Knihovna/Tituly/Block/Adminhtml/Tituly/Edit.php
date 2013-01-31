@@ -13,11 +13,6 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit extends Mage_Adminhtml_Block_W
         $this->_objectId='id';
         $this->_controller='adminhtml_tituly';
         $this->_blockGroup='tituly';
-        $this->_addButton('Přídat žánr', array(
-                            'label'   => Mage::helper('adminhtml')->__('Save and Continue Edit'),
-                            'onclick' => 'saveAndContinueEdit()',
-                            'class'   => 'save',));
-
         parent::_construct();
     }
     public function getHeaderText(){
