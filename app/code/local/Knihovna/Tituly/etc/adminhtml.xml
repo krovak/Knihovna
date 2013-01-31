@@ -5,11 +5,11 @@
             <title>Tituly</title>
             <sort_order>1</sort_order>
             <children>
-                <autor>
+                <tituly>
                     <title>Spravovat tituly</title>
                     <sort_order>1</sort_order>
                     <action>adminhtml/tituly</action>
-                </autor>
+                </tituly>
                 <zanry>
                     <title>Spravovat zanry</title>
                     <sort_order>2</sort_order>
@@ -25,12 +25,16 @@
                     <tituly>
                         <title>Tituly</title>
                         <children>
-                            <autor translate="title" module="tituly">
+                            <tituly translate="title" module="tituly">
                                 <title>Spravovat tituly</title>
-                            </autor>
+                            </tituly>
+                            <zanry traslate="title" module="tituly">
+                                <title>Spravovat zanry</title>
+                            </zanry>
                         </children>
                     </tituly>
                 </children>
+
             </admin>
         </resources>
     </acl>
