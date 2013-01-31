@@ -15,6 +15,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly extends Mage_Adminhtml_Block_Widget
         $this->_blockGroup='tituly';
         $this->_addButton('test',array(
             'label'=>'text',
+
         ));
         parent::_construct();
     }
