@@ -6,7 +6,7 @@
  * Time: 13:51
  * To change this template use File | Settings | File Templates.
  */
-class Knihovna_Zanr_Model_Resource_Zanr extends Mage_Core_Model_Resource_Db_Abstract
+class Knihovna_Tituly_Model_Resource_Zanr extends Mage_Core_Model_Resource_Db_Abstract
 {
 
     /**
@@ -15,6 +15,6 @@ class Knihovna_Zanr_Model_Resource_Zanr extends Mage_Core_Model_Resource_Db_Abst
     protected function _construct()
     {
         // TODO: Implement _construct() method.
-        $this->_init('zanr/knihovna_zanr', 'entity_id');
+        $this->_init('tituly/knihovna_zanr', 'entity_id');
     }
 }

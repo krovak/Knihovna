@@ -11,8 +11,8 @@ $installer = $this;
 
 $installer->startSetup();
 
-$table = $installer->getConnection()
-    ->newTable($installer->getTable('zanr/knihovna_zanr'))
+$tableZ = $installer->getConnection()
+    ->newTable($installer->getTable('tituly/knihovna_zanr'))
     ->addColumn('entity_id', Varien_Db_Ddl_Table::TYPE_SMALLINT, null, array(
     'identity' => true,
     'nullable' => false,
@@ -21,7 +21,33 @@ $table = $installer->getConnection()
     ->addColumn('nazev', Varien_Db_Ddl_Table::TYPE_VARCHAR, 100, array(
     'nullable' => false
 ), 'Název');
+$tableT = $installer->getConnection()
+    ->newTable($installer->getTable('tituly/knihovna_tituly'))
+    ->addColumn('entity_id', Varien_Db_Ddl_Table::TYPE_SMALLINT, null, array(
+    'identity' => true,
+    'nullable' => false,
+    'primary'  => true,
+), 'Entity_id')
+    ->addColumn('nazev',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
+    'nullable' => false
+),'Název')
+    ->addColumn('autor',Varien_Db_Ddl_Table::TYPE_SMALLINT,null,array(
+    'nullable' => false
+),'Autor')
+    ->addColumn('isbn',Varien_Db_Ddl_Table::TYPE_VARCHAR,50,array(
+    'nullable' => true
+),'ISBN')
+    ->addColumn('pocet_stranek',Varien_Db_Ddl_Table::TYPE_SMALLINT,null,array(
+    'nullable' => true
+),'Počet stránek')
+    ->addColumn('rok_vydani',Varien_Db_Ddl_Table::TYPE_SMALLINT,null,array(
+    'nullable' => false
+),'Rok vydání')
+    ->addColumn('zanr',Varien_Db_Ddl_Table::TYPE_SMALLINT,null,array(
+    'nullable' => false
+),'Žánr');
 
-$installer->getConnection()->createTable($table);
+$installer->getConnection()->createTable($tableT);
+$installer->getConnection()->createTable($tableZ);
 
 $installer->endSetup();

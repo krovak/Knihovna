@@ -1,6 +1,6 @@
 <?php
 
-class Knihovna_Tituly_Model_Zanry extends Mage_Core_Model_Abstract
+class Knihovna_Tituly_Model_Zanr extends Mage_Core_Model_Abstract
 {
     public function _construct()
     {

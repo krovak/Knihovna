@@ -55,7 +55,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                 'name'  => 'zanr',
                 'label' => 'Žánr',
                 'required' => true,
-                'values' => Mage::getModel('zanr/source_zanry')->toOptionArray()
+                'values' => Mage::getModel('tituly/zanr')->toOptionArray()
             )
         );
 

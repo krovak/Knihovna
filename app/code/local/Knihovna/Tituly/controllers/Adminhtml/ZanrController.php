@@ -6,7 +6,7 @@
  * Time: 13:38
  * To change this template use File | Settings | File Templates.
  */
-class Knihovna_Zanr_Adminhtml_ZanrController extends Mage_Adminhtml_Controller_Action
+class Knihovna_Tituly_Adminhtml_ZanrController extends Mage_Adminhtml_Controller_Action
 {
     public function indexAction()
     {
@@ -16,7 +16,7 @@ class Knihovna_Zanr_Adminhtml_ZanrController extends Mage_Adminhtml_Controller_A
     protected function _initEdit($idFielName = 'entity_id')
     {
         $id    = $this->getRequest()->getParams($idFielName);
-        $model = Mage::getModel('zanr/zanr');
+        $model = Mage::getModel('tituly/zanr');
         if ($id) {
             $model->load($id);
         }
@@ -42,14 +42,14 @@ class Knihovna_Zanr_Adminhtml_ZanrController extends Mage_Adminhtml_Controller_A
     {
         $this->loadLayout();
         $zanr = $this->_initEdit('id');
-        $this->_addContent($this->getLayout()->createBlock('zanr/adminhtml_zanr_edit')->setEditMode((bool)$this->getRequest()->getParam('entity_id')));
+        $this->_addContent($this->getLayout()->createBlock('tituly/adminhtml_zanr_edit')->setEditMode((bool)$this->getRequest()->getParam('entity_id')));
         $this->renderLayout();
     }
 
     public function saveAction()
     {
         $data = $this->getRequest()->getPost();
-        $m    = Mage::getModel('zanr/zanr');
+        $m    = Mage::getModel('tituly/zanr');
         $m->setData($data);
         $m->save();
         $this->_redirect('*/*/');

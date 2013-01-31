@@ -40,9 +40,9 @@
                         <table>tituly</table>
                     </knihovna_tituly>
 
-                    <knihovna_zanry>
+                    <knihovna_zanr>
                         <table>zanr</table>
-                    </knihovna_zanry>
+                    </knihovna_zanr>
 
                     <knihovna_autori>
                         <table>mitable</table>
