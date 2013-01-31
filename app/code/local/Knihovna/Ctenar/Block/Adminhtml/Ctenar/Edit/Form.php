@@ -35,6 +35,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Form extends Mage_Adminhtml_Bl
             $f->addField('entity_id', 'hidden', array(
                 'name' => 'entity_id'
             ));
+            $ctenar->unsetData("heslo");
         }
         $f->addField('cislo_prukazu', 'text', array(
             'name'     => 'cislo_prukazu',
