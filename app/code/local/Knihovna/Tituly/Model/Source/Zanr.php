@@ -14,7 +14,7 @@ class Knihovna_Tituly_Model_Source_Zanry
     {
                      $this->zanry[0]['label'] = '-- Vyberte --';
                      $this->zanry[0]['value'] = '';
-                     $zanry                       = Mage::getModel('zanr/zanr')->getCollection();
+                     $zanry                       = Mage::getModel('tituly/zanr')->getCollection();
         /**@var $zanr Knihovna_VJ_Model_Zanry */
         foreach ($zanry as $zanr) {
          $entity_id     = $zanr->getId();
