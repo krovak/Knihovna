@@ -6,21 +6,21 @@
  * Time: 14:41
  * To change this template use File | Settings | File Templates.
  */
-class Knihovna_Tituly_Model_Source_Zanry
+class Knihovna_Tituly_Model_Source_Zanr
 {
     public $zanry = array();
 
     public function __construct()
     {
-                     $this->zanry[0]['label'] = '-- Vyberte --';
-                     $this->zanry[0]['value'] = '';
-                     $zanry                       = Mage::getModel('tituly/zanr')->getCollection();
+        $this->zanry[0]['label'] = '-- Vyberte --';
+        $this->zanry[0]['value'] = '';
+        $zanry                   = Mage::getModel('tituly/zanr')->getCollection();
         /**@var $zanr Knihovna_VJ_Model_Zanry */
         foreach ($zanry as $zanr) {
-         $entity_id     = $zanr->getId();
-         $z             = $zanr->load($entity_id);
-         $nazev         = $z->getNazev();
-         $this->zanry[] = array('value' => $entity_id, 'label' => $nazev);
+            $entity_id     = $zanr->getId();
+            $z             = $zanr->load($entity_id);
+            $nazev         = $z->getNazev();
+            $this->zanry[] = array('value' => $entity_id, 'label' => $nazev);
         }
     }
 

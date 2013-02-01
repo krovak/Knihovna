@@ -6,7 +6,7 @@
  * Time: 13:30
  * To change this template use File | Settings | File Templates.
  */
-class Knihovna_Zanr_Block_Adminhtml_Zanr_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
+class Knihovna_Tituly_Block_Adminhtml_Zanr_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
 {
     public function _construct()
     {

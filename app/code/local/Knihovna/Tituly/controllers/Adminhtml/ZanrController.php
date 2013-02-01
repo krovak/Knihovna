@@ -10,7 +10,7 @@ class Knihovna_Tituly_Adminhtml_ZanrController extends Mage_Adminhtml_Controller
 {
     public function indexAction()
     {
-        $this->_initAction()->_addContent($this->getLayout()->createBlock('zanr/adminhtml_zanr'))->renderLayout();
+        $this->_initAction()->_addContent($this->getLayout()->createBlock('tituly/adminhtml_zanr'))->renderLayout();
     }
 
     protected function _initEdit($idFielName = 'entity_id')

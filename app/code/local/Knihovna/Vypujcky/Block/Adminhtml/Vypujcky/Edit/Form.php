@@ -52,6 +52,7 @@ class Knihovna_Vypujcky_Block_Adminhtml_Vypujcky_Edit_Form extends Mage_Adminhtm
             'name'     => 'to',
             'label'    => 'Datum do',
             'format'   => 'DD-MM-YYYY',
+            'class'    => 'validate-date',
             'required' => true
         ));
         $f->addField('book', 'select', array(

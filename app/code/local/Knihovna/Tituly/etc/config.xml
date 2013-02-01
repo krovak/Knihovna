@@ -43,11 +43,6 @@
                     <knihovna_zanr>
                         <table>zanr</table>
                     </knihovna_zanr>
-
-                    <knihovna_autori>
-                        <table>mitable</table>
-                    </knihovna_autori>
-
                 </entities>
             </tituly_resource>
         </models>

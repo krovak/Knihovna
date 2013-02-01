@@ -1,12 +1,10 @@
 <?php
 /**
- * Created by JetBrains PhpStorm.
  * User: tichave4
  * Date: 20.12.12
  * Time: 13:35
- * To change this template use File | Settings | File Templates.
  */
-class Knihovna_Zanr_Block_Adminhtml_Zanr_Grid extends Mage_Adminhtml_Block_Widget_Grid
+class Knihovna_Tituly_Block_Adminhtml_Zanr_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
     public function _construct()
     {
@@ -20,7 +18,7 @@ class Knihovna_Zanr_Block_Adminhtml_Zanr_Grid extends Mage_Adminhtml_Block_Widge
 
     public function _prepareCollection()
     {
-        $collection = Mage::getModel('zanr/zanr')->getCollection();
+        $collection = Mage::getModel('tituly/zanr')->getCollection();
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }

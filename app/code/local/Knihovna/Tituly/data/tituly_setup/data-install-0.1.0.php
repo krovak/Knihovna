@@ -20,5 +20,5 @@ $zanry = array(
     ));
 
 foreach ($zanry as $zanr) {
-    Mage::getModel('zanr/zanr')->setData($zanr)->save();
+    Mage::getModel('tituly/zanr')->setData($zanr)->save();
 }
