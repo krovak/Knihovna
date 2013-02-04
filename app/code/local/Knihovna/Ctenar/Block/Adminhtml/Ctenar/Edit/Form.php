@@ -35,6 +35,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Form extends Mage_Adminhtml_Bl
             $f->addField('entity_id', 'hidden', array(
                 'name' => 'entity_id'
             ));
+            $ctenar->unsetData("heslo");
         }
         $f->addField('cislo_prukazu', 'text', array(
             'name'     => 'cislo_prukazu',
@@ -64,12 +65,32 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Form extends Mage_Adminhtml_Bl
         $f->addField('mesto', 'text', array(
             'name'     => 'mesto',
             'label'    => 'Město',
-            'required' => true
+            'required' => false
         ));
         $f->addField('psc', 'text', array(
             'name'     => 'psc',
             'label'    => 'PSČ',
-            'required' => true
+            'required' => false
+        ));
+        $f->addField('heslo', 'password', array(
+            'name'     => 'heslo',
+            'label'    => 'Heslo',
+            'required' => false
+        ));
+        $f->addField('potvrzeni_hesla','password',array(
+        'name'     => 'potvrzeni_hesla',
+        'label'    => 'Potvrzení hesla',
+        'required' => false
+        ));
+        $f->addField('email', 'text', array(
+            'name'     => 'email',
+            'label'    => 'Email',
+            'required' => false
+        ));
+        $f->addField('telefonni_cislo', 'text', array(
+            'name'     => 'telefonni_cislo',
+            'label'    => 'Telefonní číslo',
+            'required' => false
         ));
 
 

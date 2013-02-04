@@ -40,14 +40,9 @@
                         <table>tituly</table>
                     </knihovna_tituly>
 
-                    <knihovna_zanry>
+                    <knihovna_zanr>
                         <table>zanr</table>
-                    </knihovna_zanry>
-
-                    <knihovna_autori>
-                        <table>mitable</table>
-                    </knihovna_autori>
-
+                    </knihovna_zanr>
                 </entities>
             </tituly_resource>
         </models>

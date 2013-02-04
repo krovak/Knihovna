@@ -46,16 +46,32 @@ $table = $installer->getConnection()
 )
     ->addColumn(
     'mesto', Varien_Db_Ddl_Table::TYPE_VARCHAR, 50, array(
-        'nullable' => false
+        'nullable' => true
     ), 'Město'
 )
     ->addColumn(
     'psc', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
-        'nullable' => false
+        'nullable' => true
     ), 'PSČ'
+)
+    ->addColumn(
+    'heslo',Varien_Db_Ddl_Table::TYPE_VARCHAR,255, array(
+        'nullable' => true
+    ),'Heslo'
+)
 
+    ->addColumn(
+    'email',Varien_Db_Ddl_Table::TYPE_VARCHAR,255, array(
+        'nullable'=> true
+    ),'Email'
+)
+    ->addColumn(
+    'telefonni_cislo',Varien_Db_Ddl_Table::TYPE_VARCHAR,20, array(
+        'nullable'=>true
+    ),'Telefonní číslo'
 
-);
+)
+;
 
 $installer->getConnection()->createTable($table);
 
