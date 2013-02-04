@@ -39,7 +39,7 @@
             </depends>
         </Mage_Api>
         <Mage_Eav>
-            <active>false</active>
+            <active>true</active>
             <codePool>core</codePool>
             <depends>
                 <Mage_Core />
@@ -53,14 +53,14 @@
             </depends>
         </Mage_Backup>
         <Mage_Media>
-            <active>false</active>
+            <active>true</active>
             <codePool>core</codePool>
             <depends>
                 <Mage_Core />
              </depends>
         </Mage_Media>
         <Mage_Index>
-            <active>false</active>
+            <active>true</active>
             <codePool>core</codePool>
             <depends>
                 <Mage_Core/>
