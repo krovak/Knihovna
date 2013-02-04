@@ -1,21 +1,30 @@
 <?php
-class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controller_Action
+/**
+ * Created by JetBrains PhpStorm.
+ * User: admin
+ * Date: 15.11.12
+ * Time: 13:50
+ * To change this template use File | Settings | File Templates.
+ */
+
+class Knihovna_Vypujcky_Adminhtml_VypujckyController extends Mage_Adminhtml_Controller_Action
 {
+
     public function indexAction()
     {
         $this->_initAction()->_addContent($this->getLayout()
-            ->createBlock('tituly/adminhtml_tituly'))->renderLayout();
+            ->createBlock('vypujcky/adminhtml_vypujcky'))->renderLayout();
     }
 
     protected function _initEdit($idFieldName = 'id')
     {
         $id    = $this->getRequest()->getParams($idFieldName);
-        $model = Mage::getModel('tituly/tituly');
+        $model = Mage::getModel('vypujcky/vypujcky');
         if ($id) {
             $model->load($id);
         }
-        if (!Mage::registry('tituly')) {
-            Mage::register('tituly', $model);
+        if (!Mage::registry('Vypujcky')) {
+            Mage::register('Vypujcky', $model);
         }
         return $model;
     }
@@ -33,17 +42,16 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
 
     public function deleteAction()
     {
-        Mage::getModel('tituly/tituly')->load($this->getRequest()->getParam('id'))->delete();
+        Mage::getModel('vypujcky/vypujcky')->load($this->getRequest()->getParam('id'))->delete();
         $this->_redirect('*/*/'); //kam se to má přesměrovat po uložení na indexAction, tj. na grid
     }
 
     public function editAction()
     {
-
         $this->loadLayout();
-        $autor=$this->_initEdit('id');
+        $autor = $this->_initEdit('id');
         $this->_addContent($this->getLayout()
-            ->createBlock('tituly/adminhtml_tituly_edit')
+            ->createBlock('vypujcky/adminhtml_vypujcky_edit')
             ->setEditMode((bool)$this->getRequest()
             ->getParam('entity_id')));
         $this->renderLayout();
@@ -52,11 +60,10 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
     public function saveAction()
     {
         $data = $this->getRequest()->getPost();
-        $m    = Mage::getModel('tituly/tituly');
+        $m    = Mage::getModel('vypujcky/vypujcky');
         $m->setData($data);
         $m->save();
         $this->_redirect('*/*/'); //kam se to má přesměrovat po uložení na indexAction, tj. na grid
     }
-
 
 }

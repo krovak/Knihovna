@@ -50,9 +50,22 @@ class Knihovna_Ctenar_Adminhtml_CtenarController extends Mage_Adminhtml_Controll
         $data        = $this->getRequest()->getPost();
         $m           = Mage::getModel('ctenar/ctenar');
         $data['psc'] = str_replace(' ', '', $data['psc']);
+
+        if (empty ($data['heslo'])){
+            unset($data['heslo']);
+        }else{
+            $data['heslo']= sha1($data['heslo']);
+        }
+
         $m->setData($data);
         $m->save();
         $this->_redirect('*/*/');
     }
+
+    public function test($cp='MK00000001',$pw='nevim'){
+    $m           = Mage::getModel('ctenar/ctenar');
+    $m->validate($cp,$pw);
+
+}
 }
 
