@@ -8,9 +8,9 @@
  */
 
 
-class Knihovna_Lucietest_Model_Lucietest extends Mage_Core_Model_Abstract {
+class Knihovna_Knihovna_Model_Knihovna extends Mage_Core_Model_Abstract {
     public  function  _construct(){
         parent::_construct();
-        $this->_init('lucietest/lucietest');
+        $this->_init('knihovna/knihovna');
     }
 }

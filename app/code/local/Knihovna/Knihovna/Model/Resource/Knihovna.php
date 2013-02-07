@@ -8,13 +8,13 @@
  */
 
 
-class Knihovna_Lucietest_Model_Resource_Lucietest extends Mage_Core_Model_Resource_Db_Abstract{
+class Knihovna_Knihovna_Model_Resource_Knihovna extends Mage_Core_Model_Resource_Db_Abstract{
     /**
      * Resource initialization
      */
     protected function _construct()
     {
         // TODO: Implement _construct() method.
-        $this->_init('lucietest/knihovna_lucietest','entity_id');
+        $this->_init('knihovna/knihovna_knihovna','entity_id');
     }
 }

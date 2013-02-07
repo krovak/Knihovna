@@ -8,18 +8,18 @@
  */
 
 
-class Knihovna_Lucietest_Block_Adminhtml_Lucietest_Grid
+class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Grid
     extends Mage_Adminhtml_Block_Widget_Grid {
 public function _construct(){
     parent::_construct();
-    $this->setId('Lucietest');
+    $this->setId('Knihovna');
     $this->setDefaultSort('entity_id');
     $this->setDefaultDir('asc');
     $this->setEmptyText('Žádná data');
     $this->setSaveParametersInSession(true);
 }
     public function _prepareCollection(){
-        $collection = Mage::getModel('lucietest/lucietest')->getCollection();
+        $collection = Mage::getModel('knihovna/knihovna')->getCollection();
         $this->setCollection($collection);
         return parent::_prepareCollection();
 

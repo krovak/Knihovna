@@ -8,13 +8,13 @@
  */
 
 
-class Knihovna_Lucietest_Block_Adminhtml_Lucietest extends Mage_Adminhtml_Block_Widget_Grid_Container  {
+class Knihovna_Knihovna_Block_Adminhtml_Knihovna extends Mage_Adminhtml_Block_Widget_Grid_Container  {
     public function _construct(){
-        $this->_controller='adminhtml_lucietest';
-        $this->_blockGroup='lucietest';
+        $this->_controller='adminhtml_knihovna';
+        $this->_blockGroup='knihovna';
         parent::_construct();
     }
     public function getHeaderText(){
-        return 'Nazdar';
+        return 'Knihovna';
     }
 }
