@@ -38,7 +38,7 @@
                 <class>Knihovna_Knihovna_Model_Resource</class>
                 <entities>
                     <knihovna_knihovna>
-                        <table>lutable</table>
+                        <table>knihovna</table>
                     </knihovna_knihovna>
                 </entities>
             </knihovna_resource>
