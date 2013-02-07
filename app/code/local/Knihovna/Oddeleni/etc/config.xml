@@ -35,7 +35,7 @@
                 <resourceModel>oddeleni_resource</resourceModel>
             </oddeleni>
             <oddeleni_resource>
-                <class>Knihovna_Oddeleni_Model_Model_Resource</class>
+                <class>Knihovna_Oddeleni_Model_Resource</class>
                 <entities>
                     <knihovna_oddeleni>
                         <table>oddeleni</table>
