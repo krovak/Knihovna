@@ -12,6 +12,7 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
     {
         $name = $this->getRequest()->getPost('name');
         $heslo = $this->getRequest()->getPost('password');
+        var_dump($name);
         if (Mage::getModel('ctenar/ctenar')->validate($name, $heslo)) {
             $this->_redirect('*/*/logged');
         } else {
