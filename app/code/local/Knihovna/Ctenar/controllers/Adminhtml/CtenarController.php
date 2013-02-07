@@ -31,11 +31,11 @@ class Knihovna_Ctenar_Adminhtml_CtenarController extends Mage_Adminhtml_Controll
         return $this;
     }
 
-    public function newAction()
-    {
-        $this->_forward('edit');
-
-    }
+//    public function newAction()
+//    {
+//        $this->_forward('edit');
+//
+//    }
 
     public function editAction()
     {
@@ -45,16 +45,24 @@ class Knihovna_Ctenar_Adminhtml_CtenarController extends Mage_Adminhtml_Controll
         $this->renderLayout();
     }
 
+    public function newAction()
+    {
+        $this->loadLayout();
+        $this->_addContent($this->getLayout()->createBlock('ctenar/adminhtml_ctenar_edit'))
+            ->_addLeft($this->getLayout()->createBlock('ctenar/adminhtml_ctenar_edit_tabs'));
+        $this->renderLayout();
+    }
+
     public function saveAction()
     {
         $data        = $this->getRequest()->getPost();
         $m           = Mage::getModel('ctenar/ctenar');
         $data['psc'] = str_replace(' ', '', $data['psc']);
 
-        if (empty ($data['heslo'])){
+        if (empty ($data['heslo'])) {
             unset($data['heslo']);
-        }else{
-            $data['heslo']= sha1($data['heslo']);
+        } else {
+            $data['heslo'] = sha1($data['heslo']);
         }
 
         $m->setData($data);
@@ -62,10 +70,11 @@ class Knihovna_Ctenar_Adminhtml_CtenarController extends Mage_Adminhtml_Controll
         $this->_redirect('*/*/');
     }
 
-    public function test($cp='MK00000001',$pw='nevim'){
-    $m           = Mage::getModel('ctenar/ctenar');
-    $m->validate($cp,$pw);
+    public function test($cp = 'MK00000001', $pw = 'nevim')
+    {
+        $m = Mage::getModel('ctenar/ctenar');
+        $m->validate($cp, $pw);
 
-}
+    }
 }
 

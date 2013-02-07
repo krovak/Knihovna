@@ -27,9 +27,10 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Grid extends Mage_Adminhtml_Block_W
     public function _prepareColumns()
     {
         $this->addColumn('entity_id', array(
-            'header' => 'ID',
-            'width'  => '50px',
-            'index'  => 'entity_id'
+            'header_css_class' => 'a-center',
+            'header'           => 'ID',
+            'width'            => '50px',
+            'index'            => 'entity_id'
         ));
         $this->addColumn('cislo_prukazu', array(
             'header' => 'Číslo průkazu',
@@ -37,8 +38,9 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Grid extends Mage_Adminhtml_Block_W
             'index'  => 'cislo_prukazu',
         ));
         $this->addColumn('jmeno', array(
-            'header' => 'Jméno',
-            'index'  => 'jmeno'
+            'header'           => 'Jméno',
+            'header_css_class' => 'a-center',
+            'index'            => 'jmeno'
         ));
         $this->addColumn('prijmeni', array(
             'header' => 'Přijmení',

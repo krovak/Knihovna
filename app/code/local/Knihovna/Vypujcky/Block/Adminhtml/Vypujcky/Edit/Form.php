@@ -28,7 +28,7 @@ class Knihovna_Vypujcky_Block_Adminhtml_Vypujcky_Edit_Form extends Mage_Adminhtm
 
         $f = $form->addFieldset('Vypujcky', array(
             'legend' => 'Přidat výpůjčku',
-            'class'  => 'fieldset-wide'
+            'class'  => 'fieldset-small'
         ));
         if ($autor->getId()) {
             $f->addField('entity_id', 'hidden', array(
@@ -43,18 +43,32 @@ class Knihovna_Vypujcky_Block_Adminhtml_Vypujcky_Edit_Form extends Mage_Adminhtm
             )
         );
         $f->addField('from', 'date', array(
-            'name'     => 'from',
-            'label'    => 'Datum od',
-            'format'   => 'DD-MM-YYYY',
-            'required' => true
+            'name'               => 'from',
+            'label'              => 'Datum od',
+            'after_element_html' => '<small>Comments</small>',
+            'tabindex'           => 1,
+            'image'              => $this->getSkinUrl('images/grid-cal.gif'),
+            'format'             => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),
+            'class'              => 'validate-date',
+            'required'           => true
+
         ));
         $f->addField('to', 'date', array(
             'name'     => 'to',
             'label'    => 'Datum do',
-            'format'   => 'DD-MM-YYYY',
+            'format'   => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),
             'class'    => 'validate-date',
             'required' => true
         ));
+        $f->addField('position', 'text', array(
+            'label'          => 'pokus',
+            'name'           => 'position',
+            'type'           => 'number',
+            'validate_class' => 'validate-number',
+            'index'          => 'position',
+            'width'          => 60,
+        ));
+
         $f->addField('book', 'select', array(
                 'name'     => 'book',
                 'label'    => 'Kniha',
