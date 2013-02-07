@@ -14,7 +14,9 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtm
         $this->setTitle('Pridat zaznam');
 
     }
-    public function  _prepareForm(){
+    public function  _prepareForm()
+    {
+        $knihovna2 = Mage::registry('knihovna');
         $form = new Varien_Data_Form(array(
             'id'=>'edit_form',
             'method'=>'Post'
@@ -23,6 +25,11 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtm
             'legend'=>'Přidání knihovny',
             'class'=>'fieldset-wide'
         ));
+        if ($knihovna2->getId()) {
+            $f->addField('entity_id', 'hidden', array(
+                'name' => 'entity_id'
+            ));
+        }
         $f->addField('nazev','text',array(
             'name'=>'nazev',
             'label'=>'Název',
@@ -33,6 +40,7 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtm
             'label'    => 'Adresa',
             'required' => true
         ));
+        $form->setValues($knihovna2->getData());
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
