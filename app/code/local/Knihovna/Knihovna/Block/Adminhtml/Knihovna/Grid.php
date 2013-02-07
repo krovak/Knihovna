@@ -40,6 +40,9 @@ public function _construct(){
             ));
             return $this;
         }
-
+    public function getRowUrl($row)
+    {
+        return $this->getUrl('*/*/edit', array('id' => $row->getId()));
+    }
     }
 
