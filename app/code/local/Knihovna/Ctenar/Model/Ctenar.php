@@ -28,10 +28,12 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
     public function validate($cp, $heslo)
     {
-        $db = Mage::getModel('ctenar/ctenar')->getCollection()->addFieldToFilter('cislo_prukazu', array('eq' => $cp));
+        $db = Mage::getModel('ctenar/ctenar')
+            ->getCollection()
+            ->addFieldToFilter('cislo_prukazu', array('eq' => $cp))
+            ->addFieldToFilter('heslo',array('eq'=> sha1( $heslo)));
         $data = $db->getData();
         var_dump($data);
-        die;
         if (@$data['entity_id']) {
             return true;
         } else {
