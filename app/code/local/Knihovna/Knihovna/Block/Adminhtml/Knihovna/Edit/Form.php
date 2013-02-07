@@ -6,7 +6,7 @@
  * Time: 15:08
  * To change this template use File | Settings | File Templates.
  */
-class Knihovna_Lucietest_Block_Adminhtml_Lucietest_Edit_Form extends Mage_Adminhtml_Block_Widget_Form {
+class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtml_Block_Widget_Form {
 
     public function  _construct(){
         parent::_construct();
@@ -19,7 +19,7 @@ class Knihovna_Lucietest_Block_Adminhtml_Lucietest_Edit_Form extends Mage_Adminh
             'id'=>'edit_form',
             'method'=>'Post'
         ));
-        $f = $form->addFieldset('lucietest',array(
+        $f = $form->addFieldset('knihovna',array(
             'legend'=>'co tu je napsaný',
             'class'=>'fieldset-wide'
         ));
