@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout>
+    <ctenar_login_index>
+        <reference name="content">
+            <block type="ctenar/login" template="knihovna/ctenar/login.phtml"></block>
+        </reference>
+    </ctenar_login_index>
+</layout>
