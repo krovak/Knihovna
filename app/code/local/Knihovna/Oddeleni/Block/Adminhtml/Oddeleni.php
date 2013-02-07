@@ -14,6 +14,6 @@ class Knihovna_Oddeleni_Block_Adminhtml_Oddeleni extends Mage_Adminhtml_Block_Wi
         parent::_construct();
     }
     public function getHeaderText(){
-        return 'NAZDAR';
+        return 'Oddělení';
     }
 }
