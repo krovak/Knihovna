@@ -10,38 +10,29 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtm
 
     public function  _construct(){
         parent::_construct();
-        $this->setId('editForm');
-        $this->setTitle('Přidat záznam');
+        $this->setId('edit_form');
+        $this->setTitle('Pridat zaznam');
 
     }
     public function  _prepareForm(){
-        {
-            $knihovna2 = Mage::registry('knihovna');
         $form = new Varien_Data_Form(array(
             'id'=>'edit_form',
-            'method'=>'post'
+            'method'=>'Post'
         ));
         $f = $form->addFieldset('knihovna',array(
-            'legend'=>'Přidat knihovnu',
+            'legend'=>'Přidání knihovny',
             'class'=>'fieldset-wide'
         ));
-            if ($knihovna2->getId()) {
-                $f->addField('entity_id', 'hidden', array(
-                    'name' => 'entity_id'
-                ));
-            }
         $f->addField('nazev','text',array(
             'name'=>'nazev',
             'label'=>'Název',
             'required'=>true
         ));
-        }
         $f->addField('adresa', 'text', array(
             'name'     => 'adresa',
             'label'    => 'Adresa',
             'required' => true
         ));
-            $form->setValues($knihovna2->getData());
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
