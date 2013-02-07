@@ -31,7 +31,7 @@
     <global>
         <models>
             <knihovna>
-                <resourceModel>knihovn_resource</resourceModel>
+                <resourceModel>knihovna_resource</resourceModel>
                 <class>Knihovna_Knihovna_Model</class>
             </knihovna>
             <knihovna_resource>
