@@ -7,21 +7,21 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class Knihovna_Lucietest_Adminhtml_LucietestController extends Mage_Adminhtml_Controller_Action {
+class Knihovna_Knihovna_Adminhtml_KnihovnaController extends Mage_Adminhtml_Controller_Action {
 public function indexAction(){
-    $this->_initAction()->_addContent($this->getLayout()->createBlock('lucietest/adminhtml_lucietest'))->renderLayout();
+    $this->_initAction()->_addContent($this->getLayout()->createBlock('knihovna/adminhtml_knihovna'))->renderLayout();
 }
 
 protected function _initEdit($idFileName='id'){
     $id=$this->getRequest()->getParams($idFileName);
-    $model=Mage::getModel('lucietest/lucietest');
+    $model=Mage::getModel('knihovna/knihovna');
     if($id){
         $model->load($id);
 
 
     }
-    if(!Mage::registry('lucietest')){
-        Mage::register('lucietest',$model);
+    if(!Mage::registry('knihovna')){
+        Mage::register('knihovna',$model);
     }
     return $model;
 }
@@ -37,14 +37,14 @@ protected function _initEdit($idFileName='id'){
     public function editAction(){
         $this->loadLayout();
         $this->_addContent($this->getLayout()
-        ->createBlock('lucietest/adminhtml_lucietest_edit')
+        ->createBlock('knihovna/adminhtml_knihovna_edit')
         ->setEditMode((bool)$this->getRequest()
         ->getParam('entity_id')));
         $this->renderLayout();
     }
     public function saveAction(){
         $data = $this->getRequest()->getPost();
-        $m = Mage::getModel ('lucietest/lucietest');
+        $m = Mage::getModel ('knihovna/knihovna');
         $m->setData($data);
         $m->save();
         $this->_redirect('*/*/');//kam se to m8 presmerovat po ulozeni na andexAc
