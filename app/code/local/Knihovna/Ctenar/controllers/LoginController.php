@@ -6,7 +6,7 @@
  * Time: 13:20
  * To change this template use File | Settings | File Templates.
  */
-class Knihovna_Ctenar_LoginContoller extends Mage_Core_Controller_Front_Action
+class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
 {
     public function indexAction()
     {
