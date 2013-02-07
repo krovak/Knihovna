@@ -9,12 +9,12 @@
 class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit extends Mage_Adminhtml_Block_Widget_Form_Container {
 
     public function _construct(){
-        $this->_objectId='entity_id';
+        $this->_objectId='id';
         $this->_controller='adminhtml_knihovna';
         $this->_blockGroup='knihovna';
         parent::_construct();
     }
     public function getHeaderText(){
-        return 'Pridat zaznam';
+        return 'Přidat záznam';
     }
 }
