@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class Knihovna_Patest_Model_Resource_Patest extends Mage_Core_Model_Resource_Db_Abstract {
+class Knihovna_Oddeleni_Model_Resource_Oddeleni extends Mage_Core_Model_Resource_Db_Abstract {
 
     /**
      * Resource initialization
@@ -15,6 +15,6 @@ class Knihovna_Patest_Model_Resource_Patest extends Mage_Core_Model_Resource_Db_
     protected function _construct()
     {
         // TODO: Implement _construct() method.
-        $this->_init('patest/knihovna_patest','entity_id');
+        $this->_init('oddeleni/knihovna_oddeleni','entity_id');
     }
 }

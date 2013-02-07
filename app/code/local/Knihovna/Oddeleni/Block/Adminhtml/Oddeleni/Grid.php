@@ -7,10 +7,10 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class Knihovna_Patest_Block_Adminhtml_Patest_Grid extends Mage_Adminhtml_Block_Widget_Grid {
+class Knihovna_Oddeleni_Block_Adminhtml_Oddeleni_Grid extends Mage_Adminhtml_Block_Widget_Grid {
     public function _construct(){
             parent::_construct();
-            $this->setId('patest');
+            $this->setId('oddeleni');
             $this->setDefaultSort('entity_id');
             $this->setDefaultDir('asc');
             $this->setEmptyText('Žádná data');
@@ -18,7 +18,7 @@ class Knihovna_Patest_Block_Adminhtml_Patest_Grid extends Mage_Adminhtml_Block_W
     }
 
     public function _prepareCollection(){
-            $collection = Mage::getModel('patest/patest')->getCollection();
+            $collection = Mage::getModel('oddeleni/oddeleni')->getCollection();
             $this->setCollection($collection);
             return parent::_prepareCollection();
         }

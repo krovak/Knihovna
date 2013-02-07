@@ -7,22 +7,22 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class Knihovna_Patest_Adminhtml_PatestController extends Mage_Adminhtml_Controller_Action
+class Knihovna_Oddeleni_Adminhtml_OddeleniController extends Mage_Adminhtml_Controller_Action
 {
     public function indexAction()
     {
-        $this->_initAction()->_addContent($this->getLayout()->createBlock('patest/adminhtml_patest'))->renderLayout();
+        $this->_initAction()->_addContent($this->getLayout()->createBlock('oddeleni/adminhtml_oddeleni'))->renderLayout();
     }
 
     protected function _initEdit($idFieldName = 'id')
     {
         $id    = $this->getRequest()->getParams($idFieldName);
-        $model = Mage::getModel('patest/patest');
+        $model = Mage::getModel('oddeleni/oddeleni');
         if ($id) {
             $model->load($id);
         }
-        if (!Mage::registry('patest')) {
-            Mage::register('patest', $model);
+        if (!Mage::registry('oddeleni')) {
+            Mage::register('oddeleni', $model);
         }
         return $model;
     }
@@ -45,7 +45,7 @@ class Knihovna_Patest_Adminhtml_PatestController extends Mage_Adminhtml_Controll
         $this->loadLayout();
         $oddeleni2=$this->_initEdit('id');
         $this->_addContent($this->getLayout()
-            ->createBlock('patest/adminhtml_patest_edit')
+            ->createBlock('oddeleni/adminhtml_oddeleni_edit')
             ->setEditMode((bool)$this->getRequest()
             ->getParam('entity_id')));
         $this->renderLayout();
@@ -55,7 +55,7 @@ class Knihovna_Patest_Adminhtml_PatestController extends Mage_Adminhtml_Controll
     public function saveAction()
     {
         $data = $this->getRequest()->getPost();
-        $m = Mage::getModel('patest/patest');
+        $m = Mage::getModel('oddeleni/oddeleni');
         $m->setData($data);
         $m->save();
         $this->_redirect('*/*/');
