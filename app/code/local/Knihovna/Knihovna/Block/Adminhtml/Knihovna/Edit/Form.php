@@ -10,17 +10,17 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtm
 
     public function  _construct(){
         parent::_construct();
-        $this->setId('edit_form');
-        $this->setTitle('Pridat zaznam');
+        $this->setId('editForm');
+        $this->setTitle('Přidat záznam');
 
     }
     public function  _prepareForm(){
         $form = new Varien_Data_Form(array(
             'id'=>'edit_form',
-            'method'=>'Post'
+            'method'=>'post'
         ));
         $f = $form->addFieldset('knihovna',array(
-            'legend'=>'Přidání knihovny',
+            'legend'=>'Přidat knihovnu',
             'class'=>'fieldset-wide'
         ));
         $f->addField('nazev','text',array(
