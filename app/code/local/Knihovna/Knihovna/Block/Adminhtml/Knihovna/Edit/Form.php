@@ -20,7 +20,7 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtm
             'method'=>'Post'
         ));
         $f = $form->addFieldset('knihovna',array(
-            'legend'=>'co tu je napsaný',
+            'legend'=>'Přidání knihovny',
             'class'=>'fieldset-wide'
         ));
         $f->addField('nazev','text',array(
