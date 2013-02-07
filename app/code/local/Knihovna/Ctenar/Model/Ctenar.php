@@ -30,7 +30,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
     {
         $db = Mage::getModel('ctenar/ctenar')->getCollection()->addFieldToFilter('cislo_prukazu', array('eq' => $cp));
         $data = $db->getData();
-        if ($data['entity_id']) {
+        if (@$data['entity_id']) {
             return true;
         } else {
             return false;
