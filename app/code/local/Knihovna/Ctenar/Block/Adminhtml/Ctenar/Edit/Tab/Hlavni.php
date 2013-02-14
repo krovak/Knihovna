@@ -30,87 +30,118 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
     {
         /** @var $ctenar Knihovna_Ctenar_Model_Ctenar */
         $ctenar = Mage::registry('ctenar');
-
-        if (sizeof($ctenar->getData()) == 0) {
-            $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
+        if (is_object($ctenar)) {
+            if (sizeof($ctenar->getData()) == 0) {
+                $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
+            }
         }
-
         $form = new Varien_Data_Form(array(
             'id'     => 'edit_form',
             'method' => 'Post'
         ));
-        $f    = $form->addFieldset('ctenar', array(
-            'legend' => 'Přidat čtenáře',
-            'class'  => 'fieldset-wide'
-        ));
-        if ($ctenar->getId()) {
-            $f->addField('entity_id', 'hidden', array(
-                'name' => 'entity_id'
-            ));
-            $ctenar->unsetData("heslo");
+        $f    = $form->addFieldset(
+            'ctenar', array(
+                'legend' => 'Přidat čtenáře',
+                'class'  => 'fieldset-wide'
+            )
+        );
+        if (is_object($ctenar)) {
+            if ($ctenar->getId()) {
+                $f->addField(
+                    'entity_id', 'hidden', array(
+                        'name' => 'entity_id'
+                    )
+                );
+                $ctenar->unsetData("heslo");
+            }
         }
-        $f->addField('cislo_prukazu', 'text', array(
-            'name'     => 'cislo_prukazu',
-            'label'    => 'Číslo průkazu',
-            'required' => true
-        ));
-        $f->addField('jmeno', 'text', array(
-            'name'     => 'jmeno',
-            'label'    => 'Jméno',
-            'required' => true
-        ));
 
 
-        // Setting custom renderer for content field to remove label column
-        $renderer = $this->getLayout()->createBlock('adminhtml/widget_form_renderer_fieldset_element')
-            ->setTemplate('cms/page/edit/form/renderer/content.phtml');
-        $contentField->setRenderer($renderer);
+        $f->addField(
+            'cislo_prukazu', 'text', array(
+                'name'     => 'cislo_prukazu',
+                'label'    => 'Číslo průkazu',
+                'required' => true
+            )
+        );
+        $f->addField(
+            'jmeno', 'text', array(
+                'name'     => 'jmeno',
+                'label'    => 'Jméno',
+                'required' => true
+            )
+        );
+        $f->addField(
+            'prijmeni', 'text', array(
+                'name'     => 'prijmeni',
+                'label'    => 'Přijmení',
+                'required' => true
+            )
+        );
+        $f->addField(
+            'ulice', 'text', array(
+                'name'     => 'ulice',
+                'label'    => 'Ulice',
+                'required' => true
+            )
+        );
+        $f->addField(
+            'cp', 'text', array(
+                'name'     => 'cp',
+                'label'    => 'Čp',
+                'required' => true
+            )
+        );
+        $f->addField(
+            'mesto', 'text', array(
+                'name'     => 'mesto',
+                'label'    => 'Město',
+                'required' => false
+            )
+        );
+        $f->addField(
+            'psc', 'text', array(
+                'name'     => 'psc',
+                'label'    => 'PSČ',
+                'required' => false
+            )
+        );
+        $f->addField(
+            'heslo', 'password', array(
+                'name'     => 'heslo',
+                'label'    => 'Heslo',
+                'required' => false
+            )
+        );
+        $f->addField(
+            'potvrzeni_hesla', 'password', array(
+                'name'     => 'potvrzeni_hesla',
+                'label'    => 'Potvrzení hesla',
+                'required' => false
+            )
+        );
+        $f->addField(
+            'email', 'text', array(
+                'name'     => 'email',
+                'label'    => 'Email',
+                'required' => false
+            )
+        );
+        $f->addField(
+            'telefonni_cislo', 'text', array(
+                'name'     => 'telefonni_cislo',
+                'label'    => 'Telefonní číslo',
+                'required' => false
+            )
+        );
 
-        $form->setValues($model->getData());
-        $this->setForm($form);
-
-        Mage::dispatchEvent('adminhtml_cms_page_edit_tab_content_prepare_form', array('form' => $form));
-
-        return parent::_prepareForm();
-
-
-        $form->setValues($ctenar->getData());
+        if (is_object($ctenar))
+            $form->setValues($ctenar->getData());
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
+
         return parent::_prepareForm();
-
-
-//        $form = new Varien_Data_Form();
-//
-//               $form->setHtmlIdPrefix('page_');
-//
-//               $model = Mage::registry('cms_page');
-//
-//               $fieldset = $form->addFieldset('meta_fieldset', array('legend' => Mage::helper('cms')->__('Meta Data'), 'class' => 'fieldset-wide'));
-//
-//               $fieldset->addField('meta_keywords', 'textarea', array(
-//                   'name' => 'meta_keywords',
-//                   'label' => Mage::helper('cms')->__('Keywords'),
-//                   'title' => Mage::helper('cms')->__('Meta Keywords'),
-//                   'disabled'  => $isElementDisabled
-//               ));
-//
-//               $fieldset->addField('meta_description', 'textarea', array(
-//                   'name' => 'meta_description',
-//                   'label' => Mage::helper('cms')->__('Description'),
-//                   'title' => Mage::helper('cms')->__('Meta Description'),
-//                   'disabled'  => $isElementDisabled
-//               ));
-//
-//               Mage::dispatchEvent('adminhtml_cms_page_edit_tab_meta_prepare_form', array('form' => $form));
-//
-//               $form->setValues($model->getData());
-//
-//               $this->setForm($form);
-//
-//               return parent::_prepareForm();
-//           }
 
     }
 
