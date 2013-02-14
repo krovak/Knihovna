@@ -12,8 +12,9 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
     {
         $name = $this->getRequest()->getParam('name');
         $heslo = $this->getRequest()->getParam('password');
-        var_dump($name);
-        if (Mage::getModel('ctenar/ctenar')->validate($name, $heslo)) {
+
+        if ($ctenar = Mage::getModel('ctenar/ctenar')->validate($name, $heslo)) {
+            Mage::getSingleton('core/session')->setLoggedUser($ctenar);
             $this->_redirect('*/*/logged');
         } else {
             $this->loadLayout();
@@ -29,7 +30,8 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
 
     public function loggedAction()
     {
-echo('Gratuluji podařilo se Vám přihlásit');
+echo('Gratuluji podařilo se Vám přihlásit\n');
+        var_dump(Mage::getSingleton('core/session')->getLoggedUser());
     }
 
 }

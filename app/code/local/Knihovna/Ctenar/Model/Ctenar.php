@@ -31,10 +31,11 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $db = Mage::getModel('ctenar/ctenar')
             ->getCollection()
             ->addFieldToFilter('cislo_prukazu', array('eq' => $cp))
-            ->addFieldToFilter('heslo',array('eq'=> sha1( $heslo)));
+            ->addFieldToFilter('heslo',array('eq'=> sha1( $heslo)))
+            ->getFirstItem;
         $data = $db->getData();
-        if (@$data[0]['entity_id']) {
-            return true;
+        if (@$data['entity_id']) {
+            return $db;
         } else {
             return false;
         }
