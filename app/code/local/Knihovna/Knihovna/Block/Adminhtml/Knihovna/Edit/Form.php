@@ -17,7 +17,7 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtm
     public function _prepareForm()
     {
         $knihovna2 = Mage::registry('knihovna');
-
+var_dump($knihovna2);
         $form = new Varien_Data_Form(array(
             'id'=>'edit_form',
             'method'=>'post'
