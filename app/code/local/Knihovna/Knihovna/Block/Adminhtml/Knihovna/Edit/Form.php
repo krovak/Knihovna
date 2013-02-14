@@ -19,7 +19,7 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtm
         $knihovna2 = Mage::registry('knihovna');
         $form = new Varien_Data_Form(array(
             'id'=>'edit_form',
-            'method'=>'Post'
+            'method'=>'post'
         ));
         $f = $form->addFieldset('knihovna',array(
             'legend'=>'Přidání knihovny',
