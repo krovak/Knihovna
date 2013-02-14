@@ -42,7 +42,7 @@ public function _construct(){
         }
     public function getRowUrl($row)
     {
-        return $this->getUrl('*/*/edit', array('id' => $row->getId()));
+        return $this->getUrl('*/*/edit', array('entity_id' => $row->getId()));
     }
     }
 

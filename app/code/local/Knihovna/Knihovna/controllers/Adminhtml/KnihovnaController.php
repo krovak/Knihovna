@@ -39,7 +39,7 @@ protected function _initEdit($idFileName='id'){
         $this->_addContent($this->getLayout()
         ->createBlock('knihovna/adminhtml_knihovna_edit')
         ->setEditMode((bool)$this->getRequest()
-        ->getParam('id')));
+        ->getParam('entity_id')));
         $this->renderLayout();
     }
     public function saveAction(){
