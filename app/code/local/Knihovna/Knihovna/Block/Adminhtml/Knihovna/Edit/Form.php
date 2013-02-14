@@ -8,13 +8,13 @@
  */
 class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtml_Block_Widget_Form {
 
-    public function  _construct(){
+    public function _construct(){
         parent::_construct();
-        $this->setId('edit_form');
+        $this->setId('editForm');
         $this->setTitle('Pridat zaznam');
 
     }
-    public function  _prepareForm()
+    public function _prepareForm()
     {
         $knihovna2 = Mage::registry('knihovna');
         $form = new Varien_Data_Form(array(
