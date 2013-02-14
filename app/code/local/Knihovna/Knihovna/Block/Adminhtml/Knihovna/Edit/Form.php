@@ -17,6 +17,7 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtm
     public function _prepareForm()
     {
         $knihovna2 = Mage::registry('knihovna');
+
         $form = new Varien_Data_Form(array(
             'id'=>'edit_form',
             'method'=>'post'
@@ -25,6 +26,7 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtm
             'legend'=>'Přidání knihovny',
             'class'=>'fieldset-wide'
         ));
+        if (is_object($knihovna2)) {
         if ($knihovna2->getId()) {
             $f->addField('entity_id', 'hidden', array(
                 'name' => 'entity_id'
