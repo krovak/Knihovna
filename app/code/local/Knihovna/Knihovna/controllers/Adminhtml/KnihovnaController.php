@@ -12,7 +12,7 @@ public function indexAction(){
     $this->_initAction()->_addContent($this->getLayout()->createBlock('knihovna/adminhtml_knihovna'))->renderLayout();
 }
 
-protected function _initEdit($idFileName='id'){
+protected function _initEdit($idFileName='entity_id'){
     $id=$this->getRequest()->getParams($idFileName);
     $model=Mage::getModel('knihovna/knihovna');
     if($id){
