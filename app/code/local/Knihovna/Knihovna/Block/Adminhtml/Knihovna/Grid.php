@@ -12,7 +12,7 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Grid
     extends Mage_Adminhtml_Block_Widget_Grid {
 public function _construct(){
     parent::_construct();
-    $this->setId('knihovna');
+    $this->setId('Knihovna');
     $this->setDefaultSort('entity_id');
     $this->setDefaultDir('asc');
     $this->setEmptyText('Žádná data');
