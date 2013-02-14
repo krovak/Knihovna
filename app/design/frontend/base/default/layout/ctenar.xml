@@ -5,4 +5,11 @@
             <block type="ctenar/login" template="knihovna/ctenar/login.phtml"></block>
         </reference>
     </ctenar_login_index>
+    <ctenar_index_nastenka>
+        <reference name="content">
+            <block type="core/template" name="ctenar.nastenka" template="knihovna/ctenar/nastenka.phtml">
+                <block type="ctenar/info" name="ctenar.info" template="knihovna/ctenar/info.phtml"></block>
+            </block>
+        </reference>
+    </ctenar_index_nastenka>
 </layout>

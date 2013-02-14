@@ -30,8 +30,12 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
 
     public function loggedAction()
     {
-        echo('Gratuluji podařilo se Vám přihlásit\n');
-//        Mage::getSingleton('core/session')->getLoggedUser(); ukazka ziskani dat ze Session
+        $this->loadLayout();
+        $this->getLayout()->getBlock('content')->append($this->getLayout()->createBlock('ctenar/nastenka'));
+        $this->renderLayout();
+      //  Mage::getSingleton('core/session')->getLoggedUser(); ukazka ziskani dat ze Session
+
     }
+
 
 }
