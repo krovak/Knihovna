@@ -42,7 +42,9 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtm
             'label'    => 'Adresa',
             'required' => true
         ));
+        if (is_object($knihovna2)) {
         $form->setValues($knihovna2->getData());
+        }
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
