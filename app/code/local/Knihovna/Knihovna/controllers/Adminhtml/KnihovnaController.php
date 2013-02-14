@@ -36,7 +36,9 @@ protected function _initEdit($idFileName='entity_id'){
 
     }
     public function editAction(){
+
         $this->loadLayout();
+        $knihovna2 = $this->_initEdit('entity_id');
         $this->_addContent($this->getLayout()
         ->createBlock('knihovna/adminhtml_knihovna_edit')
         ->setEditMode((bool)$this->getRequest()
