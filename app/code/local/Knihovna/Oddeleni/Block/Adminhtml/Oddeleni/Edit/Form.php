@@ -18,7 +18,6 @@ class Knihovna_Oddeleni_Block_Adminhtml_Oddeleni_Edit_Form extends Mage_Adminhtm
     public function _prepareForm()
     {
         $oddeleni2 = Mage::registry('oddeleni');
-        var_dump($oddeleni2);
         $form = new Varien_Data_Form(array(
             'id'=>'edit_form',
             'method'=>'post'
