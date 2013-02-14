@@ -27,6 +27,13 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Form extends Mage_Adminhtml_Bl
                                           'id'     => 'edit_form',
                                           'method' => 'Post'
                                      ));
+
+        $f    = $form->addFieldset(
+            'ctenar', array(
+                'legend' => 'Přidat čtenáře',
+                'class'  => 'fieldset-wide'
+            )
+        );
         if (is_object($ctenar)) {
         if ($ctenar->getId()) {
             $f->addField(
@@ -36,12 +43,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Form extends Mage_Adminhtml_Bl
             );
             $ctenar->unsetData("heslo");
         }}
-        $f    = $form->addFieldset(
-            'ctenar', array(
-                           'legend' => 'Přidat čtenáře',
-                           'class'  => 'fieldset-wide'
-                      )
-        );
+
 
         $f->addField(
             'cislo_prukazu', 'text', array(
