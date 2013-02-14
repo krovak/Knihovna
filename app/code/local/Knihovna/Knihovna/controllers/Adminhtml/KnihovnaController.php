@@ -13,7 +13,7 @@ public function indexAction(){
 }
 
 protected function _initEdit($idFileName='entity_id'){
-    $id=$this->getRequest()->getParams($idFileName);
+    $id=$this->getRequest()->getParam($idFileName);
     $model=Mage::getModel('knihovna/knihovna');
     if($id){
         $model->load($id);
