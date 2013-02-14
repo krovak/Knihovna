@@ -33,8 +33,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
             ->addFieldToFilter('cislo_prukazu', array('eq' => $cp))
             ->addFieldToFilter('heslo',array('eq'=> sha1( $heslo)));
         $data = $db->getData();
-        var_dump($data);
-        if (@$data['entity_id']) {
+        if (@$data[0]['entity_id']) {
             return true;
         } else {
             return false;
