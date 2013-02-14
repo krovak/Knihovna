@@ -17,8 +17,8 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
     public function getCisloprukazky()
     {
         $prefix = Mage::getStoreConfig('prukazka/cislo/prefix');
-        $delka = Mage::getStoreConfig('prukazka/cislo/delka');
-        $vypln = Mage::getStoreConfig('prukazka/cislo/vypln');
+        $delka  = Mage::getStoreConfig('prukazka/cislo/delka');
+        $vypln  = Mage::getStoreConfig('prukazka/cislo/vypln');
         /* @var $posledni_cislo Knihovna_Ctenar_Model_Resource_Ctenar_Collection */
         $posledni_cislo = Mage::getModel('ctenar/ctenar')->getCollection()->getLastItem();
 
@@ -28,11 +28,11 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
     public function validate($cp, $heslo)
     {
-        $db = Mage::getModel('ctenar/ctenar')
+        $db   = Mage::getModel('ctenar/ctenar')
             ->getCollection()
             ->addFieldToFilter('cislo_prukazu', array('eq' => $cp))
-            ->addFieldToFilter('heslo',array('eq'=> sha1( $heslo)))
-            ->getFirstItem;
+            ->addFieldToFilter('heslo', array('eq' => sha1($heslo)))
+            ->getFirstItem();
         $data = $db->getData();
         if (@$data['entity_id']) {
             return $db;
