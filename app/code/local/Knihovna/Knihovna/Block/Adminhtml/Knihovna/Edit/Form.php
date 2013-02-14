@@ -31,7 +31,7 @@ class Knihovna_Knihovna_Block_Adminhtml_Knihovna_Edit_Form extends Mage_Adminhtm
             $f->addField('entity_id', 'hidden', array(
                 'name' => 'entity_id'
             ));
-        }
+        }}
         $f->addField('nazev','text',array(
             'name'=>'nazev',
             'label'=>'Název',
