@@ -14,7 +14,6 @@ public function indexAction(){
 
 protected function _initEdit($idFileName='entity_id'){
     $id=$this->getRequest()->getParam($idFileName);
-    var_dump($idFileName);
     $model=Mage::getModel('knihovna/knihovna');
     if($id){
         $model->load($id);
