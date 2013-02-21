@@ -7,10 +7,10 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class Knihovna_Oddeleni_Block_Adminhtml_Oddeleni extends Mage_Adminhtml_Block_Widget_Grid_Container {
+class Knihovna_Knihovna_Block_Adminhtml_Oddeleni extends Mage_Adminhtml_Block_Widget_Grid_Container {
     public function _construct(){
         $this->_controller='adminhtml_oddeleni';
-        $this->_blockGroup='oddeleni';
+        $this->_blockGroup='knihovna';
         parent::_construct();
     }
     public function getHeaderText(){
