@@ -54,6 +54,7 @@ class Knihovna_Knihovna_Adminhtml_OddeleniController extends Mage_Adminhtml_Cont
 
     public function saveAction()
     {
+        vardump($this);
         $data = $this->getRequest()->getPost();
         $m = Mage::getModel('knihovna/oddeleni');
         $m->setData($data);
