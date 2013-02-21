@@ -22,6 +22,8 @@ Nástěnka
 
 5. Historie výpůjček - možnost filtrovat podle Titulu, podle autora nebo podle data zapůjčení/vrácení
 
-6. Poplatky knihovně
+6. Hodnocení výpůjček
+
+7. Poplatky knihovně
 - moje dluhy
 -( historie?)
