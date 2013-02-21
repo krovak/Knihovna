@@ -34,6 +34,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
             ->addFieldToFilter('heslo', array('eq' => sha1($heslo)))
             ->getFirstItem();
         $data = $db->getData();
+        var_dump($data);
         if (@$data['entity_id']) {
             return $db;
         } else {
