@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+       <config>
+        <menu>
+            <oddeleni>
+                <title>Oddělení</title>
+                <sort_order>1</sort_order>
+                <children>
+                    <autor>
+                        <title>Spravovat oddělení</title>
+                        <sort_order>1</sort_order>
+                        <action>adminhtml/oddeleni</action>
+                    </autor>
+                </children>
+            </oddeleni>
+        </menu>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <oddeleni>
+                            <title>Oddělení</title>
+                            <children>
+                                <oddeleni translate="title" module="oddeleni">
+                                    <title>Spravovat oddělení</title>
+                                </oddeleni>
+                            </children>
+                        </oddeleni>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </config>
