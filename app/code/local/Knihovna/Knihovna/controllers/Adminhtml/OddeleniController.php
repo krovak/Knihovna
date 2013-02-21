@@ -7,17 +7,17 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class Knihovna_Oddeleni_Adminhtml_OddeleniController extends Mage_Adminhtml_Controller_Action
+class Knihovna_Knihovna_Adminhtml_OddeleniController extends Mage_Adminhtml_Controller_Action
 {
     public function indexAction()
     {
-        $this->_initAction()->_addContent($this->getLayout()->createBlock('oddeleni/adminhtml_oddeleni'))->renderLayout();
+        $this->_initAction()->_addContent($this->getLayout()->createBlock('knihovna/adminhtml_oddeleni'))->renderLayout();
     }
 
     protected function _initEdit($idFieldName = 'id')
     {
         $id    = $this->getRequest()->getParams($idFieldName);
-        $model = Mage::getModel('oddeleni/oddeleni');
+        $model = Mage::getModel('knihovna/oddeleni');
         if ($id) {
             $model->load($id);
         }
@@ -45,7 +45,7 @@ class Knihovna_Oddeleni_Adminhtml_OddeleniController extends Mage_Adminhtml_Cont
         $this->loadLayout();
         $oddeleni2=$this->_initEdit('id');
         $this->_addContent($this->getLayout()
-            ->createBlock('oddeleni/adminhtml_oddeleni_edit')
+            ->createBlock('knihovna/adminhtml_oddeleni_edit')
             ->setEditMode((bool)$this->getRequest()
             ->getParam('entity_id')));
         $this->renderLayout();
@@ -55,7 +55,7 @@ class Knihovna_Oddeleni_Adminhtml_OddeleniController extends Mage_Adminhtml_Cont
     public function saveAction()
     {
         $data = $this->getRequest()->getPost();
-        $m = Mage::getModel('oddeleni/oddeleni');
+        $m = Mage::getModel('knihovna/oddeleni');
         $m->setData($data);
         $m->save();
         $this->_redirect('*/*/');
