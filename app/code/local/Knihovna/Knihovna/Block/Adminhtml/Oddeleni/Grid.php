@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class Knihovna_Oddeleni_Block_Adminhtml_Oddeleni_Grid extends Mage_Adminhtml_Block_Widget_Grid {
+class Knihovna_Knihovna_Block_Adminhtml_Oddeleni_Grid extends Mage_Adminhtml_Block_Widget_Grid {
     public function _construct(){
             parent::_construct();
             $this->setId('oddeleni');
@@ -18,7 +18,7 @@ class Knihovna_Oddeleni_Block_Adminhtml_Oddeleni_Grid extends Mage_Adminhtml_Blo
     }
 
     public function _prepareCollection(){
-            $collection = Mage::getModel('oddeleni/oddeleni')->getCollection();
+            $collection = Mage::getModel('knihovna/oddeleni')->getCollection();
             $this->setCollection($collection);
             return parent::_prepareCollection();
         }

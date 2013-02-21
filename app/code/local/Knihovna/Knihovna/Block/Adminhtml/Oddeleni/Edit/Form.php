@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class Knihovna_Oddeleni_Block_Adminhtml_Oddeleni_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
+class Knihovna_Knihovna_Block_Adminhtml_Oddeleni_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
 {
     public function _construct()
     {
