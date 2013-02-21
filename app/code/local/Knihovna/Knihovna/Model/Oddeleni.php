@@ -7,9 +7,9 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class Knihovna_Oddeleni_Model_Oddeleni extends Mage_Core_Model_Abstract {
+class Knihovna_Knihovna_Model_Oddeleni extends Mage_Core_Model_Abstract {
     public function _construct(){
         parent::_construct();
-            $this->_init('oddeleni/oddeleni');
+            $this->_init('knihovna/oddeleni');
     }
 }
