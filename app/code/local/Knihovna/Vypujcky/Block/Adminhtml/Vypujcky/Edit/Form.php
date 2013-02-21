@@ -45,7 +45,7 @@ class Knihovna_Vypujcky_Block_Adminhtml_Vypujcky_Edit_Form extends Mage_Adminhtm
         $f->addField('from', 'date', array(
             'name'               => 'from',
             'label'              => 'Datum od',
-            'after_element_html' => '<small>Comments</small>',
+            'after_element_html' => '<small></small>',
             'tabindex'           => 1,
             'image'              => $this->getSkinUrl('images/grid-cal.gif'),
             'format'             => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),
@@ -54,19 +54,14 @@ class Knihovna_Vypujcky_Block_Adminhtml_Vypujcky_Edit_Form extends Mage_Adminhtm
 
         ));
         $f->addField('to', 'date', array(
-            'name'     => 'to',
-            'label'    => 'Datum do',
-            'format'   => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),
-            'class'    => 'validate-date',
-            'required' => true
-        ));
-        $f->addField('position', 'text', array(
-            'label'          => 'pokus',
-            'name'           => 'position',
-            'type'           => 'number',
-            'validate_class' => 'validate-number',
-            'index'          => 'position',
-            'width'          => 60,
+            'name'               => 'to',
+            'label'              => 'Datum do',
+            'after_element_html' => '<small></small>',
+            'tabindex'           => 1,
+            'image'              => $this->getSkinUrl('images/grid-cal.gif'),
+            'format'             => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),
+            'class'              => 'validate-date',
+            'required'           => true
         ));
 
         $f->addField('book', 'select', array(
