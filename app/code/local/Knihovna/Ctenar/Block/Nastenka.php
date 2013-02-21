@@ -3,7 +3,7 @@
  * Created by JetBrains PhpStorm.
  * User: Owner
  * Date: 21.2.13
- * Time: 10:27
+ * Time: 11:24
  * To change this template use File | Settings | File Templates.
  */
 class Knihovna_Ctenar_Block_Nastenka extends Mage_Core_Block_Template{
