@@ -13,7 +13,7 @@ class Knihovna_Knihovna_Block_Adminhtml_Oddeleni_Edit extends Mage_Adminhtml_Blo
     public function _construct(){
     $this->_objectId='id';
     $this->_controller='adminhtml_oddeleni';
-    $this->_blockGroup='oddeleni';
+    $this->_blockGroup='knihovna';
     parent::_construct();
 }
     public function getHeaderText(){
