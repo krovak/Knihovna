@@ -40,6 +40,9 @@
                     <knihovna_knihovna>
                         <table>knihovna</table>
                     </knihovna_knihovna>
+                    <knihovna_oddeleni>
+                        <table>oddeleni</table>
+                    </knihovna_oddeleni>
                 </entities>
             </knihovna_resource>
         </models>
