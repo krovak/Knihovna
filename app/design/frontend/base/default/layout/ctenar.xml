@@ -1,5 +1,14 @@
 <?xml version="1.0"?>
 <layout>
+    <default>
+        <reference name="top.links">
+            <action method="addLink">
+                <label>Přihlásit se</label>
+                <url>/ctenar/login</url>
+                <title>Přihlášení se k účtu</title>
+            </action>
+        </reference>
+    </default>
     <ctenar_login_index>
         <reference name="content">
             <block type="ctenar/login" template="knihovna/ctenar/login.phtml"></block>
