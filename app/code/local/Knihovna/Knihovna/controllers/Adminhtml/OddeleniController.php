@@ -48,7 +48,7 @@ class Knihovna_Knihovna_Adminhtml_OddeleniController extends Mage_Adminhtml_Cont
             ->createBlock('knihovna/adminhtml_oddeleni_edit')
             ->setEditMode((bool)$this->getRequest()
             ->getParam('entity_id')));
-        $this->renderLayout();vardump($this);
+        $this->renderLayout();var_dump($this);
     }
 
 
