@@ -9,6 +9,6 @@
 class Knihovna_Ctenar_Block_Nastenka extends Mage_Core_Block_Template{
     public function __construct(){
         parent::__construct();
-        $this->setTemplate('knihovna/ctenar/nastenka.phtml');
+        // $this->setTemplate('knihovna/ctenar/nastenka.phtml');
     }
 }
