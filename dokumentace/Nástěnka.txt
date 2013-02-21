@@ -1,0 +1,27 @@
+Nástěnka
+
+1.Moje údaje
+- Jméno
+- příjmení
+- číslo čtenáře
+- změna hesla
+- adresa
+- telefon, e-mail
+- První přihlášení - registrace v knihovně
+- poslední přihlášení
+
+2. Moje výpůjčky
+- otevřené výpůjčky - zvýraznění těch, které jsou po termínu vrácení
+
+3. Knihy
+- seznam knih - vyhledávání - možnost filtrovat podle titulu, autora, volné knihy
+
+4. Rezervace
+- seznam knih, které už mám rezervované, se zvýrazněním těch, které už jsou dostupné (termín uvolnění?)
+- možnost rezervace
+
+5. Historie výpůjček - možnost filtrovat podle Titulu, podle autora nebo podle data zapůjčení/vrácení
+
+6. Poplatky knihovně
+- moje dluhy
+-( historie?)
