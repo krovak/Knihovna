@@ -13,4 +13,11 @@ class Knihovna_Vypujcky_Model_Resource_Vypujcky_Collection extends Mage_Core_Mod
     {
         $this->_init('vypujcky/vypujcky');
     }
+
+    public function getCtenarVypujcky($id_reader)
+    {
+        $readers_books = $this;
+        $readers_books->addFieldToFilter('reader',$id_reader);
+        return $readers_books;
+    }
 }
