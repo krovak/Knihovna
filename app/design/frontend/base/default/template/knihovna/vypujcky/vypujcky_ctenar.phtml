@@ -1,7 +1,6 @@
+<h3>Výpůjčky čtenáře</h3>
 <?php
     $user = Mage::getModel('core/session')->getLoggedUser();
     $vypujcky = $this->getCtenarVypujcky($user->getId());
-    foreach($vypujcky as $vypujcka) {
         var_dump($vypujcka);
-    }
 ?>
