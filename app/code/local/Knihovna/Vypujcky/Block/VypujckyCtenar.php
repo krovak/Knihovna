@@ -6,7 +6,7 @@
  * Time: 11:54
  * To change this template use File | Settings | File Templates.
  */
-class Knihovna_Vypujcky_Block_Vypujcky_ctenar extends Mage_Core_Block_Template{
+class Knihovna_Vypujcky_Block_VypujckyCtenar extends Mage_Core_Block_Template{
 
     /**
      * @param $id_reader
