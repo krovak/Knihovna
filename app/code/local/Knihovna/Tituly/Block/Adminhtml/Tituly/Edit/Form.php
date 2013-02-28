@@ -8,6 +8,10 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         parent::_construct();
         $this->setId('editForm');
         $this->setTitle('Přidat záznam');
+        $this->_addButton('test',array(
+            'label'=>'text',
+
+        ));
     }
 
     public function _prepareForm()
@@ -60,10 +64,6 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                 'values'   => Mage::getModel('tituly/source_zanr')->toOptionArray()
             )
         );
-        $f->_addButton('test',array(
-            'label'=>'text',
-
-        ));
 
         $form->setValues($autor->getData());
         $form->setUseContainer(true);
