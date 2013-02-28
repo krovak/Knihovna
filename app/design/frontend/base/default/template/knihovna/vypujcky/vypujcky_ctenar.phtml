@@ -1,8 +1,23 @@
 <h3>Výpůjčky čtenáře</h3>
+    <table>
+        <thead>
+            <tr><td>Kniha</td><td>Od</td><td>Do</td></tr>
+        </thead>
+        <tbody>
 <?php
     $user = Mage::getModel('core/session')->getLoggedUser();
     $vypujcky = $this->getCtenarVypujcky($user->getId());
         foreach($vypujcky as $vypujcka) {
-            echo '<p>'.$vypujcka->getFrom().'</p>';
+            ?>
+            <tr>
+                <?php
+                    echo '<td>'.$vypujcka->getBook().'</td>';
+                    echo '<td>'.$vypujcka->getFrom().'</td>';
+                    echo '<td>'.$vypujcka->getTo().'</td>';
+                ?>
+            </tr>
+<?php
         }
 ?>
+        </tbody>
+    </table>
