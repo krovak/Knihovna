@@ -19,9 +19,9 @@
     <frontend>
         <layout>
             <updates>
-                <ctenar module="Knihovna_Vypujcky">
-                    <file>vypujcky_ctenar.xml</file>
-                </ctenar>
+                <vypujcky module="Knihovna_Vypujcky">
+                    <file>vypujcky.xml</file>
+                </vypujcky>
             </updates>
         </layout>
         <routers>
