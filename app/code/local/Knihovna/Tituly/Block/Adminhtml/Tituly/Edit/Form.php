@@ -8,10 +8,11 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         parent::_construct();
         $this->setId('editForm');
         $this->setTitle('Přidat záznam');
-        $this->_addButton('test',array(
-            'label'=>'text',
-
-        ));
+        $this->_addButton('saveandcontinue', array(
+            'label'     => Mage::helper('adminhtml')->__('Save And Continue Edit'),
+            'onclick'   => 'saveAndContinueEdit()',
+            'class'     => 'save',
+        ), -100);
     }
 
     public function _prepareForm()

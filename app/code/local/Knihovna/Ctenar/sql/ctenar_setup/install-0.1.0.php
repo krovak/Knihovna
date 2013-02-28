@@ -67,7 +67,7 @@ $table = $installer->getConnection()
 )
     ->addColumn(
     'telefonni_cislo',Varien_Db_Ddl_Table::TYPE_VARCHAR,20, array(
-        'nullable'=>true
+        'nullable'=>false
     ),'Telefonní číslo'
 
 )

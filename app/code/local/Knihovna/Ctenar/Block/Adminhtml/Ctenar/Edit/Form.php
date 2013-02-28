@@ -120,7 +120,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Form extends Mage_Adminhtml_Bl
             'telefonni_cislo', 'text', array(
                 'name'     => 'telefonni_cislo',
                 'label'    => 'Telefonní číslo',
-                'required' => false
+                'required' => true
             )
         );
 
