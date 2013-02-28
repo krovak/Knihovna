@@ -1,7 +1,7 @@
 <h3>Výpůjčky čtenáře</h3>
     <table>
         <thead>
-            <tr><td>Kniha</td><td>Od</td><td>Do</td></tr>
+            <tr><th>Kniha</th><th>Od</th><th>Do</th></tr>
         </thead>
         <tbody>
 <?php
@@ -11,7 +11,8 @@
             ?>
             <tr>
                 <?php
-                    echo '<td>'.$vypujcka->getBook().'</td>';
+                    $book_name = Mage::getModel('tituly/tituly')->getName($vypujcka->getBook());
+                    echo '<td>'.$book_name.'</td>';
                     echo '<td>'.$vypujcka->getFrom().'</td>';
                     echo '<td>'.$vypujcka->getTo().'</td>';
                 ?>
