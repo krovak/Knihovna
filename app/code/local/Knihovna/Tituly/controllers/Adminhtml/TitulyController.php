@@ -57,6 +57,13 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         $m->save();
         $this->_redirect('*/*/'); //kam se to má přesměrovat po uložení na indexAction, tj. na grid
     }
+    public function importAction()
+    {
+        /** @var $m Knihovna_ */
+        $m    = Mage::getModel('tituly/tituly');
+ $m->test();
+
+    }
 
 
 }
