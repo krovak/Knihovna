@@ -7,7 +7,7 @@
  * www: http://www.iguru.eu
  * email: info@iguru.eu
  */
- 
+
 class Knihovna_Tituly_Block_Adminhtml_Tituly extends Mage_Adminhtml_Block_Widget_Grid_Container {
 
     public function _construct(){
