@@ -11,8 +11,8 @@
             ?>
             <tr>
                 <?php
-                    $book_name = Mage::getModel('tituly/tituly')->getName($vypujcka->getBook());
-                    echo '<td>'.$book_name.'</td>';
+                    //$book_name = Mage::getModel('tituly/tituly')->getName($vypujcka->getBook());
+                    echo '<td>'.$vypujcka->getBook().'</td>';
                     echo '<td>'.$vypujcka->getFrom().'</td>';
                     echo '<td>'.$vypujcka->getTo().'</td>';
                 ?>
