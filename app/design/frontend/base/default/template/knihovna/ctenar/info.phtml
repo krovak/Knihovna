@@ -8,12 +8,21 @@
  */
 ?>
 <?php
+/** @var $ctenar Knihovna_Ctenar_Model_Ctenar */
 $ctenar= $this->getCtenar();
 ?>
 <div id="info">
 <h3>Info o ctenari</h3>
-    <?php
-    var_dump($ctenar->getData());
+    Číslo průkazu: <?php echo $ctenar->getCislo_prukazu();?><br>
+    Jméno: <?php echo $ctenar->getJmeno();?><br>
+    Příjmení: <?php echo $ctenar->getPrijmeni();?><br>
+    Ulice: <?php echo $ctenar->getUlice();?><br>
+    Číslo popisné: <?php echo $ctenar->getCp();?><br>
+    Město: <?php echo $ctenar->getMesto();?><br>
+    PSČ: <?php echo $ctenar->getPsc();?><br>
+    Email: <?php echo $ctenar->getEmail();?><br>
+    Telefonní číslo: <?php echo $ctenar->getTelefonni_cislo();?><br>
+
 ?>
 </div>
 
