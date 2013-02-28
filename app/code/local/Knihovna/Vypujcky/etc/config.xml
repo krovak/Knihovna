@@ -17,6 +17,13 @@
         </routers>
     </admin>
     <frontend>
+        <layout>
+            <updates>
+                <ctenar module="Knihovna_Vypujcky">
+                    <file>vypujcky_ctenar.xml</file>
+                </ctenar>
+            </updates>
+        </layout>
         <routers>
             <vypujcky>
                 <use>standard</use>
