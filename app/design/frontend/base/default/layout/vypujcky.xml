@@ -2,7 +2,7 @@
 <layout>
     <ctenar_index_nastenka>
         <reference name="ctenar.nastenka">
-            <block type="vypujcky/vypujckyctenar" name="vypujcky.vypujckyctenar"
+            <block type="vypujcky/vypujckyCtenar" name="vypujcky.vypujckyctenar"
                    template="knihovna/vypujcky/vypujcky_ctenar.phtml"></block>
         </reference>
     </ctenar_index_nastenka>
