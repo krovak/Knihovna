@@ -15,11 +15,7 @@ class Knihovna_Vypujcky_Block_VypujckyCtenar extends Mage_Core_Block_Template{
     public function getCtenarVypujcky($id_reader)
     {
         $readers_books = Mage::getModel('vypujcky/vypujcky')->getCollection()
-            ->addAttributeToSelect('book')
-            ->addAttributeToSelect('from')
-            ->addAttributeToSelect('to')
-            ->addAttributeToFilter('reader', $id_reader)
-            ->load();
+            ->addAttributeToFilter('reader', $id_reader);
         return $readers_books;
     }
 }
