@@ -17,6 +17,6 @@ class Knihovna_Ctenar_Model_Observer{
         $handle = 'ctenar_logged_' . ($loggedIn ? 'in' : 'out');
         var_dump($handle);
         $observer->getEvent()->getLayout()->getUpdate()
-            ->addHandle('ctenar_logged_' . ($loggedIn ? 'in' : 'out'));
+            ->addHandle($handle);
     }
 }
