@@ -7,14 +7,15 @@ class Knihovna_Ctenar_Model_Observer{
 
     public function beforeLoadLayout($observer)
     {
-        if (is_object(Mage::getSingleton('core/session')->getLoggedUser())){
+        $user = Mage::getSingleton('core/session')->getLoggedUser();
+        if ($user->getId()){
             $loggedIn = true;
         }
         else {
             $loggedIn = false;
         }
         $handle = 'ctenar_logged_' . ($loggedIn ? 'in' : 'out');
-        var_dump($handle);
+        var_dump($user);
         $observer->getEvent()->getLayout()->getUpdate()
             ->addHandle('ctenar_logged_' . ($loggedIn ? 'in' : 'out'));
     }
