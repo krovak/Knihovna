@@ -65,22 +65,22 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         $isbnf->setAfterElementHtml("
         <button onclick='getGoogleBook();return false;'>Načíst z GoogleBooks</button>
         <script>
-        function getGoogleBook(){
-            var url ='https://www.googleapis.com/books/v1/volumes';
-            new Ajax.Request(url,{
-                        method:'get',
-                        parameters:'q='+$('#isbn').value,
-//onLoading:function (transport) {
-//                $('parent_id').update('Načítám...');
-//            }//,
-            onComplete: function(transport) {
-                    alert(transport.responseText);
+            function listEntries(booksInfo)
+            {
+                var kniha = booksInfo;
+                alert(booksInfo.prewiev);
+
             }
-        });
-
-
-
-        } </script>");
+            function search(query)
+            {
+                var sc = document.createElement('script');
+                sc.setAttribute('id', 'jsonScript');
+                sc.setAttribute('src', 'http://books.google.com/books?bibkeys=' +
+                    escape(query.isbns.value) + '&jscmd=viewapi&callback=listEntries');
+                sc.setAttribute('type', 'text/javascript');
+                document.documentElement.firstChild.appendChild(sc);
+            }
+        </script>");
 
         $form->setValues($autor->getData());
         $form->setUseContainer(true);
