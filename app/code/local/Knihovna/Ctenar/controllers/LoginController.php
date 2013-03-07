@@ -25,8 +25,8 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
 
     public function logoutAction()
     {
-   Mage::getModel('core/session')->unsetLoggedUser();
-      $this->_redirect('*/*/index');
+        Mage::getSingleton('core/session')->unsLoggedUser();
+        $this->_redirect('*/*/index');
     }
 
     public function loggedAction()
@@ -34,11 +34,9 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
         $this->loadLayout();
         $this->getLayout()->getBlock('content')->append($this->getLayout()->createBlock('ctenar/nastenka'));
         $this->renderLayout();
-      //  Mage::getSingleton('core/session')->getLoggedUser(); ukazka ziskani dat ze Session
+        //  Mage::getSingleton('core/session')->getLoggedUser(); ukazka ziskani dat ze Session
 
     }
-
-
 
 
 }

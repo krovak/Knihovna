@@ -25,6 +25,16 @@
                 </ctenar>
             </updates>
         </layout>
+        <events>
+            <controller_action_layout_load_before>
+                <observers>
+                    <ctenar_is_logged_in_observer>
+                        <class>ctenar/observer</class>
+                        <method>beforeLoadLayout</method>
+                    </ctenar_is_logged_in_observer>
+                </observers>
+            </controller_action_layout_load_before>
+        </events>
         <routers>
             <ctenar>
                 <use>standard</use>

@@ -1,6 +1,15 @@
 <?xml version="1.0"?>
 <layout>
-    <default>
+    <ctenar_logged_out>
+        <reference name="top.links">
+            <action method="addLink">
+                <label>Odhlásit se</label>
+                <url>/ctenar/login/logout</url>
+                <title>Odhlášení</title>
+            </action>
+        </reference>
+    </ctenar_logged_out>
+    <ctenar_logged_in>
         <reference name="top.links">
             <action method="addLink">
                 <label>Přihlásit se</label>
@@ -8,7 +17,8 @@
                 <title>Přihlášení se k účtu</title>
             </action>
         </reference>
-    </default>
+    </ctenar_logged_in>
+
     <ctenar_login_index>
         <reference name="content">
             <block type="ctenar/login" template="knihovna/ctenar/login.phtml"></block>
