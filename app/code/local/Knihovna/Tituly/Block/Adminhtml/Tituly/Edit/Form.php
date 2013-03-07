@@ -78,7 +78,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                 sc.setAttribute('src', 'http://books.google.com/books?bibkeys=' +
                     escape(query.isbns.value) + '&jscmd=viewapi&callback=listEntries');
                 sc.setAttribute('type', 'text/javascript');
-                document.documentElement.firstChild.appendChild(sc);
+                listEntries(sc);
             }
         </script>");
 
