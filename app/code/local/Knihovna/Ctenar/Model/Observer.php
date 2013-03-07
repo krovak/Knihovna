@@ -9,10 +9,10 @@ class Knihovna_Ctenar_Model_Observer{
     {
         $user = Mage::getSingleton('core/session')->getLoggedUser();
         if (is_object($user)){
-            $loggedIn = true;
+            $loggedIn = false;
         }
         else {
-            $loggedIn = false;
+            $loggedIn = true;
         }
         $handle = 'ctenar_logged_' . ($loggedIn ? 'in' : 'out');
         var_dump($handle);
