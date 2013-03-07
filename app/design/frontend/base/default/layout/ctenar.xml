@@ -16,7 +16,7 @@
         <reference name="top.links">
             <action method="addLink">
                 <label>Odhlásit se</label>
-                <url>/ctenar/logout</url>
+                <url>/ctenar/login/logout</url>
                 <title>Odhlášení</title>
             </action>
         </reference>
