@@ -8,10 +8,10 @@ class Knihovna_Ctenar_Model_Observer{
     public function beforeLoadLayout($observer)
     {
         if (is_object(Mage::getSingleton('core/session')->getLoggedUser())){
-            $loggedIn = true;
+            $loggedIn = false;
         }
         else {
-            $loggedIn = false;
+            $loggedIn = true;
         }
        // $loggedIn = Mage::getSingleton('customer/session')->isLoggedIn();
 
