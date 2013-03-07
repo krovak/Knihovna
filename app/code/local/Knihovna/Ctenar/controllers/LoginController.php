@@ -25,7 +25,7 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
 
     public function logoutAction()
     {
-        Mage::getModel('core/session')->unsetLoggedUser();
+        Mage::getSingleton('core/session')->unsetLoggedUser();
         $this->_redirect('*/*/index');
     }
 
