@@ -7,7 +7,7 @@ class Knihovna_Ctenar_Model_Observer{
 
     public function beforeLoadLayout($observer)
     {
-        if (Mage::getSingleton('core/session')->getLoggedUser()){
+        if (is_object(Mage::getSingleton('core/session')->getLoggedUser())){
             $loggedIn = true;
         }
         else {
