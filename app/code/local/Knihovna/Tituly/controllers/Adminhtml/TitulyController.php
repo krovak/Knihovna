@@ -41,7 +41,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
     {
 
         $this->loadLayout();
-        $autor=$this->_initEdit('id');
+        $autor = $this->_initEdit('id');
         $this->_addContent($this->getLayout()
             ->createBlock('tituly/adminhtml_tituly_edit')
             ->setEditMode((bool)$this->getRequest()
@@ -57,11 +57,12 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         $m->save();
         $this->_redirect('*/*/'); //kam se to má přesměrovat po uložení na indexAction, tj. na grid
     }
+
     public function importAction()
     {
         /** @var $m Knihovna_ */
-        $m    = Mage::getModel('tituly/import');
- $m->test();
+        $m = Mage::getModel('tituly/import');
+        $m->getInfo(10100102);
 
     }
 
