@@ -19,7 +19,12 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         ));
         $f     = $form->addFieldset('tituly', array(
             'legend' => 'Přidat knihu',
-            'class'  => 'fieldset-wide'
+            'class'  => 'fieldset-short'
+        ));
+        $isbnf = $f->addField('isbn', 'text', array(
+            'name'  => 'isbn',
+            'label' => 'ISBN',
+            'style' => 'width:45%'
         ));
         if ($autor->getId()) {
             $f->addField('entity_id', 'hidden', array(
@@ -38,10 +43,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
             'label'    => 'Název',
             'required' => true
         ));
-        $f->addField('isbn', 'text', array(
-            'name'  => 'isbn',
-            'label' => 'ISBN'
-        ));
+
         $f->addField('pocet_stranek', 'text', array(
             'name'  => 'pocet_stranek',
             'label' => 'Počet stránek',
@@ -60,6 +62,24 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                 'values'   => Mage::getModel('tituly/source_zanr')->toOptionArray()
             )
         );
+        $isbnf->setAfterElementHtml("
+        <button onclick='getGoogleBook();return false;'>Načíst z GoogleBooks</button>
+        <script>function getGoogleBook(){
+            var url ='https://www.googleapis.com/books/v1/volumes';
+            new Ajax.Request(url,{
+                        method:'get',
+                        parameters:'q='+$('isbn').value,
+//onLoading:function (transport) {
+//                $('parent_id').update('Načítám...');
+//            }//,
+            onComplete: function(transport) {
+                    alert(transport.responseText);
+            }
+        });
+
+
+
+        } </script>");
 
         $form->setValues($autor->getData());
         $form->setUseContainer(true);
