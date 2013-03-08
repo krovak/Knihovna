@@ -62,24 +62,31 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                 'values'   => Mage::getModel('tituly/source_zanr')->toOptionArray()
             )
         );
+
+        $urlImp = $this->getUrl('*/*/import'); //url s metodou v contoleru, kterou chci zavolat
+
+        //přidání tlačítka se scriptem na stahování informací
+        //tlačítko se přidá za element $isbnf (edit isbn)
+        //tlačítko po stisku zavolá $urlImp a načte z ní json objekt, který následně přiřadí jednotlivým vstupům
         $isbnf->setAfterElementHtml("
         <button onclick='getGoogleBook();return false;'>Načíst z GoogleBooks</button>
-        <script>
-            function listEntries(booksInfo)
-            {
-                var kniha = booksInfo;
-                alert(booksInfo.prewiev);
 
+        <script>
+        function getGoogleBook(){
+            var urlImp = '$urlImp';
+            new Ajax.Request(urlImp,{
+                        method:'get',
+                        parameters:'q='+$('isbn').value,
+            onComplete: function(transport) {
+                  var odpoved=JSON.parse(transport.responseText);
+                    $('nazev').value = odpoved.nazev;
+                    $('rok_vydani').value = odpoved.rokVydani;
+                    $('pocet_stranek').value = parseInt(odpoved.format[0]);
+                    $('tituly').insert({top:new Element('img',{src:odpoved.obrazek,style:'float:right'})});
             }
-            function search(query)
-            {
-                var sc = document.createElement('script');
-                sc.setAttribute('id', 'jsonScript');
-                sc.setAttribute('src', 'http://books.google.com/books?bibkeys=' +
-                    escape(query.isbns.value) + '&jscmd=viewapi&callback=listEntries');
-                sc.setAttribute('type', 'text/javascript');
-                listEntries(sc);
-            }
+        });
+
+         }
         </script>");
 
         $form->setValues($autor->getData());

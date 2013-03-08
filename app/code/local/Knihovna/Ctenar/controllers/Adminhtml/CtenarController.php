@@ -41,7 +41,9 @@ class Knihovna_Ctenar_Adminhtml_CtenarController extends Mage_Adminhtml_Controll
     {
         $this->loadLayout();
         $ctenar = $this->_initEdit('id');
-        $this->_addContent($this->getLayout()->createBlock('ctenar/adminhtml_ctenar_edit')->setEditMode((bool)$this->getRequest()->getParam('entity_id')));
+        $this->_addContent($this->getLayout()
+            ->createBlock('ctenar/adminhtml_ctenar_edit')->setEditMode((bool)$this->getRequest()->getParam('entity_id')))
+            ->_addLeft($this->getLayout()->createBlock('ctenar/adminhtml_ctenar_edit_tabs'));
         $this->renderLayout();
     }
 

@@ -10,31 +10,17 @@
 
 class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
     extends Mage_Adminhtml_Block_Widget_Form
-    implements Mage_Adminhtml_Block_Widget_Tab_Interface
 {
-
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    protected function _prepareLayout()
-    {
-        parent::_prepareLayout();
-//           if (Mage::getSingleton('cms/wysiwyg_config')->isEnabled()) {
-//               $this->getLayout()->getBlock('head')->setCanLoadTinyMce(true);
-//           }
-    }
-
     public function _prepareForm()
     {
+
         /** @var $ctenar Knihovna_Ctenar_Model_Ctenar */
         $ctenar = Mage::registry('ctenar');
-        if (is_object($ctenar)) {
-            if (sizeof($ctenar->getData()) == 0) {
-                $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
-            }
+        if (!is_object($ctenar)) {
+            $ctenar = Mage::getModel('ctenar/ctenar');
+            $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
         }
+
         $form = new Varien_Data_Form(array(
             'id'     => 'edit_form',
             'method' => 'Post'
@@ -55,7 +41,6 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 $ctenar->unsetData("heslo");
             }
         }
-
 
         $f->addField(
             'cislo_prukazu', 'text', array(
@@ -137,7 +122,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         if (is_object($ctenar))
             $form->setValues($ctenar->getData());
-        $form->setUseContainer(true);
+//            $form->setUseContainer(true);
+
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
 
@@ -146,46 +132,4 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
     }
 
 
-    /**
-     * Return Tab label
-     *
-     * @return string
-     */
-    public function getTabLabel()
-    {
-        // TODO: Implement getTabLabel() method.
-        return Mage::helper('Ctenar')->__('Content');
-    }
-
-    /**
-     * Return Tab title
-     *
-     * @return string
-     */
-    public function getTabTitle()
-    {
-        // TODO: Implement getTabTitle() method.
-        return Mage::helper('Ctenar')->__('Meta Data');
-    }
-
-    /**
-     * Can show tab in tabs
-     *
-     * @return boolean
-     */
-    public function canShowTab()
-    {
-        // TODO: Implement canShowTab() method.
-        return true;
-    }
-
-    /**
-     * Tab is hidden
-     *
-     * @return boolean
-     */
-    public function isHidden()
-    {
-        return false;
-    }
 }

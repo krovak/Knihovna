@@ -62,7 +62,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
     {
         /** @var $m Knihovna_ */
         $m = Mage::getModel('tituly/import');
-        $m->getInfo(10100102);
+        $m->getInfo($this->getRequest()->getParam('q'));
 
     }
 

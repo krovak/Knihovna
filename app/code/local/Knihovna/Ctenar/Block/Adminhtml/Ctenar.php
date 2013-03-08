@@ -16,6 +16,6 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar extends Mage_Adminhtml_Block_Widget
 
     public function getHeaderText()
     {
-        return 'Přidat záznam';
+        return 'Čtenáři';
     }
 }
