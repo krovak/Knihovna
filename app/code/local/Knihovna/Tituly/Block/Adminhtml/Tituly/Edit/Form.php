@@ -24,7 +24,8 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         $isbnf = $f->addField('isbn', 'text', array(
             'name'  => 'isbn',
             'label' => 'ISBN',
-            'style' => 'width:45%'
+            'style' => 'width:45%',
+            'tabindex' => 1
         ));
         if ($autor->getId()) {
             $f->addField('entity_id', 'hidden', array(
