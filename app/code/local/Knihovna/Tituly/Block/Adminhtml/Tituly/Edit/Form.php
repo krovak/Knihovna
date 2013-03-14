@@ -32,11 +32,11 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                 'name' => 'entity_id'
             ));
         }
-        $f->addField('autor', 'select', array(
+        $f->addField('autor', 'text', array(
                 'name'     => 'autor',
                 'label'    => 'Autor',
                 'required' => true,
-                'values'   => Mage::getModel('autor/source_autori')->toOptionArray()
+                //'values'   => Mage::getModel('autor/source_autori')->toOptionArray()
             )
         );
         $f->addField('nazev', 'text', array(
