@@ -87,7 +87,6 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                   var odpoved=JSON.parse(transport.responseText);
                     $('nazev').value = odpoved.nazev;
                     $('rok_vydani').value = odpoved.rokVydani;
-                    var g_name = odpoved.autor;
                     $('autor').value = g_name;
                     $('pocet_stranek').value = parseInt(odpoved.format[0]);
                     $('tituly').insert({top:new Element('img',{src:odpoved.obrazek,style:'float:right'})});
