@@ -76,7 +76,7 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
         $child = $xmlObj->entry->children($namespaces['dc']); //vyhledam vsechny potomky s dc
 
         //TODO předělat posílání autora jako pole s ID autorů
-        $info = array('autor'     => (string)$child->creator.implode(","),
+        $info = array('autor'     => (string)$child->creator,
                       'nazev'     => (string)$child->title,
                       'rokVydani' => (string)$child->date,
                       'format'    => $child->format,
