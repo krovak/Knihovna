@@ -91,10 +91,11 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                     function() {
                         var name = $(this).text().split(' ');
                         var g_name = odpoved.autor.split(' ');
-                        if(name[1] == g_name[2] && name[2] == g_name[1]) {
+                        if(name[0] == g_name[1] && name[1] == g_name[0]) {
                             $('autor option:selected').removeAttr('selected');
                             $(this).selected = 'selected';
                         }
+                        else return;
                     });
                     $('pocet_stranek').value = parseInt(odpoved.format[0]);
                     $('tituly').insert({top:new Element('img',{src:odpoved.obrazek,style:'float:right'})});
