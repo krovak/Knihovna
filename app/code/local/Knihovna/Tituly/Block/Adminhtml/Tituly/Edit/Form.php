@@ -89,8 +89,8 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                     $('rok_vydani').value = odpoved.rokVydani;
                     $('autor option').each(
                     function() {
-                        var name = $(this).text();
-                        var g_name = odpoved.autor;
+                        var name = $(this).text().split(' ');
+                        var g_name = odpoved.autor.split(' ');
                         if(name[1] == g_name[2] && name[2] == g_name[1]) {
                             $('autor option:selected').removeAttr('selected');
                             $(this).selected = 'selected';
