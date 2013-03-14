@@ -81,7 +81,7 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
         foreach($creators_arr as $creator) {
             $creators .= $creator.', ';
         }
-        $creators = substr($creators, 0, -1);
+        $creators = substr($creators, 0, -2);
         $info = array('autor'     => $creators,
                       'nazev'     => (string)$child->title,
                       'rokVydani' => (string)$child->date,
