@@ -25,8 +25,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
             'name'  => 'isbn',
             'label' => 'ISBN',
             'style' => 'width:45%',
-            'tabindex' => 1,
-            'element.focus()'
+            'tabindex' => 1
         ));
         if ($autor->getId()) {
             $f->addField('entity_id', 'hidden', array(
@@ -74,6 +73,11 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         <button onclick='getGoogleBook();return false;'>Načíst z GoogleBooks</button>
 
         <script>
+            var ctrl = document.getElementById('isbn');
+            if (ctrl != null && ctrl.value == '')
+             {
+        ctrl.focus();
+             }
         function getGoogleBook(){
             var urlImp = '$urlImp';
             new Ajax.Request(urlImp,{
@@ -98,3 +102,11 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         return parent::_prepareForm();
     }
 }
+/*<script type="text/javascript" language="javascript">//
+function SetFocus() {
+    var ctrl = document.getElementById("Text1");
+    if (ctrl != null && ctrl.value == '') {
+        ctrl.focus();
+    }
+}
+</script>*/
