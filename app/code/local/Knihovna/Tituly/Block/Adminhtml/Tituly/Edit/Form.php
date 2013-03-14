@@ -73,25 +73,49 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         <button onclick='getGoogleBook();return false;'>Načíst z GoogleBooks</button>
 
         <script>
+        //nastavení kurzoru do pole isbn
             var ctrl = document.getElementById('isbn');
             if (ctrl != null && ctrl.value == '')
              {
         ctrl.focus();
              }
+        //----------------------------------
         function getGoogleBook(){
-            var urlImp = '$urlImp';
-            new Ajax.Request(urlImp,{
+            if (validaceISBN(document.getElementById('isbn').value))
+            {
+                var urlImp = '$urlImp';
+                new Ajax.Request(urlImp,{
                         method:'get',
                         parameters:'q='+$('isbn').value,
-            onComplete: function(transport) {
+                onComplete: function(transport) {
                   var odpoved=JSON.parse(transport.responseText);
                     $('nazev').value = odpoved.nazev;
                     $('rok_vydani').value = odpoved.rokVydani;
                     $('pocet_stranek').value = parseInt(odpoved.format[0]);
                     $('tituly').insert({top:new Element('img',{src:odpoved.obrazek,style:'float:right'})});
+                }
+                });
             }
-        });
 
+         }
+         function validaceISBN (isbn)
+         {
+            isbn = isbn.replace(/[^\dX]/gi, '');
+            if(isbn.length != 10)
+            {
+                return false;
+            }
+            var chars = isbn.split('');
+            if(chars[9].toUpperCase() == 'X')
+            {
+                chars[9] = 10;
+            }
+            var sum = 0;
+            for (var i = 0; i < chars.length; i++)
+            {
+                sum += ((10-i) * parseInt(chars[i]));
+            };
+            return ((sum % 11) == 0);
          }
         </script>");
 
