@@ -101,22 +101,30 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
             if(isbn.length != 10)
             {
                 if (checkEan(isbn))
-                {}
+                {
+                    return true;
+                }
                 else
-                {return false;}
+                {
+                    return false;
+                }
             }
-            var chars = isbn.split('');
-            if(chars[9].toUpperCase() == 'X')
+            else
             {
-                chars[9] = 10;
+                var chars = isbn.split('');
+                if(chars[9].toUpperCase() == 'X')
+                {
+                    chars[9] = 10;
+                }
+                var sum = 0;
+                for (var i = 0; i < chars.length; i++)
+                {
+                    sum += ((10-i) * parseInt(chars[i]));
+                };
+                return ((sum % 11) == 0);
             }
-            var sum = 0;
-            for (var i = 0; i < chars.length; i++)
-            {
-                sum += ((10-i) * parseInt(chars[i]));
-            };
-            return ((sum % 11) == 0);
          }
+
          function checkEan(eanCode)
          {
             // Check if only digits
@@ -187,11 +195,3 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
     }
 
 }
-/*<script type="text/javascript" language="javascript">//
-function SetFocus() {
-    var ctrl = document.getElementById("Text1");
-    if (ctrl != null && ctrl.value == '') {
-        ctrl.focus();
-    }
-}
-</script>*/
