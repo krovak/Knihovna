@@ -74,11 +74,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
 
         <script>
         //nastavení kurzoru do pole isbn
-            var ctrl = document.getElementById('isbn');
-            if (ctrl != null && ctrl.value == '')
-             {
-        ctrl.focus();
-             }
+        $('isbn').focus();
         //----------------------------------
         function getGoogleBook(){
             if (validaceISBN(document.getElementById('isbn').value))
