@@ -86,14 +86,18 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                         parameters:'q='+$('isbn').value,
                 onComplete: function(transport) {
                   var odpoved=JSON.parse(transport.responseText);
-                  var imagecover = new Element('img',{src:odpoved.obrazek,style:'float:right',id:'imagecover'});
+                  var imagecover = new Element('img',{src:odpoved.obrazek,style:'float:right',id:'obrazek'});
                     $('nazev').value = odpoved.nazev;
                     $('rok_vydani').value = odpoved.rokVydani;
                     $('autor').value = odpoved.autor;
                     $('pocet_stranek').value = parseInt(odpoved.format[0]);
-                    if ($('imagecover')==undefined)
+                    if ($('obrazek')==undefined)
                     {
                         $('tituly').insert({top :imagecover});
+                    }
+                    else
+                    {
+                        $('obrazek').update($('obrazek').src = imagecover.src);
                     }
 
                 }
