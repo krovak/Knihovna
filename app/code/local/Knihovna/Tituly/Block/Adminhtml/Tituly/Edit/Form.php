@@ -91,7 +91,6 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                     $('rok_vydani').value = odpoved.rokVydani;
                     $('autor').value = odpoved.autor;
                     $('pocet_stranek').value = parseInt(odpoved.format[0]);
-                    $('imagecover').remove();
                     $('tituly').update({id:imagecover});
                 }
                 });
