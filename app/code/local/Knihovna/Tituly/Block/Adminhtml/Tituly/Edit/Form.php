@@ -94,6 +94,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                     if ($('obrazek')==undefined)
                     {
                         $('tituly').insert({top :imagecover});
+                        $('tituly').insert({bottom :new Element('div',{ style:'clear:both'})});
                     }
                     else
                     {
