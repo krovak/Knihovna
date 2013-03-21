@@ -85,11 +85,13 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                         parameters:'q='+$('isbn').value,
                 onComplete: function(transport) {
                   var odpoved=JSON.parse(transport.responseText);
+                  var image = new Element('img',{src:odpoved.obrazek,style:'float:right',id:'imagecover'});
                     $('nazev').value = odpoved.nazev;
                     $('rok_vydani').value = odpoved.rokVydani;
                     $('autor').value = odpoved.autor;
                     $('pocet_stranek').value = parseInt(odpoved.format[0]);
-                    $('tituly').insert({top:new Element('img',{src:odpoved.obrazek,style:'float:right'})});
+                    $('imagecover').remove();
+                    $('tituly').insert({top:image)});
                 }
                 });
             }
@@ -97,7 +99,6 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
             {
                 $('isbn').css('border-color','red');
             }
-            $('#tituly img').remove();
          }
          function validaceISBN (isbn)
          {
