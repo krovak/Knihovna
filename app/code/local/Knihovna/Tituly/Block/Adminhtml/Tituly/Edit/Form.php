@@ -79,7 +79,6 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         function getGoogleBook(){
             if (validaceISBN($('isbn').value))
             {
-                $('tituly img').remove();
                 var urlImp = '$urlImp';
                 new Ajax.Request(urlImp,{
                         method:'get',
@@ -98,7 +97,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
             {
                 $('isbn').css('border-color','red');
             }
-
+            $('#tituly img').remove();
          }
          function validaceISBN (isbn)
          {
