@@ -79,6 +79,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         function getGoogleBook(){
             if (validaceISBN($('isbn').value))
             {
+                $('tituly img').remove();
                 var urlImp = '$urlImp';
                 new Ajax.Request(urlImp,{
                         method:'get',
@@ -89,7 +90,6 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                     $('rok_vydani').value = odpoved.rokVydani;
                     $('autor').value = odpoved.autor;
                     $('pocet_stranek').value = parseInt(odpoved.format[0]);
-                    $('tituly img').remove();
                     $('tituly').insert({top:new Element('img',{src:odpoved.obrazek,style:'float:right'})});
                 }
                 });
