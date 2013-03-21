@@ -10,6 +10,11 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Nepovinne extends Mage_Adm
 {
     public function _prepareForm()
     {
+        $ctenar = Mage::registry('ctenar');
+        if (!is_object($ctenar)) {
+            $ctenar = Mage::getModel('ctenar/ctenar');
+            $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
+        }
         $form = new Varien_Data_Form();
         $this->setForm($form);
         $f    = $form->addFieldset(
@@ -60,6 +65,9 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Nepovinne extends Mage_Adm
                 'required' => false
             )
         );
+        if (is_object($ctenar))
+            $form->setValues($ctenar->getData());
+//            $form->setUseContainer(true);
 
     }
 }
