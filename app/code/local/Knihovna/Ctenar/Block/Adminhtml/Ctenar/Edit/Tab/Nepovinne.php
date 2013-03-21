@@ -10,6 +10,16 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Nepovinne extends Mage_Adm
 {
     public function _prepareForm()
     {
+        $form = new Varien_Data_Form(array(
+            'id'     => 'edit_form',
+            'method' => 'Post'
+        ));
+        $f    = $form->addFieldset(
+            'ctenar-nepovinne', array(
+                'legend' => 'Přidání nepovinných údajů',
+                'class'  => 'fieldset-wide'
+            )
+        );
         $f->addField(
             'mesto', 'text', array(
                 'name'     => 'mesto',
