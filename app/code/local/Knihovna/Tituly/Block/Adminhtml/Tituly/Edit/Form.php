@@ -95,6 +95,8 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                     {
                         $('tituly').insert({top :imagecover});
                         $('tituly').insert({bottom :new Element('div',{ style:'clear:both'})});
+                        $('hor-scroll').setStyle({'float':'left',
+                        width: '50%'});
                     }
                     else
                     {
