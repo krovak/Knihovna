@@ -79,7 +79,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         function getGoogleBook(){
             if (validaceISBN($('isbn').value))
             {
-                $('isbn').setStyle({borderColor: 'inherit'});
+                $('isbn').setStyle({borderColor: ''});
                 var urlImp = '$urlImp';
                 new Ajax.Request(urlImp,{
                         method:'get',
