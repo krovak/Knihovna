@@ -77,6 +77,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 'required' => true
             )
         );
+        /*
         $f->addField(
             'mesto', 'text', array(
                 'name'     => 'mesto',
@@ -119,7 +120,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 'required' => false
             )
         );
-
+*/
         if (is_object($ctenar))
             $form->setValues($ctenar->getData());
 //            $form->setUseContainer(true);
