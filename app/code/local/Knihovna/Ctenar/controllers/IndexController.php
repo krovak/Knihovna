@@ -17,6 +17,6 @@ class Knihovna_Ctenar_IndexController extends Mage_Core_Controller_Front_Action
     }
     public function zmenaHeslaAction()
     {
-       echo 'joooooooooooooooooooo';
+       $this ->loadLayout();
     }
 }
