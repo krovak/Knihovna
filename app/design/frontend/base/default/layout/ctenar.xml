@@ -18,7 +18,8 @@
             </action>
         </reference>
         <reference name="left">
-            <block type="ctenar/login" template="knihovna/ctenar/menu.phtml"></block>
+            <block type="ctenar/login" template="knihovna/ctenar/menu.phtml" name="menu"></block>
+
         </reference>
     </ctenar_logged_in>
 
