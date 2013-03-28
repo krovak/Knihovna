@@ -17,6 +17,9 @@
                 <title>Přihlášení se k účtu</title>
             </action>
         </reference>
+        <reference name="left">
+            <block type="ctenar/login" template="knihovna/ctenar/menu.phtml"></block>
+        </reference>
     </ctenar_logged_in>
 
     <ctenar_login_index>
