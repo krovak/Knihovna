@@ -17,10 +17,7 @@
                 <title>Přihlášení se k účtu</title>
             </action>
         </reference>
-        <reference name="left">
-            <block type="ctenar/login" template="knihovna/ctenar/menu.phtml" name="menu"></block>
 
-        </reference>
     </ctenar_logged_in>
 
     <ctenar_login_index>
@@ -33,6 +30,10 @@
             <block type="core/template" name="ctenar.nastenka" template="knihovna/ctenar/nastenka.phtml">
                 <block type="ctenar/info" name="ctenar.info" template="knihovna/ctenar/info.phtml"></block>
             </block>
+        </reference>
+        <reference name="left">
+            <block type="ctenar/login" template="knihovna/ctenar/menu.phtml" name="menu"></block>
+
         </reference>
     </ctenar_index_nastenka>
 </layout>
