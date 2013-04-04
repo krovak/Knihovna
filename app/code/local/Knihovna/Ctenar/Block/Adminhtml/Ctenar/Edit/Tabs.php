@@ -25,12 +25,12 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tabs extends Mage_Adminhtml_Bl
         $this->addTab('form_hlavni', array(
             'label'   => Mage::helper('adminhtml')->__('Hlavní'),
             'title'   => Mage::helper('adminhtml')->__('Hlavní'),
-            'content' => $this->getLayout()->createBlock('ctenar/adminhtml_ctenar_edit_tab_hlavni')->toHtml()
+            'content' => $this->getLayout()->createBlock('ctenar/adminhtml_ctenar_edit_form')->toHtml()
         ));
         $this->addTab('form_nepovinne', array(
-            'label' => Mage::helper('adminhtml')->__('Nepovinné údaje'),
-            'title' => Mage::helper('adminhtml')->__('Nepovinné údaje'),
-            'content'=> $this->getLayout()->createBlock('ctenar/adminhtml_ctenar_edit_tab_nepovinne')->toHtml()
+            'label'   => Mage::helper('adminhtml')->__('Nepovinné údaje'),
+            'title'   => Mage::helper('adminhtml')->__('Nepovinné údaje'),
+            'content' => $this->getLayout()->createBlock('ctenar/adminhtml_ctenar_edit_tab_nepovinne')->toHtml()
         ));
 
         return parent::_beforeToHtml();

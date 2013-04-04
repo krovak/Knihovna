@@ -76,17 +76,18 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
         $child = $xmlObj->entry->children($namespaces['dc']); //vyhledam vsechny potomky s dc
 
         //TODO předělat posílání autora jako pole s ID autorů
-        $creators = '';
+        $creators     = '';
         $creators_arr = $child->creator;
-        foreach($creators_arr as $creator) {
-            $creators .= $creator.', ';
+        foreach ($creators_arr as $creator) {
+            var_dump($creator);
+            $creators .= $creator . ', ';
         }
         $creators = substr($creators, 0, -2);
-        $info = array('autor'     => $creators,
-                      'nazev'     => (string)$child->title,
-                      'rokVydani' => (string)$child->date,
-                      'format'    => $child->format,
-                      'obrazek'   => $this->cover . $isbn . '.png'
+        $info     = array('autor'     => $creators,
+                          'nazev'     => (string)$child->title,
+                          'rokVydani' => (string)$child->date,
+                          'format'    => $child->format,
+                          'obrazek'   => $this->cover . $isbn . '.png'
         );
         echo Mage::helper('core')->jsonEncode($info); //vyrobim a vratim json objekt
     }

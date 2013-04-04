@@ -56,7 +56,7 @@ class Knihovna_Autor_Adminhtml_AutorController
         $this->_addContent($this->getLayout()
             ->createBlock('autor/adminhtml_autor_edit')
             ->setEditMode((bool)$this->getRequest()
-            ->getParam('entity_id')));
+                ->getParam('entity_id')));
         $this->renderLayout();
     }
 
@@ -71,9 +71,9 @@ class Knihovna_Autor_Adminhtml_AutorController
 
     public function testAction()
     {
-        $m    = Mage::getModel('autor/autor');
-        $id = $m->getIdByName("Miroslav","Virius");
-        var_dump($id);
+        $m  = Mage::getModel('autor/autor');
+        $id = $m->getIdByName("Miroslav", "Virius");
+        var_dump($id[0]);
         die;
     }
 
