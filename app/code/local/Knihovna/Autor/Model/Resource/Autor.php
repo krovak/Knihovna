@@ -19,21 +19,7 @@ class Knihovna_Autor_Model_Resource_Autor extends Mage_Core_Model_Resource_Db_Ab
         // TODO: Implement _construct() method.
         $this->_init('autor/knihovna_autor', 'entity_id');
     }
-    public function getIdByName($jmeno, $prijmeni)
-    {
-        echo "id";
-        $db = Mage::getModel('autor/autor')
-            ->getCollection()
-            ->addFieldToFilter('jmeno', array('eq' => $jmeno))
-            ->addFieldToFilter('prijmeni', array('eq' => $prijmeni));
-        $data = $db->getData();
-var_dump($data);
-        if (@$data['entity_id']) {
-            return $data['entity_id'];
-        } else {
-            return false;
-        }
-    }
+
 
 
 
