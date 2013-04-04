@@ -26,7 +26,7 @@ class Knihovna_Autor_Model_Resource_Autor extends Mage_Core_Model_Resource_Db_Ab
             ->addFieldToFilter('jmeno', array('eq' => $jmeno))
             ->addFieldToFilter('prijmeni', array('eq' => $prijmeni));
         $data = $db->getData();
-
+var_dump($data);
         if (@$data['entity_id']) {
             return $data['entity_id'];
         } else {
