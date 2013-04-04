@@ -21,7 +21,8 @@ class Knihovna_Autor_Model_Resource_Autor extends Mage_Core_Model_Resource_Db_Ab
     }
     public function getIdByName($jmeno, $prijmeni)
     {
-        $db = Mage::getModel('autor/knihovna_autor')
+        echo "id";
+        $db = Mage::getModel('autor/autor')
             ->getCollection()
             ->addFieldToFilter('jmeno', array('eq' => $jmeno))
             ->addFieldToFilter('prijmeni', array('eq' => $prijmeni));
