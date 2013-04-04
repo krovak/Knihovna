@@ -28,7 +28,7 @@ class Knihovna_Autor_Model_Resource_Autor extends Mage_Core_Model_Resource_Db_Ab
         $data = $db->getData();
 
         if (@$data['entity_id']) {
-            return $db;
+            return $data['entity_id'];
         } else {
             return false;
         }
