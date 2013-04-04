@@ -20,7 +20,7 @@ class Knihovna_Autor_Model_Autor extends Mage_Core_Model_Abstract
     {
         $db = Mage::getModel('autor/autor')
             ->getCollection()
-            ->addFieldToSelect()
+            ->addFieldToSelect('entity_id')
             ->addFieldToFilter('jmeno', array('eq' => $jmeno))
             ->addFieldToFilter('prijmeni', array('eq' => $prijmeni));
         $data = $db->getData();
