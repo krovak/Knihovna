@@ -12,8 +12,8 @@ class Knihovna_Autor_Model_Source_Autori
 
     public function __construct()
     {
-        $this->autori[0]['label'] = '-- Vyberte --';
-        $this->autori[0]['value'] = '';
+        //$this->autori[0]['label'] = '-- Vyberte --';
+        //$this->autori[0]['value'] = '';
         $autori                   = Mage::getModel('autor/autor')->getCollection();
         /**@var $autor Knihovna_VJ_Model_Autori */
         foreach ($autori as $autor) {

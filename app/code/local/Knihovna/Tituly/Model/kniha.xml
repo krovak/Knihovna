@@ -1,4 +1,55 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE feed [
+        <!ELEMENT feed (id|updated|category|title|link|author|generator|openSearch:totalResults|openSearch:startIndex|openSearch:itemsPerPage|entry)*>
+        <!ATTLIST feed
+                xmlns CDATA #REQUIRED
+                xmlns:openSearch CDATA #REQUIRED
+                xmlns:gbs CDATA #REQUIRED
+                xmlns:dc CDATA #REQUIRED
+                xmlns:batch CDATA #REQUIRED
+                xmlns:gd CDATA #REQUIRED>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT updated (#PCDATA)>
+        <!ELEMENT category (#PCDATA)>
+        <!ATTLIST category
+                scheme CDATA #REQUIRED
+                term CDATA #REQUIRED>
+        <!ELEMENT title (#PCDATA)>
+        <!ATTLIST title
+                type CDATA #REQUIRED>
+        <!ELEMENT link (#PCDATA)>
+        <!ATTLIST link
+                href CDATA #REQUIRED
+                rel CDATA #REQUIRED
+                type CDATA #REQUIRED>
+        <!ELEMENT author (name|uri)*>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT uri (#PCDATA)>
+        <!ELEMENT generator (#PCDATA)>
+        <!ATTLIST generator
+                version CDATA #REQUIRED>
+        <!ELEMENT openSearch:totalResults (#PCDATA)>
+        <!ELEMENT openSearch:startIndex (#PCDATA)>
+        <!ELEMENT openSearch:itemsPerPage (#PCDATA)>
+        <!ELEMENT entry (id|updated|category|title|link|gbs:contentVersion|gbs:embeddability|gbs:openAccess|gbs:viewability|dc:creator|dc:date|dc:description|dc:format|dc:identifier|dc:language|dc:title)*>
+        <!ELEMENT gbs:contentVersion (#PCDATA)>
+        <!ELEMENT gbs:embeddability (#PCDATA)>
+        <!ATTLIST gbs:embeddability
+                value CDATA #REQUIRED>
+        <!ELEMENT gbs:openAccess (#PCDATA)>
+        <!ATTLIST gbs:openAccess
+                value CDATA #REQUIRED>
+        <!ELEMENT gbs:viewability (#PCDATA)>
+        <!ATTLIST gbs:viewability
+                value CDATA #REQUIRED>
+        <!ELEMENT dc:creator (#PCDATA)>
+        <!ELEMENT dc:date (#PCDATA)>
+        <!ELEMENT dc:description (#PCDATA)>
+        <!ELEMENT dc:format (#PCDATA)>
+        <!ELEMENT dc:identifier (#PCDATA)>
+        <!ELEMENT dc:language (#PCDATA)>
+        <!ELEMENT dc:title (#PCDATA)>
+        ]>
 <feed xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearchrss/1.0/' xmlns:gbs='http://schemas.google.com/books/2008' xmlns:dc='http://purl.org/dc/terms' xmlns:batch='http://schemas.google.com/gdata/batch' xmlns:gd='http://schemas.google.com/g/2005'>
     <id>http://www.google.com/books/feeds/volumes</id>
     <updated>2013-03-07T09:29:15.000Z</updated>
