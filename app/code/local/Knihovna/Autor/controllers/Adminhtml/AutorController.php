@@ -69,4 +69,12 @@ class Knihovna_Autor_Adminhtml_AutorController
         $this->_redirect('*/*/'); //kam se to má přesměrovat po uložení na indexAction, tj. na grid
     }
 
+    public function testAction()
+    {
+        $m    = Mage::getModel('autor/autor');
+        $m->getIdByName("Miroslav","Virius");
+        var_dump($m);
+        die;
+    }
+
 }
