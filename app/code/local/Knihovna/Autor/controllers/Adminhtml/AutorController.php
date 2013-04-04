@@ -72,8 +72,8 @@ class Knihovna_Autor_Adminhtml_AutorController
     public function testAction()
     {
         $m    = Mage::getModel('autor/autor');
-        $m->getIdByName("Miroslav","Virius");
-        var_dump($m);
+        $id = $m->getIdByName("Miroslav","Virius");
+        var_dump($id);
         die;
     }
 
