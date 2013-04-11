@@ -79,7 +79,6 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
         $creators     = '';
         $creators_arr = $child->creator;
         foreach ($creators_arr as $creator) {
-            var_dump($creator);
             $creators .= $creator . ', ';
         }
         $creators = substr($creators, 0, -2);
@@ -92,5 +91,3 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
         echo Mage::helper('core')->jsonEncode($info); //vyrobim a vratim json objekt
     }
 }
-
-
