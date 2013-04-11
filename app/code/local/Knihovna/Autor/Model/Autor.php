@@ -29,7 +29,11 @@ class Knihovna_Autor_Model_Autor extends Mage_Core_Model_Abstract
         if (@$data['entity_id']) {
             return $data['entity_id'];
         } else {
-            return false;
+            $new_author = Mage::getModel('autor/autor');
+            $new_author->setData('jmeno',$jmeno);
+            $new_author->setData('prijmeni',$prijmeni);
+            $new_author->save();
+            getIdByName($jmeno,$prijmeni);
         }
     }
 
