@@ -79,10 +79,9 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
         $creators     = '';
         $creators_arr = $child->creator;
         foreach ($creators_arr as $creator) {
-            $creator_name = explode(' ',$creator);
-            $creator_id = Mage::getModel('autor/autor')->getIdByName($creator_name[0],$creator_name[1]);
-            $creators .= $creator_id . ', ';
+            $creators .= $creator . ', ';
         }
+        var_dump($creators);die;
         $creators = substr($creators, 0, -2);
         $info     = array('autor'     => $creators,
                           'nazev'     => (string)$child->title,
@@ -93,3 +92,5 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
         echo Mage::helper('core')->jsonEncode($info); //vyrobim a vratim json objekt
     }
 }
+
+
