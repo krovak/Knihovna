@@ -61,10 +61,8 @@ class Knihovna_Ctenar_Block_Info extends Mage_Core_Block_Template {
                        'required' => false
                    )
                );
-               if (is_object($ctenar))
                    $form->setValues($ctenar->getData());
 //            $form->setUseContainer(true);
-
 
            return $ctenar;
 
