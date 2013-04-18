@@ -29,6 +29,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
         $zanr_tabulka = Mage::getSingleton('core/resource')->getTableName('tituly/knihovna_zanr');
         $collection->getSelect()->join(array('vt' => $zanr_tabulka), 'vt.entity_id=main_table.zanr', array('zanr' => 'nazev'));
         $collection->getSelect()->columns(new Zend_Db_Expr("Concat(prijmeni,' ',jmeno)as fullname"));
+        var_dump($collection);
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
