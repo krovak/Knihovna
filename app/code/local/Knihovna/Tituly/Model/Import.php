@@ -77,6 +77,7 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
 
         //TODO předělat posílání autora jako pole s ID autorů
         $creators     = '';
+        $creators_name = '';
         $creators_arr = $child->creator;
         foreach ($creators_arr as $creator) {
             $creator_name = explode(' ',$creator);
