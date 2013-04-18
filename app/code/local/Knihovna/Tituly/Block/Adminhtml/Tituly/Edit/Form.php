@@ -32,7 +32,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                 'name' => 'entity_id'
             ));
         }
-        $f->addField('autor', 'hidden', array(
+        $f->addField('autor', 'text', array(
                 'name'     => 'autor',
                 'label'    => 'Autor',
                 'required' => true,
