@@ -13,8 +13,9 @@ class Knihovna_Autor_Block_Adminhtml_Autor_Renderer_Autor extends Mage_Adminhtml
     public function render(Varien_Object $row)
     {
         $value = $row->getData($this->getColumn()->getIndex());
-        $autor = Mage::getModel('autor/autor')->load($value);
-        return ($autor->getJmeno() . ' ' . $autor->getPrijmeni());
+        return $value;
+        //$autor = Mage::getModel('autor/autor')->load($value);
+        //return ($autor->getJmeno() . ' ' . $autor->getPrijmeni());
     }
 
 }
