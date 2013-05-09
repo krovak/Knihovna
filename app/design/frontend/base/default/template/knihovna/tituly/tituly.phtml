@@ -11,7 +11,6 @@
         <tr>
             <?php
             $author_name = Mage::getModel('autor/autor')->load($kniha->getId())->getJmeno();
-            var_dump($author_name);
             $author_surname = Mage::getModel('autor/autor')->load($kniha->getId())->getPrijmeni();
             echo '<td>'.$kniha->getNazev().'</td>';
             echo '<td>'.$author_name.' '.$author_surname.'</td>';
