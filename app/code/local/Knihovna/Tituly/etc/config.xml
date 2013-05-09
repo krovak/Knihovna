@@ -19,9 +19,9 @@
     <frontend>
         <layout>
             <updates>
-                <vypujcky module="Knihovna_Tituly">
+                <tituly module="Knihovna_Tituly">
                     <file>tituly.xml</file>
-                </vypujcky>
+                </tituly>
             </updates>
         </layout>
         <routers>
