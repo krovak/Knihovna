@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layout>
+    <tituly_index_index>
+        <reference name="content">
+            <block type="tituly/tituly" name="tituly.tituly"
+                   template="knihovna/tituly/tituly.phtml"></block>
+        </reference>
+    </tituly_index_index>
+</layout>
