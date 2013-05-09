@@ -2,8 +2,20 @@
 <layout>
     <tituly_index_index>
         <reference name="content">
-            <block type="tituly/tituly" name="tituly.tituly"
-                   template="knihovna/tituly/tituly.phtml"></block>
+            <block type="tituly/tituly" name="tituly.tituly" template="knihovna/tituly/tituly.phtml"></block>
         </reference>
     </tituly_index_index>
+    <default>
+        <!-- Mage_Customer -->
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="tituly">
+                <label>Seznam knih</label>
+                <url>tituly</url>
+                <title>Seznam knih</title>
+                <prepare/>
+                <urlParams/>
+                <position>10</position>
+            </action>
+        </reference>
+    </default>
 </layout>
