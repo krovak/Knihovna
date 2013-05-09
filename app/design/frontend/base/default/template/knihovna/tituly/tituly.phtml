@@ -12,6 +12,7 @@
             <?php
             $authors = explode(', ',$kniha->getAutor());
             $i = 0;
+            $author_name = array();
             foreach($authors as $author) {
                 $author_name[$i] = Mage::getModel('autor/autor')->load($author)->getJmeno().
                     ' '.Mage::getModel('autor/autor')->load($author)->getPrijmeni();
