@@ -77,13 +77,18 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
 
         //TODO předělat posílání autora jako pole s ID autorů
         $creators     = '';
+        $creators_name = '';
         $creators_arr = $child->creator;
         foreach ($creators_arr as $creator) {
-            $creators .= $creator . ', ';
+            $creator_name = explode(' ',$creator);
+            $creator_id = Mage::getModel('autor/autor')->getIdByName($creator_name[0],$creator_name[1]);
+            $creators .= $creator_id . ', ';
+            $creators_name .= $creator . ', ';
         }
-        var_dump($creators);die;
         $creators = substr($creators, 0, -2);
+        $creators_name = substr($creators_name, 0, -2);
         $info     = array('autor'     => $creators,
+                          'autor_text'     => $creators_name,
                           'nazev'     => (string)$child->title,
                           'rokVydani' => (string)$child->date,
                           'format'    => $child->format,
@@ -92,5 +97,3 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
         echo Mage::helper('core')->jsonEncode($info); //vyrobim a vratim json objekt
     }
 }
-
-
