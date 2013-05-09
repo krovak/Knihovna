@@ -10,10 +10,15 @@
             ?>
         <tr>
             <?php
-            $author_name = Mage::getModel('autor/autor')->load($kniha->getId())->getJmeno();
-            $author_surname = Mage::getModel('autor/autor')->load($kniha->getId())->getPrijmeni();
+            $authors = explode(', ',$kniha->getAutor);
+            $i = 0;
+            foreach($authors as $author) {
+                $author_name[$i] = Mage::getModel('autor/autor')->load($author)->getJmeno().
+                    ' '.Mage::getModel('autor/autor')->load($author)->getPrijmeni();
+            }
+            $authors = implode(' ,',$author_name);
             echo '<td>'.$kniha->getNazev().'</td>';
-            echo '<td>'.$author_name.' '.$author_surname.'</td>';
+            echo '<td>'.$authors.'</td>';
             echo '<td>'.$kniha->getIsbn().'</td>';
             ?>
         </tr>
