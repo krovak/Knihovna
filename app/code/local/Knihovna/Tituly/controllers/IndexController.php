@@ -12,5 +12,8 @@ class Knihovna_Tituly_IndexController extends Mage_Core_Controller_Front_Action 
     public function indexAction(){
         $collection = Mage::getModel('tituly/tituly')->getCollection();
         //var_dump($collection);
+        $this->loadLayout();
+        $this->getLayout()->getBlock('content')->append($this->getLayout()->createBlock('tituly/tituly'));
+        $this->renderLayout();
     }
 }
