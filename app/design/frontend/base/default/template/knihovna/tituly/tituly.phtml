@@ -10,14 +10,14 @@
             ?>
         <tr>
             <?php
+            var_dump($kniha->getAutor());
             $authors = explode(', ',$kniha->getAutor());
-                var_dump($authors);
+            var_dump($authors);
             $i = 0;
             foreach($authors as $author) {
                 $author_name[$i] = Mage::getModel('autor/autor')->load($author)->getJmeno().
                     ' '.Mage::getModel('autor/autor')->load($author)->getPrijmeni();
             }
-                var_dump($author_name);
             $authors = implode(' ,',$author_name);
             echo '<td>'.$kniha->getNazev().'</td>';
             echo '<td>'.$authors.'</td>';
