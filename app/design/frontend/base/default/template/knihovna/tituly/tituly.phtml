@@ -14,8 +14,8 @@
             $i = 0;
             $author_name = array();
             foreach($authors as $author) {
-                $author_name[$i] = Mage::getModel('autor/autor')->load($author)->getJmeno().
-                    ' '.Mage::getModel('autor/autor')->load($author)->getPrijmeni();
+                array_push($author_name, Mage::getModel('autor/autor')->load($author)->getJmeno().
+                    ' '.Mage::getModel('autor/autor')->load($author)->getPrijmeni());
             }
             var_dump($author_name);
             $authors = implode(' ,',$author_name);
