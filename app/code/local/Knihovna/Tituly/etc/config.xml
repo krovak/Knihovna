@@ -17,6 +17,13 @@
         </routers>
     </admin>
     <frontend>
+        <layout>
+            <updates>
+                <vypujcky module="Knihovna_Tituly">
+                    <file>tituly.xml</file>
+                </vypujcky>
+            </updates>
+        </layout>
         <routers>
             <tituly>
                 <use>standard</use>
