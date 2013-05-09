@@ -4,6 +4,19 @@
             <tr><th>Název</th><th>Autor</th><th>ISBN</th></tr>
         </thead>
         <tbody>
-
+        <?php
+        $knihy = $this->getKnihy();
+        foreach($knihy as $kniha) {
+            ?>
+        <tr>
+            <?php
+            echo '<td>'.$kniha->getNazev().'</td>';
+            echo '<td>'.$kniha->getAutor_text().'</td>';
+            echo '<td>'.$kniha->getIsbn().'</td>';
+            ?>
+        </tr>
+            <?php
+        }
+        ?>
         </tbody>
     </table>

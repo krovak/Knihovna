@@ -12,4 +12,9 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
 
         // $this->setTemplate('knihovna/ctenar/nastenka.phtml');
     }
+    public function getKnihy()
+    {
+        $books = Mage::getModel('tituly/tituly')->getCollection();
+        return $books;
+    }
 }
