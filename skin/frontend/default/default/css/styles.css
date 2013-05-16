@@ -1791,3 +1791,12 @@ tr.summary-details-excluded { font-style:italic; }
 #seznam_knih {
     border: 1px solid  #0a263c;
 }
+#seznam_knih th {
+    border-bottom: 2px solid #0a263c;
+    padding: 5px 10px;
+    background: #fefefe;
+}
+#seznam_knih td {
+    border: 1px solid #0a263c;
+    padding: 5px 10px;
+}
