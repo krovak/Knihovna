@@ -10,7 +10,11 @@
         </thead>
         <tbody>
         <?php
-        $knihy = $this->getKnihy();
+        if(issset($_GET['query']) && $_GET['query'] != '')
+            $knihy = $this->getKnihyParam($_GET['query']);
+        else
+            $knihy = $this->getKnihy();
+
         foreach($knihy as $kniha) {
             ?>
         <tr>
