@@ -1786,3 +1786,8 @@ tr.summary-details-excluded { font-style:italic; }
 /* ======================================================================================= */
 
 .guest-select {width:305px !important;}
+
+/* Seznam knih */
+#seznam_knih {
+    border: 1px solid  #0a263c;
+}
