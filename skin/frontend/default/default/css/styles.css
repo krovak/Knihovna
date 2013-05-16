@@ -1790,11 +1790,12 @@ tr.summary-details-excluded { font-style:italic; }
 /* Seznam knih */
 #seznam_knih {
     border: 1px solid  #0a263c;
+    margin-top: 20px;
 }
 #seznam_knih th {
-    border-bottom: 2px solid #0a263c;
     padding: 5px 10px;
-    background: #fefefe;
+    background: #0a263c;
+    color: #fff;
 }
 #seznam_knih td {
     border: 1px solid #0a263c;
