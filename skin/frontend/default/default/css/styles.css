@@ -1788,6 +1788,12 @@ tr.summary-details-excluded { font-style:italic; }
 .guest-select {width:305px !important;}
 
 /* Seznam knih */
+#nadpis_knihy {
+    float: left;
+}
+#hledac {
+    float: right;
+}
 #seznam_knih {
     border: 1px solid  #0a263c;
     margin-top: 20px;
@@ -1796,6 +1802,7 @@ tr.summary-details-excluded { font-style:italic; }
     padding: 5px 10px;
     background: #0a263c;
     color: #fff;
+    font-weight: bold;
 }
 #seznam_knih td {
     border: 1px solid #0a263c;
