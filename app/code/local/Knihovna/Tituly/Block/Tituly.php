@@ -21,7 +21,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
     public function getKnihyParam($param)
     {
         $books = Mage::getModel('tituly/tituly')->getCollection()
-            ->addFieldToFilter('nazev', array('like'=>$param));
+            ->addFieldToFilter('nazev', array('like'=>'%$param%'));
         return $books;
     }
 }
