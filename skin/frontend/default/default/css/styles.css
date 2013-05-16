@@ -1794,6 +1794,9 @@ tr.summary-details-excluded { font-style:italic; }
 #hledac {
     float: right;
 }
+.clear {
+    clear: both;
+}
 #seznam_knih {
     border: 1px solid  #0a263c;
     margin-top: 20px;
