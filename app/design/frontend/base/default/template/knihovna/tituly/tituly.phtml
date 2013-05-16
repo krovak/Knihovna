@@ -10,7 +10,7 @@
         </thead>
         <tbody>
         <?php
-        if(issset($_GET['query']) && $_GET['query'] != '')
+        if(isset($_GET['query']) && $_GET['query'] != '')
             $knihy = $this->getKnihyParam($_GET['query']);
         else
             $knihy = $this->getKnihy();
