@@ -10,8 +10,8 @@
         </thead>
         <tbody>
         <?php
-        if(isset($_GET['query']) && $_GET['query'] != '')
-            $knihy = $this->getKnihyParam($_GET['query']);
+        if(isset($_POST['query']) && $_POST['query'] != '')
+            $knihy = $this->getKnihyParam($_POST['query']);
         else
             $knihy = $this->getKnihy();
 
