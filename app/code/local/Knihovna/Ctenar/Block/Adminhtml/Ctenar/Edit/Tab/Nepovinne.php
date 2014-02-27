@@ -67,7 +67,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Nepovinne extends Mage_Adm
         );
         if (is_object($ctenar))
             $form->setValues($ctenar->getData());
-//            $form->setUseContainer(true);
+            $form->setUseContainer(true);
 
     }
 }
