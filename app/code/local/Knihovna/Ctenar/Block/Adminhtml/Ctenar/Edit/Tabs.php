@@ -35,8 +35,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tabs extends Mage_Adminhtml_Bl
 
 
         $this->addTab('form_nepovinne', array(
-            'label'   => Mage::helper('adminhtml')->__('Nepovinné údaje'),
-            'title'   => Mage::helper('adminhtml')->__('Nepovinné údaje'),
+            'label'   => Mage::helper('adminhtml')->__('Nepovinné údaje2'),
+            'title'   => Mage::helper('adminhtml')->__('Nepovinné údaje2'),
             'content' => $this->getLayout()->createBlock('ctenar/adminhtml_ctenar_edit_tab_nepovinne')->toHtml()
         ));
         return parent::_beforeToHtml();
