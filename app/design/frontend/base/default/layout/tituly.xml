@@ -15,7 +15,7 @@
         <reference name="top.links">
             <action method="addLink" translate="label title" module="tituly">
                 <label>Seznam knih</label>
-                <url>tituly</url>
+                <url>/tituly</url>
                 <title>Seznam knih</title>
                 <prepare/>
                 <urlParams/>
