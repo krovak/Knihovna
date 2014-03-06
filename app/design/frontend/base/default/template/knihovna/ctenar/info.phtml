@@ -7,12 +7,106 @@
  * To change this template use File | Settings | File Templates.
  */
 ?>
+
+<style type="text/css">
+    #info_ctenar
+    {
+        border: none;
+        width: 100%;
+        font-size: 1.2em;
+    }
+
+    #info_ctenar td
+    {
+        padding-bottom: 1em;
+    }
+
+    .td_vnejsi
+    {
+        font-weight: bold;
+    }
+</style>
+
 <?php
 /** @var $ctenar Knihovna_Ctenar_Model_Ctenar */
 $ctenar= $this->getCtenar();
 ?>
+
 <div id="info" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-<h3>Info o ctenari</h3>
+
+    <table id="info_ctenar">
+    <thead>
+        <tr>
+            <td colspan="4" style="text-align: center"><h3>Info o čtenáři</h3></td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr></td>
+        </tr>
+    </thead>
+        <tbody>
+        <tr>
+            <td style="width: 20%" class="td_vnejsi">Jméno: </td><td style="width: 30%"><?php echo $ctenar->getJmeno();?></td>
+            <td style="width: 20%" class="td_vnejsi">Příjmení: </td><td style="width: 30%"><?php echo $ctenar->getPrijmeni();?></td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr></td>
+        </tr>
+        <tr>
+            <td class="td_vnejsi">Ulice: </td><td><?php echo $ctenar->getUlice();?></td>
+            <td class="td_vnejsi">Č. popisné: </td><td><?php echo $ctenar->getCp();?></td>
+        </tr>
+        <tr>
+            <td class="td_vnejsi">Město: </td><td><?php echo $ctenar->getMesto();?></td>
+            <td class="td_vnejsi">PSČ: </td><td><?php echo $ctenar->getPsc();?></td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr></td>
+        </tr>
+        <tr>
+            <td id="td_mala" class="td_vnejsi">Email: </td><td id="id_dlouha" colspan="3"><?php echo $ctenar->getEmail();?></td>
+        </tr>
+        <tr>
+            <td id="td_mala" class="td_vnejsi">Tel. číslo: </td><td id="id_dlouha" colspan="3"><?php echo $ctenar->getTelefonni_cislo();?></td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <form id="zmenaHesla" name="zmenaHesla" method="post">
+        <table id="info_ctenar">
+            <thead>
+                <tr>
+                    <td colspan="4" style="text-align: center"><h3>Změna hesla</h3></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><hr></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
+                    <td colspan="2"><input id="password" type="password" name="password" class="required-entry input-text"></td>
+                </tr>
+                <tr>
+                    <td class="td_vnejsi" colspan="2"><label for="password2">Ověření nového hesla:</label></td>
+                    <td colspan="2"><input id="password2" type="password" name="password" class="required-entry input-text"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><hr></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: center"><input type="submit" value="Změna hesla" style="width: 12em; height: 2em"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <!-- PUVODNI VYPIS
+
     <b>Číslo průkazu:</b> <?php echo $ctenar->getCislo_prukazu();?><br>
     <b>Jméno:</b> <?php echo $ctenar->getJmeno();?><br>
     <b>Příjmení:</b> <?php echo $ctenar->getPrijmeni();?><br>
@@ -21,7 +115,10 @@ $ctenar= $this->getCtenar();
     <b>Město:</b> <?php echo $ctenar->getMesto();?><br>
     <b>PSČ:</b> <?php echo $ctenar->getPsc();?><br>
     <b>Email:</b> <?php echo $ctenar->getEmail();?><br>
-    <b>Telefonní číslo:</b> <?php echo $ctenar->getTelefonni_cislo();?><br>
+    <b>Telefonní číslo:</b> <?php echo $ctenar->getTelefonni_cislo();?>
+    <br>
+
+
     <form id="zmenaHesla" name="zmenaHesla" method="post">
         <label for="password">Nové heslo:</label><input id="password" type="password" name="password"
                                                    class="required-entry input-text">
@@ -30,11 +127,11 @@ $ctenar= $this->getCtenar();
         <input type="submit" value="Změna hesla">
 
     </form>
+    -->
+
     <script type="text/javascript">
         var loginForm = new VarienForm('zmenaHesla');
     </script>
-
-
 
 </div>
 
