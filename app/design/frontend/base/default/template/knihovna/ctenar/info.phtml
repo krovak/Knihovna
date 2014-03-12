@@ -91,8 +91,11 @@ $ctenar= $this->getCtenar();
                     <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
                     <?php echo $ctenar->getHeslo();
                     //$user = Mage::getSingleton('core/session')->getLoggedUser();
-                    $user = Mage::getModel('core/session')->getLoggedUser();
 
+
+
+                    $user = Mage::getModel('core/session')->getLoggedUser();
+                    echo $user->getHeslo();
 
                     try {
 
