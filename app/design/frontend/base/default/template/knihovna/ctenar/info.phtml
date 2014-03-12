@@ -92,11 +92,18 @@ $ctenar= $this->getCtenar();
                     <?php echo $ctenar->getHeslo();
 
 
+
+
+                    try {
                     $testid = 1;
                     $ctenar = Mage::getModel('ctenar/ctenar')->load($testid);
                     $newPassword = 123456;
                     $ctenar->setPassword($newPassword);
                     $ctenar->save();
+                    }
+                    catch(Exception $ex) {
+                    $result = 'Error : '.$ex->getMessage();
+                    }
                     ?>
                     <td colspan="2"><input id="password" type="password" name="password" class="required-entry input-text"></td>
                 </tr>
