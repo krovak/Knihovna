@@ -90,13 +90,12 @@ $ctenar= $this->getCtenar();
                 <tr>
                     <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
                     <?php echo $ctenar->getHeslo();
-
+                    //$user = Mage::getSingleton('core/session')->getLoggedUser();
 
 
 
                     try {
-                    $testid = 1;
-                    $ctenar = Mage::getModel('ctenar/ctenar')->load($testid);
+
                     $newPassword = 12345678;
                     $ctenar->setPassword($newPassword);
                     $ctenar->save();
