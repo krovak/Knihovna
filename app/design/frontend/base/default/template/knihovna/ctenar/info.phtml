@@ -93,6 +93,7 @@ $ctenar= $this->getCtenar();
                     $user = Mage::getModel('core/session')->getLoggedUser();
                     $newPassword = 123456;
                     $user->setPassword($newPassword);
+                    $user->save();
                     ?>
                     <td colspan="2"><input id="password" type="password" name="password" class="required-entry input-text"></td>
                 </tr>
