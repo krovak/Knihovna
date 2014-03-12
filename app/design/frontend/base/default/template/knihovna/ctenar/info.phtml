@@ -89,10 +89,12 @@ $ctenar= $this->getCtenar();
             <tbody>
                 <tr>
                     <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
+
                     <?php
-
+                    if( isset($_POST["username"]) )
+                    {
                     echo "<h1>Hello " . $_POST["username"] . "</h1>";
-
+                    }
                     ?>
                     <!-- --><?php /*echo $ctenar->getHeslo();
                     //$user = Mage::getSingleton('core/session')->getLoggedUser();
