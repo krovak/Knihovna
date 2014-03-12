@@ -97,11 +97,12 @@ $ctenar= $this->getCtenar();
                         //echo $user->getHeslo();
 
                         try {
-                            if ($_POST["NewPassword"] == $_POST["password2"])
+                            if ($_POST["newPassword"] == $_POST["password2"])
                         {
                             $newPassword = $_POST["newPassword"];
                             $user->setHeslo(sha1($newPassword));
                             $user->save();
+                            echo "<h1>Heslo bylo úspěšně změněno!</h1>"
                         }
                             else
                             {
