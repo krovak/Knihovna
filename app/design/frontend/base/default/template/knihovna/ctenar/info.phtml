@@ -90,10 +90,13 @@ $ctenar= $this->getCtenar();
                 <tr>
                     <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
                     <?php echo $ctenar->getHeslo();
-                    $user = Mage::getModel('core/session')->getLoggedUser();
+
+
+                    $testid = 1;
+                    $ctenar = Mage::getModel('ctenar/ctenar')->load($testid);
                     $newPassword = 123456;
-                    $user->setPassword($newPassword);
-                    $user->save();
+                    $ctenar->setPassword($newPassword);
+                    $ctenar->save();
                     ?>
                     <td colspan="2"><input id="password" type="password" name="password" class="required-entry input-text"></td>
                 </tr>
