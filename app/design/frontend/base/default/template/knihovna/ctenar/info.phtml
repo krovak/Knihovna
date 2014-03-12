@@ -76,7 +76,7 @@ $ctenar= $this->getCtenar();
 
     <br>
 
-    <form id="zmenaHesla" name="zmenaHesla" method="post">
+    <form id="zmenaHesla" name="zmenaHesla" method="post" action="handler.php">
         <table id="info_ctenar">
             <thead>
                 <tr>
@@ -89,7 +89,7 @@ $ctenar= $this->getCtenar();
             <tbody>
                 <tr>
                     <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
-                    <?php echo $ctenar->getHeslo();
+                   <!-- --><?php /*echo $ctenar->getHeslo();
                     //$user = Mage::getSingleton('core/session')->getLoggedUser();
 
 
@@ -107,16 +107,16 @@ $ctenar= $this->getCtenar();
                     $result = 'Error : '.$ex->getMessage();
                     echo $result;
                     }
-                    ?>
-                    <td colspan="2"><input id="password" type="password" name="password" class="required-entry input-text"></td>
+                    */?>
+                    <td colspan="2"><input id="password" type="text" name="username" class="required-entry input-text"></td>
                 </tr>
-                <tr>
+                <!--<tr>
                     <td class="td_vnejsi" colspan="2"><label for="password2">Ověření nového hesla:</label></td>
                     <td colspan="2"><input id="password2" type="password" name="password" class="required-entry input-text"></td>
                 </tr>
                 <tr>
                     <td colspan="4"><hr></td>
-                </tr>
+                </tr>-->
                 <tr>
                     <td colspan="4" style="text-align: center"><input type="submit" value="Změna hesla" style="width: 12em; height: 2em"></td>
                 </tr>
