@@ -98,7 +98,7 @@ $ctenar= $this->getCtenar();
 
                         try {
 
-
+                            $newPassword = $_POST["newPassword"];
                             $user->setHeslo(sha1($newPassword));
                             $user->save();
                         }
