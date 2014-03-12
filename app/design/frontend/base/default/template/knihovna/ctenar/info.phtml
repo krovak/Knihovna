@@ -115,25 +115,7 @@ $ctenar= $this->getCtenar();
                         }
                     }
                     ?>
-                    <!-- --><?php /*echo $ctenar->getHeslo();
-                    //$user = Mage::getSingleton('core/session')->getLoggedUser();
 
-
-
-                    $user = Mage::getModel('core/session')->getLoggedUser();
-                    echo $user->getHeslo();
-
-                    try {
-
-                    $newPassword = 12345678;
-                    $user->setHeslo(sha1($newPassword));
-                    $user->save();
-                    }
-                    catch(Exception $ex) {
-                    $result = 'Error : '.$ex->getMessage();
-                    echo $result;
-                    }
-                    */?>
                     <td colspan="2"><input type="password" name="newPassword" class="required-entry input-text"></td>
                 </tr>
                 <tr>
