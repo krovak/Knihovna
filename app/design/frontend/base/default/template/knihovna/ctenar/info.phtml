@@ -8,6 +8,7 @@
  */
 ?>
 
+
 <?php
 /** @var $ctenar Knihovna_Ctenar_Model_Ctenar */
 $ctenar= $this->getCtenar();
@@ -16,14 +17,14 @@ $ctenar= $this->getCtenar();
 <div id="info" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
     <table id="profil_ctenar">
-    <thead>
+        <thead>
         <tr>
             <td colspan="4" style="text-align: center"><h2>Můj profil</h2></td>
         </tr>
         <tr>
             <td colspan="4"><hr></td>
         </tr>
-    </thead>
+        </thead>
         <tbody>
         <tr>
             <td id="td_sirka_1" class="td_vnejsi">Jméno: </td><td id="td_sirka_2"><?php echo $ctenar->getJmeno();?></td>
@@ -57,31 +58,61 @@ $ctenar= $this->getCtenar();
 
     <br>
 
-    <form id="zmenaHesla" name="zmenaHesla" method="post">
+    <form method="post" action="">
         <table id="profil_ctenar">
+
             <thead>
-                <tr>
-                    <td colspan="4" style="text-align: center"><h2>Změna hesla</h2></td>
-                </tr>
-                <tr>
-                    <td colspan="4"><hr></td>
-                </tr>
+            <tr>
+                <td colspan="4" style="text-align: center"><h2>Změna hesla</h2></td>
+            </tr>
+            <tr>
+                <td colspan="4"><hr></td>
+            </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
-                    <td colspan="2"><input id="password" type="password" name="password" class="required-entry input-text"></td>
-                </tr>
-                <tr>
-                    <td class="td_vnejsi" colspan="2"><label for="password2">Ověření nového hesla:</label></td>
-                    <td colspan="2"><input id="password2" type="password" name="password" class="required-entry input-text"></td>
-                </tr>
-                <tr>
-                    <td colspan="4"><hr></td>
-                </tr>
-                <tr>
-                    <td colspan="4" style="text-align: center"><input type="submit" value="Změna hesla" style="width: 8em; height: 2em"></td>
-                </tr>
+            <tr>
+                <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
+                <?php
+                if( isset($_POST["newPassword"]) and isset($_POST["password2"]))
+                {
+                    $user = Mage::getModel('core/session')->getLoggedUser();
+                    //echo $user->getHeslo();
+
+                    try {
+                        if ($_POST["newPassword"] == $_POST["password2"])
+                        {
+                            $newPassword = $_POST["newPassword"];
+                            $user->setHeslo(sha1($newPassword));
+                            $user->save();
+                            echo "<h1>Heslo bylo úspěšně změněno!</h1>";
+                        }
+                        else
+                        {
+                            echo "<h1>Hesla se neshodují!</h1>";
+                        }
+                    }
+                    catch(Exception $ex) {
+                        $result = 'Error : '.$ex->getMessage();
+                        echo $result;
+                    }
+                }
+                ?>
+
+                <td colspan="2"><input type="password" name="newPassword" class="required-entry input-text"></td>
+
+
+
+            </tr>
+            <tr>
+                <td class="td_vnejsi" colspan="2"><label for="password2">Ověření nového hesla:</label></td>
+                <td colspan="2"><input id="password2" type="password" name="password" class="required-entry input-text"></td>
+            </tr>
+            <tr>
+                <td colspan="4"><hr></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: center"><input type="submit" value="Změna hesla" style="width: 8em; height: 2em"></td>
+            </tr>
             </tbody>
         </table>
     </form>
