@@ -19,7 +19,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         if (!is_object($ctenar)) {
             $ctenar = Mage::getModel('ctenar/ctenar');
             $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
-            $email=$this->__(Mage::getSingleton('customer/session')->getCustomer()->getEmail());
+            $email=$this->__(Mage::getSingleton('ctenar/ctenar')->$ctenar->getEmail());
 
             echo $email;
         }
