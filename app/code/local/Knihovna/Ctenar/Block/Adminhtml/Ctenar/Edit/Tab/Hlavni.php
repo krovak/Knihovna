@@ -21,9 +21,9 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             $ctenar->setData('cislo_prukazu', $ctenar->getCisloprukazky());
 
         }
-        $email=$this->__(Mage::getSingleton('ctenar/ctenar')->$ctenar->getEmail());
+        echo $ctenar->getEmail();
 
-        echo $email;
+
 
 
         $form = new Varien_Data_Form(array(
