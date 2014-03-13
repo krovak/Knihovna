@@ -3,6 +3,16 @@
     <ctenar_logged_out>
         <reference name="top.links">
             <action method="addLink">
+                <label>Moje výpůjčky</label>
+                <url>/ctenar/index/nastenka/</url>
+                <title>Moje výpůjčky</title>
+            </action>
+            <action method="addLink">
+                <label>Můj profil</label>
+                <url>/ctenar/index/nastenka/</url>
+                <title>Můj profil</title>
+            </action>
+            <action method="addLink">
                 <label>Odhlásit se</label>
                 <url>/ctenar/login/logout</url>
                 <title>Odhlášení</title>
@@ -25,15 +35,18 @@
             <block type="ctenar/login" template="knihovna/ctenar/login.phtml"></block>
         </reference>
     </ctenar_login_index>
+
     <ctenar_index_nastenka>
         <reference name="content">
             <block type="core/template" name="ctenar.nastenka" template="knihovna/ctenar/nastenka.phtml">
+                <block type="vypujcky/vypujcky_ctenar" name="vypujcky.vypujckyctenar"
+                       template="knihovna/vypujcky/vypujcky_ctenar.phtml"></block>
                 <block type="ctenar/info" name="ctenar.info" template="knihovna/ctenar/info.phtml"></block>
             </block>
         </reference>
         <reference name="left">
             <block type="ctenar/login" template="knihovna/ctenar/menu.phtml" name="menu"></block>
-
         </reference>
     </ctenar_index_nastenka>
+
 </layout>

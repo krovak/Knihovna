@@ -5,7 +5,7 @@ $installer = $this;
 $installer->startSetup();
 
 $table = $installer->getConnection()
-    ->newTable($installer->getTable('oddeleni/knihovna_oddeleni'))
+    ->newTable($installer->getTable('knihovna/knihovna_oddeleni'))
     ->addColumn('entity_id', Varien_Db_Ddl_Table::TYPE_SMALLINT, null, array(
     'identity' => true,
     'nullable' => false,

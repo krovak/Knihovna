@@ -1828,21 +1828,65 @@ tr.summary-details-excluded { font-style:italic; }
     padding: 5px 10px;
 }
 
-/* info o ctenari */
+/* Tabulky, prihlaseni, profil ctenare, vypujcky */
 
-#info_ctenar
-{
+#profil_ctenar {
     border: none;
     width: 100%;
     font-size: 1.2em;
 }
 
-#info_ctenar td
-{
+#profil_ctenar td {
     padding-bottom: 1em;
 }
 
-.td_vnejsi
-{
+#tab_prihlaseni {
+    border: none;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+#tab_prihlaseni td {
+    width: 50%;
+}
+
+#tab_prihlaseni .td_vnejsi {
+    text-align: right;
+    padding-right: 1em;
+}
+
+#tab_vypujcky {
+    border: 1px solid  #0a263c;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#tab_vypujcky th {
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 10px;
+    background: #0a263c;
+    color: #fff;
+}
+
+#tab_vypujcky td {
+    text-align: center;
+    padding: 5px 10px;
+    border: 1px solid #0a263c;
+}
+
+.td_vnejsi {
     font-weight: bold;
+}
+
+#td_sirka_1 {
+    width: 20%;
+}
+
+#td_sirka_2 {
+    width: 30%;
+}
+
+#td_sirka_3 {
+    width: 50%;
 }

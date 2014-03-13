@@ -8,25 +8,6 @@
  */
 ?>
 
-<!--<style type="text/css">
-    #info_ctenar
-    {
-        border: none;
-        width: 100%;
-        font-size: 1.2em;
-    }
-
-    #info_ctenar td
-    {
-        padding-bottom: 1em;
-    }
-
-    .td_vnejsi
-    {
-        font-weight: bold;
-    }
-</style>-->
-
 <?php
 /** @var $ctenar Knihovna_Ctenar_Model_Ctenar */
 $ctenar= $this->getCtenar();
@@ -34,10 +15,10 @@ $ctenar= $this->getCtenar();
 
 <div id="info" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
-    <table id="info_ctenar">
+    <table id="profil_ctenar">
     <thead>
         <tr>
-            <td colspan="4" style="text-align: center"><h3>Info o čtenáři</h3></td>
+            <td colspan="4" style="text-align: center"><h2>Můj profil</h2></td>
         </tr>
         <tr>
             <td colspan="4"><hr></td>
@@ -45,8 +26,8 @@ $ctenar= $this->getCtenar();
     </thead>
         <tbody>
         <tr>
-            <td style="width: 20%" class="td_vnejsi">Jméno: </td><td style="width: 30%"><?php echo $ctenar->getJmeno();?></td>
-            <td style="width: 20%" class="td_vnejsi">Příjmení: </td><td style="width: 30%"><?php echo $ctenar->getPrijmeni();?></td>
+            <td id="td_sirka_1" class="td_vnejsi">Jméno: </td><td id="td_sirka_2"><?php echo $ctenar->getJmeno();?></td>
+            <td id="td_sirka_1" class="td_vnejsi">Příjmení: </td><td id="td_sirka_2"><?php echo $ctenar->getPrijmeni();?></td>
         </tr>
         <tr>
             <td colspan="4"><hr></td>
@@ -63,10 +44,10 @@ $ctenar= $this->getCtenar();
             <td colspan="4"><hr></td>
         </tr>
         <tr>
-            <td id="td_mala" class="td_vnejsi">Email: </td><td id="id_dlouha" colspan="3"><?php echo $ctenar->getEmail();?></td>
+            <td id="td_sirka_1" class="td_vnejsi">Email: </td><td colspan="3"><?php echo $ctenar->getEmail();?></td>
         </tr>
         <tr>
-            <td id="td_mala" class="td_vnejsi">Tel. číslo: </td><td id="id_dlouha" colspan="3"><?php echo $ctenar->getTelefonni_cislo();?></td>
+            <td id="td_sirka_1" class="td_vnejsi">Tel. číslo: </td><td colspan="3"><?php echo $ctenar->getTelefonni_cislo();?></td>
         </tr>
         <tr>
             <td colspan="4"><hr></td>
@@ -76,11 +57,11 @@ $ctenar= $this->getCtenar();
 
     <br>
 
-    <form method="post" action="">
-        <table id="info_ctenar">
+    <form id="zmenaHesla" name="zmenaHesla" method="post">
+        <table id="profil_ctenar">
             <thead>
                 <tr>
-                    <td colspan="4" style="text-align: center"><h3>Změna hesla</h3></td>
+                    <td colspan="4" style="text-align: center"><h2>Změna hesla</h2></td>
                 </tr>
                 <tr>
                     <td colspan="4"><hr></td>
@@ -89,65 +70,21 @@ $ctenar= $this->getCtenar();
             <tbody>
                 <tr>
                     <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
-
-                    <?php
-                    if( isset($_POST["newPassword"]) and isset($_POST["password2"]))
-                    {
-                        $user = Mage::getModel('core/session')->getLoggedUser();
-                        //echo $user->getHeslo();
-
-                        try {
-                            if ($_POST["newPassword"] == $_POST["password2"])
-                        {
-                            $newPassword = $_POST["newPassword"];
-                            $user->setHeslo(sha1($newPassword));
-                            $user->save();
-                            echo "<h1>Heslo bylo úspěšně změněno!</h1>";
-                        }
-                            else
-                            {
-                                echo "<h1>Hesla se neshodují!</h1>";
-                            }
-                        }
-                        catch(Exception $ex) {
-                            $result = 'Error : '.$ex->getMessage();
-                            echo $result;
-                        }
-                    }
-                    ?>
-
-                    <td colspan="2"><input type="password" name="newPassword" class="required-entry input-text"></td>
+                    <td colspan="2"><input id="password" type="password" name="password" class="required-entry input-text"></td>
                 </tr>
                 <tr>
                     <td class="td_vnejsi" colspan="2"><label for="password2">Ověření nového hesla:</label></td>
-                    <td colspan="2"><input type="password" name="password2" class="required-entry input-text"></td>
+                    <td colspan="2"><input id="password2" type="password" name="password" class="required-entry input-text"></td>
                 </tr>
                 <tr>
                     <td colspan="4"><hr></td>
                 </tr>
                 <tr>
-                    <td colspan="4" style="text-align: center"><input type="submit" value="Změna hesla" style="width: 12em; height: 2em"></td>
+                    <td colspan="4" style="text-align: center"><input type="submit" value="Změna hesla" style="width: 8em; height: 2em"></td>
                 </tr>
             </tbody>
         </table>
     </form>
-
-    <!-- PUVODNI VYPIS
-
-    <b>Číslo průkazu:</b> <?php echo $ctenar->getCislo_prukazu();?><br>
-    <b>Jméno:</b> <?php echo $ctenar->getJmeno();?><br>
-    <b>Příjmení:</b> <?php echo $ctenar->getPrijmeni();?><br>
-    <b>Ulice:</b> <?php echo $ctenar->getUlice();?><br>
-    <b>Číslo popisné:</b> <?php echo $ctenar->getCp();?><br>
-    <b>Město:</b> <?php echo $ctenar->getMesto();?><br>
-    <b>PSČ:</b> <?php echo $ctenar->getPsc();?><br>
-    <b>Email:</b> <?php echo $ctenar->getEmail();?><br>
-    <b>Telefonní číslo:</b> <?php echo $ctenar->getTelefonni_cislo();?>
-    <br>
-
-
-
-    -->
 
     <script type="text/javascript">
         var loginForm = new VarienForm('zmenaHesla');

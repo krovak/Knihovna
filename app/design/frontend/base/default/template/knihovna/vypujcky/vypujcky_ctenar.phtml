@@ -1,24 +1,37 @@
-<h3>Výpůjčky čtenáře</h3>
-    <table>
-        <thead>
-            <tr><th>Kniha</th><th>Od</th><th>Do</th></tr>
-        </thead>
-        <tbody>
-<?php
-    $user = Mage::getModel('core/session')->getLoggedUser();
-    $vypujcky = $this->getCtenarVypujcky($user->getId());
-        foreach($vypujcky as $vypujcka) {
-            ?>
-            <tr>
-                <?php
-                    $book_name = Mage::getModel('tituly/tituly')->load($vypujcka->getBook())->getNazev();
-                    echo '<td>'.$book_name.'</td>';
-                    echo '<td>'.$vypujcka->getFrom().'</td>';
-                    echo '<td>'.$vypujcka->getTo().'</td>';
-                ?>
-            </tr>
-<?php
-        }
-?>
-        </tbody>
-    </table>
+<h2 style="text-align: center">Moje výpůjčky</h2>
+
+<table id="tab_vypujcky">
+    <thead>
+        <tr>
+            <th>Kniha</th>
+            <th>Od</th>
+            <th>Do</th>
+            <th>Zbývá <br> (roky, měsíce, dny)</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        $user = Mage::getModel('core/session')->getLoggedUser();
+        $vypujcky = $this->getCtenarVypujcky($user->getId());
+        $date1 = new DateTime(date("y-m-d"));
+
+            foreach($vypujcky as $vypujcka) {
+                    echo '<tr>';
+                        $book_name = Mage::getModel('tituly/tituly')->load($vypujcka->getBook())->getNazev();
+                        echo '<td>'.$book_name.'</td>';
+                        echo '<td>'.$vypujcka->getFrom().'</td>';
+                        echo '<td>'.$vypujcka->getTo().'</td>';
+                        $date2 = new DateTime($vypujcka->getTo());
+                        $interval = $date2->diff($date1);
+                        if (!$interval->y && !$interval->m && $interval->d<=10) {
+                            echo '<td style="color: red">'.'!!! '.$interval->y.'/'.$interval->m.'/'.$interval->d.' !!!'.'</td>';
+                        }
+                        else {
+                            echo '<td style="color: green">'.$interval->y.'/'.$interval->m.'/'.$interval->d.'</td>';
+                        }
+
+                    echo '</tr>';
+            }
+    ?>
+    </tbody>
+</table>

@@ -1,10 +1,28 @@
+<h2 style="text-align: center">Příhlášení  čtenáře</h2>
+<br>
+<hr>
+<br>
+
 <form id="prihlaseni" name="prihlaseni" method="post">
-    <label for="name">Číslo průkazu:</label><input id="name" type="text" name="name" class="required-entry input-text">
-    <label for="password">Heslo:</label><input id="password" type="password" name="password"
-                                               class="required-entry input-text">
-    <input type="submit" value="Přihlásit">
+    <table id="tab_prihlaseni">
+        <tr>
+            <td class="td_vnejsi"><label for="name">Číslo průkazu:</label></td>
+            <td><input id="name" type="text" name="name" class="required-entry input-text"></td>
+        </tr>
+        <tr>
+            <td class="td_vnejsi"><label for="password">Heslo:</label></td>
+            <td><input id="password" type="password" name="password" class="required-entry input-text"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><br></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center"><input type="submit" value="Přihlásit" style="width: 6em;height: 1.8em"></td>
+        </tr>
+    </table>
 
 </form>
 <script type="text/javascript">
     var loginForm = new VarienForm('prihlaseni');
 </script>
+<tr>
