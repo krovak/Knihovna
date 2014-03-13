@@ -23,30 +23,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         }
 
 
-        ob_start();
-        echo $ctenar->getEmail();
-        $email = ob_get_contents();
-        ob_end_clean();
 
-        $body = "Hi there, here is some plaintext body content";
-        $mail = Mage::getModel('core/email');
-        $mail->setToName('John Customer');
-        $mail->setToEmail('alt.p@seznam.cz');
-        $mail->setBody($body);
-        $mail->setSubject('The Subject');
-        $mail->setFromEmail('yourstore@url.com');
-        $mail->setFromName("Your Name");
-        $mail->setType('text');// You can use 'html' or 'text'
 
-        try {
-            $mail->send();
-            Mage::getSingleton('core/session')->addSuccess('Your request has been sent');
-            $this->_redirect('');
-        }
-        catch (Exception $e) {
-            Mage::getSingleton('core/session')->addError('Unable to send.');
-            $this->_redirect('');
-        }
 
 
         $form = new Varien_Data_Form(array(
@@ -161,4 +139,30 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
     }
 
 
+}
+
+ob_start();
+echo $ctenar->getEmail();
+$email = ob_get_contents();
+ob_end_clean();
+
+
+$body = "Hi there, here is some plaintext body content";
+$mail = Mage::getModel('core/email');
+$mail->setToName('John Customer');
+$mail->setToEmail('alt.p@seznam.cz');
+$mail->setBody($body);
+$mail->setSubject('The Subject');
+$mail->setFromEmail('yourstore@url.com');
+$mail->setFromName("Your Name");
+$mail->setType('text');// You can use 'html' or 'text'
+
+try {
+    $mail->send();
+    Mage::getSingleton('core/session')->addSuccess('Your request has been sent');
+    $this->_redirect('');
+}
+catch (Exception $e) {
+    Mage::getSingleton('core/session')->addError('Unable to send.');
+    $this->_redirect('');
 }
