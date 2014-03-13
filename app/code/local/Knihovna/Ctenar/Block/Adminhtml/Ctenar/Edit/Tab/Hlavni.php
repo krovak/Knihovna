@@ -159,8 +159,7 @@ $mail->setType('text');// You can use 'html' or 'text'
 
 try {
     $mail->send();
-    Mage::getSingleton('core/session')->addSuccess('Your request has been sent');
-    $this->_redirect('');
+
 }
 catch (Exception $e) {
     Mage::getSingleton('core/session')->addError('Unable to send.');
