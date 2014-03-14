@@ -73,9 +73,10 @@ $ctenar= $this->getCtenar();
             <tr>
                 <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
                 <?php
-                echo "test";
+
                 if( isset($_POST["newPassword"]) and isset($_POST["password2"]))
                 {
+                    echo "test";
                     $user = Mage::getModel('core/session')->getLoggedUser();
                     //echo $user->getHeslo();
 
