@@ -26,9 +26,36 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         return $cp;
     }
 
-    public function pokus($pokus)
+    public function pokus($heslo1,$heslo2)
     {
-        echo "Ahoj!";
+        if( isset($heslo1) and isset($heslo2))
+    {
+
+        $user = Mage::getModel('core/session')->getLoggedUser();
+        //echo $user->getHeslo();
+
+        try {
+            if ($heslo1 == $heslo2)
+            {
+                $newPassword = $heslo1;
+
+
+
+
+                $user->setHeslo(sha1($newPassword));
+                $user->save();
+                echo "<h1>Heslo bylo úspěšně změněno!</h1>";
+            }
+            else
+            {
+                echo "<h1>Hesla se neshodují!</h1>";
+            }
+        }
+        catch(Exception $ex) {
+            $result = 'Error : '.$ex->getMessage();
+            echo $result;
+        }
+    }
     }
 
     public function validate($cp, $heslo)

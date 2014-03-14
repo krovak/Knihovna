@@ -73,35 +73,8 @@ $ctenar= $this->getCtenar();
             <tr>
                 <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
                 <?php
-                $ctenar->pokus($_POST["newPassword"]);
-                if( isset($_POST["newPassword"]) and isset($_POST["password2"]))
-                {
+                $ctenar->pokus($_POST["newPassword"],$_POST["password2"]);
 
-                    $user = Mage::getModel('core/session')->getLoggedUser();
-                    //echo $user->getHeslo();
-
-                    try {
-                        if ($_POST["newPassword"] == $_POST["password2"])
-                        {
-                            $newPassword = $_POST["newPassword"];
-                            $user->pokus($newPassword);
-
-
-
-                            $user->setHeslo(sha1($newPassword));
-                            $user->save();
-                            echo "<h1>Heslo bylo úspěšně změněno!</h1>";
-                        }
-                        else
-                        {
-                            echo "<h1>Hesla se neshodují!</h1>";
-                        }
-                    }
-                    catch(Exception $ex) {
-                        $result = 'Error : '.$ex->getMessage();
-                        echo $result;
-                    }
-                }
                 ?>
 
                 <td colspan="2"><input type="password" name="newPassword" class="required-entry input-text"></td>
