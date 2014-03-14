@@ -28,8 +28,8 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
     public function pokus($heslo1,$heslo2)
     {
-        if( isset($heslo1) and isset($heslo2))
-    {
+
+
 
         $user = Mage::getModel('core/session')->getLoggedUser();
         //echo $user->getHeslo();
@@ -55,7 +55,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
             $result = 'Error : '.$ex->getMessage();
             echo $result;
         }
-    }
+
     }
 
     public function validate($cp, $heslo)
