@@ -39,9 +39,6 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
             {
 
 
-
-
-
                 $user->setHeslo(sha1($heslo1));
                 $user->save();
                 echo "<h1>Heslo bylo úspěšně změněno!</h1>";
