@@ -83,10 +83,11 @@ $ctenar= $this->getCtenar();
                     try {
                         if ($_POST["newPassword"] == $_POST["password2"])
                         {
+                            $newPassword = $_POST["newPassword"];
                             $user->pokus($newPassword);
 
 
-                            $newPassword = $_POST["newPassword"];
+
                             $user->setHeslo(sha1($newPassword));
                             $user->save();
                             echo "<h1>Heslo bylo úspěšně změněno!</h1>";
