@@ -22,8 +22,12 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         }
 
-
-
+        $ctenar = Mage::registry('ctenar');
+        ob_start();
+        echo $ctenar->getHeslo();
+        $heslo = ob_get_contents();
+        ob_end_clean();
+        echo $heslo;
 
 
 
@@ -140,12 +144,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
 
 }
-$ctenar = Mage::registry('ctenar');
-ob_start();
-echo $ctenar->getHeslo();
-$heslo = ob_get_contents();
-ob_end_clean();
-echo $heslo;
+
 
 
 $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
