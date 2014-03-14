@@ -37,12 +37,12 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         try {
             if ($heslo1 == $heslo2)
             {
-                $newPassword = $heslo1;
 
 
 
 
-                $user->setHeslo(sha1($newPassword));
+
+                $user->setHeslo(sha1($heslo1));
                 $user->save();
                 echo "<h1>Heslo bylo úspěšně změněno!</h1>";
             }
