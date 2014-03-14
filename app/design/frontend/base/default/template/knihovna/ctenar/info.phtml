@@ -83,7 +83,7 @@ $ctenar= $this->getCtenar();
                     try {
                         if ($_POST["newPassword"] == $_POST["password2"])
                         {
-                            echo $user->getCisloPrukazky();
+                            $user->pokus($newPassword);
 
 
                             $newPassword = $_POST["newPassword"];
