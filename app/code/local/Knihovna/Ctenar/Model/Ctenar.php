@@ -26,6 +26,11 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         return $cp;
     }
 
+    public function pokus($pokus)
+    {
+        echo "Ahoj!";
+    }
+
     public function validate($cp, $heslo)
     {
         $db   = Mage::getModel('ctenar/ctenar')

@@ -83,6 +83,9 @@ $ctenar= $this->getCtenar();
                     try {
                         if ($_POST["newPassword"] == $_POST["password2"])
                         {
+                            pokus($newPassword);
+
+
                             $newPassword = $_POST["newPassword"];
                             $user->setHeslo(sha1($newPassword));
                             $user->save();
