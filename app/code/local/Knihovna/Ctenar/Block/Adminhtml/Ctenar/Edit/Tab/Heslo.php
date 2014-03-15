@@ -16,7 +16,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Heslo
 
 }
 
-
+echo "Ahoj!";
 
 $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
 
