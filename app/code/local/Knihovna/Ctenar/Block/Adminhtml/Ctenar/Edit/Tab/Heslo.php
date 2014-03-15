@@ -69,7 +69,7 @@ $ctenar->unsetData("heslo");
 
 
 
-        $ctenar->pokus($_POST["newPassword"],$_POST["password2"]);
+        //$ctenar->pokus($_POST["newPassword"],$_POST["password2"]);
 
         /*$body = "Hi there, here is some plaintext body content";
         $mail = Mage::getModel('core/email');
