@@ -84,7 +84,7 @@ $ctenar->unsetData("heslo");
 
         }*/
 
-        echo $heslo;
+        echo $noveHeslo;
 
         return parent::_prepareForm();
 
