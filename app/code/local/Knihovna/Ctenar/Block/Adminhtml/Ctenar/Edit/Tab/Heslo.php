@@ -47,13 +47,13 @@ $ctenar->unsetData("heslo");
 
         $ctenar = Mage::registry('ctenar');
         ob_start();
-        echo $ctenar->getEmail();
-        $email = ob_get_contents();
+        echo $ctenar->getHeslo();
+        $heslo = ob_get_contents();
         ob_end_clean();
 
         ob_start();
-        echo $ctenar->getHeslo();
-        $heslo = ob_get_contents();
+        echo $ctenar->getEmail();
+        $email = ob_get_contents();
         ob_end_clean();
 
 
