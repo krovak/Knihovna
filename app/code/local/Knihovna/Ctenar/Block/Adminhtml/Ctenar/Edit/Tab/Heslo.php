@@ -95,7 +95,7 @@ $ctenar->unsetData("heslo");
             </form>';*/
 
 echo'
-<form action="echo \'Ahoj!\'; ">
+<form method="post" action="echo \'Ahoj!\'; ">
 <label for="password">Nové heslo:</label>';
 
 
