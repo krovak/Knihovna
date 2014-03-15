@@ -94,6 +94,8 @@ $ctenar->unsetData("heslo");
         echo '<input type="button" value="Run somePHPfile.php" />';
         echo '</form>';
 
+        echo 'Ahoj';
+
         return parent::_prepareForm();
 
 
