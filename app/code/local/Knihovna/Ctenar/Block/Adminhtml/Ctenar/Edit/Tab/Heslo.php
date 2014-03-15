@@ -67,7 +67,9 @@ $ctenar->unsetData("heslo");
 
         $sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
 
-        $ctenar->pokus('123','456');
+
+
+        $ctenar->pokus($_POST["newPassword"],$_POST["password2"]);
 
         /*$body = "Hi there, here is some plaintext body content";
         $mail = Mage::getModel('core/email');
@@ -88,9 +90,9 @@ $ctenar->unsetData("heslo");
 
         }*/
 
-        /*echo "<form action="<?php echo "Ahoj!";?>" method="post">";
-        <input type="button" value="Run somePHPfile.php" />
-        </form> */
+        echo '<form action="<?php echo "Ahoj!";?>" method="post">';
+        echo '<input type="button" value="Run somePHPfile.php" />';
+        echo '</form>';
 
         return parent::_prepareForm();
 
