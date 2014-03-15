@@ -53,10 +53,8 @@ $ctenar->unsetData("heslo");
         $email = ob_get_contents();
         ob_end_clean();
 
-        ob_start();
-        echo $ctenar->generatePassword();
-        $heslo = ob_get_contents();
-        ob_end_clean();
+        $newResetPasswordLinkToken = Mage::helper('ctenar')->generateResetPasswordLinkToken();
+        $ctenar->changeResetPasswordLinkToken($newResetPasswordLinkToken);
 
 
         $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
