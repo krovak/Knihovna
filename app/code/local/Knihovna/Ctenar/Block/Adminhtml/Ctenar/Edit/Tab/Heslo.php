@@ -90,9 +90,27 @@ $ctenar->unsetData("heslo");
 
         }*/
 
-        echo '<form action="echo \'Ahoj!\'" method="post">
+        /*echo '<form action="echo \'Ahoj!\'" method="post">
             <input type="button" value="Run somePHPfile.php" />
-            </form>';
+            </form>';*/
+
+echo'
+<label for="password">Nové heslo:</label>
+
+                if( isset($_POST["newPassword"]) and isset($_POST["password2"]))
+                    $ctenar->pokus($_POST["newPassword"],$_POST["password2"]);
+
+
+
+<input type="password" name="newPassword" class="required-entry input-text">
+
+
+
+
+   <label for="password2">Ověření nového hesla:</label>
+   <input type="password" name="password2" class="required-entry input-text">
+   <input type="submit" value="Změna hesla" >';
+
 
         echo 'Ahoj';
 
