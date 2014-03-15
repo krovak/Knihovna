@@ -87,7 +87,7 @@ $ctenar->unsetData("heslo");
 
         }*/
 
-        echo $email;
+        echo $heslo;
 
         return parent::_prepareForm();
 
