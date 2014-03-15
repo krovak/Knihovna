@@ -62,7 +62,6 @@ $ctenar->unsetData("heslo");
         $promenneProSablonu = array();
         $promenneProSablonu['heslo'] = $heslo;
 
-        $pripravenaSablona = $sablonaEmailu->getProcessedTemplate($promenneProSablonu);
 
         $sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
 
