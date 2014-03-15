@@ -43,7 +43,9 @@ $ctenar->unsetData("heslo");
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
 
-        $ctenar = Mage::getModel('ctenar/ctenar');
+
+
+        $ctenar = Mage::registry('ctenar');
         ob_start();
         echo $ctenar->getEmail();
         $email = ob_get_contents();
@@ -68,6 +70,8 @@ $ctenar->unsetData("heslo");
             Mage::getSingleton('core/session')->addError('Unable to send.');
 
         }
+
+        echo "Ahoj!";
 
         return parent::_prepareForm();
 
