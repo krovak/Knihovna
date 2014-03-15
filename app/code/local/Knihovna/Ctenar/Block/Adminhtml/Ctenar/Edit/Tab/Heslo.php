@@ -61,7 +61,7 @@ $promenneProSablonu['myvar1'] = 'Branko';
 
 
 
-$ctenar = Mage::registry('ctenar');
+$ctenar = Mage::getModel('ctenar/ctenar');
 ob_start();
 echo $ctenar->getEmail();
 $email = ob_get_contents();
