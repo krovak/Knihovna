@@ -64,6 +64,7 @@ $ctenar->unsetData("heslo");
 
         $pripravenaSablona = $sablonaEmailu->getProcessedTemplate($promenneProSablonu);
 
+        $sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
 
         /*$body = "Hi there, here is some plaintext body content";
         $mail = Mage::getModel('core/email');
