@@ -46,10 +46,7 @@ $ctenar->unsetData("heslo");
 
 
         $ctenar = Mage::registry('ctenar');
-        ob_start();
-        echo $ctenar->getHeslo();
-        $heslo = ob_get_contents();
-        ob_end_clean();
+        $noveHeslo = sha1(time());
 
         ob_start();
         echo $ctenar->getEmail();
@@ -60,7 +57,7 @@ $ctenar->unsetData("heslo");
         $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
 
         $promenneProSablonu = array();
-        $promenneProSablonu['heslo'] = $email;
+        $promenneProSablonu['heslo'] = $noveHeslo;
         //echo $promenneProSablonu['heslo'];
         $sablonaEmailu->setSenderName('NAME');
         $sablonaEmailu->setSenderEmail('EMAIL@DOMAIN.com');
