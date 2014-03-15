@@ -94,25 +94,7 @@ $ctenar->unsetData("heslo");
             <input type="button" value="Run somePHPfile.php" />
             </form>';*/
 
-echo'
-<form method="post" action="<?php echo \'Ahoj!\';?> ">
-<label for="password">Nové heslo:</label>';
 
-
-
-
-
-echo'<input type="password" name="newPassword" class="required-entry input-text">
-
-
-
-
-   <label for="password2">Ověření nového hesla:</label>
-   <input type="password" name="password2" class="required-entry input-text">
-   <input type="submit" value="Změna hesla" >';
-
-
-        echo 'Ahoj';
 
         return parent::_prepareForm();
 
