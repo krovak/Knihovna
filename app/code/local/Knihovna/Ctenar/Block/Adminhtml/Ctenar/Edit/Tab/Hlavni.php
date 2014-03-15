@@ -22,7 +22,10 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         }
 
-        $ctenar = Mage::registry('ctenar');
+
+            $ctenar = Mage::getModel('ctenar/ctenar');
+
+
         ob_start();
         echo $ctenar->getHeslo();
         $heslo = ob_get_contents();
