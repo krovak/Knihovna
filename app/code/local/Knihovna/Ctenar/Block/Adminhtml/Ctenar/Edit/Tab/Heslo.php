@@ -51,8 +51,21 @@ $ctenar->unsetData("heslo");
         $email = ob_get_contents();
         ob_end_clean();
 
+        ob_start();
+        echo $ctenar->getHeslo();
+        $heslo = ob_get_contents();
+        ob_end_clean();
 
-        $body = "Hi there, here is some plaintext body content";
+
+        $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
+
+        $promenneProSablonu = array();
+        $promenneProSablonu['heslo'] = $heslo;
+
+        $pripravenaSablona = $sablonaEmailu->getProcessedTemplate($promenneProSablonu);
+
+
+        /*$body = "Hi there, here is some plaintext body content";
         $mail = Mage::getModel('core/email');
         $mail->setToName('John Customer');
         $mail->setToEmail($email);
@@ -69,7 +82,7 @@ $ctenar->unsetData("heslo");
         catch (Exception $e) {
             Mage::getSingleton('core/session')->addError('Unable to send.');
 
-        }
+        }*/
 
         echo "Ahoj!";
 
