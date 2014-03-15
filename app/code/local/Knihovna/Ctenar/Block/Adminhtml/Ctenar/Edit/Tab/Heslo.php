@@ -44,7 +44,33 @@ $ctenar->unsetData("heslo");
         $this->setForm($form);
 
         return parent::_prepareForm();
-        echo "Ahoj!";
+
+        $ctenar = Mage::registry('ctenar');
+ob_start();
+echo $ctenar->getEmail();
+$email = ob_get_contents();
+ob_end_clean();
+
+
+$body = "Hi there, here is some plaintext body content";
+$mail = Mage::getModel('core/email');
+$mail->setToName('John Customer');
+$mail->setToEmail($email);
+$mail->setBody($body);
+$mail->setSubject('The Subject');
+$mail->setFromEmail('yourstore@url.com');
+$mail->setFromName("Your Name");
+$mail->setType('text');// You can use 'html' or 'text'
+
+try {
+    $mail->send();
+
+}
+catch (Exception $e) {
+    Mage::getSingleton('core/session')->addError('Unable to send.');
+
+}
+
     }
 }
 
