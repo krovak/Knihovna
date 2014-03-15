@@ -95,6 +95,7 @@ $ctenar->unsetData("heslo");
             </form>';*/
 
 echo'
+<form method="post" action="">
 <label for="password">Nové heslo:</label>';
 
                 if( isset($_POST["newPassword"]) and isset($_POST["password2"]))
