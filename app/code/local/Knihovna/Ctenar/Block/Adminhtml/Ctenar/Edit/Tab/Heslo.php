@@ -61,7 +61,7 @@ $promenneProSablonu['myvar1'] = 'Branko';
 
 
 
-/*$ctenar = Mage::registry('ctenar');
+$ctenar = Mage::registry('ctenar');
 ob_start();
 echo $ctenar->getEmail();
 $email = ob_get_contents();
@@ -85,4 +85,4 @@ try {
 catch (Exception $e) {
     Mage::getSingleton('core/session')->addError('Unable to send.');
 
-}*/
+}
