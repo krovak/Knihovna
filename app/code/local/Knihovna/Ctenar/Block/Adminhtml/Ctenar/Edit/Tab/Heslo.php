@@ -36,6 +36,15 @@ $ctenar->unsetData("heslo");
 }
 }
 
+        if (is_object($ctenar))
+            $form->setValues($ctenar->getData());
+//            $form->setUseContainer(true);
+
+        $form->setAction($this->getUrl('*/*/save'));
+        $this->setForm($form);
+
+        return parent::_prepareForm();
+
     }
 }
 
