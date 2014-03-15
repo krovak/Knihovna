@@ -60,8 +60,8 @@ $ctenar->unsetData("heslo");
         $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
 
         $promenneProSablonu = array();
-        $promenneProSablonu['heslo'] = $heslo;
-        echo $promenneProSablonu['heslo'];
+        $promenneProSablonu['heslo'] = 'heslo';
+        //echo $promenneProSablonu['heslo'];
         $sablonaEmailu->setSenderName('NAME');
         $sablonaEmailu->setSenderEmail('EMAIL@DOMAIN.com');
         $sablonaEmailu->setTemplateSubject('STATUS CHANGED');
