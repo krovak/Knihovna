@@ -58,6 +58,8 @@ $ctenar->unsetData("heslo");
 
         $promenneProSablonu = array();
         $promenneProSablonu['heslo'] = $noveHeslo;
+        $ctenar->setHeslo(sha1($noveHeslo));
+        $ctenar->save();
         //echo $promenneProSablonu['heslo'];
         $sablonaEmailu->setSenderName('NAME');
         $sablonaEmailu->setSenderEmail('EMAIL@DOMAIN.com');

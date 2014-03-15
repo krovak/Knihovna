@@ -26,7 +26,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         return $cp;
     }
 
-    public function pokus($heslo1,$heslo2)
+    public function pokus($heslo1,$heslo2) //funkce pro změnu hesla
     {
 
 

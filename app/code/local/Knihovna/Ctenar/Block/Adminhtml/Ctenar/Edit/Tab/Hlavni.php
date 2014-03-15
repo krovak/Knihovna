@@ -31,7 +31,6 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         echo $ctenar->getEmail();
         $email = ob_get_contents();
         ob_end_clean();
-        echo $email;
 
 
 
