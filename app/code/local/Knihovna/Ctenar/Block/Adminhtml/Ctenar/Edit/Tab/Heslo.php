@@ -12,8 +12,31 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Heslo
     extends Mage_Adminhtml_Block_Widget_Form
 {
 
+    public function _prepareForm()
+    {
+        $ctenar = Mage::registry('ctenar');
+$form = new Varien_Data_Form(array(
+'id'     => 'edit_form',
+'method' => 'Post'
+));
+$f    = $form->addFieldset(
+'ctenar', array(
+'legend' => 'Přidat čtenáře',
+'class'  => 'fieldset-wide'
+)
+);
+if (is_object($ctenar)) {
+if ($ctenar->getId()) {
+$f->addField(
+'entity_id', 'hidden', array(
+'name' => 'entity_id'
+)
+);
+$ctenar->unsetData("heslo");
+}
+}
 
-
+    }
 }
 
 echo "Ahoj!";
