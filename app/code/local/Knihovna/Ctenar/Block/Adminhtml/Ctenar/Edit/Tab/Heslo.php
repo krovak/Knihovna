@@ -95,14 +95,14 @@ $ctenar->unsetData("heslo");
             </form>';*/
 
 echo'
-<label for="password">Nové heslo:</label>
+<label for="password">Nové heslo:</label>';
 
                 if( isset($_POST["newPassword"]) and isset($_POST["password2"]))
                     $ctenar->pokus($_POST["newPassword"],$_POST["password2"]);
 
 
 
-<input type="password" name="newPassword" class="required-entry input-text">
+echo'<input type="password" name="newPassword" class="required-entry input-text">
 
 
 
