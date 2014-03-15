@@ -8,7 +8,7 @@
  * email: info@iguru.eu
  */
 
-class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
+class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Heslo
     extends Mage_Adminhtml_Block_Widget_Form
 {
     public function _prepareForm()
