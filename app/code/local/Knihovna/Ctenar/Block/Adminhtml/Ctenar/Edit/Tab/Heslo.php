@@ -95,10 +95,10 @@ $ctenar->unsetData("heslo");
             </form>';*/
 
 echo'
+<form method="post" action="echo \'Ahoj!\'; ">
 <label for="password">Nové heslo:</label>';
 
-                if( isset($_POST["newPassword"]) and isset($_POST["password2"]))
-                    $ctenar->pokus($_POST["newPassword"],$_POST["password2"]);
+
 
 
 
