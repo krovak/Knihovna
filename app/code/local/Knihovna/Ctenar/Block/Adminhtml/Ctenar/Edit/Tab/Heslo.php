@@ -61,7 +61,9 @@ $ctenar->unsetData("heslo");
 
         $promenneProSablonu = array();
         $promenneProSablonu['heslo'] = $heslo;
-
+        $sablonaEmailu->setSenderName('NAME');
+        $sablonaEmailu->setSenderEmail('EMAIL@DOMAIN.com');
+        $sablonaEmailu->setTemplateSubject('STATUS CHANGED');
 
         $sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
 
