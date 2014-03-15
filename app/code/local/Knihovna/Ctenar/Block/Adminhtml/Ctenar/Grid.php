@@ -33,7 +33,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Grid extends Mage_Adminhtml_Block_W
             'index'            => 'entity_id'
         ));
         $this->addColumn('cislo_prukazu', array(
-            'header' => 'Číslo průkazu',
+            'header' => 'Číslo průkazu2',
             'width'  => '100px',
             'index'  => 'cislo_prukazu',
         ));
