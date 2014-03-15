@@ -90,7 +90,7 @@ $ctenar->unsetData("heslo");
 
         }*/
 
-        echo '<form action="xyz.php" method="post">
+        echo '<form action="echo \'Ahoj!\'" method="post">
             <input type="button" value="Run somePHPfile.php" />
             </form>';
 
