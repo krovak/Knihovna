@@ -44,6 +44,9 @@ $ctenar->unsetData("heslo");
         $this->setForm($form);
 
 
+        $ctenar = Mage::registry('ctenar');
+        $ctenar->resetHesla();
+
 
 
 
