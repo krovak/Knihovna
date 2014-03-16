@@ -93,7 +93,6 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $mail->setToEmail($email);
         $mail->setBody($body);
         $mail->setSubject($subject);
-        $mail->setFromName("Your Name");
         $mail->setType('text');// You can use 'html' or 'text'
 
         try {
