@@ -73,7 +73,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $ctenar->setHeslo(sha1($noveHeslo));
         $ctenar->save();
         //echo $promenneProSablonu['heslo'];
-        $sablonaEmailu->setSenderName('NAME');
+        $sablonaEmailu->setSenderName('Administrace');
         $sablonaEmailu->setSenderEmail('EMAIL@DOMAIN.com');
 
         $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');

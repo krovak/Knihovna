@@ -138,7 +138,11 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         $this->setForm($form);
 
         $ctenar = Mage::registry('ctenar');
-        $ctenar->resetHesla();
+        $adminEmail = Mage::getStoreConfig('trans_email/ident_general/value') ?
+            Mage::getStoreConfig('trans_email/ident_general/value') :
+            Mage::getSingleton('core/config')->init()->getXpath('/config/default/trans_email/ident_general/email');
+        echo $adminEmail;
+        //$ctenar->resetHesla();
 
         return parent::_prepareForm();
 
