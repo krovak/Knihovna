@@ -139,15 +139,9 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         $ctenar = Mage::registry('ctenar');
 
-            $adminUser = Mage::getSingleton('admin/session')->getUser();
 
-        ob_start();
-        echo $adminUser->getEmail();
-        $adminEmail = ob_get_contents();
-        ob_end_clean();
 
-        echo $adminEmail;
-        //$ctenar->resetHesla();
+        $ctenar->resetHesla();
 
         return parent::_prepareForm();
 

@@ -65,6 +65,12 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $email = ob_get_contents();
         ob_end_clean();
 
+        $adminUser = Mage::getSingleton('admin/session')->getUser();
+
+        ob_start();
+        echo $adminUser->getEmail();
+        $adminEmail = ob_get_contents();
+        ob_end_clean();
 
         $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
 
@@ -74,7 +80,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $ctenar->save();
         //echo $promenneProSablonu['heslo'];
         $sablonaEmailu->setSenderName('Administrace');
-        $sablonaEmailu->setSenderEmail('EMAIL@DOMAIN.com');
+        $sablonaEmailu->setSenderEmail($adminEmail);
 
         $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
 
@@ -88,6 +94,8 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         echo $ctenar->getEmail();
         $email = ob_get_contents();
         ob_end_clean();
+
+
 
 
         $mail = Mage::getModel('core/email');
