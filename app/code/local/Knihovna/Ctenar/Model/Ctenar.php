@@ -55,6 +55,33 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
     }
 
+    public function resetHesla()
+    {
+        $ctenar = Mage::registry('ctenar');
+        $noveHeslo = sha1(time());
+
+        ob_start();
+        echo $ctenar->getEmail();
+        $email = ob_get_contents();
+        ob_end_clean();
+
+
+        $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
+
+        $promenneProSablonu = array();
+        $promenneProSablonu['heslo'] = $noveHeslo;
+        $ctenar->setHeslo(sha1($noveHeslo));
+        $ctenar->save();
+        //echo $promenneProSablonu['heslo'];
+        $sablonaEmailu->setSenderName('NAME');
+        $sablonaEmailu->setSenderEmail('EMAIL@DOMAIN.com');
+        $sablonaEmailu->setTemplateSubject('STATUS CHANGED');
+
+        $sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
+    }
+
+
+
     public function validate($cp, $heslo)
     {
         $db   = Mage::getModel('ctenar/ctenar')
