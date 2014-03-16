@@ -80,7 +80,7 @@
         </resources>
         <template>
             <email>
-                <custom_email_template1 module="SampleModule1">
+                <custom_email_template1>
                     <label>ActiveCodeline custom email module</label>
                     <file>zmenaHesla.html</file>
                     <type>html</type>
