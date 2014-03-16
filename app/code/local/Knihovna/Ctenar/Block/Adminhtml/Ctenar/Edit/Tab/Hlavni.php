@@ -137,6 +137,10 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
 
+        $ctenar = Mage::registry('ctenar');
+        $body = "Ahoj!";
+        $ctenar->poslatEmail($body);
+
         return parent::_prepareForm();
 
     }
