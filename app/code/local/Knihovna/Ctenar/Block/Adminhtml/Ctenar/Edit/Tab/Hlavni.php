@@ -139,7 +139,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         $ctenar = Mage::registry('ctenar');
         $body = "Ahoj!";
-        $ctenar->poslatEmail($body);
+        $subject = "Předmět zprávy!";
+        $ctenar->poslatEmail($body,$subject);
 
         return parent::_prepareForm();
 

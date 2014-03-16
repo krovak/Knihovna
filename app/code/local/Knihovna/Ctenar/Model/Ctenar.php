@@ -80,7 +80,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
     }
 
-    public function poslatEmail($body)
+    public function poslatEmail($body,$subject)
     {
         $ctenar = Mage::registry('ctenar');
         ob_start();
@@ -90,10 +90,9 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
 
         $mail = Mage::getModel('core/email');
-        $mail->setToName('John Customer');
         $mail->setToEmail($email);
         $mail->setBody($body);
-        $mail->setSubject('The Subject');
+        $mail->setSubject($subject);
         $mail->setFromEmail('yourstore@url.com');
         $mail->setFromName("Your Name");
         $mail->setType('text');// You can use 'html' or 'text'
