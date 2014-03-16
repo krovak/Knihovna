@@ -81,7 +81,7 @@
         <template>
             <email>
                 <custom_email_template1>
-                    <label>ActiveCodeline custom email module</label>
+                    <label>Reset hesla</label>
                     <file>zmenaHesla.html</file>
                     <type>html</type>
                 </custom_email_template1>
