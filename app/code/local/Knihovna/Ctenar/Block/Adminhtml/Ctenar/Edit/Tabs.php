@@ -32,11 +32,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tabs extends Mage_Adminhtml_Bl
             'title'   => Mage::helper('adminhtml')->__('Nepovinné údaje'),
             'content' => $this->getLayout()->createBlock('ctenar/adminhtml_ctenar_edit_tab_nepovinne')->toHtml()
         ));
-        $this->addTab('form_heslo', array(
-            'label'   => Mage::helper('adminhtml')->__('Heslo'),
-            'title'   => Mage::helper('adminhtml')->__('Heslo'),
-            'content' => $this->getLayout()->createBlock('ctenar/adminhtml_ctenar_edit_tab_heslo')->toHtml()
-        ));
+
 
 
 
