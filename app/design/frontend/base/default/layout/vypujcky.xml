@@ -6,4 +6,5 @@
                    template="knihovna/vypujcky/vypujcky_ctenar.phtml"></block>
         </reference>
     </ctenar_index_nastenka>
+
 </layout>

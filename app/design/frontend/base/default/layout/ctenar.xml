@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+
 <layout>
     <ctenar_logged_out>
         <reference name="top.links">
@@ -66,3 +67,5 @@
     </ctenar_index_nastenka>
 
 </layout>
+
+        

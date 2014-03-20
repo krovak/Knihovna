@@ -20,6 +20,7 @@ class Knihovna_Ctenar_IndexController extends Mage_Core_Controller_Front_Action
         $this->getLayout()->getBlock('content')->append($this->getLayout()->createBlock('vypujcky/vypujckyCtenar'));
         $this->renderLayout();
     }
+
     public function profilAction(){
         $this->loadLayout();
         $this->getLayout()->getBlock('content')->append($this->getLayout()->createBlock('ctenar/info'));
