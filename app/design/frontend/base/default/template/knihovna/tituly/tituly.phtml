@@ -2,8 +2,8 @@
 <div id="hledac">
     <form method="post">
         <input type="text" name="query">
-        <select name="hledej">
-            <option value="jmeno">jméno</option>
+        <select name="podle">
+            <option value="nazev">jméno</option>
             <option value="autor">autor</option>
             <option value="isbn">ISBN</option>
             <option value="doroku">do roku</option>
@@ -21,7 +21,7 @@
         <tbody>
         <?php
         if(isset($_POST['query']) && $_POST['query'] != '')
-            $knihy = $this->getKnihyParam($_POST['query']);
+            $knihy = $this->getKnihyParam($_POST['query'],$_POST['podle']);
         else
             $knihy = $this->getKnihy();
 
