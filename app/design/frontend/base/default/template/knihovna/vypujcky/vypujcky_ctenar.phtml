@@ -6,7 +6,7 @@
             <th>Kniha</th>
             <th>Od</th>
             <th>Do</th>
-            <th>Zbývá <br> (roky, měsíce, dny)</th>
+            <th>Zbývá dnů</th>
         </tr>
     </thead>
     <tbody>
@@ -22,12 +22,14 @@
                         echo '<td>'.$vypujcka->getFrom().'</td>';
                         echo '<td>'.$vypujcka->getTo().'</td>';
                         $date2 = new DateTime($vypujcka->getTo());
-                        $interval = $date2->diff($date1);
-                        if (!$interval->y && !$interval->m && $interval->d<=10) {
-                            echo '<td style="color: red">'.'!!! '.$interval->y.'/'.$interval->m.'/'.$interval->d.' !!!'.'</td>';
+                        $interval = $date1->diff($date2,false);
+                        $days_Left = $interval->format('%R%d');
+                        //echo $interval->format('%R%d');
+                        if ($date1 >= $date2) {
+                            echo '<td style="color: red">'.$days_Left.'</td>';
                         }
                         else {
-                            echo '<td style="color: green">'.$interval->y.'/'.$interval->m.'/'.$interval->d.'</td>';
+                            echo '<td style="color: green">'.$days_Left.'</td>';
                         }
 
                     echo '</tr>';
