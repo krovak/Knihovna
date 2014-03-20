@@ -13,7 +13,6 @@
     <?php
         $user = Mage::getModel('core/session')->getLoggedUser();
         $vypujcky = $this->getCtenarVypujcky($user->getId());
-        $date1 = new DateTime(date("y-m-d"));
 
             foreach($vypujcky as $vypujcka) {
                     echo '<tr>';
@@ -21,10 +20,9 @@
                         echo '<td>'.$book_name.'</td>';
                         echo '<td>'.$vypujcka->getFrom().'</td>';
                         echo '<td>'.$vypujcka->getTo().'</td>';
-                        $date2 = new DateTime($vypujcka->getTo());
-                        $interval = $date1->diff($date2,false);
-                        $days_Left = $interval->format('%R%d');
-                        //echo $interval->format('%R%d');
+
+                        $days_Left = $this->getDaysLeft(new DateTime($vypujcka->getTo()));
+
                         if ($date1 >= $date2) {
                             echo '<td style="color: red">'.$days_Left.'</td>';
                         }

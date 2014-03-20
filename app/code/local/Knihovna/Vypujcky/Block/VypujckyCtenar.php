@@ -18,4 +18,12 @@ class Knihovna_Vypujcky_Block_VypujckyCtenar extends Mage_Core_Block_Template{
             ->addFieldToFilter('reader', array('eq'=>$id_reader));
         return $readers_books;
     }
+
+    public function getDaysLeft($date)
+    {
+        $now = new DateTime(date("y-m-d"));
+        $interval = $now->diff($date,false);
+        $days_Left = $interval->format('%R%d');
+        return $days_Left;
+    }
 }
