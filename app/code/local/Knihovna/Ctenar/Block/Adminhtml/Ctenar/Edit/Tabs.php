@@ -35,6 +35,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tabs extends Mage_Adminhtml_Bl
 
 
 
+
         return parent::_beforeToHtml();
     }
 }

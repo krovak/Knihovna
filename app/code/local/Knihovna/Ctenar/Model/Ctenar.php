@@ -26,6 +26,96 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         return $cp;
     }
 
+    public function pokus($heslo1,$heslo2) //funkce pro změnu hesla
+    {
+
+
+
+        $user = Mage::getModel('core/session')->getLoggedUser();
+        //echo $user->getHeslo();
+
+        try {
+            if ($heslo1 == $heslo2)
+            {
+
+
+                $user->setHeslo(sha1($heslo1));
+                $user->save();
+                echo "<h1>Heslo bylo úspěšně změněno!</h1>";
+            }
+            else
+            {
+                echo "<h1>Hesla se neshodují!</h1>";
+            }
+        }
+        catch(Exception $ex) {
+            $result = 'Error : '.$ex->getMessage();
+            echo $result;
+        }
+
+    }
+
+    public function resetHesla()
+    {
+        $ctenar = Mage::registry('ctenar');
+        $noveHeslo = sha1(time());
+
+        ob_start();
+        echo $ctenar->getEmail();
+        $email = ob_get_contents();
+        ob_end_clean();
+
+        $adminUser = Mage::getSingleton('admin/session')->getUser();
+
+        ob_start();
+        echo $adminUser->getEmail();
+        $adminEmail = ob_get_contents();
+        ob_end_clean();
+
+        $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
+
+        $promenneProSablonu = array();
+        $promenneProSablonu['heslo'] = $noveHeslo;
+        $ctenar->setHeslo(sha1($noveHeslo));
+        $ctenar->save();
+        //echo $promenneProSablonu['heslo'];
+        $sablonaEmailu->setSenderName('Administrace');
+        $sablonaEmailu->setSenderEmail($adminEmail);
+
+        $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
+
+        $sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
+    }
+
+    public function poslatEmail($body,$subject)
+    {
+        $ctenar = Mage::registry('ctenar');
+        ob_start();
+        echo $ctenar->getEmail();
+        $email = ob_get_contents();
+        ob_end_clean();
+
+
+
+
+        $mail = Mage::getModel('core/email');
+        $mail->setToEmail($email);
+        $mail->setBody($body);
+        $mail->setSubject($subject);
+        $mail->setType('text');// You can use 'html' or 'text'
+
+        try {
+            $mail->send();
+
+        }
+        catch (Exception $e) {
+            Mage::getSingleton('core/session')->addError('Unable to send.');
+
+        }
+    }
+
+
+
     public function validate($cp, $heslo)
     {
         $db   = Mage::getModel('ctenar/ctenar')

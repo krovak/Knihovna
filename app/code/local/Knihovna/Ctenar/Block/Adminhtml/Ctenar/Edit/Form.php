@@ -16,6 +16,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Form extends Mage_Adminhtml_Bl
 
         $form->setUseContainer(true);
         $this->setForm($form);
+
         return parent::_prepareForm();
     }
 }
