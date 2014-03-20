@@ -23,7 +23,7 @@
 
                         $days_Left = $this->getDaysLeft(new DateTime($vypujcka->getTo()));
 
-                        if ($date1 >= $date2) {
+                        if ($days_Left <= 0) {
                             echo '<td style="color: red">'.$days_Left.'</td>';
                         }
                         else {
