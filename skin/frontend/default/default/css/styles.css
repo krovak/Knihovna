@@ -1869,6 +1869,11 @@ tr.summary-details-excluded { font-style:italic; }
     color: #fff;
 }
 
+#tab_vypujcky tr.red {
+    background: #ff2f2a;
+    color: #ffffff;
+}
+
 #tab_vypujcky td {
     text-align: center;
     padding: 5px 10px;
@@ -1889,4 +1894,21 @@ tr.summary-details-excluded { font-style:italic; }
 
 #td_sirka_3 {
     width: 50%;
+}
+
+/* tabulka menu */
+
+#tab_menu {
+    border: none;
+    margin-top: 20px;
+    width: 70%;
+    font-size: 1.2em;
+
+}
+
+#tab_menu td {
+    text-align: left;
+    padding: 5px 10px;
+    color: #0a263c;
+    font-weight: bold;
 }

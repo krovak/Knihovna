@@ -15,20 +15,26 @@
         $vypujcky = $this->getCtenarVypujcky($user->getId());
 
             foreach($vypujcky as $vypujcka) {
+
+                $days_Left = $this->getDaysLeft(new DateTime($vypujcka->getTo()));
+
+                if ($days_Left <= 0) {
+                    echo '<tr class="red">';
+                }
+                else
+                {
                     echo '<tr>';
+                }
+
                         $book_name = Mage::getModel('tituly/tituly')->load($vypujcka->getBook())->getNazev();
                         echo '<td>'.$book_name.'</td>';
                         echo '<td>'.$vypujcka->getFrom().'</td>';
                         echo '<td>'.$vypujcka->getTo().'</td>';
+                        echo '<td>'.$days_Left.'</td>';
 
-                        $days_Left = $this->getDaysLeft(new DateTime($vypujcka->getTo()));
 
-                        if ($days_Left <= 0) {
-                            echo '<td style="color: red">'.$days_Left.'</td>';
-                        }
-                        else {
-                            echo '<td style="color: green">'.$days_Left.'</td>';
-                        }
+
+
 
                     echo '</tr>';
             }
