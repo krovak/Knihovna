@@ -72,10 +72,11 @@ $ctenar= $this->getCtenar();
                     <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
                     <?php
                     if( isset($_POST["password"]) and isset($_POST["password2"]))
+                    {
                         echo "test";
                     $ctenar->pokus($_POST["password"],$_POST["password2"]);
 
-
+                    }
 
                     ?>
                     <td colspan="2"><input id="password" type="password" name="password" class="required-entry input-text"></td>
