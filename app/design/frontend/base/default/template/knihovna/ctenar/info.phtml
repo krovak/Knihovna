@@ -57,7 +57,7 @@ $ctenar= $this->getCtenar();
 
     <br>
 
-    <form id="zmenaHesla" name="zmenaHesla" method="post">
+    <form method="post" action="">
         <table id="profil_ctenar">
             <thead>
                 <tr>
@@ -72,6 +72,7 @@ $ctenar= $this->getCtenar();
                     <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
                     <?php
                     if( isset($_POST["password"]) and isset($_POST["password2"]))
+
                     $ctenar->pokus($_POST["password"],$_POST["password2"]);
 
 
