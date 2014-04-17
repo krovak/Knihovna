@@ -153,6 +153,10 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
 //$ctenar->resetHesla();
 
+$body = "Ahoj!";
+$subject = "Předmět zprávy!";
+$ctenar->poslatEmail($body,$subject);
+
 
 
 
@@ -162,7 +166,6 @@ ob_start();
 echo $ctenar->getEmail();
 $email = ob_get_contents();
 ob_end_clean();
-
 
 $body = "Hi there, here is some plaintext body content";
 $mail = Mage::getModel('core/email');
