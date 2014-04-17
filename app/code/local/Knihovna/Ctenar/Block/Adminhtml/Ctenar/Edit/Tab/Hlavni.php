@@ -56,7 +56,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'text_emailu', 'text', array(
                 'name'     => 'text_emailu',
                 'label'    => 'Text E-mailu',
-                'required' => true
+                'required' => false
             )
         );
         $f->addField(
