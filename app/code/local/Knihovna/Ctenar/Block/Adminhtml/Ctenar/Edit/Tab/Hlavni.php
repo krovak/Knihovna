@@ -60,7 +60,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             )
         );
         $f->addField('submit', 'submit', array(
-            'label'     => Mage::helper('form')->__('Submit'),
+            'label'     => 'submit',
             'required'  => true,
             'value'  => 'Poslat',
             'after_element_html' => '<small>Comments</small>',
