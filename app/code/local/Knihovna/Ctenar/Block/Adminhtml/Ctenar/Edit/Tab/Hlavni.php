@@ -34,6 +34,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'id'     => 'edit_form',
             'method' => 'Post'
         ));
+
+
         $f    = $form->addFieldset(
             'ctenar', array(
                 'legend' => 'Přidat čtenáře',
@@ -50,7 +52,17 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 $ctenar->unsetData("heslo");
             }
         }
-
+        $f = $form->addField('radio', 'radio', array(
+            'label'     => 'RadioButton',
+            'name'      => 'title',
+            'onclick' => "",
+            'onchange' => "",
+            'value'  => '1',
+            'disabled' => false,
+            'readonly' => false,
+            'after_element_html' => '<small>Comments</small>',
+            'tabindex' => 1
+        ));
         $f->addField(
             'cislo_prukazu', 'text', array(
                 'name'     => 'cislo_prukazu',
