@@ -52,17 +52,13 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 $ctenar->unsetData("heslo");
             }
         }
-        $f ->addField('radio', 'radio', array(
-            'label'     => 'RadioButton',
-            'name'      => 'title',
-            'onclick' => "",
-            'onchange' => "",
-            'value'  => '1',
-            'disabled' => false,
-            'readonly' => false,
-            'after_element_html' => '<small>Comments</small>',
-            'tabindex' => 1
-        ));
+        $f->addField(
+            'text_emailu', 'text', array(
+                'name'     => 'text_emailu',
+                'label'    => 'Text E-mailu',
+                'required' => true
+            )
+        );
         $f->addField(
             'cislo_prukazu', 'text', array(
                 'name'     => 'cislo_prukazu',
