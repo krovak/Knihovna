@@ -50,7 +50,17 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 $ctenar->unsetData("heslo");
             }
         }
-
+        $f->addField('radio', 'radio', array(
+            'label'     => Mage::helper('form')->__('Radio'),
+            'name'      => 'title',
+            'onclick' => "",
+            'onchange' => "",
+            'value'  => '1',
+            'disabled' => false,
+            'readonly' => false,
+            'after_element_html' => '<small>Comments</small>',
+            'tabindex' => 1
+        ));
         $f->addField(
             'cislo_prukazu', 'text', array(
                 'name'     => 'cislo_prukazu',
