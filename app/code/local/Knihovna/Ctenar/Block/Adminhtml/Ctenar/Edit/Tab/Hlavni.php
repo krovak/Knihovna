@@ -59,6 +59,13 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 'required' => false
             )
         );
+        $f->addField('submit', 'submit', array(
+            'label'     => Mage::helper('form')->__('Submit'),
+            'required'  => true,
+            'value'  => 'Poslat',
+            'after_element_html' => '<small>Comments</small>',
+            'tabindex' => 1
+        ));
         $f->addField(
             'cislo_prukazu', 'text', array(
                 'name'     => 'cislo_prukazu',
