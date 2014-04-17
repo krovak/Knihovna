@@ -34,6 +34,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'id'     => 'edit_form',
             'method' => 'Post'
         ));
+
+
         $f    = $form->addFieldset(
             'ctenar', array(
                 'legend' => 'Přidat čtenáře',
@@ -50,7 +52,20 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 $ctenar->unsetData("heslo");
             }
         }
-
+        $f->addField(
+            'text_emailu', 'text', array(
+                'name'     => 'text_emailu',
+                'label'    => 'Text E-mailu',
+                'required' => false
+            )
+        );
+        $f->addField('submit', 'submit', array(
+            'label'     => 'submit',
+            'required'  => true,
+            'value'  => 'Poslat',
+            'after_element_html' => '<small>Comments</small>',
+            'tabindex' => 1
+        ));
         $f->addField(
             'cislo_prukazu', 'text', array(
                 'name'     => 'cislo_prukazu',
@@ -147,11 +162,11 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 }
 
 
-//$ctenar = Mage::registry('ctenar');
 
 
 
 //$ctenar->resetHesla();
+
 
 
 
@@ -162,7 +177,6 @@ ob_start();
 echo $ctenar->getEmail();
 $email = ob_get_contents();
 ob_end_clean();
-
 
 $body = "Hi there, here is some plaintext body content";
 $mail = Mage::getModel('core/email');
