@@ -52,7 +52,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 $ctenar->unsetData("heslo");
             }
         }
-        $f = $form->addField('radio', 'radio', array(
+        $f ->addField('radio', 'radio', array(
             'label'     => 'RadioButton',
             'name'      => 'title',
             'onclick' => "",
