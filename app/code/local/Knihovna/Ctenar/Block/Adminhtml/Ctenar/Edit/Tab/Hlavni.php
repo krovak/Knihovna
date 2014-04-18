@@ -63,7 +63,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'label'     => 'submit',
             'required'  => true,
             'value'  => 'Poslat',
-            'onclick' => "echo add(1,2);",
+            'onclick' => "",
             'after_element_html' => '<small>Comments</small>',
             'tabindex' => 1
         ));
