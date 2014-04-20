@@ -24,10 +24,10 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         }
 
-
+        $ctenar->resetHesla();
         if (isset($_GET['val1']))
         {$promenna = $_GET['val1'];
-            $ctenar->resetHesla();
+
         }
 
 
