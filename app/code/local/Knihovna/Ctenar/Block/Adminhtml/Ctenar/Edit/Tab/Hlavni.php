@@ -65,7 +65,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'label'     => 'submit',
             'required'  => true,
             'value'  => 'Poslat',
-            'onclick' => "location.reload(true);",
+            'onclick' => "alert('on change');alert('on change2');alert('on change3');",
             'after_element_html' => '<small>Comments</small>',
             'tabindex' => 1
         ));
