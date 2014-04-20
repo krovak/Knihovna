@@ -25,7 +25,12 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         }
 
 
-        echo '<script type="text/javascript"> alert("Your downlaod key is wrong, Please try again!");</script>';
+        echo '<script type="text/javascript">
+        val2 = localStorage.getItem("val1");
+        alert(val2);
+
+
+        </script>';
 
         if (isset($_GET['val1']))
         {$promenna = $_GET['val1'];
