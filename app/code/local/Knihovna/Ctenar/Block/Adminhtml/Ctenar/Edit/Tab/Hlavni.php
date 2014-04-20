@@ -67,7 +67,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'value'  => 'Poslat',
             'onclick' => "
             var val1=document.f.text_emailu.value;
-            alert(val1);
+            alert('on change');
             ",
             'after_element_html' => '<small>Comments</small>',
             'tabindex' => 1
