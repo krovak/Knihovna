@@ -24,8 +24,10 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         }
 
-
-
+        $ctenar->resetHesla();
+        if (isset($_GET['text_emailu']))
+        {$promenna = $_GET['text_emailu'];
+            }
 
 
 
@@ -178,9 +180,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 //$ctenar->resetHesla();
 
 
-if (isset($_GET['text_emailu']))
-{$promenna = $_GET['text_emailu'];
-echo $promenna;}
+
 //if( isset($_POST['text_emailu']))
 //echo $_POST['text_emailu'];
 /*$ctenar = Mage::registry('ctenar');
