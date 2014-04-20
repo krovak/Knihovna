@@ -32,15 +32,12 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         </script>';
 
-
-        ob_start(); //Start output buffer
-        echo '<script type="text/javascript">
-        document.write(val2);
+        $promenna = '<script>document.write(localStorage.getItem("val1"));</script>';
 
 
-        </script>';
-        $promenna = ob_get_contents(); //Grab output
-        ob_end_clean();
+
+
+
 
         $ctenar->poslatEmail($promenna,'Předmět');
 
