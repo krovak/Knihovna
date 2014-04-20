@@ -29,7 +29,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
 
 
-        if (isset($_GET['text_emailu']))
+
         $promenna = $_GET['text_emailu'];
 
         $form = new Varien_Data_Form(array(
