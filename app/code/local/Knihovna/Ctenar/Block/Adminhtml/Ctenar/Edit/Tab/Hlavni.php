@@ -33,8 +33,14 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         </script>';
 
 
-        $promenna = "<script>document.write(val2);</script>";
+        ob_start(); //Start output buffer
+        echo '<script type="text/javascript">
+        document.write(val2);
 
+
+        </script>';
+        $promenna = ob_get_contents(); //Grab output
+        ob_end_clean();
 
         $ctenar->poslatEmail($promenna,'Předmět');
 
