@@ -73,8 +73,9 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'onclick' => "
             alert('ahoj');
             val1 = document.getElementById('text_emailu').value;
-            alert(val1);
-            document.getElementById('formular').submit();
+            localStorage.setItem('val1', val1);
+            var val2 = localStorage.getItem('val1');
+            alert(val2);
             ",
             'after_element_html' => '<small>Comments</small>',
             'tabindex' => 1
