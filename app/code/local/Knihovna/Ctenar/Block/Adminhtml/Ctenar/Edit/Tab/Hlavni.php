@@ -65,7 +65,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'label'     => 'submit',
             'required'  => true,
             'value'  => 'Poslat',
-            'onclick' => "location.reload(true);",
+            'onclick' => "location.reload();",
             'after_element_html' => '<small>Comments</small>',
             'tabindex' => 1
         ));
@@ -174,7 +174,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
 
 //if( isset($_POST['text_emailu']))
-//echo $_POST['text_emailu'];
+echo $_POST['text_emailu'];
 /*$ctenar = Mage::registry('ctenar');
 ob_start();
 echo $ctenar->getEmail();
