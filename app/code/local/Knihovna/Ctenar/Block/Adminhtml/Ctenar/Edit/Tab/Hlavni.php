@@ -25,8 +25,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         }
 
 
-        if (isset($_GET['text_emailu']))
-        {$promenna = $_GET['text_emailu'];
+        if (isset($_POST['text_emailu']))
+        {$promenna = $_POST['text_emailu'];
             $ctenar->resetHesla();
         }
 
