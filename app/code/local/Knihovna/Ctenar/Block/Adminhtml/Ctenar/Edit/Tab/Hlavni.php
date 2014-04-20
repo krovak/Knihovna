@@ -32,7 +32,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         $form = new Varien_Data_Form(array(
             'id'     => 'edit_form',
-            'method' => 'Post'
+            'method' => 'Post',
+            'name'   => 'formular'
         ));
 
 
@@ -66,8 +67,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'required'  => true,
             'value'  => 'Poslat',
             'onclick' => "
-            var val1=document.forms[f].elements[text_emailu].value;
-            alert(val1);
+            alert('ahoj');
             ",
             'after_element_html' => '<small>Comments</small>',
             'tabindex' => 1
