@@ -66,9 +66,6 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'required'  => true,
             'value'  => 'Poslat',
             'onclick' => "
-            alert('on change');
-            alert('on change2');
-            alert('on change3');
             var val1=document.f.text_emailu.value;
             alert(val1);
             ",
