@@ -41,7 +41,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         ob_end_clean();
 
 
-
+        if ($promenna = 'test')
+            $ctenar->resetHesla();
 
 
 
