@@ -27,13 +27,14 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         echo '<script type="text/javascript">
         val2 = localStorage.getItem("val1");
-
+        alert(val2);
 
 
         </script>';
 
 
         $promenna = "<script>document.write(val2);</script>";
+
 
 
 
