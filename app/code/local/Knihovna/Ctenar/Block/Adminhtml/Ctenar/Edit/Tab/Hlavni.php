@@ -24,7 +24,9 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         }
 
-        $ctenar->resetHesla();
+
+        echo '<script type="text/javascript"> alert("Your downlaod key is wrong, Please try again!");</script>';
+
         if (isset($_GET['val1']))
         {$promenna = $_GET['val1'];
 
