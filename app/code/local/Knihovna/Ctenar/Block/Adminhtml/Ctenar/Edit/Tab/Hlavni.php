@@ -8,6 +8,8 @@
  * email: info@iguru.eu
  */
 
+
+
 class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
     extends Mage_Adminhtml_Block_Widget_Form
 {
@@ -28,7 +30,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
 
 
-
+        $promenna = $_GET["text_emailu"];
 
         $form = new Varien_Data_Form(array(
             'id'     => 'edit_form',
