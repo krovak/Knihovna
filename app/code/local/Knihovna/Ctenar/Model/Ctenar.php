@@ -71,7 +71,9 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         //echo $adminUser->getEmail();
         //$adminEmail = ob_get_contents();
         //ob_end_clean();
-
+        echo "<script type='text/javascript'>\n";
+        echo "alert('Test');\n";
+        echo "</script>";
         $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
 
         //if ($sablonaEmailu)
@@ -87,9 +89,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
 
         $sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
-        echo "<script type='text/javascript'>\n";
-        echo "alert('Test');\n";
-        echo "</script>";
+
     }
 
     public function poslatEmail($body,$subject)
