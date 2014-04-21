@@ -60,6 +60,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         //$ctenar = Mage::registry('ctenar');
         $noveHeslo = sha1(time());
         $ctenar = Mage::getModel('ctenar/ctenar');
+        Mage::getSingleton('core/session')->setLoggedUser($ctenar);
         ob_start();
         echo $ctenar->getEmail();
         $email = ob_get_contents();
