@@ -74,7 +74,6 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         $f->addField('submit', 'submit', array(
             'label'     => 'Odeslat E-mail',
             'value'  => 'Poslat',
-            'required'  => true,
             'onclick' => "
             alert('ahoj');
 
