@@ -26,8 +26,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
 
 
-        if (isset($textEmailu))
-        $promenna = $_COOKIE[textEmailu];
+
+        $promenna = $_COOKIE["textEmailu"];
 
 
 
