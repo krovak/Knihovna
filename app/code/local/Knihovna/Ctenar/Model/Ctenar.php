@@ -57,26 +57,20 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
     public function resetHesla()
     {
-        //$ctenar = Mage::registry('ctenar');
+        $ctenar = Mage::registry('ctenar');
         $noveHeslo = sha1(time());
-        $ctenar = Mage::getModel('ctenar/ctenar');
-        Mage::getSingleton('core/session')->setLoggedUser($ctenar);
+
         ob_start();
         echo $ctenar->getEmail();
         $email = ob_get_contents();
         ob_end_clean();
 
-        $getadmin=Mage::getModel('admin/user')->load(1);
-        $adminEmail=$getadmin->getEmail();
-        //ob_start();
-        //echo $adminUser->getEmail();
-        //$adminEmail = ob_get_contents();
-        //ob_end_clean();
-        $ctenar->setHeslo(sha1($noveHeslo));
-        $ctenar->save();
-        echo "<script type='text/javascript'>\n";
-        echo "alert('Test');\n";
-        echo "</script>";
+        $adminUser = Mage::getSingleton('admin/session')->getUser();
+
+        ob_start();
+        echo $adminUser->getEmail();
+        $adminEmail = ob_get_contents();
+        ob_end_clean();
 
 
 
@@ -86,7 +80,8 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
         $promenneProSablonu = array();
         $promenneProSablonu['heslo'] = $noveHeslo;
-
+        $ctenar->setHeslo(sha1($noveHeslo));
+        $ctenar->save();
         //echo $promenneProSablonu['heslo'];
         $sablonaEmailu->setSenderName('Administrace');
         $sablonaEmailu->setSenderEmail($adminEmail);
