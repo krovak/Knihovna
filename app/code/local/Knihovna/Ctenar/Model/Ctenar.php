@@ -65,12 +65,12 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $email = ob_get_contents();
         ob_end_clean();
 
-        $adminUser = Mage::getModel('admin/user')->getUser();
-
-        ob_start();
-        echo $adminUser->getEmail();
-        $adminEmail = ob_get_contents();
-        ob_end_clean();
+        $getadmin=Mage::getModel('admin/user')->load(1);
+        $adminEmail=$getadmin->getEmail();
+        //ob_start();
+        //echo $adminUser->getEmail();
+        //$adminEmail = ob_get_contents();
+        //ob_end_clean();
 
         $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
 
