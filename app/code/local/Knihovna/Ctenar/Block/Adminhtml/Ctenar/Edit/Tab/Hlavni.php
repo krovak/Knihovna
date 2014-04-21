@@ -68,19 +68,15 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 'id'       => 'text_emailu',
                 'label'    => 'Text E-mailu',
                 'required' => false,
-                'onchange' => "alert('on change');"
             )
         );
         $f->addField('submit', 'submit', array(
-            'label'     => 'submit',
-            'required'  => true,
+            'label'     => 'Odeslat E-mail',
             'value'  => 'Poslat',
             'onclick' => "
-            alert('ahoj');
             val1 = document.getElementById('text_emailu').value;
             document.cookie = 'textEmailu'+'='+val1;
             ",
-            'after_element_html' => '<small>Comments</small>',
             'tabindex' => 1
         ));
         $f->addField(
