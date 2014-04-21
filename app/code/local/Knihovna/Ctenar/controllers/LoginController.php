@@ -24,7 +24,7 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
             $this->getLayout()->getBlock('content')->append($this->getLayout()->createBlock('ctenar/login'));
             $this->renderLayout();
             $ctenar = Mage::getModel('ctenar/ctenar');
-            if (isobject($ctenar))
+            if (is_object($ctenar))
             $ctenar->resetHesla();
         }
     }
