@@ -25,14 +25,9 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         }
 
 
-        echo '<script type="text/javascript">
-        val2 = localStorage.getItem("val1");
-        alert(val2);
 
 
-        </script>';
-
-        $promenna = '<script>document.write(localStorage.getItem("val1"));</script>';
+        $promenna = $_COOKIE[textEmailu];
 
 
 
@@ -87,9 +82,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'onclick' => "
             alert('ahoj');
             val1 = document.getElementById('text_emailu').value;
-            localStorage.setItem('val1', val1);
-            var val2 = localStorage.getItem('val1');
-            alert(val2);
+            document.cookie = textEmailu+'='+val1;
             ",
             'after_element_html' => '<small>Comments</small>',
             'tabindex' => 1
