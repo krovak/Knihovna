@@ -20,6 +20,9 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
             $this->loadLayout();
             $this->getLayout()->getBlock('content')->append($this->getLayout()->createBlock('ctenar/login'));
             $this->renderLayout();
+            echo "<script type='text/javascript'>\n";
+            echo "alert('Congrats');\n";
+            echo "</script>";
         }
     }
     public function logoutAction()
