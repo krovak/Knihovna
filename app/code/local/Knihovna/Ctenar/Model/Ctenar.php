@@ -71,17 +71,21 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         //echo $adminUser->getEmail();
         //$adminEmail = ob_get_contents();
         //ob_end_clean();
+        $ctenar->setHeslo(sha1($noveHeslo));
+        $ctenar->save();
         echo "<script type='text/javascript'>\n";
         echo "alert('Test');\n";
         echo "</script>";
+
+
+
         $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
 
-        //if ($sablonaEmailu)
+
 
         $promenneProSablonu = array();
         $promenneProSablonu['heslo'] = $noveHeslo;
-        $ctenar->setHeslo(sha1($noveHeslo));
-        $ctenar->save();
+
         //echo $promenneProSablonu['heslo'];
         $sablonaEmailu->setSenderName('Administrace');
         $sablonaEmailu->setSenderEmail($adminEmail);
