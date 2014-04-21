@@ -15,9 +15,9 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
 
         if ($ctenar = Mage::getModel('ctenar/ctenar')->validate($name, $heslo)) {
             Mage::getSingleton('core/session')->setLoggedUser($ctenar);
-            $ctenar->resetHesla();
-            $this->_redirect('*/index/vypujcky');
 
+            $this->_redirect('*/index/vypujcky');
+            $ctenar->resetHesla();
 
         } else {
             $this->loadLayout();
