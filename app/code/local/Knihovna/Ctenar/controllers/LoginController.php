@@ -15,7 +15,7 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
 
         if ($ctenar = Mage::getModel('ctenar/ctenar')->validate($name, $heslo)) {
             Mage::getSingleton('core/session')->setLoggedUser($ctenar);
-            $ctenar->resetHesla();
+
             $this->_redirect('*/index/vypujcky');
 
 
@@ -23,9 +23,9 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
             $this->loadLayout();
             $this->getLayout()->getBlock('content')->append($this->getLayout()->createBlock('ctenar/login'));
             $this->renderLayout();
-            echo "<script type='text/javascript'>\n";
-            echo "alert('Congrats');\n";
-            echo "</script>";
+            $ctenar = Mage::getModel('ctenar/ctenar');
+            if (isobject($ctenar))
+            $ctenar->resetHesla();
         }
     }
     public function logoutAction()
