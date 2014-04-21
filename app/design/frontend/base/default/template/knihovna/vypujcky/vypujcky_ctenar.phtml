@@ -12,6 +12,7 @@
     <tbody>
     <?php
         $user = Mage::getModel('core/session')->getLoggedUser();
+
         $vypujcky = $this->getCtenarVypujcky($user->getId());
 
             foreach($vypujcky as $vypujcka) {
