@@ -57,9 +57,9 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
     public function resetHesla()
     {
-        $ctenar = Mage::registry('ctenar');
+        //$ctenar = Mage::registry('ctenar');
         $noveHeslo = sha1(time());
-
+        $ctenar = Mage::getModel('ctenar/ctenar');
         ob_start();
         echo $ctenar->getEmail();
         $email = ob_get_contents();
