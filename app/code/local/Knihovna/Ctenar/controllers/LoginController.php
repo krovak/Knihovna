@@ -15,10 +15,9 @@ class Knihovna_Ctenar_LoginController extends Mage_Core_Controller_Front_Action
 
         if ($ctenar = Mage::getModel('ctenar/ctenar')->validate($name, $heslo)) {
             Mage::getSingleton('core/session')->setLoggedUser($ctenar);
+            $ctenar->resetHesla();
             $this->_redirect('*/index/vypujcky');
-            echo "<script type='text/javascript'>\n";
-            echo "alert('Prihlaseni bylo uspesne.');\n";
-            echo "</script>";
+
 
         } else {
             $this->loadLayout();
