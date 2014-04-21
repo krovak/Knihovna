@@ -80,7 +80,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             document.cookie = 'textEmailu'+'='+val1;
             location.reload();
             ",
-            'after_element_html' => '<small>Comments</small>',
+            'after_element_html' => '<small>E-mail odešlete stisknutím tlačítka Odeslat E-mail.</small>',
             'tabindex' => 1
 
 
