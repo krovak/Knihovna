@@ -28,7 +28,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         if (isset($_COOKIE["textEmailu"]))
         $promenna = $_COOKIE["textEmailu"];
-        if (strlen($promenna) > 0)
+        if (isset($promenna) and strlen($promenna) > 0)
         $ctenar->poslatEmail($promenna,'Knihovna');
         setcookie("textEmailu");
 
