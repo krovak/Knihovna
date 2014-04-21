@@ -36,8 +36,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         if (isset($promenna))
         $ctenar->poslatEmail($promenna,'Předmět');
 
-        if ($promenna == 'test')
-        {$ctenar->resetHesla();}
+
 
 
 
