@@ -77,7 +77,6 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             val1 = document.getElementById('text_emailu').value;
             document.cookie = 'textEmailu'+'='+val1;
             ",
-            'tabindex' => 1
         ));
         $f->addField(
             'cislo_prukazu', 'text', array(
