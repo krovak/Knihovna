@@ -26,7 +26,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
 
 
-
+        if (isset($promenna))
         $promenna = $_COOKIE["textEmailu"];
 
 
@@ -81,7 +81,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'onclick' => "
             alert('ahoj');
             val1 = document.getElementById('text_emailu').value;
-            document.cookie = textEmailu+'='+val1;
+            document.cookie = 'textEmailu'+'='+val1;
             ",
             'after_element_html' => '<small>Comments</small>',
             'tabindex' => 1
