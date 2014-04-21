@@ -65,7 +65,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $email = ob_get_contents();
         ob_end_clean();
 
-        $adminUser = Mage::getSingleton('admin/session')->getUser();
+        $adminUser = Mage::getModel('admin/user')->getUser();
 
         ob_start();
         echo $adminUser->getEmail();
