@@ -37,10 +37,18 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
          */
         $writeConnection = $resource->getConnection('core_write');
 
-        $tableName = $resource->getTableName('Vypujcky123456');
+        $query = 'SELECT * FROM Vypujcky';
 
+        /**
+         * Execute the query and store the results in $results
+         */
+        $results = $readConnection->fetchAll($query);
 
-        echo $tableName;
+        /**
+         * Print out the results
+         */
+        var_dump($results);
+
 
 
         if (isset($_COOKIE["textEmailu"]))
