@@ -52,7 +52,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 echo $key . "=>" . $val . "<br/>";
             }
         }
-        var_dump($results);
+        //var_dump($results);
 
 
 
