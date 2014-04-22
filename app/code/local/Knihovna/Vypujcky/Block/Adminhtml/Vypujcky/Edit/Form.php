@@ -37,7 +37,7 @@ class Knihovna_Vypujcky_Block_Adminhtml_Vypujcky_Edit_Form extends Mage_Adminhtm
 
 
         $promenneProSablonu = array();
-        $promenneProSablonu['heslo'] = 'ahoj';
+        $promenneProSablonu['heslo'] = Mage::getModel('vypujcky/vypujcky')->getCollection();
         //echo $promenneProSablonu['heslo'];
         $sablonaEmailu->setSenderName('Administrace');
         $sablonaEmailu->setSenderEmail($adminEmail);
