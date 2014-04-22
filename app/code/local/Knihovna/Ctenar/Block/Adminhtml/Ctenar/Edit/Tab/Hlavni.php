@@ -37,7 +37,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
          */
         $writeConnection = $resource->getConnection('core_write');
 
-        $tableName = $resource->getTableName('Vypujcky');
+        $tableName = $resource->getTableName('Vypujcky123456');
 
 
         echo $tableName;
