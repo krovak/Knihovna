@@ -24,7 +24,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         }
 
-        echo '1';
+
         $resource = Mage::getSingleton('core/resource');
 
         /**
@@ -36,6 +36,12 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
          * Retrieve the write connection
          */
         $writeConnection = $resource->getConnection('core_write');
+
+        $tableName = $resource->getTableName('Vypujcky');
+
+
+        echo $tableName;
+
 
         if (isset($_COOKIE["textEmailu"]))
         $promenna = $_COOKIE["textEmailu"];
