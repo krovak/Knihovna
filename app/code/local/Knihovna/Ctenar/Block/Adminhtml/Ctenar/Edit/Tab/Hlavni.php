@@ -37,7 +37,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
          */
         $writeConnection = $resource->getConnection('core_write');
 
-        $query = 'SELECT * FROM Vypujcky';
+        $query = 'SELECT * FROM vypujcky/knihovna_vypujcky';
 
         /**
          * Execute the query and store the results in $results
