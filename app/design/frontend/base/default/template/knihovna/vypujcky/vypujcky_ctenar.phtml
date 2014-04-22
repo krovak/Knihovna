@@ -28,13 +28,12 @@
                 {
                     echo '<tr>';
                 }
-                        $IDcislo = $user->getId();
+
                         $book_name = Mage::getModel('tituly/tituly')->load($vypujcka->getBook())->getNazev();
                         echo '<td>'.$book_name.'</td>';
                         echo '<td>'.$vypujcka->getFrom().'</td>';
                         echo '<td>'.$vypujcka->getTo().'</td>';
                         echo '<td>'.$days_Left.'</td>';
-                        echo '<td>'.$IDcislo.'</td>';
 
 
 
