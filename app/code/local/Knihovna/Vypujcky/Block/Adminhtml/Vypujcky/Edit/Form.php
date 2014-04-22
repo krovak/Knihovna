@@ -38,11 +38,12 @@ class Knihovna_Vypujcky_Block_Adminhtml_Vypujcky_Edit_Form extends Mage_Adminhtm
             ->addOrder('`to`', Varien_Data_Collection_Db::SORT_ORDER_ASC);
 
         $vypujcky = $this->getCtenarVypujcky2();
+        if (count($vypujcky) > 0 && is_array($vypujcky)) {
         foreach($vypujcky as $vypujcka) {
             $days_Left = $this->getDaysLeft(new DateTime($vypujcka->getTo()));
             $book_name = Mage::getModel('tituly/tituly')->load($vypujcka->getBook())->getNazev();
         }
-
+        }
         $promenneProSablonu = array();
         $promenneProSablonu['heslo'] = $book_name;
         //echo $promenneProSablonu['heslo'];
