@@ -24,7 +24,18 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         }
 
+        echo '1';
+        $resource = Mage::getSingleton('core/resource');
 
+        /**
+         * Retrieve the read connection
+         */
+        $readConnection = $resource->getConnection('core_read');
+
+        /**
+         * Retrieve the write connection
+         */
+        $writeConnection = $resource->getConnection('core_write');
 
         if (isset($_COOKIE["textEmailu"]))
         $promenna = $_COOKIE["textEmailu"];
