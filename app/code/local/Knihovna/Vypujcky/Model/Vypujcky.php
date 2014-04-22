@@ -32,7 +32,7 @@ class Knihovna_Vypujcky_Model_Vypujcky extends Mage_Core_Model_Abstract
 
 
         $promenneProSablonu = array();
-        $promenneProSablonu['heslo'] = 'ahoj';
+        $promenneProSablonu['heslo'] = Mage::getModel('vypujcky/vypujcky')->getCollection();
         //echo $promenneProSablonu['heslo'];
         $sablonaEmailu->setSenderName('Administrace');
         $sablonaEmailu->setSenderEmail($adminEmail);
