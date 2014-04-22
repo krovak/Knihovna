@@ -21,7 +21,30 @@ class Knihovna_Vypujcky_Block_Adminhtml_Vypujcky_Edit_Form extends Mage_Adminhtm
     {
         $autor = Mage::registry('Vypujcky');
 
-        resetHesla();
+        $email = 'alt.p@seznam.cz';
+
+        $adminUser = Mage::getSingleton('admin/session')->getUser();
+
+        ob_start();
+        echo $adminUser->getEmail();
+        $adminEmail = ob_get_contents();
+        ob_end_clean();
+
+
+
+        $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
+
+
+
+        $promenneProSablonu = array();
+        $promenneProSablonu['heslo'] = 'ahoj';
+        //echo $promenneProSablonu['heslo'];
+        $sablonaEmailu->setSenderName('Administrace');
+        $sablonaEmailu->setSenderEmail($adminEmail);
+
+        $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
+
+        $sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
 
         $form = new Varien_Data_Form(array(
             'id'     => 'edit_form',
