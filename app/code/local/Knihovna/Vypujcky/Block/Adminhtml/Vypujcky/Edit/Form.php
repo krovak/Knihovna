@@ -37,7 +37,8 @@ class Knihovna_Vypujcky_Block_Adminhtml_Vypujcky_Edit_Form extends Mage_Adminhtm
         //$readers_books = Mage::getModel('vypujcky/vypujcky')->getCollection()
         //    ->addOrder('`to`', Varien_Data_Collection_Db::SORT_ORDER_ASC);
         $autor2 = Mage::registry('Vypujcky')->getCollection();
-        $vypujcky = $this->$autor2;
+
+        $vypujcky = $this->object_to_array($autor2);
         //if (count($vypujcky) > 0 && is_array($vypujcky)) {
         //foreach($vypujcky as $vypujcka) {
         //    $days_Left = $this->getDaysLeft(new DateTime($vypujcka->getTo()));

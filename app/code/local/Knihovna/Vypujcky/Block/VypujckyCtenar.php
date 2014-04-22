@@ -20,6 +20,10 @@ class Knihovna_Vypujcky_Block_VypujckyCtenar extends Mage_Core_Block_Template{
         return $readers_books;
     }
 
+    function object_to_array($object) {
+        return (array) $object;
+    }
+
     public function getCtenarVypujcky2()
     {
         $readers_books = Mage::getModel('vypujcky/vypujcky')->getCollection()
