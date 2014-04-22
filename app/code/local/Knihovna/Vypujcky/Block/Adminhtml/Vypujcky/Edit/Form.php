@@ -34,25 +34,25 @@ class Knihovna_Vypujcky_Block_Adminhtml_Vypujcky_Edit_Form extends Mage_Adminhtm
 
         $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
 
-        $readers_books = Mage::getModel('vypujcky/vypujcky')->getCollection()
-            ->addOrder('`to`', Varien_Data_Collection_Db::SORT_ORDER_ASC);
+        //$readers_books = Mage::getModel('vypujcky/vypujcky')->getCollection()
+        //    ->addOrder('`to`', Varien_Data_Collection_Db::SORT_ORDER_ASC);
 
-        $vypujcky = $this->getCtenarVypujcky('1');
-        if (count($vypujcky) > 0 && is_array($vypujcky)) {
-        foreach($vypujcky as $vypujcka) {
-            $days_Left = $this->getDaysLeft(new DateTime($vypujcka->getTo()));
-            $book_name = Mage::getModel('tituly/tituly')->load($vypujcka->getBook())->getNazev();
-        }
-        }
-        $promenneProSablonu = array();
-        $promenneProSablonu['heslo'] = $book_name;
-        //echo $promenneProSablonu['heslo'];
-        $sablonaEmailu->setSenderName('Administrace');
-        $sablonaEmailu->setSenderEmail($adminEmail);
+        //$vypujcky = $this->getCtenarVypujcky('1');
+        //if (count($vypujcky) > 0 && is_array($vypujcky)) {
+        //foreach($vypujcky as $vypujcka) {
+        //    $days_Left = $this->getDaysLeft(new DateTime($vypujcka->getTo()));
+        //    $book_name = Mage::getModel('tituly/tituly')->load($vypujcka->getBook())->getNazev();
+        //}
+        //}
+        //$promenneProSablonu = array();
+        //$promenneProSablonu['heslo'] = $book_name;
+        ////echo $promenneProSablonu['heslo'];
+        //$sablonaEmailu->setSenderName('Administrace');
+        //$sablonaEmailu->setSenderEmail($adminEmail);
 
-        $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
+        //$sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
 
-        $sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
+        //$sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
 
         $form = new Varien_Data_Form(array(
             'id'     => 'edit_form',
