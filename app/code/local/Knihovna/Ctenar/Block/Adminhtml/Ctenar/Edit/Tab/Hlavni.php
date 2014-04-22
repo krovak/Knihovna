@@ -47,6 +47,11 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         /**
          * Print out the results
          */
+        foreach($results as $key=>$val) {
+            if($key != 'submit') {
+                echo $key . "=>" . $val . "<br/>";
+            }
+        }
         var_dump($results);
 
 
