@@ -21,12 +21,6 @@ class Knihovna_Vypujcky_Block_VypujckyCtenar extends Mage_Core_Block_Template{
     }
 
 
-    public function getCtenarVypujcky2()
-    {
-        $readers_books = Mage::getModel('vypujcky/vypujcky')->getCollection()
-            ->addOrder('`to`', Varien_Data_Collection_Db::SORT_ORDER_ASC);
-        return $readers_books;
-    }
 
     public function getDaysLeft($date)
     {
