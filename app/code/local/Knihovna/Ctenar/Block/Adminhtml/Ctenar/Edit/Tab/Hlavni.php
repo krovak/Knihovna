@@ -43,19 +43,19 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
          */
         $results = $readConnection->fetchAll($query);
 
-        $rows = count($results); // This will get you the number of rows
+        //$rows = count($results); // This will get you the number of rows
 
-foreach ($results as $row => $column)
-{
-    $cols = count($row);
-}
-        echo $rows;
-        echo $cols;
+//foreach ($results as $row => $column)
+//{
+ //   $cols = count($row);
+//}
+       // echo $rows;
+       // echo $cols;
 
         /**
          * Print out the results
          */
-        //echo '<pre>'; print_r($results); echo '</pre>';
+        echo '<pre>'; print_r($results); echo '</pre>';
         //var_dump($results);
 
 
