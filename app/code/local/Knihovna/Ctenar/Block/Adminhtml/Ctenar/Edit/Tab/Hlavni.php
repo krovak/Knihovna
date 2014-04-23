@@ -91,7 +91,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             ob_start();
             var_dump($results);
             $nasCtenar = ob_get_clean();
-            echo $nasCtenar;
+            //echo $nasCtenar;
             $string = str_replace("\r\n",' ',$nasCtenar);
             $string = str_replace("\n",' ',$string);
 
