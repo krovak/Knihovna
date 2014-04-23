@@ -97,10 +97,10 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
             foreach(preg_split('/ /', $string) as $token) {
                 $email = filter_var($token, FILTER_VALIDATE_EMAIL);
-
+                if ($email !== false)
+                    echo $email;
             }
-            if ($email !== false)
-                echo $email;
+
         }
 
         //V ARRAY seznamCtenaru JSOU CTENARI, KTERYM BUDEME POSILAT E-MAILY
