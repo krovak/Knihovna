@@ -85,6 +85,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         {
             $positions[$i] = $positions[$i]+22;
             $seznamCtenaru[$i] = $pokus[$positions[$i]];
+            $query = "SELECT * FROM ctenar WHERE `entity_id` = '$seznamCtenaru[$i]'";
         }
 
         //V ARRAY seznamCtenaru JSOU CTENARI, KTERYM BUDEME POSILAT E-MAILY
