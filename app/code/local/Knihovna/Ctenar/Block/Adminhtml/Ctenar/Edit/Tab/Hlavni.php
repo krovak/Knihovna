@@ -56,7 +56,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
          * Print out the results
          */
         //echo '<pre>'; print_r($results); echo '</pre>';
-        if (is_string($results))
+        if (is_array($results))
             echo 'Ano!';
         //var_dump($results);
 
