@@ -67,7 +67,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         //najdeme, kde vsude jsou ctenari
 
-        $needle = "'reader' => string(1)";
+        $needle = "reader";
         $lastPos = 0;
         $positions = array();
 
