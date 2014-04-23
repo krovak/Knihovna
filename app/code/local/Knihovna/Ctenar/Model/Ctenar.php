@@ -108,7 +108,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
 
 
-        $query = "SELECT * FROM vypujcky WHERE `to` = DATE_SUB( CURDATE( ) , INTERVAL 0)";
+        $query = "SELECT * FROM vypujcky WHERE `to` = DATE_SUB( CURDATE( ) , INTERVAL 0 DAY)";
         /**
          * Execute the query and store the results in $results
          */
