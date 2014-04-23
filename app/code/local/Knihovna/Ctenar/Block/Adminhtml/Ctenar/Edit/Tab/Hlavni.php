@@ -81,7 +81,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         echo count($positions);
 
         if (count($positions)>0 and is_int(count($positions)))
-        for ($i = 0; $i<=count($positions); $i++)
+        for ($i = 0; $i<count($positions); $i++)
             $positions[$i] = $positions[$i]+22;
 
 
