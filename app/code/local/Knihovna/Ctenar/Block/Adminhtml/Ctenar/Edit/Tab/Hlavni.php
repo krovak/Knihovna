@@ -76,7 +76,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             $lastPos = $lastPos + strlen($needle);
         }
 
-        echo $positions;
+        var_dump($positions);
 
         if (isset($_COOKIE["textEmailu"]))
         $promenna = $_COOKIE["textEmailu"];
