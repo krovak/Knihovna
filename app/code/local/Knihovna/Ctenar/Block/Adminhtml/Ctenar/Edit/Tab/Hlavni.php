@@ -63,7 +63,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         var_dump($results);
         $pokus = ob_get_clean();
 
-        //echo $pokus;
+        echo $pokus;
 
         //najdeme, kde vsude jsou ctenari
 
