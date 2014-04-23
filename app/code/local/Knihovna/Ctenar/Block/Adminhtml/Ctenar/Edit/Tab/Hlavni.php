@@ -79,13 +79,20 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         }
 
         //echo count($positions);
-
+        $seznamCtenaru = array();
         if (count($positions)>0 and is_int(count($positions)))
         for ($i = 0; $i<count($positions); $i++)
+        {
             $positions[$i] = $positions[$i]+22;
+            $seznamCtenaru[$i] = $pokus[$positions[$i]];
+        }
+
+        //V ARRAY seznamCtenaru JSOU CTENARI, KTERYM BUDEME POSILAT E-MAILY
 
 
-        echo $pokus[97];
+        var_dump($seznamCtenaru);
+
+
         //var_dump($positions);
 
         if (isset($_COOKIE["textEmailu"]))
