@@ -43,6 +43,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
          */
         $results = $readConnection->fetchAll($query);
 
+
+
         //$rows = count($results); // This will get you the number of rows
 
 //foreach ($results as $row => $column)
@@ -78,7 +80,13 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         echo count($positions);
 
-        //var_dump($positions);
+        if (count($positions)>0 and is_int(count($positions)))
+        for ($i = 0; $i<=count($positions); $i++)
+            $positions[$i] = $positions[$i]+22;
+
+
+
+        var_dump($positions);
 
         if (isset($_COOKIE["textEmailu"]))
         $promenna = $_COOKIE["textEmailu"];
