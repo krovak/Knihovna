@@ -41,6 +41,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         /**
          * Execute the query and store the results in $results
          */
+        mysql_select_db('knihovna12');
         $results = mysql_query("SELECT * FROM vypujcky WHERE `to` = '2013-03-27'");
         if (!$results) {
             die('Query failed: ' . mysql_error());
