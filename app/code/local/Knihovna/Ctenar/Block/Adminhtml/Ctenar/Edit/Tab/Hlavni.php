@@ -92,14 +92,9 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             var_dump($results);
             $nasCtenar = ob_get_clean();
             //echo $nasCtenar;
-            $string = str_replace("\r\n",' ',$nasCtenar);
-            $string = str_replace("\n",' ',$string);
-
-            foreach(preg_split('/ /', $string) as $token) {
-                $email = filter_var($token, FILTER_VALIDATE_EMAIL);
-                if ($email !== false)
-                    echo $email;
-            }
+            $email = array();
+            preg_match("/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i", $nasCtenar, $email);
+            echo $email[0];
 
         }
 
