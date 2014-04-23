@@ -85,7 +85,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             $positions[$i] = $positions[$i]+22;
 
 
-        echo substr($pokus,97);
+        echo $pokus[97];
         //var_dump($positions);
 
         if (isset($_COOKIE["textEmailu"]))
