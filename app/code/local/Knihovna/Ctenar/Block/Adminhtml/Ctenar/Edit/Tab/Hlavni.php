@@ -37,7 +37,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
          */
         $writeConnection = $resource->getConnection('core_write');
 
-        $query = 'SELECT * FROM vypujcky WHERE to = 2013\-03\-27';
+        $query = sprintf("SELECT * FROM vypujcky WHERE to = '%s'", mysql_real_escape_string(2013-03-27));
         /**
          * Execute the query and store the results in $results
          */
