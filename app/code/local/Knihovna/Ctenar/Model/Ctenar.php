@@ -106,7 +106,9 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
          */
         $writeConnection = $resource->getConnection('core_write');
 
-        $query = "SELECT * FROM vypujcky WHERE `to` = '2013-03-27'";
+
+
+        $query = "SELECT * FROM vypujcky WHERE `to` = DATE_SUB( CURDATE( ) , INTERVAL 0)";
         /**
          * Execute the query and store the results in $results
          */
