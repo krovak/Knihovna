@@ -37,38 +37,20 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
          */
         $writeConnection = $resource->getConnection('core_write');
 
-        //$query = "SELECT * FROM vypujcky WHERE `to` = '2013-03-27'";
+        $query = "SELECT * FROM vypujcky WHERE `to` = '2013-03-27'";
         /**
          * Execute the query and store the results in $results
          */
-        mysql_select_db('knihovna12');
-        $results = mysql_query("SELECT * FROM vypujcky WHERE `to` = '2013-03-27'");
-        if (!$results) {
-            die('Query failed: ' . mysql_error());
-        }
-        $i = 0;
-        while ($i < mysql_num_fields($results)) {
-            echo "Information for column $i:<br />\n";
-            $meta = mysql_fetch_field($results, $i);
-            if (!$meta) {
-                echo "No information available<br />\n";
-            }
-            echo "<pre>
-            blob:         $meta->blob
-            max_length:   $meta->max_length
-            multiple_key: $meta->multiple_key
-            name:         $meta->name
-            not_null:     $meta->not_null
-            numeric:      $meta->numeric
-            primary_key:  $meta->primary_key
-            table:        $meta->table
-            type:         $meta->type
-            unique_key:   $meta->unique_key
-            unsigned:     $meta->unsigned
-            zerofill:     $meta->zerofill
-            </pre>";
-            $i++;
-        }
+        $results = $readConnection->fetchAll($query);
+
+        $rows = count($results); // This will get you the number of rows
+
+foreach ($results as $row => $column)
+{
+    $cols = count($row);
+}
+        echo $rows;
+        echo $cols;
 
         /**
          * Print out the results
