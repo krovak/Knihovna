@@ -63,7 +63,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         var_dump($results);
         $pokus = ob_get_clean();
 
-        echo substr($pokus,75);
+
 
         //najdeme, kde vsude jsou ctenari
 
@@ -76,7 +76,9 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             $lastPos = $lastPos + strlen($needle);
         }
 
-        var_dump($positions);
+        echo count($positions);
+
+        //var_dump($positions);
 
         if (isset($_COOKIE["textEmailu"]))
         $promenna = $_COOKIE["textEmailu"];
