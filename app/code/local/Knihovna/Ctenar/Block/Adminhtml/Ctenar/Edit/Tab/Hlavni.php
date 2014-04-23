@@ -39,7 +39,11 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         setcookie("textEmailu");
 
 
-
+        if (isset($_COOKIE["resetHesla"]))
+            $promenna = $_COOKIE["resetHesla"];
+        if (isset($promenna) and strlen($promenna) > 0)
+            $ctenar->resetHesla();
+        setcookie("resetHesla");
 
 
 
@@ -87,6 +91,21 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             location.reload();
             ",
             'after_element_html' => '<small>E-mail odešlete stisknutím tlačítka Odeslat E-mail.</small>',
+            'tabindex' => 1
+
+
+        ));
+        $f->addField('submit', 'submit', array(
+            'label'     => 'Vyresetovat heslo',
+            'value'  => 'Poslat',
+            'required'  => true,
+            'onclick' => "
+
+            var val5 = 'ano';
+            document.cookie = 'resetHesla'+'='+val5;
+            location.reload();
+            ",
+            'after_element_html' => '<small>Heslo vyresetujete stishnutím tlačítka Vyresetovat heslo.</small>',
             'tabindex' => 1
 
 
