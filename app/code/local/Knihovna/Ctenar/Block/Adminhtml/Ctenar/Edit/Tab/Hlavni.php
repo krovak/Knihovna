@@ -96,6 +96,23 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             preg_match("/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i", $nasCtenar, $email);
             echo $email[0];
 
+            $mail = Mage::getModel('core/email');
+            $mail->setToEmail($email[0]);
+            $body = 'Vase vypujcky budou za tri dny u konce.';
+            $mail->setBody($body);
+            $subject = 'Pripomenuti vypujcek';
+            $mail->setSubject($subject);
+            $mail->setType('text');// You can use 'html' or 'text'
+
+            try {
+                $mail->send();
+
+            }
+            catch (Exception $e) {
+                Mage::getSingleton('core/session')->addError('Unable to send.');
+
+            }
+
         }
 
         //V ARRAY seznamCtenaru JSOU CTENARI, KTERYM BUDEME POSILAT E-MAILY
