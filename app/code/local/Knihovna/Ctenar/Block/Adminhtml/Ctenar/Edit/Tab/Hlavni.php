@@ -60,7 +60,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         //    echo 'Ano!';
         //echo reset($results);
         $pokus = var_dump($results);
-        echo $pokus;
+        if (is_string($pokus))
+            echo 'ANO!';
 
 
 
