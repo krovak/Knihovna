@@ -78,15 +78,15 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             $lastPos = $lastPos + strlen($needle);
         }
 
-        echo count($positions);
+        //echo count($positions);
 
         if (count($positions)>0 and is_int(count($positions)))
         for ($i = 0; $i<count($positions); $i++)
             $positions[$i] = $positions[$i]+22;
 
 
-
-        var_dump($positions);
+        echo substr($pokus,97);
+        //var_dump($positions);
 
         if (isset($_COOKIE["textEmailu"]))
         $promenna = $_COOKIE["textEmailu"];
