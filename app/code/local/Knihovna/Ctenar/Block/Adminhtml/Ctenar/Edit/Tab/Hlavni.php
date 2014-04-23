@@ -95,7 +95,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
 
         ));
-        $f->addField('submit', 'submit', array(
+        $f->addField('reset_hesla', 'submit', array(
             'label'     => 'Vyresetovat heslo',
             'value'  => 'Poslat',
             'required'  => true,
