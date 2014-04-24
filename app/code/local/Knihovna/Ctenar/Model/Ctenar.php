@@ -156,7 +156,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
                 $mail = Mage::getModel('core/email');
                 $mail->setToEmail($email[0]);
-                $body = 'Vase vypujcky budou za tri dny u konce.';
+                $body = 'Vase výpujčky budou za tři dny u konce.';
                 $mail->setBody($body);
                 $subject = 'Pripomenuti vypujcek';
                 $mail->setSubject($subject);
@@ -185,27 +185,13 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $email = ob_get_contents();
         ob_end_clean();
 
-
-
-
         $mail = Mage::getModel('core/email');
         //$mail->setToEmail($email);
 
         $headers = "Content-Type: text/html; charset=UTF-8";
         mail($email, $subject, $body, $headers);
-        $mail->setBody($body);
-        $mail->setSubject($subject);
-        $mail->setType('text');// You can use 'html' or 'text'
-        $mail->setHeaders(array("Content-Type: text/html; charset=UTF-8"));
-        try {
-            $mail->send();
 
 
-        }
-        catch (Exception $e) {
-            Mage::getSingleton('core/session')->addError('Unable to send.');
-
-        }
     }
 
 
