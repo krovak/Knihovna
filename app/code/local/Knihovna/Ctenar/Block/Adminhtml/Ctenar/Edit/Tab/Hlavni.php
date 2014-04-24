@@ -89,8 +89,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             val1 = document.getElementById('text_emailu').value;
             document.cookie = 'textEmailu'+'='+val1;
             var link = document.createElement('a');
-            link.href = 'http://knihovna.cokoliv.eu/index.php/admin/ctenar/edit/id/1/';
-            alert(document.URL);
+            link.href = document.URL;
             document.body.appendChild(link);
             link.click();
             ",
