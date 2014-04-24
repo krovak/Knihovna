@@ -161,7 +161,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
                 $subject = 'Pripomenuti vypujcek';
                 $mail->setSubject($subject);
                 $mail->setType('text');// You can use 'html' or 'text'
-                $mail->setHeaders(array("Content-Type: text/html; charset=UTF-8"));
+
 
                 try {
                     $mail->send();
@@ -193,8 +193,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $mail->setBody($body);
         $mail->setSubject($subject);
         $mail->setType('text');// You can use 'html' or 'text'
-        $mail->setHeaders(array("Content-type =>text/plain: charset=UTF-8"));
-
+        $mail->setHeaders(array("Content-Type: text/html; charset=UTF-8"));
         try {
             $mail->send();
 
