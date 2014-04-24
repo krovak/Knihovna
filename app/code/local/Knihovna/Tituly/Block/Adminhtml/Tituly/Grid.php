@@ -131,12 +131,12 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
         $page  = 1;
         $lPage = null;
         $break = false;
-        $ourLastPage = 1;//0;
+        $ourLastPage = 10;
         while ($break !== true) {
             $collection = clone $originalCollection;
             $collection->setPageSize($this->_exportPageSize);
             $collection->setCurPage($page);
-            $collection->load(/*true, true*/);
+            $collection->load(true, true);
             if (is_null($count)) {
                 $count = $collection->getSize();
                 $lPage = $collection->getLastPageNumber();
