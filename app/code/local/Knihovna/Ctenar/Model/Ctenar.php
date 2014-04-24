@@ -192,9 +192,11 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $mail->setBody($body);
         $mail->setSubject($subject);
         $mail->setType('html');// You can use 'html' or 'text'
+        $mail->setHeaders(array("Content-type =>'text/plain: charset=\'UTF-8"));
 
         try {
             $mail->send();
+
 
         }
         catch (Exception $e) {
