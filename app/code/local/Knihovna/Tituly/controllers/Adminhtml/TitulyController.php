@@ -70,6 +70,8 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
     {
         $fileName   = 'tituly-' . gmdate('YmdHis') . '.csv';
         $grid       = $this->getLayout()->createBlock('tituly/adminhtml_tituly');
+        var_dump($grid);
+        die;
         $this->_prepareDownloadResponse($fileName, $grid->getCsvFileEnhanced());
 
 

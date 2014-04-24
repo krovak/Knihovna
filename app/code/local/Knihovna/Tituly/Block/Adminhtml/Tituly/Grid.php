@@ -35,9 +35,6 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
 
     public function _prepareColumns()
     {
-        //$this->addExportType('*/*/exportCsvEnhanced', Mage::helper('tituly')->__('CSVe'));
-        //return parent::_prepareColumns();
-
         $this->addColumn('entity_id', array(
             'header' => 'ID',
             'index'  => 'entity_id',
@@ -136,7 +133,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
             $collection = clone $originalCollection;
             $collection->setPageSize($this->_exportPageSize);
             $collection->setCurPage($page);
-            $collection->load(true, true);
+            $collection->load(/*true, true*/);
             if (is_null($count)) {
                 $count = $collection->getSize();
                 $lPage = $collection->getLastPageNumber();
