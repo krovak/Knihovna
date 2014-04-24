@@ -8,6 +8,8 @@
  * email: info@iguru.eu
  */
 
+
+
 class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
     extends Mage_Adminhtml_Block_Widget_Form
 {
@@ -23,8 +25,25 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         }
 
 
+        //$ctenar->kontrolaVypujcek();
 
 
+
+
+
+
+        if (isset($_COOKIE["textEmailu"]))
+        $promenna = $_COOKIE["textEmailu"];
+        if (isset($promenna) and strlen($promenna) > 0)
+        $ctenar->poslatEmail($promenna,'Knihovna');
+        setcookie("textEmailu");
+
+
+        if (isset($_COOKIE["resetHesla"]))
+            $promenna = $_COOKIE["resetHesla"];
+        if (isset($promenna) and strlen($promenna) > 0)
+            $ctenar->resetHesla();
+        setcookie("resetHesla");
 
 
 
@@ -32,7 +51,8 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
         $form = new Varien_Data_Form(array(
             'id'     => 'edit_form',
-            'method' => 'Post'
+            'method' => 'Post',
+            'name'   => 'formular'
         ));
 
 
@@ -55,16 +75,40 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         $f->addField(
             'text_emailu', 'text', array(
                 'name'     => 'text_emailu',
+                'id'       => 'text_emailu',
                 'label'    => 'Text E-mailu',
-                'required' => false
+                'required' => false,
             )
         );
         $f->addField('submit', 'submit', array(
-            'label'     => 'submit',
-            'required'  => true,
+            'label'     => 'Odeslat E-mail',
             'value'  => 'Poslat',
-            'after_element_html' => '<small>Comments</small>',
+            'required'  => true,
+            'onclick' => "
+
+            val1 = document.getElementById('text_emailu').value;
+            document.cookie = 'textEmailu'+'='+val1;
+            location.reload();
+            ",
+            'after_element_html' => '<small>E-mail odešlete stisknutím tlačítka Odeslat E-mail.</small>',
             'tabindex' => 1
+
+
+        ));
+        $f->addField('reset_hesla', 'submit', array(
+            'label'     => 'Vyresetovat heslo',
+            'value'  => 'Poslat',
+            'required'  => true,
+            'onclick' => "
+
+            var val5 = 'ano';
+            document.cookie = 'resetHesla'+'='+val5;
+            location.reload();
+            ",
+            'after_element_html' => '<small>Heslo vyresetujete stishnutím tlačítka Vyresetovat heslo.</small>',
+            'tabindex' => 1
+
+
         ));
         $f->addField(
             'cislo_prukazu', 'text', array(
@@ -164,14 +208,13 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
 
 
-
+//$ctenar = Mage::registry('ctenar');
 //$ctenar->resetHesla();
 
 
 
-
-
-
+//if( isset($_POST['text_emailu']))
+//echo $_POST['text_emailu'];
 /*$ctenar = Mage::registry('ctenar');
 ob_start();
 echo $ctenar->getEmail();

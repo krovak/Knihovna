@@ -21,6 +21,7 @@ class Knihovna_Vypujcky_Block_Adminhtml_Vypujcky_Edit_Form extends Mage_Adminhtm
     {
         $autor = Mage::registry('Vypujcky');
 
+
         $form = new Varien_Data_Form(array(
             'id'     => 'edit_form',
             'method' => 'post'

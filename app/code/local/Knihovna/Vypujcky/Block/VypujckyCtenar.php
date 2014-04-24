@@ -20,6 +20,8 @@ class Knihovna_Vypujcky_Block_VypujckyCtenar extends Mage_Core_Block_Template{
         return $readers_books;
     }
 
+
+
     public function getDaysLeft($date)
     {
         $now = new DateTime(date("y-m-d"));

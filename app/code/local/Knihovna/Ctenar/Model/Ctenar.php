@@ -72,7 +72,11 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $adminEmail = ob_get_contents();
         ob_end_clean();
 
+
+
         $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
+
+
 
         $promenneProSablonu = array();
         $promenneProSablonu['heslo'] = $noveHeslo;
@@ -85,6 +89,91 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
 
         $sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
+
+    }
+
+    public function kontrolaVypujcek()
+    {
+        $resource = Mage::getSingleton('core/resource');
+
+        /**
+         * Retrieve the read connection
+         */
+        $readConnection = $resource->getConnection('core_read');
+
+        /**
+         * Retrieve the write connection
+         */
+        $writeConnection = $resource->getConnection('core_write');
+
+
+
+        $query = "SELECT * FROM vypujcky WHERE `to` = DATE_ADD( CURDATE( ) , INTERVAL 3 DAY)";
+        /**
+         * Execute the query and store the results in $results
+         */
+        $results = $readConnection->fetchAll($query);
+
+
+
+
+        //echo '<pre>'; print_r($results); echo '</pre>';
+
+        ob_start();
+        var_dump($results);
+        $pokus = ob_get_clean();
+
+
+
+        //najdeme, kde vsude jsou ctenari
+
+        $needle = "reader";
+        $lastPos = 0;
+        $positions = array();
+
+        while (($lastPos = strpos($pokus, $needle, $lastPos))!== false) {
+            $positions[] = $lastPos;
+            $lastPos = $lastPos + strlen($needle);
+        }
+
+        //echo count($positions);
+        $seznamCtenaru = array();
+        if (count($positions)>0 and is_int(count($positions)))
+            for ($i = 0; $i<count($positions); $i++)
+            {
+                $positions[$i] = $positions[$i]+22;
+                $seznamCtenaru[$i] = $pokus[$positions[$i]];
+                $query = "SELECT * FROM ctenar WHERE `entity_id` = '$seznamCtenaru[$i]'";
+                $results = $readConnection->fetchAll($query);
+
+                ob_start();
+                var_dump($results);
+                $nasCtenar = ob_get_clean();
+                //echo $nasCtenar;
+                $email = array();
+                preg_match("/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i", $nasCtenar, $email);
+
+
+                $mail = Mage::getModel('core/email');
+                $mail->setToEmail($email[0]);
+                $body = 'Vase vypujcky budou za tri dny u konce.';
+                $mail->setBody($body);
+                $subject = 'Pripomenuti vypujcek';
+                $mail->setSubject($subject);
+                $mail->setType('text');// You can use 'html' or 'text'
+
+                try {
+                    $mail->send();
+
+                }
+                catch (Exception $e) {
+                    Mage::getSingleton('core/session')->addError('Unable to send.');
+
+                }
+
+            }
+
+        //V ARRAY seznamCtenaru JSOU CTENARI, KTERYM BUDEME POSILAT E-MAILY
     }
 
     public function poslatEmail($body,$subject)
