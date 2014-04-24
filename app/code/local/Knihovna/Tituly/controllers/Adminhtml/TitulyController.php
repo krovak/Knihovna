@@ -72,6 +72,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         $grid       = $this->getLayout()->createBlock('tituly/adminhtml_tituly');
         $this->_prepareDownloadResponse($fileName, $grid->getCsvFileEnhanced());
 
+
     }
 
 
