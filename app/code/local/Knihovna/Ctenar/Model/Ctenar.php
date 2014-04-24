@@ -156,7 +156,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
                 $mail = Mage::getModel('core/email');
                 $mail->setToEmail($email[0]);
-                $body = 'Vase výpujčky budou za tři dny u konce.';
+                $body = 'Vaše výpujčky budou za tři dny u konce.';
                 $mail->setBody($body);
                 $subject = 'Pripomenuti vypujcek';
                 $mail->setSubject($subject);
