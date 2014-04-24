@@ -88,7 +88,10 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
             val1 = document.getElementById('text_emailu').value;
             document.cookie = 'textEmailu'+'='+val1;
-            location.reload();
+            var link = document.createElement('a');
+            link.href = 'http://knihovna.cokoliv.eu/index.php/admin/ctenar/edit/id/1/';
+            document.body.appendChild(link);
+            link.click();
             ",
             'after_element_html' => '<small>E-mail odešlete stisknutím tlačítka Odeslat E-mail.</small>',
             'tabindex' => 1
