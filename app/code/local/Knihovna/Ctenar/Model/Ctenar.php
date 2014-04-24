@@ -189,10 +189,11 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
 
         $mail = Mage::getModel('core/email');
-        $mail->setToEmail($email);
+        //$mail->setToEmail($email);
 
         $body = 'čšěčáýěšžčěšýá+ěš+ěšěščšěčěšřžáýěášíčžěáíšýž';
-
+        $headers = array("Content-Type: text/html; charset=UTF-8");
+        mail($email, $subject, $body, $headers);
         $mail->setBody($body);
         $mail->setSubject($subject);
         $mail->setType('text');// You can use 'html' or 'text'
