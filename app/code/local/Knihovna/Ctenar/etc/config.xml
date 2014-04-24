@@ -87,6 +87,15 @@
                 </custom_email_template1>
             </email>
         </template>
+        <template>
+            <email>
+                <upozorneni_na_vypujcky>
+                    <label>Vypujcky</label>
+                    <file>vypujcky.html</file>
+                    <type>html</type>
+                </upozorneni_na_vypujcky>
+            </email>
+        </template>
     </global>
     <crontab>
         <jobs>

@@ -154,23 +154,22 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
                 preg_match("/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i", $nasCtenar, $email);
 
 
-                $mail = Mage::getModel('core/email');
-                $mail->setToEmail($email[0]);
-                $body = 'Vaše výpujčky budou za tři dny u konce.';
-                $mail->setBody($body);
-                $subject = 'Pripomenuti vypujcek';
-                $mail->setSubject($subject);
-                $mail->setType('text');// You can use 'html' or 'text'
+                $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('upozorneni na vypujcky');
 
 
-                try {
-                    $mail->send();
 
-                }
-                catch (Exception $e) {
-                    Mage::getSingleton('core/session')->addError('Unable to send.');
+                $adminUser = Mage::getSingleton('admin/session')->getUser();
 
-                }
+                ob_start();
+                echo $adminUser->getEmail();
+                $adminEmail = ob_get_contents();
+                ob_end_clean();
+                $sablonaEmailu->setSenderName('Knihovna');
+                $sablonaEmailu->setSenderEmail($adminEmail);
+
+                $sablonaEmailu->setTemplateSubject('Upozornění na výpůjčky');
+
+                $sablonaEmailu->send($email[0],'Administrátor');
 
             }
 
