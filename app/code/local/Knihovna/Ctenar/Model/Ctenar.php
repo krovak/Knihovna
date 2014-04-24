@@ -158,18 +158,15 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
 
 
-                $adminUser = Mage::getSingleton('admin/session')->getUser();
 
-                ob_start();
-                echo $adminUser->getEmail();
-                $adminEmail = ob_get_contents();
+                $adminEmail = Mage::getStoreConfig('trans_email/ident_general/email');
                 ob_end_clean();
                 $sablonaEmailu->setSenderName('Knihovna');
                 $sablonaEmailu->setSenderEmail($adminEmail);
 
                 $sablonaEmailu->setTemplateSubject('Upozornění na výpůjčky');
 
-                $sablonaEmailu->send($email[0],'Administrátor');
+                $sablonaEmailu->send($email[0],'Knihovna');
 
             }
 
