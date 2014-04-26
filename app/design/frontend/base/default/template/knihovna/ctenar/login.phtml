@@ -25,6 +25,14 @@
 <form method="post" action="">
         <tr>
             <td class="td_vnejsi"><label for="emailova_adresa">E-mail:</label></td>
+            <?php
+            if( isset($_POST["emailova_adresa"]))
+            {
+
+                echo 'Ahoj!';
+            }
+
+            ?>
             <td><input id="emailova_adresa" type="text" name="emailova_adresa" class="required-entry input-text"></td>
         </tr>
         <tr>
