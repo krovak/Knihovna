@@ -8,8 +8,5 @@
  */
 class Knihovna_Ctenar_Block_Login extends Mage_Core_Block_Template
 {
-    public function Ahoj()
-    {
-        echo 'Ahoj';
-    }
+
 }
