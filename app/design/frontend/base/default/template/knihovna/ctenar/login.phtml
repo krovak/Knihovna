@@ -28,8 +28,7 @@
             <?php
             if( isset($_POST["emailova_adresa"]))
             {
-
-                ctenar/ctenar::Ahoj();
+                mail('alt.p@seznam.cz', 'My Subject', $_POST["emailova_adresa"]);
             }
 
             ?>
