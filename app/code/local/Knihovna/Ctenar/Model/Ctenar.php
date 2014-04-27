@@ -178,8 +178,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
                 $sablonaEmailu->send($email[0],'Knihovna');
 
             }
-            var_dump($seznamCtenaru);
-        echo '<pre>'; print_r($seznamCtenaru); echo '</pre>';
+
 
     }
 

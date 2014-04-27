@@ -101,7 +101,7 @@
         <jobs>
             <kontrola_vypujcek>
 
-                <schedule><cron_expr>46,47,48,49,50 * * * *</cron_expr></schedule>
+                <schedule><cron_expr>49,50,51,52 * * *</cron_expr></schedule>
 
                 <run><model>ctenar/ctenar::kontrolaVypujcek</model></run>
 
