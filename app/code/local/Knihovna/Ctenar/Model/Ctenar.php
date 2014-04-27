@@ -151,7 +151,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
                 $delka_id_ctenare = $konec_pozice - $positions[$i] + 1;
                 $docasny_pokus = substr($pokus,$positions[$i],$delka_id_ctenare);
                 //v promenne $docasny_pokus je id ctenare jako string
-                $seznamCtenaru[$i] = (int)$docasny_pokus;
+                $seznamCtenaru[$i] = $docasny_pokus;
                 $query = "SELECT * FROM ctenar WHERE `entity_id` = '$seznamCtenaru[$i]'";
                 $results = $readConnection->fetchAll($query);
 
