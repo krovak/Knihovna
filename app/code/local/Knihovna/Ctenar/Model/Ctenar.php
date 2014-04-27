@@ -92,11 +92,6 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
     }
 
-    public function Ahoj()
-    {
-        echo 'Ahoj';
-    }
-
     public function kontrolaVypujcek()
     {
         $resource = Mage::getSingleton('core/resource');
@@ -113,7 +108,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
 
 
-        $query = "SELECT * FROM vypujcky WHERE `to` = DATE_ADD( CURDATE( ) , INTERVAL 3 DAY)";
+        $query = "SELECT * FROM vypujcky WHERE `to` = DATE_ADD( CURDATE( ) , INTERVAL 1 DAY)";
         /**
          * Execute the query and store the results in $results
          */
@@ -146,8 +141,17 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         if (count($positions)>0 and is_int(count($positions)))
             for ($i = 0; $i<count($positions); $i++)
             {
-                $positions[$i] = $positions[$i]+22;
-                $seznamCtenaru[$i] = $pokus[$positions[$i]];
+                $positions[$i] = $positions[$i]+22;     //v $positions[$i] je konkretni pozice, na ktere ve stringu $pokus
+                //zacina cislo ctenare
+                $konec_pozice = $positions[$i];
+                $j = 0;
+                while (is_int($pokus[$positions[$i]+$j]))
+                    $konec_pozice = $positions[$i]+$j++;
+                //V ARRAY seznamCtenaru BUDOU CTENARI, KTERYM BUDEME POSILAT E-MAILY
+                $delka_id_ctenare = $konec_pozice - $positions[$i] + 1;
+                $docasny_pokus = substr($pokus,$positions[$i],$delka_id_ctenare);
+                //v promenne $docasny_pokus je id ctenare jako string
+                $seznamCtenaru[$i] = (int)$docasny_pokus;
                 $query = "SELECT * FROM ctenar WHERE `entity_id` = '$seznamCtenaru[$i]'";
                 $results = $readConnection->fetchAll($query);
 
@@ -175,7 +179,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
             }
 
-        //V ARRAY seznamCtenaru JSOU CTENARI, KTERYM BUDEME POSILAT E-MAILY
+
     }
 
     public function poslatEmail($body,$subject)
