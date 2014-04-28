@@ -80,7 +80,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 'required' => false,
             )
         );
-        $f->addField('submit', 'submit', array(
+      /*  $f->addField('submit', 'submit', array(
             'label'     => 'Odeslat E-mail',
             'value'  => 'Poslat',
             'required'  => false,
@@ -97,7 +97,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'tabindex' => 1
 
 
-        ));
+        ));*/
         $f->addField('reset_hesla', 'submit', array(
             'label'     => 'Vyresetovat heslo',
             'value'  => 'Poslat',
