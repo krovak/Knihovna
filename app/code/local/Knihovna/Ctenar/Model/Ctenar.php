@@ -88,7 +88,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
         $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
 
-        $sablonaEmailu->sendTransactional($email,'John Doe', $promenneProSablonu);
+        $sablonaEmailu->send($email,'John Doe', $promenneProSablonu);
 
     }
 
@@ -175,7 +175,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
                 $sablonaEmailu->setTemplateSubject('Upozornění na výpůjčky');
 
-                $sablonaEmailu->sendTransactional($email[0],'Knihovna');
+                $sablonaEmailu->send($email[0],'Knihovna');
 
             }
 
