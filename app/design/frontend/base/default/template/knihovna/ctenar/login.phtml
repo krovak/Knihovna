@@ -28,10 +28,10 @@
             <?php
             if( isset($_POST["emailova_adresa"]))
             {
-                $uzivateluv_email = isset($_POST["emailova_adresa"]);
+                $uzivateluv_email = $_POST["emailova_adresa"];
                 $resource = Mage::getSingleton('core/resource');
                 $readConnection = $resource->getConnection('core_read');
-                $query = "SELECT * FROM ctenar";
+                $query = "SELECT * FROM ctenar WHERE `email` = '$uzivateluv_email'";
                 $results = $readConnection->fetchAll($query);
                 ob_start();
                 var_dump($results);
