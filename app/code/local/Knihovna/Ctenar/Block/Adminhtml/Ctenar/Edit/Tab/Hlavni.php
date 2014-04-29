@@ -112,7 +112,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'value'  => 'Poslat',
             'required'  => false,
             'onclick' => "
-            window.location.replace('http://knihovna.cokoliv.eu/index.php/admin/ctenar/edit/id/1/');
+            window.location.replace('www.google.com');
             ",
             'after_element_html' => '<small>Heslo vyresetujete stisknutím tlačítka Vyresetovat heslo.</small>',
             'tabindex' => 1
