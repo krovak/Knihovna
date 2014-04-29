@@ -28,13 +28,24 @@
             <?php
             if( isset($_POST["emailova_adresa"]))
             {
+                $uzivateluv_email = isset($_POST["emailova_adresa"]);
                 $resource = Mage::getSingleton('core/resource');
                 $readConnection = $resource->getConnection('core_read');
-                $query = "SELECT * FROM vypujcky";
+                $query = "SELECT * FROM ctenar WHERE `email` = '$uzivateluv_email'";
                 $results = $readConnection->fetchAll($query);
                 ob_start();
                 var_dump($results);
                 $pokus = ob_get_clean();
+                //v $pokus mame uzivatele, ktery chce vyresetovat heslo
+
+                //vygenerujeme nove nahodne heslo:
+                $noveHeslo = sha1(time());
+
+                //zjistime, kteremu uzivateli ho musime nastavit:
+                echo $pokus;
+                die();
+
+
                 //mail('alt.p@seznam.cz', $pokus, $_POST["emailova_adresa"]);
             }
 
