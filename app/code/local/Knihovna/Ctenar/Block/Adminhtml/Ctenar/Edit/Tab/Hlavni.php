@@ -118,7 +118,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             var link = document.createElement('a');
             link.href = 'seznam.cz';
             document.body.appendChild(link);
-            link.click();
+
             ",
             'after_element_html' => '<small>Heslo vyresetujete stishnutím tlačítka Vyresetovat heslo.</small>',
             'tabindex' => 1
