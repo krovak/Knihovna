@@ -111,7 +111,9 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'label'     => 'Vyresetovat heslo',
             'value'  => 'Poslat',
             'required'  => false,
-            'onclick' => "window.location('http://www.yahoo.com')",
+            'onclick' => "
+            window.location.replace('http://knihovna.cokoliv.eu/index.php/admin/ctenar/edit/id/1/');
+            ",
             'after_element_html' => '<small>Heslo vyresetujete stishnutím tlačítka Vyresetovat heslo.</small>',
             'tabindex' => 1
 
