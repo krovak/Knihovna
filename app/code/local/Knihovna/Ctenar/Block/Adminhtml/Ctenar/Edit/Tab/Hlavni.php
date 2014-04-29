@@ -35,15 +35,21 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         if (isset($_COOKIE["textEmailu"]))
         $promenna = $_COOKIE["textEmailu"];
         if (isset($promenna) and strlen($promenna) > 0)
+        {
+            setcookie("textEmailu");
         $ctenar->poslatEmail($promenna,'Knihovna');
-        setcookie("textEmailu");
+        }
+
 
 
         if (isset($_COOKIE["resetHesla"]))
             $promenna = $_COOKIE["resetHesla"];
         if (isset($promenna) and strlen($promenna) > 0)
+        {
+            setcookie("resetHesla");
             $ctenar->resetHesla();
-        setcookie("resetHesla");
+        }
+
 
 
 
