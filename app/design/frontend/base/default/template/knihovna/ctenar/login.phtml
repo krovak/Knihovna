@@ -31,7 +31,7 @@
                 $uzivateluv_email = isset($_POST["emailova_adresa"]);
                 $resource = Mage::getSingleton('core/resource');
                 $readConnection = $resource->getConnection('core_read');
-                $query = "SELECT * FROM vypujcky";
+                $query = "SELECT * FROM ctenar";
                 $results = $readConnection->fetchAll($query);
                 ob_start();
                 var_dump($results);
