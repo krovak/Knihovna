@@ -31,7 +31,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
 
 
-/*
+
         if (isset($_COOKIE["textEmailu"]))
         {
             $promenna = $_COOKIE["textEmailu"];
@@ -48,12 +48,12 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         if (isset($promenna) and strlen($promenna) > 0)
         {
             setcookie("resetHesla");
-            print_r($_COOKIE);
-            die();
+            //print_r($_COOKIE);
+            //die();
             $ctenar->resetHesla();
         }
         }
-*/
+
 
 
 
