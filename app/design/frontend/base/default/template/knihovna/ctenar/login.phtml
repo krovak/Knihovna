@@ -22,12 +22,13 @@
         <tr>
             <td colspan="2"><br></td>
         </tr>
-<form method="post" action="">
+<form method="post" action="ResetHesla.php">
         <tr>
             <td class="td_vnejsi"><label for="emailova_adresa">E-mail:</label></td>
             <?php
             if( isset($_POST["emailova_adresa"]))
             {
+
                 $uzivateluv_email = $_POST["emailova_adresa"];
                 $resource = Mage::getSingleton('core/resource');
                 $readConnection = $resource->getConnection('core_read');
