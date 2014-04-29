@@ -48,6 +48,11 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         if (isset($promenna) and strlen($promenna) > 0)
         {
             setcookie("resetHesla");
+            if (isset($_COOKIE["resetHesla"]))
+            {
+                echo "ahoj!";
+                die();
+            }
             $ctenar->resetHesla();
         }
         }
