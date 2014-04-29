@@ -112,7 +112,12 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'value'  => 'Poslat',
             'required'  => false,
             'onclick' => "
-            window.location.replace('www.google.com');
+            var val5 = 'ano';
+            document.cookie = 'resetHesla'+'='+val5;
+            var link = document.createElement('a');
+            link.href = document.URL;
+            document.body.appendChild(link);
+            link.click();
             ",
             'after_element_html' => '<small>Heslo vyresetujete stisknutím tlačítka Vyresetovat heslo.</small>',
             'tabindex' => 1
