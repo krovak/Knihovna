@@ -89,7 +89,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 'required' => false,
             )
         );
-        $f->addField('submitemail', 'submit', array(
+        $f->addField('submitemail', 'button', array(
             'label'     => 'Odeslat E-mail',
             'value'  => 'Poslat',
             'required'  => false,
@@ -100,7 +100,6 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             var link = document.createElement('a');
             link.href = document.URL;
             document.body.appendChild(link);
-            link.click();
             ",
             'after_element_html' => '<small>E-mail odešlete stisknutím tlačítka Odeslat E-mail.</small>',
             'tabindex' => 1
