@@ -111,9 +111,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             'label'     => 'Vyresetovat heslo',
             'value'  => 'Poslat',
             'required'  => false,
-            'onclick' => "
-
-            ",
+            'onclick' => '',
             'after_element_html' => '<small>Heslo vyresetujete stishnutím tlačítka Vyresetovat heslo.</small>',
             'tabindex' => 1
 
