@@ -15,36 +15,40 @@
                 $docasny_email = array();
                 preg_match("/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i", $uzivateluv_email, $docasny_email);
                 $uzivateluv_email = $docasny_email[0];
+                if (empty($uzivateluv_email)) {
+                    echo 'Nezadali jste e-mail!';
+                }
+                else {
+                    $resource = Mage::getSingleton('core/resource');
+                    $readConnection = $resource->getConnection('core_read');
+                    $writeConnection = $resource->getConnection('core_write');
 
-
-                $resource = Mage::getSingleton('core/resource');
-                $readConnection = $resource->getConnection('core_read');
-                $writeConnection = $resource->getConnection('core_write');
-
-                //vygenerujeme nove nahodne heslo:
-                $noveHeslo = sha1(time());
-
-
-
-                $query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `email`='$uzivateluv_email'";
-                $writeConnection->query($query);
-
-                //mail('alt.p@seznam.cz', $pokus, $_POST["emailova_adresa"]);
-
-                $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
+                    //vygenerujeme nove nahodne heslo:
+                    $noveHeslo = sha1(time());
 
 
 
-                $promenneProSablonu = array();
-                $promenneProSablonu['heslo'] = $noveHeslo;
+                    $query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `email`='$uzivateluv_email'";
+                    $writeConnection->query($query);
 
-                //echo $promenneProSablonu['heslo'];
-                $sablonaEmailu->setSenderName('Administrace');
-                $sablonaEmailu->setSenderEmail('mail');
+                    //mail('alt.p@seznam.cz', $pokus, $_POST["emailova_adresa"]);
 
-                $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
+                    $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
 
-                $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
+
+
+                    $promenneProSablonu = array();
+                    $promenneProSablonu['heslo'] = $noveHeslo;
+
+                    //echo $promenneProSablonu['heslo'];
+                    $sablonaEmailu->setSenderName('Administrace');
+                    $sablonaEmailu->setSenderEmail('mail');
+
+                    $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
+
+                    $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
+                }
+
             }
 else {
     echo 'Nezadali jste e-mail!';
