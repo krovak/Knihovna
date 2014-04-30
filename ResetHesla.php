@@ -16,7 +16,7 @@
                 preg_match("/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i", $uzivateluv_email, $docasny_email);
                 $uzivateluv_email = $docasny_email[0];
                 if (empty($uzivateluv_email)) {
-                    echo 'Nezadali jste e-mail!';
+                    echo 'Nezadali jste e-mailovou adresu!';
                 }
                 else {
                     $resource = Mage::getSingleton('core/resource');
@@ -47,10 +47,11 @@
                     $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
 
                     $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
+                    echo 'Pokud jste zadali platný e-mail, Vaše heslo bylo vyresetováno a e-mailem Vám bylo zasláno nové.';
                 }
 
             }
 else {
-    echo 'Nezadali jste e-mail!';
+    echo 'Nezadali jste e-mailovou adresu!';
 }
 
