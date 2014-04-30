@@ -12,6 +12,11 @@
             {
 
                 $uzivateluv_email = $_POST["emailova_adresa"];
+                $docasny_email = array();
+                preg_match("/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i", $uzivateluv_email, $docasny_email);
+                $uzivateluv_email = $docasny_email[0];
+
+
                 $resource = Mage::getSingleton('core/resource');
                 $readConnection = $resource->getConnection('core_read');
                 $writeConnection = $resource->getConnection('core_write');
@@ -41,4 +46,7 @@
 
                 $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
             }
+else {
+    echo 'Nezadali jste e-mail!';
+}
 
