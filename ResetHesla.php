@@ -8,9 +8,9 @@
  */
 
 
-            if (isset($_POST["emailova_adresa"]) and !empty($_POST["emailova_adresa"]))
+            if (isset($_POST["emailova_adresa"]))
             {
-                echo 'Ahoj...';
+
                 $uzivateluv_email = $_POST["emailova_adresa"];
                 $docasny_email = array();
                 preg_match("/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i", $uzivateluv_email, $docasny_email);
@@ -51,7 +51,4 @@
                 }
 
             }
-else {
-    echo 'Nezadali jste e-mailovou adresu!';
-}
 
