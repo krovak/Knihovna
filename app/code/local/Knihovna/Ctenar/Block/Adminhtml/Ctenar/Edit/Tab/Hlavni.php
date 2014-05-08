@@ -42,7 +42,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         }
         }
 
-
+        $ctenar->pridaniTokenu();
         if (isset($_COOKIE["resetHesla"]))
         {    $promenna = $_COOKIE["resetHesla"];
         if (isset($promenna) and strlen($promenna) > 0)
