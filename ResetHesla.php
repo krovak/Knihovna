@@ -28,26 +28,26 @@
                     $novyToken = str_shuffle($novyToken);
                     $novyToken = substr($novyToken, 0, 20); //vygenerovali jsme novy token
 
-                    $query = "SELECT * FROM ctenar";
-                    $results = $readConnection->fetchAll($query);
+                    //$query = "SELECT * FROM ctenar";
+                    //$results = $readConnection->fetchAll($query);
 
-                    echo $results;
+                    //echo $results;
 
                     //vygenerujeme nove nahodne heslo:
-                    //$noveHeslo = sha1(time());
+                    $noveHeslo = sha1(time());
 
 
 
-                    //$query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `email`='$uzivateluv_email'";
-                    //$writeConnection->query($query);
+                    $query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `email`='$uzivateluv_email'";
+                    $writeConnection->query($query);
 
 
 
-                    //$sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
+                    $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
 
 
 
-                    /*$promenneProSablonu = array();
+                    $promenneProSablonu = array();
                     $promenneProSablonu['heslo'] = $noveHeslo;
 
 
@@ -58,7 +58,7 @@
 
                     $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
                     echo 'Pokud jste zadali platný e-mail, Vaše heslo bylo vyresetováno a e-mailem Vám bylo zasláno nové.';
-                    */
+
                 }
 
             }
