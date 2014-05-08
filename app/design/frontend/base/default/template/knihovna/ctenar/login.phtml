@@ -1,7 +1,6 @@
 <?php //include 'ResetHesla.php'; ?>
 <?php
-$aa = $_POST["emailova_adresa"];
-if( !empty($aa))
+if (isset($_POST["emailova_adresa"]) and !empty($_POST["emailova_adresa"]))
 {
 
     echo 'Ano!';
