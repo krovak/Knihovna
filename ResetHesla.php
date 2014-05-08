@@ -24,24 +24,34 @@
                     $readConnection = $resource->getConnection('core_read');
                     $writeConnection = $resource->getConnection('core_write');
 
+                    $novyToken = '1234567890qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM';
+                    $novyToken = str_shuffle($novyToken);
+                    $novyToken = substr($novyToken, 0, 20); //vygenerovali jsme novy token
+
+                    $query = "SELECT * FROM ctenar WHERE `email`='$uzivateluv_email'";
+
+                    $results = $readConnection->fetchAll($query);
+
+                    echo $results;
+
                     //vygenerujeme nove nahodne heslo:
-                    $noveHeslo = sha1(time());
+                    //$noveHeslo = sha1(time());
 
 
 
-                    $query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `email`='$uzivateluv_email'";
-                    $writeConnection->query($query);
-
-                    //mail('alt.p@seznam.cz', $pokus, $_POST["emailova_adresa"]);
-
-                    $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
+                    //$query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `email`='$uzivateluv_email'";
+                    //$writeConnection->query($query);
 
 
 
-                    $promenneProSablonu = array();
+                    //$sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
+
+
+
+                    /*$promenneProSablonu = array();
                     $promenneProSablonu['heslo'] = $noveHeslo;
 
-                    //echo $promenneProSablonu['heslo'];
+
                     $sablonaEmailu->setSenderName('Administrace');
                     $sablonaEmailu->setSenderEmail('mail');
 
@@ -49,6 +59,7 @@
 
                     $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
                     echo 'Pokud jste zadali platný e-mail, Vaše heslo bylo vyresetováno a e-mailem Vám bylo zasláno nové.';
+                    */
                 }
 
             }
