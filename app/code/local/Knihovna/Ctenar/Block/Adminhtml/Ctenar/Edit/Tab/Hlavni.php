@@ -54,6 +54,11 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
         }
         }
 
+        $resource = Mage::getSingleton('core/resource');
+        $writeConnection = $resource->getConnection('core_write');
+        $query = "ALTER TABLE ctenar DROP token";
+        $writeConnection->query($query);
+        echo 'Hotovo!';
 
 
 
