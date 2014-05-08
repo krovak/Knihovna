@@ -8,7 +8,7 @@
  */
 
 
-            if( isset($_POST["emailova_adresa"]))
+            if (isset($_POST["emailova_adresa"]) and !empty($_POST["emailova_adresa"]))
             {
 
                 $uzivateluv_email = $_POST["emailova_adresa"];
