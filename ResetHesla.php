@@ -28,8 +28,7 @@
                     $novyToken = str_shuffle($novyToken);
                     $novyToken = substr($novyToken, 0, 20); //vygenerovali jsme novy token
 
-                    $query = "SELECT * FROM ctenar WHERE `email`='$uzivateluv_email'";
-                    echo $query;
+                    $query = "SELECT * FROM ctenar";
                     $results = $readConnection->fetchAll($query);
 
                     echo $results;
