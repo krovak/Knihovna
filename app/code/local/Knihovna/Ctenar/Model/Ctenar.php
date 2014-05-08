@@ -35,7 +35,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         //echo $user->getHeslo();
 
         try {
-            if ($heslo1 == $heslo2)
+            if (($heslo1 == $heslo2) and ctype_alnum($heslo1))
             {
 
 
@@ -43,9 +43,13 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
                 $user->save();
                 echo "<h1>Heslo bylo úspěšně změněno!</h1>";
             }
+            elseif (!ctype_alnum($heslo1))
+            {
+                echo "<h1>Chyba: zadané heslo obsahuje nepovolené znaky!</h1>";
+            }
             else
             {
-                echo "<h1>Hesla se neshodují!</h1>";
+                echo "<h1>Chyba: hesla se neshodují!</h1>";
             }
         }
         catch(Exception $ex) {
