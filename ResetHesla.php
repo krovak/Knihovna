@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-echo'Ahoj';
+
             if (isset($_POST["emailova_adresa"]) and !empty($_POST["emailova_adresa"]))
             {
 
