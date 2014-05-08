@@ -24,15 +24,6 @@
                     $readConnection = $resource->getConnection('core_read');
                     $writeConnection = $resource->getConnection('core_write');
 
-                    $novyToken = '1234567890qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM';
-                    $novyToken = str_shuffle($novyToken);
-                    $novyToken = substr($novyToken, 0, 20); //vygenerovali jsme novy token
-
-                    //$query = "SELECT * FROM ctenar";
-                    //$results = $readConnection->fetchAll($query);
-
-                    //echo $results;
-
                     //vygenerujeme nove nahodne heslo:
                     $noveHeslo = sha1(time());
 
