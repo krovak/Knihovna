@@ -152,6 +152,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
             }
 
             }
+        $seznamCtenaru = array_unique($seznamCtenaru);
 
         for ($i = 0; $i<count($seznamCtenaru); $i++)
 
