@@ -148,6 +148,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
             if (isset($existuje["reader"]))
             {
                 array_push($seznamCtenaru, $existuje["reader"]);
+
             }
             /*
             if (isset($existuje["reader"]))
@@ -216,7 +217,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
                 $sablonaEmailu->send($nasCtenar,'Knihovna');
             */
             }
-            echo($seznamCtenaru);
+            var_dump($seznamCtenaru);
         die();
 
 
