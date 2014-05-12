@@ -185,7 +185,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
                 $sablonaEmailu->send($nasCtenar,'Knihovna');
 
 
-            die();
+
         /*}
             for ($i = 0; $i<count($positions); $i++)
             {
