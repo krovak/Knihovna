@@ -147,7 +147,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         {
             if (isset($existuje["reader"]))
             {
-                $query = "SELECT email FROM ctenar WHERE `entity_id` = '$results[0]['reader']'";
+                $query = "SELECT email FROM ctenar WHERE `entity_id` = '$results[0][\"reader\"]'";
                 $nasCtenar = $readConnection->fetchOne($query);
 
 
