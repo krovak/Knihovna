@@ -132,28 +132,25 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
 
 
-        echo '<pre>'; print_r($results); echo '</pre>';
+        //echo '<pre>'; print_r($results); echo '</pre>';
 
 
         //echo($results[0]["reader"]);
 
-        die();
-
 
         //najdeme, kde vsude jsou ctenari
 
-        $needle = "reader";
-        $lastPos = 0;
-        $positions = array();
-
-        while (($lastPos = strpos($pokus, $needle, $lastPos))!== false) {
-            $positions[] = $lastPos;
-            $lastPos = $lastPos + strlen($needle);
-        }
 
         //echo count($positions);
         $seznamCtenaru = array();
-        if (count($positions)>0 and is_int(count($positions)))
+        foreach($results as $existuje)
+        {
+            if (isset($existuje["reader"]))
+            {
+                echo 'ANO!';
+                die();
+            }
+        }
             for ($i = 0; $i<count($positions); $i++)
             {
                 $positions[$i] = $positions[$i]+22;     //v $positions[$i] je konkretni pozice, na ktere ve stringu $pokus
