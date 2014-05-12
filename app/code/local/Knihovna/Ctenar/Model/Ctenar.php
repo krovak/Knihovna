@@ -97,7 +97,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
     }
 
 
-    public function pridaniTokenu()
+    /*public function pridaniTokenu()
     {
 
         $resource = Mage::getSingleton('core/resource');
@@ -106,6 +106,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $writeConnection->query($query);
         echo 'Done!';
     }
+    */
     public function kontrolaVypujcek()
     {
         $resource = Mage::getSingleton('core/resource');
@@ -166,13 +167,14 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
                 $docasny_pokus = substr($pokus,$positions[$i],$delka_id_ctenare);
                 //v promenne $docasny_pokus je id ctenare jako string
                 $seznamCtenaru[$i] = $docasny_pokus;
-                $query = "SELECT * FROM ctenar WHERE `entity_id` = '$seznamCtenaru[$i]'";
+                $query = "SELECT email FROM ctenar WHERE `entity_id` = '$seznamCtenaru[$i]'";
                 $results = $readConnection->fetchAll($query);
 
                 ob_start();
                 var_dump($results);
                 $nasCtenar = ob_get_clean();
-                //echo $nasCtenar;
+                echo $nasCtenar;
+                die();
                 $email = array();
                 preg_match("/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i", $nasCtenar, $email);
 
