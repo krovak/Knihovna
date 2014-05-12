@@ -123,7 +123,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
 
 
-        $query = "SELECT * FROM vypujcky WHERE `to` = DATE_ADD( CURDATE( ) , INTERVAL 1 DAY)";
+        $query = "SELECT reader FROM vypujcky WHERE `to` = DATE_ADD( CURDATE( ) , INTERVAL 1 DAY)";
         /**
          * Execute the query and store the results in $results
          */
@@ -137,7 +137,8 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         ob_start();
         var_dump($results);
         $pokus = ob_get_clean();
-
+        echo $pokus;
+        die();
 
 
         //najdeme, kde vsude jsou ctenari
