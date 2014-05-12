@@ -147,9 +147,30 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         {
             if (isset($existuje["reader"]))
             {
-                echo 'ANO!';
-                die();
+                $query = "SELECT email FROM ctenar WHERE `entity_id` = '$results[0]['reader']'";
+                $nasCtenar = $readConnection->fetchOne($query);
+
+
+
+
+
+
+                $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('upozorneni_na_vypujcky');
+
+
+
+
+                $adminEmail = Mage::getStoreConfig('trans_email/ident_general/email');
+
+                $sablonaEmailu->setSenderName('Knihovna');
+                $sablonaEmailu->setSenderEmail($adminEmail);
+
+                $sablonaEmailu->setTemplateSubject('Upozornění na výpůjčky');
+
+                $sablonaEmailu->send($nasCtenar,'Knihovna');
+
             }
+            die();
         }
             for ($i = 0; $i<count($positions); $i++)
             {
