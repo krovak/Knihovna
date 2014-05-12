@@ -150,13 +150,21 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
                 array_push($seznamCtenaru, $existuje["reader"]);
 
             }
-            /*
-            if (isset($existuje["reader"]))
-            {
-                $cislo = $results[0]["reader"];
+
+            }
+            var_dump($seznamCtenaru);
+        die();
+        for ($i = 0; $i<count($seznamCtenaru); $i++)
+
+        {
+
+
+
+                $cislo = $results[$i]["reader"];
 
                 $query = "SELECT email FROM ctenar WHERE `entity_id` = '$cislo'";
                 echo $query;
+            die();
                 $nasCtenar = $readConnection->fetchOne($query);
 
 
@@ -178,9 +186,9 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
                 $sablonaEmailu->send($nasCtenar,'Knihovna');
 
-            }
+
             die();
-        }
+        /*}
             for ($i = 0; $i<count($positions); $i++)
             {
                 $positions[$i] = $positions[$i]+22;     //v $positions[$i] je konkretni pozice, na ktere ve stringu $pokus
@@ -215,11 +223,9 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
                 $sablonaEmailu->setTemplateSubject('Upozornění na výpůjčky');
 
                 $sablonaEmailu->send($nasCtenar,'Knihovna');
-            */
-            }
-            var_dump($seznamCtenaru);
-        die();
 
+            }*/
+        }
 
     }
 
