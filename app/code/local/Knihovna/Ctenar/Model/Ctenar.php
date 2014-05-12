@@ -134,10 +134,11 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
         //echo '<pre>'; print_r($results); echo '</pre>';
 
-        ob_start();
+        /*ob_start();
         var_dump($results);
         $pokus = ob_get_clean();
-        echo $pokus;
+        */
+        echo '<pre>'; print_r($results); echo '</pre>';
         die();
 
 
