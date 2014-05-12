@@ -172,10 +172,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
 
 
-                echo $nasCtenar;
-                die();
-                $email = array();
-                preg_match("/[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})/i", $nasCtenar, $email);
+
 
 
                 $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('upozorneni_na_vypujcky');
@@ -190,7 +187,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
                 $sablonaEmailu->setTemplateSubject('Upozornění na výpůjčky');
 
-                $sablonaEmailu->send($email[0],'Knihovna');
+                $sablonaEmailu->send($nasCtenar,'Knihovna');
 
             }
 
