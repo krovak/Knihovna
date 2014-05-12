@@ -168,11 +168,10 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
                 //v promenne $docasny_pokus je id ctenare jako string
                 $seznamCtenaru[$i] = $docasny_pokus;
                 $query = "SELECT email FROM ctenar WHERE `entity_id` = '$seznamCtenaru[$i]'";
-                $results = $readConnection->fetchAll($query);
+                $nasCtenar = $readConnection->fetchOne($query);
 
-                ob_start();
-                var_dump($results);
-                $nasCtenar = ob_get_clean();
+
+
                 echo $nasCtenar;
                 die();
                 $email = array();
