@@ -15,6 +15,11 @@
                     <sort_order>2</sort_order>
                     <action>adminhtml/zanr</action>
                 </zanry>
+                <importCSV>
+                    <title>Import from csv</title>
+                    <sort_order>2</sort_order>
+                    <action>adminhtml/tituly</action>
+                </importCSV>
             </children>
         </tituly>
     </menu>
