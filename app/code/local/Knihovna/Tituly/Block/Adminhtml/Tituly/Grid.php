@@ -143,7 +143,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
             }
             $page ++;
             foreach ($collection as $item) {
-                $item->setState($item->getState(), 'processing'); $item->save();
+                //$item->setState($item->getState(), 'processing'); $item->save();
                 call_user_func_array(array($this, $callback), array_merge(array($item), $args));
             }
         }
