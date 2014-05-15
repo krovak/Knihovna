@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<layout>
+    <ctenar_login_index>
+        <reference name="content">
+            <block type="ctenar/login" template="knihovna/ctenar/login.phtml"></block>
+        </reference>
+    </ctenar_login_index>
+
+    <ctenar_index_vypujcky>
+        <reference name="content">
+            <block type="vypujcky/vypujckyCtenar" name="vypujcky.vypujckyctenar" template="knihovna/vypujcky/vypujcky_ctenar.phtml"></block>
+        </reference>
+    </ctenar_index_vypujcky>
+
+    <ctenar_index_profil>
+        <reference name="content">
+            <block type="ctenar/info" name="ctenar.info" template="knihovna/ctenar/info.phtml"></block>
+        </reference>
+    </ctenar_index_profil>
+
+    <ctenar_index_nastenka>
+        <reference name="content">
+            <block type="core/template" name="ctenar.nastenka" template="knihovna/ctenar/nastenka.phtml">
+                <!--<block before="ctenar.info" type="vypujcky/vypujcky_ctenar" name="vypujcky.vypujckyctenar" template="knihovna/vypujcky/vypujcky_ctenar.phtml"></block>-->
+                <block type="ctenar/info" name="ctenar.info" template="knihovna/ctenar/info.phtml"></block>
+            </block>
+        </reference>
+    </ctenar_index_nastenka>
+</layout>

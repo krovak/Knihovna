@@ -31,11 +31,11 @@ class Knihovna_Ctenar_Adminhtml_CtenarController extends Mage_Adminhtml_Controll
         return $this;
     }
 
-//    public function newAction()
-//    {
-//        $this->_forward('edit');
-//
-//    }
+/*    public function newAction()
+    {
+        $this->_forward('edit');
+
+    }*/
 
     public function editAction()
     {

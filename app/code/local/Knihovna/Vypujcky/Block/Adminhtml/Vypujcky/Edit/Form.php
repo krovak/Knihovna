@@ -61,7 +61,7 @@ class Knihovna_Vypujcky_Block_Adminhtml_Vypujcky_Edit_Form extends Mage_Adminhtm
             'tabindex'           => 1,
             'image'              => $this->getSkinUrl('images/grid-cal.gif'),
             'format'             => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),
-            'class'              => 'validate-date',
+           // 'class'              => 'validate-date',
             'required'           => true
         ));
 

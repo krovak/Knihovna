@@ -33,26 +33,18 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
 
         if (isset($_COOKIE["textEmailu"]))
-        {
-            $promenna = $_COOKIE["textEmailu"];
+        $promenna = $_COOKIE["textEmailu"];
         if (isset($promenna) and strlen($promenna) > 0)
-        {
-            setcookie("textEmailu");
         $ctenar->poslatEmail($promenna,'Knihovna');
-        }
-        }
+        setcookie("textEmailu");
 
-        //$ctenar->pridaniTokenu();
+
         if (isset($_COOKIE["resetHesla"]))
-        {    $promenna = $_COOKIE["resetHesla"];
+            $promenna = $_COOKIE["resetHesla"];
         if (isset($promenna) and strlen($promenna) > 0)
-        {
-            setcookie("resetHesla");
-            //print_r($_COOKIE);
-            //die();
             $ctenar->resetHesla();
-        }
-        }
+        setcookie("resetHesla");
+
 
 
 
@@ -88,7 +80,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
                 'required' => false,
             )
         );
-        $f->addField('submitemail', 'button', array(
+      /*  $f->addField('submitemail', 'semail', array(
             'label'     => 'Odeslat E-mail',
             'value'  => 'Poslat',
             'required'  => false,
@@ -106,11 +98,12 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
 
 
         ));
-        $f->addField('reset_hesla', 'button', array(
+        */$f->addField('reset_hesla', 'submit', array(
             'label'     => 'Vyresetovat heslo',
             'value'  => 'Poslat',
             'required'  => false,
             'onclick' => "
+
             var val5 = 'ano';
             document.cookie = 'resetHesla'+'='+val5;
             var link = document.createElement('a');
@@ -118,7 +111,7 @@ class Knihovna_Ctenar_Block_Adminhtml_Ctenar_Edit_Tab_Hlavni
             document.body.appendChild(link);
             link.click();
             ",
-            'after_element_html' => '<small>Heslo vyresetujete stisknutím tlačítka Vyresetovat heslo.</small>',
+            'after_element_html' => '<small>Heslo vyresetujete stishnutím tlačítka Vyresetovat heslo.</small>',
             'tabindex' => 1
 
 
