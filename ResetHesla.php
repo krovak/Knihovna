@@ -25,7 +25,8 @@
                     foreach ($collection as $item)
                     {
                         $pole = $item->getData();
-                        echo '<pre>'; print_r($pole); echo '</pre>';
+                        //echo '<pre>'; print_r($pole); echo '</pre>';
+                        echo $pole['email'];
                         break; // just display one item
                     }
                     die();
