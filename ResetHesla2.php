@@ -63,7 +63,7 @@ echo("<html><head><meta charset='utf-8'></head><body><script type='text/javascri
 
 echo '<script type="text/javascript">
 
-window.location = "knihovna.cokoliv.eu";
+window.location = "http://knihovna.cokoliv.eu";
 </script>';
 
 
