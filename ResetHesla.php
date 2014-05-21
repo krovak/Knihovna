@@ -32,8 +32,25 @@
                             $readConnection = $resource->getConnection('core_read');
                             $writeConnection = $resource->getConnection('core_write');
 
+                            $nahodnaHodnota = sha1(time());
+                            $query = "UPDATE ctenar SET token='$nahodnaHodnota' WHERE `email`='$uzivateluv_email'";
+                            $writeConnection->query($query);
+
+                            $webAdresa = "http://knihovna.cokoliv.eu/ResetHesla2.php?token=" . $nahodnaHodnota;
+
+                            $emailTemplate = Mage::getModel('core/email_template')
+                                ->loadDefault('dotaz_na_heslo');
+
+                            $emailTemplateVariables = array();
+                            $emailTemplateVariables['adresa'] = $webAdresa;
+
+                            $processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
+
+                            $emailTemplate->send($uzivateluv_email,'John Doe', $emailTemplateVariables);
+
                             //vygenerujeme nove nahodne heslo:
-                            $noveHeslo = sha1(time());
+                            //odeslani noveho hesla
+                            /*$noveHeslo = sha1(time());
 
 
 
@@ -56,7 +73,7 @@
                             $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
 
                             $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
-
+                            */
                         }
 
                     }

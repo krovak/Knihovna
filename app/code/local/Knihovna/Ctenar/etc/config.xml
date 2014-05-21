@@ -96,6 +96,15 @@
                 </upozorneni_na_vypujcky>
             </email>
         </template>
+        <template>
+            <email>
+                <dotaz_na_heslo>
+                    <label>Dotaz na změnu hesla</label>
+                    <file>dotazHeslo.html</file>
+                    <type>html</type>
+                </dotaz_na_heslo>
+            </email>
+        </template>
     </global>
     <crontab>
         <jobs>
