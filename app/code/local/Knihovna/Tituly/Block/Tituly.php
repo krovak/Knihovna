@@ -33,7 +33,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         }
         elseif (!strcmp($podle,'autor'))
         {
-            $param = array(
+            $autor = array(
                 array(
                     "finset" => array($param)
                 ),
@@ -45,7 +45,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
 
 
         $books = Mage::getModel('tituly/tituly')->getCollection()
-            ->addFieldToFilter($podle, $param);
+            ->addFieldToFilter($podle, $autor);
         echo '%'.$param.'%';
 
         echo $podle;
