@@ -19,6 +19,15 @@
                     echo 'Nezadali jste e-mailovou adresu!';
                 }
                 else {
+                    $collection = Mage::getModel('ctenar/ctenar')->getCollection();
+
+
+                    foreach ($collection as $item)
+                    {
+                        var_dump($item->getData());
+                        break; // just display one item
+                    }
+                    die();
                     $uzivateluv_email = $docasny_email[0];
                     $resource = Mage::getSingleton('core/resource');
                     $readConnection = $resource->getConnection('core_read');
