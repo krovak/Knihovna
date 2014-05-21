@@ -31,11 +31,21 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
             //$operator = 'gteq';
             $podle = 'rok_vydani';
         }
+        elseif (!strcmp($podle,'autor'))
+        {
+            $param = array(
+                array(
+                    "finset" => array($param)
+                ),
+            );
+        }
         else
             $operator = 'like';
 
+
+
         $books = Mage::getModel('tituly/tituly')->getCollection()
-            ->addFieldToFilter($podle, array('like'=>$param));
+            ->addFieldToFilter($podle, $param);
         echo '%'.$param.'%';
 
         echo $podle;
