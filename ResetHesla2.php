@@ -14,16 +14,19 @@ $collection = Mage::getModel('ctenar/ctenar')->getCollection()
 ->addFieldToSelect('email')
 ->addFieldToSelect('token');
 
+$token = $_GET['token'];
+
 foreach ($collection as $item)
     $pole = $item->getData();
+    if ($pole['token'] == $token) {
     echo '<pre>'; print_r($pole); echo '</pre>';
     die();
-
+    }
 //vygenerujeme nove nahodne heslo:
 //odeslani noveho hesla
 $noveHeslo = sha1(time());
 
-$token = $_GET['token'];
+
 $query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `token`='$token'";
 $writeConnection->query($query);
 
