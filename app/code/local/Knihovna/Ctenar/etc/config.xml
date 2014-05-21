@@ -99,7 +99,7 @@
         <template>
             <email>
                 <dotaz_na_heslo>
-                    <label>Dotaz na změnu hesla</label>
+                    <label>Dotaz na zmenu hesla</label>
                     <file>dotazHeslo.html</file>
                     <type>html</type>
                 </dotaz_na_heslo>
