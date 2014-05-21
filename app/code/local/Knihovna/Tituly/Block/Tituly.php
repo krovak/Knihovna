@@ -43,9 +43,12 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
 
 
 
-        $books = Mage::getModel('tituly/tituly')->getCollection()
-            ->addFieldToFilter($podle, array('like' => '%'))
-            ->addFieldToSelect($podle);
+        $books = Mage::getModel('tituly/tituly')->getCollection();
+            foreach ($books as $item){
+                $pole = $item->getData();
+                echo $pole['autor'];
+            }
+
         echo '%'.$param.'%';
 
         echo $podle;
