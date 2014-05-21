@@ -48,7 +48,7 @@ foreach ($collection as $item){
 
         $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
 
-        $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
+        $sablonaEmailu->send($pole['email'],'John Doe', $promenneProSablonu);
 
     }
 
