@@ -19,8 +19,7 @@ $collection = Mage::getModel('ctenar/ctenar')->getCollection()
 ->addFieldToSelect('token');
 
 $token = $_GET['token'];
-echo $token;
-die();
+
 
 foreach ($collection as $item)
     $pole = $item->getData();
