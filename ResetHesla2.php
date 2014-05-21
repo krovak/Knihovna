@@ -56,8 +56,9 @@ foreach ($collection as $item){
 
 
 }
-echo '<script type="text/javascript" charset="utf-8">
-alert("Vaše heslo bylo vyresetováno a na e-mail Vám bylo zasláno heslo nové. Nyní budete přesměrování" +
- "na hlavní stránku knihovny.");
-</script>';
+
+$zprava = 'Vaše heslo bylo vyresetováno a na e-mail Vám bylo zasláno heslo nové. Nyní budete přesměrování" +
+ "na hlavní stránku knihovny.';
+
+echo("<html><head><meta charset='utf-8'></head><body><script type='text/javascript'>alert('" . $zprava . "');</script></body></html>");
     ?>
