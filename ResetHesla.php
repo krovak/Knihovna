@@ -38,14 +38,13 @@
 
                             $webAdresa = "http://knihovna.cokoliv.eu/ResetHesla2.php?token=" . $nahodnaHodnota;
 
-                            $emailTemplate = Mage::getModel('core/email_template')
-                                ->loadDefault('dotaz_na_heslo');
+                            $emailTemplate = Mage::getModel('core/email_template')->loadDefault('dotaz_na_heslo');
 
                             $emailTemplateVariables = array();
                             $emailTemplateVariables['adresa'] = $webAdresa;
 
                             $processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
-                            echo 'Ahoj!';
+                            echo $webAdresa;
                             die();
                             $emailTemplate->send($uzivateluv_email,'John Doe', $emailTemplateVariables);
 
