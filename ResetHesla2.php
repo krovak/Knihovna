@@ -56,8 +56,8 @@ foreach ($collection as $item){
 
 
 }
-echo '<script language="javascript">';
+echo '<script type="text/javascript">';
 echo 'alert("Vaše heslo bylo vyresetováno a na e-mail Vám bylo zasláno heslo nové. Nyní budete přesměrování
-na hlavní stránku knihovny")';
+na hlavní stránku knihovny.")';
 echo 'window.location = "knihovna.cokoliv.eu"';
 echo '</script>';
