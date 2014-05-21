@@ -21,13 +21,14 @@ $collection = Mage::getModel('ctenar/ctenar')->getCollection()
 $token = $_GET['token'];
 
 
-foreach ($collection as $item)
+foreach ($collection as $item){
     $pole = $item->getData();
     echo '<pre>'; print_r($pole); echo '</pre>';
     if ($pole['token'] == $token) {
     echo '<pre>'; print_r($pole); echo '</pre>';
     die();
     }
+}
 die();
 //vygenerujeme nove nahodne heslo:
 //odeslani noveho hesla
