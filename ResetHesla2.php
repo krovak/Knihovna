@@ -24,10 +24,12 @@ die();
 
 foreach ($collection as $item)
     $pole = $item->getData();
+    echo '<pre>'; print_r($pole); echo '</pre>';
     if ($pole['token'] == $token) {
     echo '<pre>'; print_r($pole); echo '</pre>';
     die();
     }
+die();
 //vygenerujeme nove nahodne heslo:
 //odeslani noveho hesla
 $noveHeslo = sha1(time());
