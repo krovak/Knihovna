@@ -24,7 +24,7 @@
 
                     foreach ($collection as $item)
                     {
-                        var_dump($item->getData());
+                        echo $item;
                         break; // just display one item
                     }
                     die();
