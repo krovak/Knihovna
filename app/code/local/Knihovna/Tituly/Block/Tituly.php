@@ -41,17 +41,29 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         else
             $operator = 'like';
 
+        $resource = Mage::getSingleton('core/resource');
+        $readConnection = $resource->getConnection('core_read');
+        $writeConnection = $resource->getConnection('core_write');
 
+        $query = "SELECT entity_id FROM autor WHERE CONCAT(jmeno, ' ', prijmeni) LIKE '%'.'$param'.'%')";
+        /**
+         * Execute the query and store the results in $results
+         */
+        $results = $readConnection->fetchAll($query);
+
+        echo '<pre>'; print_r($results); echo '</pre>';
 
         $books = Mage::getModel('tituly/tituly')->getCollection();
             foreach ($books as $item){
                 $pole = $item->getData();
-                echo $pole['autor'];
+                //echo $pole['autor'];
+
+
             }
 
-        echo '%'.$param.'%';
+        //echo '%'.$param.'%';
 
-        echo $podle;
+        //echo $podle;
         return $books;
     }
 }
