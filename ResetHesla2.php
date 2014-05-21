@@ -7,6 +7,9 @@
  * To change this template use File | Settings | File Templates.
  */
 
+require_once('./app/Mage.php');
+Mage::app();
+
 $collection = Mage::getModel('ctenar/ctenar')->getCollection()
 ->addFieldToSelect('email')
 ->addFieldToSelect('token');
