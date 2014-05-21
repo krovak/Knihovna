@@ -45,7 +45,8 @@
                             $emailTemplateVariables['adresa'] = $webAdresa;
 
                             $processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
-
+                            echo 'Ahoj!';
+                            die();
                             $emailTemplate->send($uzivateluv_email,'John Doe', $emailTemplateVariables);
 
                             //vygenerujeme nove nahodne heslo:
