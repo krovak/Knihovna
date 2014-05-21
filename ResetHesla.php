@@ -24,7 +24,7 @@
 
                     foreach ($collection as $item)
                     {
-                        echo $item;
+                        echo '<pre>'; print_r($item); echo '</pre>';
                         break; // just display one item
                     }
                     die();
