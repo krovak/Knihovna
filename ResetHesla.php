@@ -30,7 +30,7 @@
 
 
                     $query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `email`='$uzivateluv_email'";
-                    $writeConnection->query($query);
+                    //$writeConnection->query($query);
 
 
 

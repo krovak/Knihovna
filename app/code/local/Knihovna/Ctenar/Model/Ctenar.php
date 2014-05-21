@@ -153,7 +153,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
 
 
-                $cislo = $results[$i]["reader"];
+                $cislo = $seznamCtenaru[$i];
 
                 $query = "SELECT email FROM ctenar WHERE `entity_id` = '$cislo'";
 
