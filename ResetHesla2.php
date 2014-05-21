@@ -10,6 +10,10 @@
 require_once('./app/Mage.php');
 Mage::app();
 
+$resource = Mage::getSingleton('core/resource');
+$readConnection = $resource->getConnection('core_read');
+$writeConnection = $resource->getConnection('core_write');
+
 $collection = Mage::getModel('ctenar/ctenar')->getCollection()
 ->addFieldToSelect('email')
 ->addFieldToSelect('token');
