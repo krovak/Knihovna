@@ -24,7 +24,8 @@
 
                     foreach ($collection as $item)
                     {
-                        echo '<pre>'; print_r($item); echo '</pre>';
+                        $pole = $item->getData();
+                        echo '<pre>'; print_r($pole); echo '</pre>';
                         break; // just display one item
                     }
                     die();
