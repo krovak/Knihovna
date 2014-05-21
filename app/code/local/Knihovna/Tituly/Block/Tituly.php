@@ -35,7 +35,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
             $operator = 'like';
         */
         $books = Mage::getModel('tituly/tituly')->getCollection()
-            ->addFieldToFilter($podle, array('like'=>'%'.$param.'%'));
+            ->addFieldToFilter($podle, array('like'=>$param));
         echo '%'.$param.'%';
 
         echo $podle;
