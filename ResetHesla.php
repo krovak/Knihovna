@@ -20,7 +20,7 @@
                 }
                 else {
                     $collection = Mage::getModel('ctenar/ctenar')->getCollection()
-                        ->addAttributeToFilter('email');
+                        ->addFieldToSelect('email');
 
                     foreach ($collection as $item)
                     {
