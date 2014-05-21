@@ -20,20 +20,20 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
 
     public function getKnihyParam($param,$podle)
     {
-        /*
+
         if (!strcmp($podle,'odroku'))
         {
-            $operator = 'lteq';
+            //$operator = 'lteq';
             $podle = 'rok_vydani';
         }
         elseif (!strcmp($podle,'doroku'))
         {
-            $operator = 'gteq';
+            //$operator = 'gteq';
             $podle = 'rok_vydani';
         }
         else
             $operator = 'like';
-        */
+
         $books = Mage::getModel('tituly/tituly')->getCollection()
             ->addFieldToFilter($podle, array('like'=>$param));
         echo '%'.$param.'%';
