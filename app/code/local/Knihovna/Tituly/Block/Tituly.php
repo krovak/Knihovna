@@ -44,7 +44,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
 
 
         $books = Mage::getModel('tituly/tituly')->getCollection()
-            ->addFieldToFilter($podle, array("finset"=>$param));
+            ->addFieldToFilter($podle, 'notnull');
         echo '%'.$param.'%';
 
         echo $podle;
