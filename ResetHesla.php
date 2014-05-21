@@ -26,40 +26,42 @@
                     {
                         $pole = $item->getData();
                         //echo '<pre>'; print_r($pole); echo '</pre>';
-                        echo $pole['email'];
-                        break; // just display one item
+                        if ($pole['email'] == $docasny_email[0]) {
+                            $uzivateluv_email = $docasny_email[0];
+                            $resource = Mage::getSingleton('core/resource');
+                            $readConnection = $resource->getConnection('core_read');
+                            $writeConnection = $resource->getConnection('core_write');
+
+                            //vygenerujeme nove nahodne heslo:
+                            $noveHeslo = sha1(time());
+
+
+
+                            $query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `email`='$uzivateluv_email'";
+                            $writeConnection->query($query);
+
+
+
+                            $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
+
+
+
+                            $promenneProSablonu = array();
+                            $promenneProSablonu['heslo'] = $noveHeslo;
+
+
+                            $sablonaEmailu->setSenderName('Administrace');
+                            $sablonaEmailu->setSenderEmail('mail');
+
+                            $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
+
+                            $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
+                            echo 'Pokud jste zadali platný e-mail, Vaše heslo bylo vyresetováno a e-mailem Vám bylo zasláno nové.';
+                        }
+
                     }
-                    die();
-                    $uzivateluv_email = $docasny_email[0];
-                    $resource = Mage::getSingleton('core/resource');
-                    $readConnection = $resource->getConnection('core_read');
-                    $writeConnection = $resource->getConnection('core_write');
-
-                    //vygenerujeme nove nahodne heslo:
-                    $noveHeslo = sha1(time());
 
 
-
-                    $query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `email`='$uzivateluv_email'";
-                    $writeConnection->query($query);
-
-
-
-                    $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
-
-
-
-                    $promenneProSablonu = array();
-                    $promenneProSablonu['heslo'] = $noveHeslo;
-
-
-                    $sablonaEmailu->setSenderName('Administrace');
-                    $sablonaEmailu->setSenderEmail('mail');
-
-                    $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
-
-                    $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
-                    echo 'Pokud jste zadali platný e-mail, Vaše heslo bylo vyresetováno a e-mailem Vám bylo zasláno nové.';
 
                 }
 
