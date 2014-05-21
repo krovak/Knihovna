@@ -54,33 +54,6 @@
                             $emailTemplate->send($uzivateluv_email,'John Doe', $emailTemplateVariables);
 
 
-
-                            //vygenerujeme nove nahodne heslo:
-                            //odeslani noveho hesla
-                            /*$noveHeslo = sha1(time());
-
-
-
-                            $query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `email`='$uzivateluv_email'";
-                            $writeConnection->query($query);
-
-
-
-                            $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
-
-
-
-                            $promenneProSablonu = array();
-                            $promenneProSablonu['heslo'] = $noveHeslo;
-
-
-                            $sablonaEmailu->setSenderName('Administrace');
-                            $sablonaEmailu->setSenderEmail('mail');
-
-                            $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
-
-                            $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
-                            */
                         }
 
                     }
