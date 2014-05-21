@@ -57,7 +57,7 @@
                         }
 
                     }
-                    echo 'Pokud jste zadali platný e-mail, Vaše heslo bylo vyresetováno a e-mailem Vám bylo zasláno nové.';
+                    echo 'Pokud jste zadali platný e-mail, byl Vám e-mailem zaslán odkaz k vyresetování hesla.';
 
 
 
