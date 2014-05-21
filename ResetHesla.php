@@ -19,8 +19,8 @@
                     echo 'Nezadali jste e-mailovou adresu!';
                 }
                 else {
-                    $collection = Mage::getModel('ctenar/ctenar')->getCollection();
-
+                    $collection = Mage::getModel('ctenar/ctenar')->getCollection()
+                        ->addAttributeToSelect('email');
 
                     foreach ($collection as $item)
                     {
