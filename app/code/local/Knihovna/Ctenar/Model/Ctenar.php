@@ -97,7 +97,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
     }
 
 
-    public function pridaniTokenu()
+    /*public function pridaniTokenu()
     {
 
         $resource = Mage::getSingleton('core/resource');
@@ -106,6 +106,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
         $writeConnection->query($query);
         echo 'Done!';
     }
+    */
 
     public function kontrolaVypujcek()
     {
