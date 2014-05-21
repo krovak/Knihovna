@@ -56,10 +56,11 @@
                             $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
 
                             $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
-                            echo 'Pokud jste zadali platný e-mail, Vaše heslo bylo vyresetováno a e-mailem Vám bylo zasláno nové.';
+
                         }
 
                     }
+                    echo 'Pokud jste zadali platný e-mail, Vaše heslo bylo vyresetováno a e-mailem Vám bylo zasláno nové.';
 
 
 
