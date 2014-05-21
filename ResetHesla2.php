@@ -23,36 +23,36 @@ $token = $_GET['token'];
 
 foreach ($collection as $item){
     $pole = $item->getData();
-    echo '<pre>'; print_r($pole); echo '</pre>';
+
     if ($pole['token'] == $token) {
-    echo '<pre>'; print_r($pole); echo '</pre>';
-    die();
+        //vygenerujeme nove nahodne heslo:
+        //odeslani noveho hesla
+        $noveHeslo = sha1(time());
+
+
+        $query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `token`='$token'";
+        $writeConnection->query($query);
+
+
+
+        $sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
+
+
+
+        $promenneProSablonu = array();
+        $promenneProSablonu['heslo'] = $noveHeslo;
+
+
+        $sablonaEmailu->setSenderName('Administrace');
+        $sablonaEmailu->setSenderEmail('mail');
+
+        $sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
+
+        $sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
+
     }
+
+
+
+
 }
-die();
-//vygenerujeme nove nahodne heslo:
-//odeslani noveho hesla
-$noveHeslo = sha1(time());
-
-
-$query = "UPDATE ctenar SET heslo=sha1('$noveHeslo') WHERE `token`='$token'";
-$writeConnection->query($query);
-
-
-
-$sablonaEmailu = Mage::getModel('core/email_template')->loadDefault('custom_email_template1');
-
-
-
-$promenneProSablonu = array();
-$promenneProSablonu['heslo'] = $noveHeslo;
-
-
-$sablonaEmailu->setSenderName('Administrace');
-$sablonaEmailu->setSenderEmail('mail');
-
-$sablonaEmailu->setTemplateSubject('Vaše heslo bylo vyresetováno');
-
-$sablonaEmailu->send($uzivateluv_email,'John Doe', $promenneProSablonu);
-
-
