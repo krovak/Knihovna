@@ -44,9 +44,16 @@
                             $emailTemplateVariables['adresa'] = $webAdresa;
 
                             $processedTemplate = $emailTemplate->getProcessedTemplate($emailTemplateVariables);
-                            echo $webAdresa;
-                            die();
+
+                            $emailTemplate->setSenderName('Administrace');
+                            $emailTemplate->setSenderEmail('mail');
+
+                            $emailTemplate->setTemplateSubject('Vyresetování hesla');
+
+
                             $emailTemplate->send($uzivateluv_email,'John Doe', $emailTemplateVariables);
+
+
 
                             //vygenerujeme nove nahodne heslo:
                             //odeslani noveho hesla
