@@ -7,6 +7,15 @@
  * To change this template use File | Settings | File Templates.
  */
 
+$collection = Mage::getModel('ctenar/ctenar')->getCollection()
+->addFieldToSelect('email')
+->addFieldToSelect('token');
+
+foreach ($collection as $item)
+    $pole = $item->getData();
+    echo '<pre>'; print_r($pole); echo '</pre>';
+    die();
+
 //vygenerujeme nove nahodne heslo:
 //odeslani noveho hesla
 $noveHeslo = sha1(time());
