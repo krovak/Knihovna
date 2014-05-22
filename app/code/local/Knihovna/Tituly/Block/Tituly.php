@@ -31,15 +31,10 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
             //$operator = 'gteq';
             $podle = 'rok_vydani';
         }
-        /*elseif (!strcmp($podle,'autor'))
+
+        elseif (!strcmp($podle,'autor'))
         {
-            $autor[] = array($param);
-            $autor[] = array('like' =>$param. ',%');
-            $autor[] = array('like' => '%,' . $param);
-            $autor[] = array('like' => '%,' . $param . ',%');
-        }*/
-        else
-            $operator = 'like';
+            //$operator = 'like';
 
         $resource = Mage::getSingleton('core/resource');
         $readConnection = $resource->getConnection('core_read');
@@ -72,7 +67,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         );
         $autori[] = $novyAutor;
         }
-        echo '<pre>'; print_r($autori); echo '</pre>';
+        //echo '<pre>'; print_r($autori); echo '</pre>';
 
         $books = Mage::getModel('tituly/tituly')->getCollection()
         ->addFieldToFilter($podle, $autori);
@@ -83,9 +78,13 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
 
             }
 */
-        echo '%'.$param.'%';
 
-        echo $podle;
         return $books;
+        }
+        else {
+            $books = Mage::getModel('tituly/tituly')->getCollection()
+                ->addFieldToFilter($podle, '%'.$param.'%');
+            return $books;
+        }
     }
 }
