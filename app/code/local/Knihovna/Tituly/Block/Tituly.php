@@ -51,23 +51,27 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         /**
          * Execute the query and store the results in $results
          */
+        $cislaCtenaru = array();
         $results = $readConnection->fetchAll($query);
-        //for ($i = 0; $i < count)
+        /*for ($i = 0; $i < count($results); $i++) {
+            $cislaCtenaru[$i] =
+        }*/
         //echo count($results);
-        //echo $results[1]["entity_id"];
-        echo '<pre>'; print_r($results); echo '</pre>';
+                                                //echo $results[1]["entity_id"];
+        //echo '<pre>'; print_r($results); echo '</pre>';
 
-        $books = Mage::getModel('tituly/tituly')->getCollection();
-            foreach ($books as $item){
+        $books = Mage::getModel('tituly/tituly')->getCollection()
+        ->addFieldToFilter($podle, array("finset"=>$results[0]["entity_id"]));
+            /*foreach ($books as $item){
                 $pole = $item->getData();
                 //echo $pole['autor'];
 
 
             }
+*/
+        echo '%'.$param.'%';
 
-        //echo '%'.$param.'%';
-
-        //echo $podle;
+        echo $podle;
         return $books;
     }
 }
