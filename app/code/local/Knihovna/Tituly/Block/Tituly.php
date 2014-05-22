@@ -45,7 +45,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         $readConnection = $resource->getConnection('core_read');
         $writeConnection = $resource->getConnection('core_write');
         $hledanyString = '%'.$param.'%';
-        $query = "SELECT entity_id FROM autor WHERE CONCAT(jmeno, ' ', prijmeni) LIKE '$hledanyString')";
+        $query = "SELECT entity_id FROM autor WHERE CONCAT(jmeno, ' ', prijmeni) LIKE '$hledanyString'";
         /**
          * Execute the query and store the results in $results
          */
