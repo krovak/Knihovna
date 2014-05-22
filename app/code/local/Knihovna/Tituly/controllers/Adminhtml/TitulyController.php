@@ -78,9 +78,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
 
     public function importFromCsvAction()
     {
-        $grid       = $this->getLayout()->createBlock('tituly/adminhtml_tituly_grid');
-        $grid->importCsvFile();
-    }
+        echo 'd';    }
 
 
 }
