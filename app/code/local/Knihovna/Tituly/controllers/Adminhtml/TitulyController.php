@@ -79,8 +79,8 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
     public function importFromCsvAction()
     {
         $csv = new Varien_File_Csv();
-        $data = $csv->getData('name.csv');
-        array_shift($data);
+        //$data = $csv->getData('name.csv');
+       // array_shift($data);
 
         $target = Mage::getModel('tituly/adminhtml_tituly_grid');
         $target->addData(array('autor' => 'ja', 'isbn' => 'ISBN 80-204-0105-9', 'pocet_stranek' => '90', 'rok_vydani' => 2013,'zanr'=> 2));
