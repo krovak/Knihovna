@@ -90,7 +90,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
                     ->addFieldToFilter($podle, array($operator=>$param));
                 return $books;
             }
-            elseif (!strcmp($podle,'nazev'))
+            elseif (!strcmp($podle,'nazev') OR !strcmp($podle,'isbn'))
             {
                 $operator = 'like';
                 $books = Mage::getModel('tituly/tituly')->getCollection()
