@@ -31,6 +31,11 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         $this->_forward('edit');
     }
 
+    public function importFromCsvAction()
+    {
+        echo 'ahoj';
+    }
+
     public function deleteAction()
     {
         Mage::getModel('tituly/tituly')->load($this->getRequest()->getParam('id'))->delete();
@@ -63,7 +68,6 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         /** @var $m Knihovna_ */
         $m = Mage::getModel('tituly/import');
         $m->getInfo($this->getRequest()->getParam('q'));
-
     }
 
     public function exportCsvEnhancedAction()
