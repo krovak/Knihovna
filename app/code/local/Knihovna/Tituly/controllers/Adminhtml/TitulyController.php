@@ -83,7 +83,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
        // array_shift($data);
 
 
-        $target = Mage::getModel('knihovna/tituly');
+        $target = Mage::getModel('tituly/tituly');
         $target->setautor('ja');
         $target->setisbn('ISBN 80-204-0105-8');
         $target->setpocet_stranek('90');
