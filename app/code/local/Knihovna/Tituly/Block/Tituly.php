@@ -73,7 +73,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         $autori[] = $novyAutor;
         }
         echo '<pre>'; print_r($autori); echo '</pre>';
-        //die();
+        die();
 
         $books = Mage::getModel('tituly/tituly')->getCollection()
         ->addFieldToFilter($podle, array("finset"=>$autori));
