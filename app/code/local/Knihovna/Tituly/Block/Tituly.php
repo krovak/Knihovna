@@ -76,22 +76,28 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
 
             if (!strcmp($podle,'odroku'))
             {
-                $operator = 'lteq';
+                $operator = 'gteq';
                 $podle = 'rok_vydani';
+                $books = Mage::getModel('tituly/tituly')->getCollection()
+                    ->addFieldToFilter($podle, array($operator=>$param));
+                return $books;
             }
             elseif (!strcmp($podle,'doroku'))
             {
-                $operator = 'gteq';
+                $operator = 'lteq';
                 $podle = 'rok_vydani';
+                $books = Mage::getModel('tituly/tituly')->getCollection()
+                    ->addFieldToFilter($podle, array($operator=>$param));
+                return $books;
             }
             elseif (!strcmp($podle,'nazev'))
             {
                 $operator = 'like';
-
+                $books = Mage::getModel('tituly/tituly')->getCollection()
+                    ->addFieldToFilter($podle, array($operator=>'%'.$param.'%'));
+                return $books;
             }
-            $books = Mage::getModel('tituly/tituly')->getCollection()
-                ->addFieldToFilter($podle, array($operator=>$param));
-            return $books;
+
         }
 
     }
