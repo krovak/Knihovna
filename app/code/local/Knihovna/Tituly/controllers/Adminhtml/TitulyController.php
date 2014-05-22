@@ -96,13 +96,11 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         try
         {
             $target->save();
-            echo "saved ";
         } catch (Exception $e) {
             echo $e->getMessage() . "\n";
         }
 
         $this->loadLayout();
-        $this->_addContent($this->getLayout());
 
         //foreach ($data as $_data) {
 
