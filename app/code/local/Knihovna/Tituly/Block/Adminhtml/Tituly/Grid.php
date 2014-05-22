@@ -19,6 +19,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
         $this->setEmptyText('Žádná data');
         $this->setSaveParametersInSession(true);
 
+
         $this->importCsvFile();
     }
 
