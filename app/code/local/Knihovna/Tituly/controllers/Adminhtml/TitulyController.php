@@ -81,6 +81,8 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         //$csv = new Varien_File_Csv();
         //$data = $csv->getData('name.csv');
        // array_shift($data);
+        $this->_initAction()->_addContent($this->getLayout()
+            ->createBlock('tituly/adminhtml_tituly'))->renderLayout();
 
         $target = Mage::getModel('tituly/tituly');
         $target->setautor('ja');
