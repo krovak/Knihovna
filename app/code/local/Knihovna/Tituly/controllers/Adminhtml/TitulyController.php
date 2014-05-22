@@ -84,14 +84,19 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
 
 
         $target = Mage::getModel('tituly/tituly');
-        //  var_dump($target);
+        var_dump($target);
         $target->setAutor('ja');
         $target->setIsbn('ISBN 80-204-0105-8');
         $target->setPocet_stranek('90');
         $target->setRok_vydan('2013');
         $target->setZanr('2');
-        $target->save();
-
+        try
+        {
+            $target->save();
+            echo "saved ";
+        } catch (Exception $e) {
+            echo $e->getMessage() . "\n";
+        }
 
         $this->_initAction()->_addContent($this->getLayout()
             ->createBlock('tituly/adminhtml_tituly'))->renderLayout();
