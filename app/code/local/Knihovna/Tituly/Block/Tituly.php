@@ -61,11 +61,9 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         //echo '<pre>'; print_r($results); echo '</pre>';
         $autori = array(
             array(
-                "finset" => array(348)
+                "finset" => array($results[0]["entity_id"])
             ),
-            array(
-                "finset" => array(350)
-            ),
+
         );
         echo '<pre>'; print_r($autori); echo '</pre>';
 
