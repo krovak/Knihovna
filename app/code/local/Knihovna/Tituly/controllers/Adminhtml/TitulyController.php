@@ -83,7 +83,11 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
        // array_shift($data);
 
         $target = Mage::getModel('tituly/tituly');
-        $target->addData(array('entity_id' => '7', 'autor' => 'ja', 'isbn' => 'ISBN 80-204-0105-9', 'pocet_stranek' => '90', 'rok_vydani' => '2013','zanr'=> '2'));
+        $target->setautor('ja');
+        $target->setisbn('ISBN 80-204-0105-9');
+        $target->setpocet_stranek('90');
+        $target->setrok_vydani('2013');
+        $target->setzanrt('2');
         $target->save();
 
         //foreach ($data as $_data) {
