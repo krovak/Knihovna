@@ -83,7 +83,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         }
         else {
             $books = Mage::getModel('tituly/tituly')->getCollection()
-                ->addFieldToFilter($podle, '%'.$param.'%');
+                ->addFieldToFilter($podle, array('like'=>'%'.$param.'%'));
             return $books;
         }
     }
