@@ -52,7 +52,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
          * Execute the query and store the results in $results
          */
         $results = $readConnection->fetchAll($query);
-        echo '$results[$1]["entity_id"]';
+        echo $results[1]["entity_id"];
         //echo '<pre>'; print_r($results); echo '</pre>';
 
         $books = Mage::getModel('tituly/tituly')->getCollection();
