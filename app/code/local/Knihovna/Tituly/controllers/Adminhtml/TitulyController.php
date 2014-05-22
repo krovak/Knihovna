@@ -101,7 +101,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         }
 
         $this->loadLayout();
-
+        $this->renderLayout();
         //foreach ($data as $_data) {
 
         //}
