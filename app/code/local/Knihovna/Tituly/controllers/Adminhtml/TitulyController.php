@@ -85,12 +85,14 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
 
         $target = Mage::getModel('tituly/tituly');
 
+        /*
         $target->setNazev("kniha");
         $target->setAutor(5);
         $target->setIsbn('ISBN 80-204-0105-8');
         $target->setPocet_stranek('90');
         $target->setRok_vydani('2013');
         $target->setZanr('2');
+        */
         try
         {
             $target->save();
@@ -100,6 +102,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         }
 
         $this->loadLayout();
+        $this->_addContent($this->getLayout());
 
         //foreach ($data as $_data) {
 
