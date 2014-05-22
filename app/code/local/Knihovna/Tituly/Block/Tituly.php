@@ -47,7 +47,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         $hledanyString = '%'.$param.'%';
 
 
-        $query = "SELECT entity_id FROM knihovna_autor WHERE CONCAT(jmeno, ' ', prijmeni) LIKE '$hledanyString'";
+        $query = "SELECT entity_id FROM knihovna_autor WHERE CONCAT(jmeno, ' ', prijmeni) LIKE '%a%'";
         /**
          * Execute the query and store the results in $results
          */
