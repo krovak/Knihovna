@@ -87,7 +87,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
             elseif (!strcmp($podle,'nazev'))
             {
                 $operator = 'like';
-                $podle = 'rok_vydani';
+
             }
             $books = Mage::getModel('tituly/tituly')->getCollection()
                 ->addFieldToFilter($podle, array($operator=>'%'.$param.'%'));
