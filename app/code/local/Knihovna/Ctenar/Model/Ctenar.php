@@ -102,11 +102,12 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
         $resource = Mage::getSingleton('core/resource');
         $writeConnection = $resource->getConnection('core_write');
-        $query = "ALTER TABLE ctenar ADD token VARCHAR(20)";
+        $query = "ALTER TABLE ctenar ADD token VARCHAR(40)";
         $writeConnection->query($query);
         echo 'Done!';
     }
     */
+
     public function kontrolaVypujcek()
     {
         $resource = Mage::getSingleton('core/resource');
@@ -153,7 +154,7 @@ class Knihovna_Ctenar_Model_Ctenar extends Mage_Core_Model_Abstract
 
 
 
-                $cislo = $results[$i]["reader"];
+                $cislo = $seznamCtenaru[$i];
 
                 $query = "SELECT email FROM ctenar WHERE `entity_id` = '$cislo'";
 
