@@ -21,18 +21,9 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
     public function getKnihyParam($param,$podle)
     {
 
-        if (!strcmp($podle,'odroku'))
-        {
-            //$operator = 'lteq';
-            $podle = 'rok_vydani';
-        }
-        elseif (!strcmp($podle,'doroku'))
-        {
-            //$operator = 'gteq';
-            $podle = 'rok_vydani';
-        }
 
-        elseif (!strcmp($podle,'autor'))
+
+        if (!strcmp($podle,'autor'))
         {
             //$operator = 'like';
 
@@ -82,9 +73,26 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         return $books;
         }
         else {
+
+            if (!strcmp($podle,'odroku'))
+            {
+                $operator = 'lteq';
+                $podle = 'rok_vydani';
+            }
+            elseif (!strcmp($podle,'doroku'))
+            {
+                $operator = 'gteq';
+                $podle = 'rok_vydani';
+            }
+            elseif (!strcmp($podle,'nazev'))
+            {
+                $operator = 'like';
+                $podle = 'rok_vydani';
+            }
             $books = Mage::getModel('tituly/tituly')->getCollection()
-                ->addFieldToFilter($podle, array('like'=>'%'.$param.'%'));
+                ->addFieldToFilter($podle, array($operator=>'%'.$param.'%'));
             return $books;
         }
+
     }
 }
