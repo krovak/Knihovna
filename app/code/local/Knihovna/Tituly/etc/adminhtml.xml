@@ -18,7 +18,7 @@
                 <importCSV>
                     <title>Import from csv</title>
                     <sort_order>2</sort_order>
-                    <action>adminhtml/tituly/importFromCsv</action>
+                    <action>adminhtml/tituly_importFromCsv</action>
                 </importCSV>
             </children>
         </tituly>
