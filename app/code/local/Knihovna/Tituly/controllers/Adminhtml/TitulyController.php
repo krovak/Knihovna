@@ -103,11 +103,11 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         $this->loadLayout();
         $this->renderLayout();
 
-        ?>
-            <form>
-                dfadfa
-            </form>
-        <?php
+        $this->setAfterElementHtml("
+        <from>
+            adfadfa
+        </from>
+        ");
         //foreach ($data as $_data) {
 
         //}
