@@ -84,7 +84,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
 
 
         $target = Mage::getModel('tituly/tituly');
-        var_dump($target);
+
         $target->setNazev("kniha");
         $target->setAutor(5);
         $target->setIsbn('ISBN 80-204-0105-8');
@@ -99,8 +99,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
             echo $e->getMessage() . "\n";
         }
 
-        $this->_initAction()->_addContent($this->getLayout()
-            ->createBlock('tituly/adminhtml_tituly'))->renderLayout();
+        $this->loadLayout();
 
         //foreach ($data as $_data) {
 
