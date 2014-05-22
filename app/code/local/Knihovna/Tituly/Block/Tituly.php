@@ -47,7 +47,7 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         $hledanyString = '%'.$param.'%';
 
 
-        $query = "SELECT entity_id FROM knihovna_autor WHERE CONCAT(jmeno, ' ', prijmeni) LIKE '%a%'";
+        $query = "SELECT entity_id FROM knihovna_autor WHERE CONCAT(jmeno, ' ', prijmeni) LIKE '$hledanyString'";
         /**
          * Execute the query and store the results in $results
          */
@@ -59,6 +59,16 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         //echo count($results);
                                                 //echo $results[1]["entity_id"];
         //echo '<pre>'; print_r($results); echo '</pre>';
+        $autori = array(
+            array(
+                "finset" => array(348)
+            ),
+            array(
+                "finset" => array(350)
+            ),
+        );
+        echo '<pre>'; print_r($autori); echo '</pre>';
+
 
         $books = Mage::getModel('tituly/tituly')->getCollection()
         ->addFieldToFilter($podle, array("finset"=>$results[0]["entity_id"]));
