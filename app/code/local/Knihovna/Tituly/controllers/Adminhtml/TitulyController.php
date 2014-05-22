@@ -103,14 +103,11 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         $this->loadLayout();
         $this->renderLayout();
 
-        $form  = new Varien_Data_Form(array(
-            'id'     => 'edit_form',
-            'method' => 'post'
-        ));
-        $f     = $form->addFieldset('tituly', array(
-            'legend' => 'Přidat knihu',
-            'class'  => 'fieldset-short'
-        ));
+        ?>
+            <form>
+                dfadfa
+            </form>
+        <?php
         //foreach ($data as $_data) {
 
         //}
