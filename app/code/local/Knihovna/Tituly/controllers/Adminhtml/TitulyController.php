@@ -83,7 +83,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
        // array_shift($data);
 
 
-        $target = Mage::getModel('tituly/tituly')->load(2);
+        $target = Mage::getModel('tituly/tituly');
         var_dump($target);
         $target->setNazev("kniha");
         $target->setAutor(5);
