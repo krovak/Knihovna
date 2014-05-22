@@ -54,8 +54,8 @@ class Knihovna_Tituly_Block_Tituly extends Mage_Core_Block_Template{
         $results = $readConnection->fetchAll($query);
         //for ($i = 0; $i < count)
         //echo count($results);
-        echo $results[1]["entity_id"];
-        //echo '<pre>'; print_r($results); echo '</pre>';
+        //echo $results[1]["entity_id"];
+        echo '<pre>'; print_r($results); echo '</pre>';
 
         $books = Mage::getModel('tituly/tituly')->getCollection();
             foreach ($books as $item){
