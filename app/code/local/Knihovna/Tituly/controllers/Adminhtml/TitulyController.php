@@ -89,7 +89,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         $target->setAutor(5);
         $target->setIsbn('ISBN 80-204-0105-8');
         $target->setPocet_stranek('90');
-        $target->setRok_vydan('2013');
+        $target->setRok_vydani('2013');
         $target->setZanr('2');
         try
         {
