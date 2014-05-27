@@ -19,6 +19,9 @@ $collection = Mage::getModel('ctenar/ctenar')->getCollection()
 ->addFieldToSelect('token');
 
 $token = $_GET['token'];
+if (!ctype_alnum($token)) {
+    die();
+}
 
 
 foreach ($collection as $item){
