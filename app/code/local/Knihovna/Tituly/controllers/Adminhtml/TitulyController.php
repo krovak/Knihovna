@@ -95,7 +95,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
             //sloucime jmena s mezerami do jednoho
                 $jmeno = '';
                 for($i = 0; $i < sizeof($autorArray)-1; $i++)
-                    $jmeno .= $autorArray[$i];
+                    $jmeno .= ' '.$autorArray[$i];
             // prijmeni autora
                 $prijmeni = $autorArray[sizeof($autorArray)-1];
 
@@ -103,7 +103,11 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
             var_dump($prijmeni);
 
             $DB_data = Mage::getModel('autor/autor');
-            var_dump($DB_data->getIdByName($jmeno,$prijmeni));
+            try {
+            var_dump($DB_data->getIdByName($jmeno,$prijmeni)); }
+            catch (Exception $e) {
+
+            }
             echo '<br>';
         }
 
