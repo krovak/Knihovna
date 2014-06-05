@@ -90,8 +90,8 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
             /* AUTOR - JMENO a PRIJMENI */
             // potreba zjistit jestli uz neexistuje v databazi
             // rozsekat na jmeno (jmen muze byt vic) a prijmeni (prijmeni pouze jedno..a to to posledni)
-                $regularExpression = "\S"; // rozsekame podle bilych znaku
-                $autorArray = preg_split($regularExpression,"ahojkz jak se"); // tady jsou vsechna jmena + prijmeni autora
+                $regularExpression = "/\S/"; // rozsekame podle bilych znaku
+                $autorArray = preg_split($regularExpression,$radek[0]); // tady jsou vsechna jmena + prijmeni autora
             //sloucime jmena s mezerami do jednoho
                 $jmeno = '';
                 for($i = 0; i < end($autorArray)-1; $i++)
