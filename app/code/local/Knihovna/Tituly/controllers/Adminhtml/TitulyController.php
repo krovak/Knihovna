@@ -82,7 +82,12 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         $csv = new Varien_File_Csv();
         $data = $csv->getData('importCSV.csv');
         array_shift($data); // prevedeni CSV dat do array
-        var_dump($data);
+        //var_dump($data);
+
+        foreach ($data as $radek) {
+            var_dump(radek);
+        }
+
 
         $DB_data = Mage::getModel('autor/autor');
         var_dump($DB_data->getIdByName("Miroslav","Virius"));
