@@ -85,7 +85,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         //var_dump($data);
 
         foreach ($data as $radek) {
-            var_dump(radek);
+            var_dump($radek);
         }
 
 
