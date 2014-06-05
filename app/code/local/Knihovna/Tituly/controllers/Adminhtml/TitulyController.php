@@ -136,7 +136,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
 
                 $data = $db->getData();
                 if (@$data['entity_id']) {
-                    return $data['entity_id'];
+                    echo $data['entity_id'];
                 } else {
                     $new_zanr = Mage::getModel('tituly/zanr');
                     $new_zanr->setData('nazev',$zanr);
