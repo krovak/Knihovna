@@ -93,8 +93,8 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
                 $regularExpression = "/(\s)+/"; // rozsekame podle bilych znaku
                 $autorArray = preg_split($regularExpression,$radek[0]); // tady jsou vsechna jmena + prijmeni autora\
             //sloucime jmena s mezerami do jednoho
-                $jmeno = '';
-                for($i = 0; $i < sizeof($autorArray)-1; $i++)
+                $jmeno = $autorArray[0];
+                for($i = 1; $i < sizeof($autorArray)-1; $i++)
                     $jmeno .= ' '.$autorArray[$i];
             // prijmeni autora
                 $prijmeni = $autorArray[sizeof($autorArray)-1];
@@ -106,7 +106,6 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
             try {
             var_dump($DB_data->getIdByName($jmeno,$prijmeni)); }
             catch (Exception $e) {
-
             }
             echo '<br>';
         }
