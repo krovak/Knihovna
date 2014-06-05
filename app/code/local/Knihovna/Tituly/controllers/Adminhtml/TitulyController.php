@@ -101,11 +101,11 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
             // prijmeni autora
                 $prijmeni = $autorArray[sizeof($autorArray)-1];
 
-            var_dump($jmeno);
-            var_dump($prijmeni);
+            //var_dump($jmeno);
+            //var_dump($prijmeni);
 
             $DB_data = Mage::getModel('autor/autor');
-            var_dump($DB_data->getIdByName($jmeno,$prijmeni));
+            //var_dump($DB_data->getIdByName($jmeno,$prijmeni));
         }
 
 
