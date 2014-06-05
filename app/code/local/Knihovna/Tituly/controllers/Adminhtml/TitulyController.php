@@ -103,7 +103,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
             //zdali autor existuje .. vrati ID, jinak vytvori a vrati ID
                 $DB_data = Mage::getModel('autor/autor');
                 try {
-                    var_dump($DB_data->getIdByName($jmeno,$prijmeni));
+                    $DB_data->getIdByName($jmeno,$prijmeni));
                 }
                 catch (Exception $e) {}
             /* ZANR - typ zanru
@@ -115,6 +115,8 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
             //zdali zanr existuje .. vrati ID, jinak vytvori a vrati ID
                 $DBdata = Mage::getModel('tituly/zanr');
                 var_dump($DB_data->getIdbyZanr($zanr));
+
+            echo '<br>';
         }
 
         ////$target = Mage::getModel('tituly/tituly');
