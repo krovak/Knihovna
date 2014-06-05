@@ -12,7 +12,7 @@ class Knihovna_Tituly_Model_Zanr extends Mage_Core_Model_Abstract
         $db = Mage::getModel('tituly/zanr')
             ->getCollection()
             ->addFieldToSelect('entity_id')
-            ->addFieldToFilter('zanr', array('eq' => $zanr))
+            ->addFieldToFilter('nazev', array('eq' => $zanr))
             ->getLastItem();
 
         $data = $db->getData();
@@ -20,7 +20,7 @@ class Knihovna_Tituly_Model_Zanr extends Mage_Core_Model_Abstract
             return $data['entity_id'];
         } else {
             $new_zanr = Mage::getModel('tituly/zanr');
-            $new_zanr->setData('zanr',$zanr);
+            $new_zanr->setData('nazev',$zanr);
             $new_zanr->save();
             getIdByName($zanr);
         }
