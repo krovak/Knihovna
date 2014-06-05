@@ -87,11 +87,12 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         foreach ($data as $radek) {
             //var_dump($radek);
 
-            /* AUTOR - JMENO a PRIJMENI */
-            //potreba zjistit jestli uz neexistuje v databazi
+            /* AUTOR - PRIJMENI a JMENO
+             - potreba zjistit jestli uz neexistuje v databazi */
+
             //rozsekat na prijmeni (muze byt pouze jedno) a jmena (jmen muze byt vic)
                 $regularExpression = "/(\s)+/"; // rozsekame podle bilych znaku
-                $autorArray = preg_split($regularExpression,$radek[0]); // tady jsou vsechna jmena + prijmeni autora\
+                $autorArray = preg_split($regularExpression,$radek[0]); // tady je prijmeni + vsechna jmena autora
             //prijmeni autora
                 $prijmeni = $autorArray[0];
             //sloucime jmena s mezerami do jednoho
@@ -99,15 +100,21 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
                 for($i = 2; $i < sizeof($autorArray); $i++)
                     $jmeno .= ' '.$autorArray[$i];
 
-            var_dump($jmeno);
-            var_dump($prijmeni);
+            //zdali autor existuje .. vrati ID, jinak vytvori a vrati ID
+                $DB_data = Mage::getModel('autor/autor');
+                try {
+                    var_dump($DB_data->getIdByName($jmeno,$prijmeni));
+                }
+                catch (Exception $e) {}
+            /* ZANR - typ zanru
+             - potreba zjistit zdali uz neexistuje v databazi */
 
-            $DB_data = Mage::getModel('autor/autor');
-            try {
-            var_dump($DB_data->getIdByName($jmeno,$prijmeni)); }
-            catch (Exception $e) {
-            }
-            echo '<br>';
+            //vezmeme zanr
+                $zanr = $radek[5];
+                var_dump($zanr);
+            //zdali zanr existuje .. vrati ID, jinak vytvori a vrati ID
+                $DBdata = Mage::getModel('tituly/zanr');
+                var_dump($DB_data);
         }
 
         ////$target = Mage::getModel('tituly/tituly');
