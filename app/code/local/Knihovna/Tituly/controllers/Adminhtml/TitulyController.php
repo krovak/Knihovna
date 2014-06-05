@@ -94,7 +94,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
                 $autorArray = preg_split($regularExpression,$radek[0]); // tady jsou vsechna jmena + prijmeni autora
             //sloucime jmena s mezerami do jednoho
                 $jmeno = '';
-                for($i = 0; i < end($autorArray)-1; $i++)
+                for($i = 0; $i < end($autorArray)-1; $i++)
                     $jmeno .= $autorArray[i];
             // prijmeni autora
                 $prijmeni = $autorArray[end];
