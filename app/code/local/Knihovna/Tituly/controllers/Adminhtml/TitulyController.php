@@ -85,7 +85,24 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         //var_dump($data);
 
         foreach ($data as $radek) {
-            var_dump($radek);
+            //var_dump($radek);
+
+            /* AUTOR */
+            // rozsekat na jmeno (jmen muze byt vic) a prijmeni (prijmeni pouze jedno..a to to posledni)
+                $regularExpression = "\S"; // rozsekame podle bilych znaku
+                $autorArray = preg_split($regularExpression,$data[0]); // tady jsou vsechna jmena + prijmeni
+            //sloucime jmena s mezerami do jendoho
+                $jmeno = '';
+                for($i = 0; i < end($autorArray)-1; $i++)
+                    $jmeno .= $autorArray[i];
+            // prijmeni autora
+                $prijmeni = $autorArray[end];
+
+            var_dump($jmeno);
+            var_dump($prijmeni);
+
+            $DB_data = Mage::getModel('autor/autor');
+            var_dump($DB_data->getIdByName(,"Virius"));
         }
 
 
