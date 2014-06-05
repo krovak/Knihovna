@@ -103,7 +103,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
             //zdali autor existuje .. vrati ID, jinak vytvori a vrati ID
                 $DB_data = Mage::getModel('autor/autor');
                 try {
-                    $DB_data->getIdByName($jmeno,$prijmeni));
+                    $DB_data->getIdByName($jmeno,$prijmeni);
                 }
                 catch (Exception $e) {}
             /* ZANR - typ zanru
