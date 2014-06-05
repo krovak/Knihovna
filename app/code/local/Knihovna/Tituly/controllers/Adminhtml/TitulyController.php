@@ -104,6 +104,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
 
             $DB_data = Mage::getModel('autor/autor');
             var_dump($DB_data->getIdByName($jmeno,$prijmeni));
+            echo '<br>';
         }
 
         ////$target = Mage::getModel('tituly/tituly');
