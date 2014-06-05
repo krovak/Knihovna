@@ -103,6 +103,10 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         $this->loadLayout();
         $this->renderLayout();
 
+        echo '<form action="" method="POST">';
+        echo '<input type="file" name="path">';
+        echo '</form>';
+
 
         //foreach ($data as $_data) {
 
