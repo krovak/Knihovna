@@ -22,7 +22,7 @@ class Knihovna_Tituly_Model_Zanr extends Mage_Core_Model_Abstract
             $new_zanr = Mage::getModel('tituly/zanr');
             $new_zanr->setData('nazev',$zanr);
             $new_zanr->save();
-            getIdByName($zanr);
+            getIdByZanr($zanr);
         }
     }
 
