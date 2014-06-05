@@ -93,7 +93,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
                 $regularExpression = "/[\S]+/"; // rozsekame podle bilych znaku
                 var_dump($radek[0]);
                 $autorArray = preg_split($regularExpression,$radek[0]); // tady jsou vsechna jmena + prijmeni autora
-                var_dump($autorArray);
+                var_dump('deleni: '.$autorArray.' :konec');
             //sloucime jmena s mezerami do jednoho
                 $jmeno = '';
                 for($i = 0; $i < end($autorArray)-1; $i++)
