@@ -114,7 +114,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
                 var_dump($zanr);
             //zdali zanr existuje .. vrati ID, jinak vytvori a vrati ID
                 $DBdata = Mage::getModel('tituly/zanr');
-                var_dump($DB_data);
+                var_dump($DB_data->getIdbyZanr($zanr));
         }
 
         ////$target = Mage::getModel('tituly/tituly');
