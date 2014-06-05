@@ -103,11 +103,10 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         $this->loadLayout();
         $this->renderLayout();
 
-        echo '<form action="" method="POST">';
+        echo '<script>window.open("popup.html","_blank","width=250,height=250")</script>';
+        echo '<form action="" method="POST" target="_blank">';
         echo '<input type="file" name="path">';
         echo '</form>';
-
-        echo '<script>window.open("popup.html","_blank","width=250,height=250")</script>';
 
 
         //foreach ($data as $_data) {
