@@ -102,11 +102,9 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
 
             //zdali autor existuje .. vrati ID, jinak vytvori a vrati ID
                 $DB_data = Mage::getModel('autor/autor');
-                try {
-                    $DB_data->getIdByName($jmeno,$prijmeni);
-                }
-                catch (Exception $e) {}
-            /* ZANR - typ zanru
+                $autorID = $DB_data->getIdByName($jmeno,$prijmeni);
+
+            /* ZANR - TYP ZANRU
              - potreba zjistit zdali uz neexistuje v databazi */
 
             //vezmeme zanr
@@ -114,58 +112,32 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
                 var_dump($zanr);
             //zdali zanr existuje .. vrati ID, jinak vytvori a vrati ID
                 $DBdata = Mage::getModel('tituly/zanr');
-            //
-            $db = Mage::getModel('tituly/zanr')
-                ->getCollection()
-                ->addFieldToSelect('entity_id')
-                ->addFieldToFilter('nazev', array('eq' => $zanr))
-                ->getLastItem();
+                $zanrID = $DB_data->getIDbyZanr($zanr);
 
-            $data = $db->getData();
-            if (@$data['entity_id']) {
-                return $data['entity_id'];
-            } else {
-                $new_zanr = Mage::getModel('tituly/zanr');
-                $new_zanr->setData('nazev',$zanr);
-                $new_zanr->save();
-                $db = Mage::getModel('tituly/zanr')
-                    ->getCollection()
-                    ->addFieldToSelect('entity_id')
-                    ->addFieldToFilter('nazev', array('eq' => $zanr))
-                    ->getLastItem();
+            /* OSTATNI */
 
-                $data = $db->getData();
-                if (@$data['entity_id']) {
-                    echo $data['entity_id'];
-                } else {
-                    $new_zanr = Mage::getModel('tituly/zanr');
-                    $new_zanr->setData('nazev',$zanr);
-                    $new_zanr->save();
+                $kniha = $radek[1];
+                $isbn = $radek[2];
+                $pocetStranek = $radek[3];
+                $rokVydani = $radek[4];
 
-                }
-            }
-            //
+            /* VLOZENI DO DATABAZE TITULU */
+
+                $target = Mage::getModel('tituly/tituly');
+                $target->setNazev($kniha);
+                $target->setAutor($autorID);
+                $target->setIsbn($isbn);
+                $target->setPocet_stranek($pocetStranek);
+                $target->setRok_vydani($rokVydani);
+                $target->setZanr($zanrID);
+
+                try { $target->save(); }
+                catch (Exception $e) { echo $e->getMessage() . "\n"; }
 
             echo '<br>';
         }
 
-        ////$target = Mage::getModel('tituly/tituly');
-
-        /*
-        $target->setNazev("kniha");
-        $target->setAutor(5);
-        $target->setIsbn('ISBN 80-204-0105-8');
-        $target->setPocet_stranek('90');
-        $target->setRok_vydani('2013');
-        $target->setZanr('2');
-        */
-        /*
-        try
-        {
-            $target->save();
-        } catch (Exception $e) {
-            echo $e->getMessage() . "\n";
-        }*/
+        ////
 
         /*
         $this->loadLayout();
@@ -183,33 +155,5 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
 
         //}
     }
-
-    public function importCSV() {
-        $path = $_POST["path"];
-
-        if (($handle = fopen($path,"r")) !== FALSE) {
-            while (($data = fgetcsv($handle,1000,",")) !== FALSE) {
-                /* nacteni dat */
-                $autor = $data[0];
-                $kniha = $data[1];
-                $isbn = $data[2];
-                $pocetStranek = $data[3];
-                $rokVydani = $data[4];
-                $zanr = $data[5];
-
-                /* overeni autora */
-                $regularExpression = "\S";
-                $autorArray = preg_split($regularExpression,$autor);
-                for ($i = 0; $i < sizeof($autorArray); )
-                //projet v databazi vsechny autory
-                $jmeno = "jmeno1 jmeno2 jmeno3";
-                $prijmeni = "prijmeni1";
-
-
-            }
-        }
-    }
-
-
 
 }
