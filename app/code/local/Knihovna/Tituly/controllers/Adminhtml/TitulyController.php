@@ -78,12 +78,12 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
 
     public function importFromCsvAction()
     {
-        //$csv = new Varien_File_Csv();
-        //$data = $csv->getData('name.csv');
-       // array_shift($data);
+        $csv = new Varien_File_Csv();
+        $data = $csv->getData('importCSV.csv');
+        array_shift($data);
+        var_dump($data);
 
-
-        $target = Mage::getModel('tituly/tituly');
+        ////$target = Mage::getModel('tituly/tituly');
 
         /*
         $target->setNazev("kniha");
@@ -93,26 +93,57 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
         $target->setRok_vydani('2013');
         $target->setZanr('2');
         */
+        /*
         try
         {
             $target->save();
         } catch (Exception $e) {
             echo $e->getMessage() . "\n";
-        }
+        }*/
 
+        /*
         $this->loadLayout();
         $this->renderLayout();
 
-        echo '<script>window.open("popup.html","_blank","width=250,height=250")</script>';
-        echo '<form action="" method="POST" target="_blank">';
+        echo '<form action="" method="POST" id="inputCSV" name="inputCSV">';
         echo '<input type="file" name="path">';
         echo '</form>';
-
+        echo '<script type="text/javascript">
+                var loginForm = new VarienForm("inputCSV");
+                </script>';
+        */
 
         //foreach ($data as $_data) {
 
         //}
     }
+
+    public function importCSV() {
+        $path = $_POST["path"];
+
+        if (($handle = fopen($path,"r")) !== FALSE) {
+            while (($data = fgetcsv($handle,1000,",")) !== FALSE) {
+                /* nacteni dat */
+                $autor = $data[0];
+                $kniha = $data[1];
+                $isbn = $data[2];
+                $pocetStranek = $data[3];
+                $rokVydani = $data[4];
+                $zanr = $data[5];
+
+                /* overeni autora */
+                $regularExpression = "\S";
+                $autorArray = preg_split($regularExpression,$autor);
+                for ($i = 0; $i < sizeof($autorArray); )
+                //projet v databazi vsechny autory
+                $jmeno = "jmeno1 jmeno2 jmeno3";
+                $prijmeni = "prijmeni1";
+
+
+            }
+        }
+    }
+
 
 
 }
