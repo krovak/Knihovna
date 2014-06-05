@@ -91,11 +91,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
             // potreba zjistit jestli uz neexistuje v databazi
             // rozsekat na jmeno (jmen muze byt vic) a prijmeni (prijmeni pouze jedno..a to to posledni)
                 $regularExpression = "/(\s)+/"; // rozsekame podle bilych znaku
-                echo 'radek: ';
-                var_dump($radek[0]);
                 $autorArray = preg_split($regularExpression,$radek[0]); // tady jsou vsechna jmena + prijmeni autora\
-                echo 'deleni: ';
-                var_dump($autorArray);
             //sloucime jmena s mezerami do jednoho
                 $jmeno = '';
                 for($i = 0; $i < end($autorArray)-1; $i++)
@@ -103,16 +99,12 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
             // prijmeni autora
                 $prijmeni = $autorArray[sizeof($autorArray)-1];
 
-            //var_dump($jmeno);
-            //var_dump($prijmeni);
+            var_dump($jmeno);
+            var_dump($prijmeni);
 
             $DB_data = Mage::getModel('autor/autor');
-            //var_dump($DB_data->getIdByName($jmeno,$prijmeni));
+            var_dump($DB_data->getIdByName($jmeno,$prijmeni));
         }
-
-
-        $DB_data = Mage::getModel('autor/autor');
-        var_dump($DB_data->getIdByName("Miroslav","Virius"));
 
         ////$target = Mage::getModel('tituly/tituly');
 
