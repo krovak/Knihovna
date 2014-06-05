@@ -97,7 +97,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
                 for($i = 0; $i < end($autorArray)-1; $i++)
                     $jmeno .= $autorArray[i];
             // prijmeni autora
-                $prijmeni = $autorArray[end($autorArray)];
+                $prijmeni = $autorArray[sizeof($autorArray)-1];
 
             var_dump($jmeno);
             var_dump($prijmeni);
