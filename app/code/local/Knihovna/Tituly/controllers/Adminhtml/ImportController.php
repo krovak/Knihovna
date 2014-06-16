@@ -28,7 +28,7 @@ class Knihovna_Tituly_Adminhtml_ImportController extends Mage_Adminhtml_Controll
     public function editAction()
     {
         $this->loadLayout();
-        $zanr = $this->_initEdit('id');
+        //$zanr = $this->_initEdit('id');
         $this->_addContent($this->getLayout()->createBlock('tituly/adminhtml_import_edit')->setEditMode((bool)$this->getRequest()->getParam('entity_id')));
         $this->renderLayout();
     }
@@ -92,11 +92,11 @@ class Knihovna_Tituly_Adminhtml_ImportController extends Mage_Adminhtml_Controll
 
             //vezmeme zanr
             $zanr = $radek[5];
-            var_dump($zanr);
+            //var_dump($zanr);
             //zdali zanr existuje .. vrati ID, jinak vytvori a vrati ID
             $DBdata = Mage::getModel('tituly/zanr');
             $zanrID = $DBdata->getIDbyZanr($zanr);
-            var_dump($zanrID);
+            //var_dump($zanrID);
             //$zanrID = 2;
 
             /* OSTATNI */
@@ -120,6 +120,9 @@ class Knihovna_Tituly_Adminhtml_ImportController extends Mage_Adminhtml_Controll
             catch (Exception $e) { echo $e->getMessage() . "\n";
             }
         }
+
+        $this->loadLayout();
+        $this->renderLayout();
 
 
     }
