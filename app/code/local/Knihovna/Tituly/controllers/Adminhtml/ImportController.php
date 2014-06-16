@@ -13,20 +13,6 @@ class Knihovna_Tituly_Adminhtml_ImportController extends Mage_Adminhtml_Controll
         $this->_initAction()->_addContent($this->getLayout()->createBlock('tituly/adminhtml_import_edit'))->renderLayout();
     }
 
-
-    protected function _initEdit($idFielName = 'entity_id')
-    {
-        $id    = $this->getRequest()->getParams($idFielName);
-        $model = Mage::getModel('tituly/zanr');
-        if ($id) {
-            $model->load($id);
-        }
-        if (!Mage::registry('zanr')) {
-            Mage::register('zanr', $model);
-        }
-        return $model;
-    }
-
     public function _initAction()
     {
         $this->loadLayout();
@@ -49,14 +35,6 @@ class Knihovna_Tituly_Adminhtml_ImportController extends Mage_Adminhtml_Controll
 
     public function saveAction()
     {
-        $data = $this->getRequest()->getPost();
-        $m    = Mage::getModel('tituly/zanr');
-        $m->setData($data);
-        $m->save();
-        $this->_redirect('*/*/');
-
-        ///////
-
         /* NACTENI .CSV */
 
         if(isset($_FILES['fileinputname']['name']) and (file_exists($_FILES['fileinputname']['tmp_name']))) {
