@@ -78,11 +78,15 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
 
     public function importFromCsvAction()
     {
-        /* nacteni .CSV */
+        /* NACTENI .CSV */
+
         $csv = new Varien_File_Csv();
         $data = $csv->getData('importCSV.csv');
         array_shift($data); // prevedeni CSV dat do array
         //var_dump($data);
+
+        /* PROCHAZENI .CSV */
+
 
         foreach ($data as $radek) {
             //var_dump($radek);
@@ -99,7 +103,6 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
                 $jmeno = $autorArray[1];
                 for($i = 2; $i < sizeof($autorArray); $i++)
                     $jmeno .= ' '.$autorArray[$i];
-
             //zdali autor existuje .. vrati ID, jinak vytvori a vrati ID
                 $DB_data = Mage::getModel('autor/autor');
                 $autorID = $DB_data->getIdByName($jmeno,$prijmeni);
@@ -113,7 +116,7 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
             //zdali zanr existuje .. vrati ID, jinak vytvori a vrati ID
                 $DBdata = Mage::getModel('tituly/zanr');
                 $zanrID = $DB_data->getIDbyZanr($zanr);
-                $zanrID = 2;
+                //$zanrID = 2;
 
             /* OSTATNI */
 
@@ -132,10 +135,8 @@ class Knihovna_Tituly_Adminhtml_TitulyController extends Mage_Adminhtml_Controll
                 $target->setRok_vydani($rokVydani);
                 $target->setZanr($zanrID);
 
-                try { $target->save(); }
+                try { $target->save(); } //ulozeni vkladu
                 catch (Exception $e) { echo $e->getMessage() . "\n"; }
-
-            echo '<br>';
         }
 
         ////
