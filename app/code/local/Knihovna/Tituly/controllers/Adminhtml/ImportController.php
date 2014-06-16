@@ -10,7 +10,7 @@ class Knihovna_Tituly_Adminhtml_ImportController extends Mage_Adminhtml_Controll
 {
     public function indexAction()
     {
-        $this->_initAction()->_addContent($this->getLayout()->createBlock('tituly/adminhtml_zanr'))->renderLayout();
+        $this->_initAction()->_addContent($this->getLayout()->createBlock('tituly/adminhtml_import_edit'))->renderLayout();
     }
 
     protected function _initEdit($idFielName = 'entity_id')
