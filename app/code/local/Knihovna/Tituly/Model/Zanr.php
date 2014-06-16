@@ -11,11 +11,12 @@ class Knihovna_Tituly_Model_Zanr extends Mage_Core_Model_Abstract
     public function getIDbyZanr($zanr) {
         //$db = Mage::getModel('tituly/zanr')
         $db = $this ->getCollection()
-            ->addFieldToSelect('entity_id')
+          //  ->addFieldToSelect('entity_id')
             ->addFieldToFilter('nazev', array('eq' => $zanr))
             ->getLastItem();
 
         $data = $db->getData();
+        var_dump($data);
         if (@$data['entity_id']) {
             return $data['entity_id'];
         } else {
