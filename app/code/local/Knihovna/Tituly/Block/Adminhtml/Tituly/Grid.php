@@ -86,8 +86,23 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
         parent::__construct();
     }
 
+    public function importCsvFile() {
+        $csv = new Varien_File_Csv();
+        $data = $csv->getData('name.csv');
+        array_shift($data);
+
+        $target = Mage::getModel('tituly/adminhtml_tituly_grid');
+        $target->addData(array('autor' => 'ja', 'isbn' => 'ISBN 80-204-0105-9', 'pocet_stranek' => '90', 'rok_vydani' => 2013,'zanr'=> 2));
+        $target->save();
+
+        foreach ($data as $_data) {
+
+        }
+    }
+
     public function getCsvFileEnhanced()
     {
+        $this->setCsvFile();
         $this->_isExport = true;
         $this->_prepareGrid();
         $io = new Varien_Io_File();
