@@ -37,4 +37,9 @@ class Knihovna_Autor_Model_Autor extends Mage_Core_Model_Abstract
         }
     }
 
+    public function getFullName()
+    {
+        return $this->_getData("jmeno") . " " . $this->_getData("prijmeni");
+    }
+
 }

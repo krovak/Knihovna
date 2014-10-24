@@ -20,6 +20,11 @@
                     <sort_order>2</sort_order>
                     <action>adminhtml/import</action>
                 </importCSV>
+                <michal>
+                    <title>Michal</title>
+                    <sort_order>-10</sort_order>
+                    <action>adminhtml/michal</action>
+                </michal>
             </children>
         </tituly>
     </menu>

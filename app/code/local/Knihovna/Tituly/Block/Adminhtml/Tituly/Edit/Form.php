@@ -39,9 +39,10 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                 //'values'   => Mage::getModel('autor/source_autori')->toOptionArray()
             )
         );
-        $f->addField('autor_text', 'text', array(
-                'name'     => 'autor_text',
+        $f->addField('fullname', 'text', array(
+                'name'  => 'fullname',
                 'label'    => 'Autor',
+                'index' => "fullname",
                 'required' => true,
                 //'values'   => Mage::getModel('autor/source_autori')->toOptionArray()
             )
@@ -57,6 +58,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
             'label' => 'Počet stránek',
             'width' => '100px'
         ));
+
         $f->addField('rok_vydani', 'text', array(
             'name'     => 'rok_vydani',
             'label'    => 'Rok vydání',
