@@ -66,7 +66,13 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
     public function getInfo($isbn)
     { //stazeni obrazku z obalkyknih.cz
         $obrazek = $this->getHeader("http://www.obalkyknih.cz/api/cover?isbn=" . $isbn);
-        $this->getFile($obrazek, $this->mediaDir . DS . 'cover' . DS . $isbn . '.png');
+        if ($obrazek != "http://www.obalkyknih.cz/img/spacer.gif") {
+            $this->getFile($obrazek, $this->mediaDir . DS . 'cover' . DS . $isbn . '.png');
+            $obrazek = $this->cover . $isbn . '.png';
+        }else {
+            $obrazek = $this->cover . "neexistuje.png";
+        }
+
 
         //nacteni informaci z googleBook
         $xmlObj = simplexml_load_file('http://books.google.com/books/feeds/volumes?q=' . urlencode($isbn));
@@ -92,7 +98,7 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
                           'nazev'     => (string)$child->title,
                           'rokVydani' => (string)$child->date,
                           'format'    => $child->format,
-                          'obrazek'   => $this->cover . $isbn . '.png'
+                          'obrazek'   => $obrazek
         );
         echo Mage::helper('core')->jsonEncode($info); //vyrobim a vratim json objekt
     }
