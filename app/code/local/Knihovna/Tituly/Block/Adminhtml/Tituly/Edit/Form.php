@@ -12,6 +12,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
 
     public function _prepareForm()
     {
+
         $autor = Mage::registry('tituly');
         $form  = new Varien_Data_Form(array(
             'id'     => 'edit_form',
@@ -21,6 +22,14 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
             'legend' => 'Přidat knihu',
             'class'  => 'fieldset-short'
         ));
+
+        $adr = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB) . "media/cover/" . $autor->getIsbn() . ".png";
+        $obr = '<img id="obrazek" src ="' .$adr . '">';
+
+        $f->addField('note', 'note', array(
+            'text'     => $obr
+        ));
+
         $isbnf = $f->addField('isbn', 'text', array(
             'name'  => 'isbn',
             'label' => 'ISBN',
@@ -72,6 +81,13 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                 'values'   => Mage::getModel('tituly/source_zanr')->toOptionArray()
             )
         );
+
+
+
+
+
+        //$adr = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB) . "media/cover/" . $autor->getIsbn() . ".png";
+        //echo "<img id='obrazek' src=\"$adr\">";
 
         $urlImp = $this->getUrl('*/*/import'); //url s metodou v contoleru, kterou chci zavolat
 

@@ -24,6 +24,7 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
     {
         $this->mediaDir = Mage::getBaseDir('media'); //načtení adresy k médiím ze systému
         $this->cover    = Mage::getBaseUrl('media') . DS . 'cover' . DS; //nastavení kam chci ukládat obaly
+        //TODO Dodělat, když adresář neexistuje, vytvořit
         $this->default_cover = Mage::getBaseUrl('skin') . DS . 'frontend' . DS . 'base' . DS . 'default' . DS . 'images' . DS . 'cover'; //defaultní obal knihy
     }
 
