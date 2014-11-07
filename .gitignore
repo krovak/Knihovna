@@ -3,3 +3,4 @@ media/*
 cron.php
 lib/Zend
 .idea
+app/etc/local.xml
