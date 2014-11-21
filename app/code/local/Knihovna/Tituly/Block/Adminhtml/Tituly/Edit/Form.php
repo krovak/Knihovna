@@ -24,10 +24,10 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         ));
 
         $adr = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB) . "media/cover/" . $autor->getIsbn() . ".png";
-        $obr = '<img id="obrazek" src ="' .$adr . '">';
+        $obr = '<img style="display: block; height: inherit" id="obrazek" src ="' .$adr . '">';
 
         $f->addField('note', 'note', array(
-            'text'     => $obr
+            'text'     => "<span style='display: block; position: absolute; right: 2%; margin-top: -0.5%; height: 16em'>" . $obr . "</span>"
         ));
 
         $isbnf = $f->addField('isbn', 'text', array(
@@ -121,7 +121,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                     {
                         $('tituly').insert({top :imagecover});
                         $('tituly').insert({bottom :new Element('div',{ style:'clear:both'})});
-                        $('obrazek').next().setStyle({'float':'left',
+                        $('obrazek').next().setStyle({'float':'right',
                         width: '50%'});
                     }
                     else

@@ -863,7 +863,7 @@ abstract class Mage_Core_Block_Abstract extends Varien_Object
             $html = $this->_toHtml();
             $this->_saveCache($html);
 
-            if ($this->hasData('translate_inline')) {
+              if ($this->hasData('translate_inline')) {
                 $translate->setTranslateInline(true);
             }
         }
