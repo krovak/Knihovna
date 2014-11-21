@@ -35,7 +35,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         }
         else
         {
-            $adr = $this->default_cover. DS . "neexistuje.png";
+            $adr = $this->default_cover. "/neexistuje.png";
             $obr = '<img style="display: block; height: inherit" id="obrazek" src ="' .$adr . '">';
         }
 
