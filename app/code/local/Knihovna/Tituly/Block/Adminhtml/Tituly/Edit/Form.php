@@ -125,6 +125,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                 onComplete: function(transport) {
                   var odpoved=JSON.parse(transport.responseText);
                   var imagecover = new Element('img',{src:odpoved.obrazek,style:'float:right',id:'obrazek'});
+                  if (odpoved.nazev!=false){
                     $('nazev').value = odpoved.nazev;
                     $('rok_vydani').value = odpoved.rokVydani;
                     $('autor').value = odpoved.autor;
@@ -141,7 +142,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                     {
                         $('obrazek').update($('obrazek').src = imagecover.src);
                     }
-
+                    }
                 }
                 });
             }
