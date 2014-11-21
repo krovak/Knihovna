@@ -23,8 +23,21 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
             'class'  => 'fieldset-short'
         ));
 
+        $this->default_cover = Mage::getBaseUrl('skin') . DS . 'frontend' . DS . 'base' . DS . 'default' . DS . 'images' . DS . 'cover'; //defaultní obal knihy
+
         $adr = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB) . "media/cover/" . $autor->getIsbn() . ".png";
-        $obr = '<img style="display: block; height: inherit" id="obrazek" src ="' .$adr . '">';
+        $adr_rel = "cover". DS . $autor->getIsbn() . ".png";
+        $file = new Varien_Io_File();
+
+        if($file->fileExists(Mage::getBaseDir('media').DS.$adr_rel))
+        {
+            $obr = '<img style="display: block; height: inherit" id="obrazek" src ="' .$adr . '">';
+        }
+        else
+        {
+            $adr = $this->default_cover. DS . "neexistuje.png";
+            $obr = '<img style="display: block; height: inherit" id="obrazek" src ="' .$adr . '">';
+        }
 
         $f->addField('note', 'note', array(
             'text'     => "<span style='display: block; position: absolute; right: 2%; margin-top: -0.5%; height: 16em'>" . $obr . "</span>"
