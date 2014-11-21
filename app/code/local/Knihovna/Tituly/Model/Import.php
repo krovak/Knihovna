@@ -26,8 +26,8 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
         $this->mediaDir = Mage::getBaseDir('media'); //načtení adresy k médiím ze systému
         $file = new Varien_Io_File();
         $file->checkAndCreateFolder($adresar);
-        $this->cover = Mage::getBaseUrl('media') . DS . 'cover' . DS;
-        $this->default_cover = Mage::getBaseUrl('skin') . DS . 'frontend' . DS . 'base' . DS . 'default' . DS . 'images' . DS . 'cover'; //defaultní obal knihy
+        $this->cover = Mage::getBaseUrl('media') . '/cover/';
+        $this->default_cover = Mage::getBaseUrl('skin') . 'frontend/base/default/images/cover'; //defaultní obal knihy
     }
 
 
