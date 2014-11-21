@@ -22,11 +22,14 @@ class Knihovna_Tituly_Model_Import extends Mage_Core_Model_Abstract
      */
     public function __construct()
     {
+        $adresar = Mage::getBaseDir('media') . DS . 'cover' . DS; //nastavení kam chci ukládat obal
         $this->mediaDir = Mage::getBaseDir('media'); //načtení adresy k médiím ze systému
-        $this->cover    = Mage::getBaseUrl('media') . DS . 'cover' . DS; //nastavení kam chci ukládat obaly
-        //TODO Dodělat, když adresář neexistuje, vytvořit
+        $file = new Varien_Io_File();
+        $file->checkAndCreateFolder($adresar);
+        $this->cover = Mage::getBaseUrl('media') . DS . 'cover' . DS;
         $this->default_cover = Mage::getBaseUrl('skin') . DS . 'frontend' . DS . 'base' . DS . 'default' . DS . 'images' . DS . 'cover'; //defaultní obal knihy
     }
+
 
     /**
      * @param $path url na obalkyknih s isbn
