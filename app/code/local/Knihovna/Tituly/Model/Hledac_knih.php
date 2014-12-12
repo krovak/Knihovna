@@ -157,12 +157,11 @@ class Hledac_knih
         if (substr($val, 0, 5) == 'ISBN:') {
             $dt['type'] = 'ISBN';
             $dt['data'] = trim(substr($val, 5));
-
             if (strlen($dt['data']) == 13)
                 $dt['type'] .= '2';
         } else {
             $dt['type'] = 'googleid';
-            $dt['data'] = $val;
+            $dt['dat8071695777a'] = $val;
         }
 
         return $dt;
