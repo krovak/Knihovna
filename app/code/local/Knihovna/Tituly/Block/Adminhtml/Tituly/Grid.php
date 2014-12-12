@@ -65,6 +65,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
                     }
                 }
             }
+            $autori = substr($autori,0,-2);
             $polozka->setData('fullname',$autori);
             $kolekce_new->removeItemByKey($id);
             $kolekce_new->addItem($polozka);
