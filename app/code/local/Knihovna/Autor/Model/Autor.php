@@ -33,7 +33,7 @@ class Knihovna_Autor_Model_Autor extends Mage_Core_Model_Abstract
             $new_author->setData('jmeno',$jmeno);
             $new_author->setData('prijmeni',$prijmeni);
             $new_author->save();
-            $new_author -> getIdByName($jmeno,$prijmeni);
+           return $new_author -> getIdByName($jmeno,$prijmeni);
         }
     }
 
