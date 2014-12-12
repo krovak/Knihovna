@@ -57,7 +57,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
         $f->addField('autor', 'hidden', array(
                 'name'     => 'autor',
                 'label'    => 'Autor',
-                'required' => true,
+                //'required' => true,
                 //'values'   => Mage::getModel('autor/source_autori')->toOptionArray()
             )
         );
