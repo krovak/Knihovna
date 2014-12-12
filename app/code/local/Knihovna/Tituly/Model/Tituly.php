@@ -34,8 +34,11 @@ class Knihovna_Tituly_Model_Tituly extends Mage_Core_Model_Abstract
     {
         $pl     = parent::load($id, $field);
         $autId  = $pl->getData('autor');
-        $autori = Mage::getModel('autor/autor')->load($autId)->getFullName();
-        $pl->setData('fullname', $autori);
+        $autIdEx = explode(",",$autId);
+        $autori = array();
+        foreach ($autIdEx as $value)
+        $autori[] = Mage::getModel('autor/autor')->load($value)->getFullName();
+        $pl->setData('fullname',implode(",",$autori));
         return $pl;
     }
 

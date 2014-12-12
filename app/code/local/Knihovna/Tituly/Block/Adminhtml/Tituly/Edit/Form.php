@@ -247,8 +247,9 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
             return true;
          }
         </script>");
-
         $form->setValues($autor->getData());
+
+
         $form->setUseContainer(true);
         $form->setAction($this->getUrl('*/*/save'));
         $this->setForm($form);
