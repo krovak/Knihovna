@@ -143,6 +143,10 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
                         $('obrazek').update($('obrazek').src = imagecover.src);
                     }
                     }
+                    else {
+                    $('isbn') . setStyle({borderColor: 'red'});
+                    $('isbn').value = 'ISBN nenalezeno';
+    }
                 }
                 });
             }
