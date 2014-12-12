@@ -153,6 +153,7 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Edit_Form extends Mage_Adminhtml_Bl
             else
             {
                 $('isbn').setStyle({borderColor: 'red'});
+                $('isbn').value = 'Neplatný formát ISBN';
             }
          }
          function validaceISBN (isbn)
