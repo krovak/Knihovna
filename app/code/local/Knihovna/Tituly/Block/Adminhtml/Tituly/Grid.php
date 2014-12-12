@@ -24,9 +24,55 @@ class Knihovna_Tituly_Block_Adminhtml_Tituly_Grid extends Mage_Adminhtml_Block_W
     {
 
         $collection = Mage::getModel('tituly/tituly')->getCollection();
-
         $this->setCollection($collection);
-        return parent::_prepareCollection();
+
+        $zmena = parent::_prepareCollection(); //manuální nahrazení jmen autorů - nelze přistoupit pomocí collection SQL (databáze není ani v první normální formě)
+        $cteni = Mage::getSingleton('core/resource')->getConnection('core_read');
+        $tabulka = Mage::getSingleton('core/resource')->getTableName('tituly/knihovna_tituly');
+        $pozadavek = 'SELECT entity_id, autor FROM ' . $tabulka;
+        $tituly_autori_tab = $cteni->fetchAll($pozadavek);
+        $tabulka = Mage::getSingleton('core/resource')->getTableName('autor/knihovna_autor');
+        $pozadavek = 'SELECT * FROM ' . $tabulka;
+        $autori_tab = $cteni->fetchAll($pozadavek);
+        $kolekce = $zmena->getCollection();
+        $kolekce_new = $kolekce;
+        $polozky = $kolekce->getItems();
+        foreach($polozky as $polozka)
+        {
+            $id = $polozka->getData()['entity_id'];
+            foreach($tituly_autori_tab as $i)
+            {
+                if($i['entity_id'] == $id)
+                {
+                    $id_jmen = $i['autor'];
+                    break;
+                }
+            }
+            $id_jmen = explode(',', $id_jmen);
+            foreach ($id_jmen as $i)
+            {
+                $i = trim($i);
+            }
+            $autori = '';
+            foreach($id_jmen as $i)
+            {
+                foreach($autori_tab as $j)
+                {
+                    if ($j['entity_id'] == $i)
+                    {
+                        $autori .= $j['jmeno'] . ', ' . $j['prijmeni'] . '; ';
+                        break;
+                    }
+                }
+            }
+            $autori = substr($autori,0,-2);
+            $polozka->setData('fullname',$autori);
+            $kolekce_new->removeItemByKey($id);
+            $kolekce_new->addItem($polozka);
+        }
+        $zmena->setCollection($kolekce_new);
+
+        return $zmena;
     }
 
     public function _prepareColumns()
