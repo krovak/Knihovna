@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout>
+    <ctenar_index_nastenka>
+        <reference name="ctenar.nastenka">
+            <block type="vypujcky/vypujckyCtenar" before="ctenar.info" name="vypujcky.vypujckyctenar"
+                   template="knihovna/vypujcky/vypujcky_ctenar.phtml"></block>
+        </reference>
+    </ctenar_index_nastenka>
+
+</layout>

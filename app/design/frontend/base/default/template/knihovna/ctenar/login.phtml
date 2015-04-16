@@ -1,0 +1,46 @@
+<?php include 'ResetHesla.php'; ?>
+
+<h2 style="text-align: center">Přihlášení čtenáře</h2>
+<br>
+<hr>
+<br>
+
+<form id="prihlaseni" name="prihlaseni" method="post">
+    <table id="tab_prihlaseni">
+        <tr>
+            <td class="td_vnejsi"><label for="name">Číslo průkazu:</label></td>
+            <td><input id="name" type="text" name="name" class="required-entry input-text"></td>
+        </tr>
+        <tr>
+            <td class="td_vnejsi"><label for="password">Heslo:</label></td>
+            <td><input id="password" type="password" name="password" class="required-entry input-text"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><br></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center"><input type="submit" value="Přihlásit" style="width: 6em;height: 1.8em"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><br></td>
+        </tr>
+</form>
+<form method="post" action="">
+        <tr>
+            <td class="td_vnejsi"><label for="emailova_adresa">E-mail:</label></td>
+
+            <td><input id="emailova_adresa" type="text" name="emailova_adresa" class="input-text"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><br></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center"><input type="submit" value="Vyresetovat heslo" style="width: 21em;height: 1.8em"></td>
+        </tr>
+    </table>
+
+</form>
+<script type="text/javascript">
+    var loginForm = new VarienForm('prihlaseni');
+</script>
+<tr>

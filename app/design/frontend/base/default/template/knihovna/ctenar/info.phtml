@@ -1,0 +1,107 @@
+<?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: tichave4
+ * Date: 14.2.13
+ * Time: 15:16
+ * To change this template use File | Settings | File Templates.
+ */
+?>
+
+<?php
+/** @var $ctenar Knihovna_Ctenar_Model_Ctenar */
+$ctenar= $this->getCtenar();
+?>
+
+<div id="info" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+    <table id="profil_ctenar">
+    <thead>
+        <tr>
+            <td colspan="4" style="text-align: center"><h2>Můj profil</h2></td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr></td>
+        </tr>
+    </thead>
+        <tbody>
+        <tr>
+            <td id="td_sirka_1" class="td_vnejsi">Jméno: </td><td id="td_sirka_2"><?php echo $ctenar->getJmeno();?></td>
+            <td id="td_sirka_1" class="td_vnejsi">Příjmení: </td><td id="td_sirka_2"><?php echo $ctenar->getPrijmeni();?></td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr></td>
+        </tr>
+        <tr>
+            <td class="td_vnejsi">Ulice: </td><td><?php echo $ctenar->getUlice();?></td>
+            <td class="td_vnejsi">Č. popisné: </td><td><?php echo $ctenar->getCp();?></td>
+        </tr>
+        <tr>
+            <td class="td_vnejsi">Město: </td><td><?php echo $ctenar->getMesto();?></td>
+            <td class="td_vnejsi">PSČ: </td><td><?php echo $ctenar->getPsc();?></td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr></td>
+        </tr>
+        <tr>
+            <td id="td_sirka_1" class="td_vnejsi">Email: </td><td colspan="3"><?php echo $ctenar->getEmail();?></td>
+        </tr>
+        <tr>
+            <td id="td_sirka_1" class="td_vnejsi">Tel. číslo: </td><td colspan="3"><?php echo $ctenar->getTelefonni_cislo();?></td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <form method="post" action="">
+        <table id="profil_ctenar">
+            <thead>
+                <tr>
+                    <td colspan="4" style="text-align: center"><h2>Změna hesla</h2></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><hr></td>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="4" style="text-align: center">Nové heslo může obsahovat pouze písmena a číslice.</td>
+            </tr>
+                <tr>
+                    <td class="td_vnejsi" colspan="2"><label for="password">Nové heslo:</label></td>
+                    <?php
+                    if( isset($_POST["password"]) and isset($_POST["password2"]))
+                    {
+
+                        $ctenar->pokus($_POST["password"],$_POST["password2"]);
+                    }
+
+                    ?>
+                    <td colspan="2"><input id="password" type="password" name="password" class="required-entry input-text"></td>
+                </tr>
+
+                <tr>
+                    <td class="td_vnejsi" colspan="2"><label for="password2">Ověření nového hesla:</label></td>
+                    <td colspan="2"><input id="password2" type="password" name="password2" class="required-entry input-text"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><hr></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: center"><input type="submit" value="Změna hesla" style="width: 8em; height: 2em"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <script type="text/javascript">
+        var loginForm = new VarienForm('zmenaHesla');
+    </script>
+
+</div>
+
+

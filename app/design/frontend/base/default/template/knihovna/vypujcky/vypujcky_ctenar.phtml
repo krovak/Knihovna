@@ -1,0 +1,46 @@
+<h2 style="text-align: center">Moje výpůjčky</h2>
+
+<table id="tab_vypujcky">
+    <thead>
+        <tr>
+            <th>Kniha</th>
+            <th>Od</th>
+            <th>Do</th>
+            <th>Zbývá dnů</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        $user = Mage::getModel('core/session')->getLoggedUser();
+
+
+
+        $vypujcky = $this->getCtenarVypujcky($user->getId());
+
+            foreach($vypujcky as $vypujcka) {
+
+                $days_Left = $this->getDaysLeft(new DateTime($vypujcka->getTo()));
+
+                if ($days_Left <= 0) {
+                    echo '<tr class="red">';
+                }
+                else
+                {
+                    echo '<tr>';
+                }
+
+                        $book_name = Mage::getModel('tituly/tituly')->load($vypujcka->getBook())->getNazev();
+                        echo '<td>'.$book_name.'</td>';
+                        echo '<td>'.$vypujcka->getFrom().'</td>';
+                        echo '<td>'.$vypujcka->getTo().'</td>';
+                        echo '<td>'.$days_Left.'</td>';
+
+
+
+
+
+                    echo '</tr>';
+            }
+    ?>
+    </tbody>
+</table>

@@ -1,0 +1,51 @@
+<h3 id="nadpis_knihy">Výpis knih</h3>
+<div id="hledac">
+    <form method="post">
+        <input type="text" name="query">
+        <select name="podle">
+            <option value="nazev">jméno</option>
+            <option value="autor">autor</option>
+            <option value="isbn">ISBN</option>
+            <option value="doroku">do roku</option>
+            <option value="odroku">od roku</option>
+
+        </select>
+        <input type="submit" class="button" value="Hledej">
+    </form>
+</div>
+<div class="clear"></div>
+    <table id="seznam_knih">
+        <thead>
+            <tr><th>Název</th><th>Autor</th><th>ISBN</th><th>Počet stránek</th><th>Rok vydání</th></tr>
+        </thead>
+        <tbody>
+        <?php
+        if(isset($_POST['query']) && $_POST['query'] != '')
+            $knihy = $this->getKnihyParam($_POST['query'],$_POST['podle']);
+        else
+            $knihy = $this->getKnihy();
+
+        foreach($knihy as $kniha) {
+            ?>
+        <tr>
+            <?php
+            $authors = explode(', ',$kniha->getAutor());
+            $i = 0;
+            $author_name = array();
+            foreach($authors as $author) {
+                array_push($author_name, Mage::getModel('autor/autor')->load($author)->getJmeno().
+                    ' '.Mage::getModel('autor/autor')->load($author)->getPrijmeni());
+            }
+            $authors = implode(' ,',$author_name);
+            echo '<td>'.$kniha->getNazev().'</td>';
+            echo '<td>'.$authors.'</td>';
+            echo '<td>'.$kniha->getIsbn().'</td>';
+            echo '<td>'.$kniha->getPocet_stranek().'</td>';
+            echo '<td>'.$kniha->getRok_vydani().'</td>';
+            ?>
+        </tr>
+            <?php
+        }
+        ?>
+        </tbody>
+    </table>
