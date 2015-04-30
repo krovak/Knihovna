@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <knihovna>
+            <title>Knihovna</title>
+            <sort_order>1</sort_order>
+            <children>
+                <knihovna>
+                    <title>Spravovat knihovnu</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/knihovna</action>
+                </knihovna>
+                <oddeleni>
+                    <title>Spravovat oddeleni</title>
+                    <sort_order>2</sort_order>
+                    <action>adminhtml/oddeleni</action>
+                </oddeleni>
+            </children>
+        </knihovna>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <knihovna>
+                        <title>Knihovna</title>
+                        <children>
+                            <knihovna translate="title" module="knihovna">
+                                <title>Spravovat knihovnu</title>
+                            </knihovna>
+                            <oddeleni traslate="title" module="knihovna">
+                                <title>Spravovat oddělení</title>
+                            </oddeleni>
+                        </children>
+                    </knihovna>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

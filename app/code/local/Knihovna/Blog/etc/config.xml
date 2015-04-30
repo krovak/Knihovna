@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Knihovna_Blog>
+            <version>1.0.0.0</version>
+        </Knihovna_Blog>
+    </modules>
+
+    <global>
+        <models>
+            <knihovna_blog>
+                <class>Knihovna_Blog_Model</class>
+                <resourceModel>Knihovna_blog_resource</resourceModel>
+            </knihovna_blog>
+
+            <knihovna_blog_resource>
+                <class>Knihovna_Blog_Model_Resource</class>
+                <entities>
+                    <post_entity>
+                        <table>knihovna_blog_post_entity</table>
+                    </post_entity>
+                    <post_entity_datetime>
+                        <table>knihovna_blog_post_entity_datetime</table>
+                    </post_entity_datetime>
+                    <post_entity_decimal>
+                        <table>knihovna_blog_post_entity_decimal</table>
+                    </post_entity_decimal>
+                    <post_entity_int>
+                        <table>knihovna_blog_post_entity_int</table>
+                    </post_entity_int>
+                    <post_entity_text>
+                        <table>knihovna_blog_post_entity_text</table>
+                    </post_entity_text>
+                    <post_entity_varchar>
+                        <table>knihovna_blog_post_entity_varchar</table>
+                    </post_entity_varchar>
+                    <post_entity_char>
+                        <table>knihovna_blog_post_entity_char</table>
+                    </post_entity_char>
+                </entities>
+            </knihovna_blog_resource>
+        </models>
+
+        <helpers>
+            <knihovna_blog>
+                <class>Knihovna_Blog_Helper</class>
+            </knihovna_blog>
+        </helpers>
+
+        <blocks>
+            <knihovna_blog>
+                <class>Knihovna_Blog_Block</class>
+            </knihovna_blog>
+        </blocks>
+
+        <resources>
+            <blog_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </blog_write>
+
+            <blog_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </blog_read>
+
+            <knihovna_blog_setup>
+                <setup>
+                    <module>Knihovna_Setup</module>
+                    <class>Knihovna_Blog_Model_Resource_Setup</class>
+                </setup>
+
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </knihovna_blog_setup>
+        </resources>
+    </global>
+
+    <frontend>
+        <routers>
+            <knihovna_blog>
+                <use>standard</use>
+                <args>
+                    <module>Knihovna_Blog</module>
+                    <frontName>blog</frontName>
+                </args>
+            </knihovna_blog>
+        </routers>
+    </frontend>
+</config>
+
